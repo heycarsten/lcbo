@@ -5,7 +5,6 @@ module LCBO
       def self.included(mod)
         mod.send(:attr_reader, :body)
         mod.send(:attr_reader, :params)
-        mod.send(:include, Errors)
         mod.send(:include, Eventable)
         mod.extend(ClassMethods)
       end

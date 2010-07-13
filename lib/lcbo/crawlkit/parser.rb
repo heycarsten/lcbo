@@ -8,7 +8,6 @@ module LCBO
         mod.send(:attr_reader, :params)
 
         mod.extend(ClassMethods)
-        mod.send(:include, Errors)
         mod.send(:include, Eventable)
       end
 

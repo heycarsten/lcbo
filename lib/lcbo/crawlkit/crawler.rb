@@ -4,7 +4,6 @@ module LCBO
 
       def self.included(mod)
         mod.module_eval { attr_reader :active_crawl }
-        mod.send(:include, Errors)
         mod.send(:include, Eventable)
         mod.extend(ClassMethods)
       end
@@ -47,7 +46,7 @@ module LCBO
 
       def user_agent
         @user_agent ||= begin
-          LCBO.config[:crawlkit][:user_agent] || Typhoeus::USER_AGENT
+          LCBO.config[:user_agent] || Typhoeus::USER_AGENT
         end
       end
 

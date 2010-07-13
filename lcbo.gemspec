@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = '>= 1.3.6'
 
-  # lol - required for validation
-  s.rubyforge_project         = 'lcbo'
+  # Required for validation
+  s.rubyforge_project = 'lcbo'
 
   # If you have other dependencies, add them here
   s.add_dependency 'typhoeus',    '0.1.29'
@@ -22,12 +22,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'yajl-ruby',   '0.7.7'
 
   # If you need to check in files that aren't .rb files, add them here
-  s.files        = Dir["{lib}/**/*.rb", '*.md']
+  s.files        = Dir['{lib}/**/*.rb', '*.md']
   s.require_path = 'lib'
 
   # If you need an executable, add it here
-  # s.executables = ["newgem"]
-
-  # If you have C extensions, uncomment this line
-  # s.extensions = "ext/extconf.rb"
+  # s.executables = ['lcbo']
 end
