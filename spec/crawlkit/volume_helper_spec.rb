@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe LCBO::CrawlKit::VolumeHelper do
-  EXPECTATIONS = {
+  @expectations = {
     '10x500 mL bottles' => 5000,
     '6x330 mL cans'     => 1980,
     '1500 mL bottle'    => 1500,
@@ -13,7 +13,7 @@ describe LCBO::CrawlKit::VolumeHelper do
     '6 parts'           => 0,
     nil                 => 0 }
 
-  EXPECTATIONS.each_pair do |input, expectation|
+  @expectations.each_pair do |input, expectation|
     it "should convert: #{input.inspect} to: #{expectation.inspect}" do
       LCBO::CrawlKit::VolumeHelper[input].should == expectation
     end

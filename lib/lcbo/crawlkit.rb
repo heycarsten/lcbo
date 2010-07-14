@@ -14,7 +14,6 @@ require 'typhoeus'
 require 'uri'
 require 'yajl'
 
-require 'lcbo/crawlkit/crawler'
 require 'lcbo/crawlkit/eventable'
 require 'lcbo/crawlkit/parser'
 require 'lcbo/crawlkit/request'

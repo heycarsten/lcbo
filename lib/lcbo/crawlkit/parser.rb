@@ -17,9 +17,10 @@ module LCBO
         end
 
         def from_json(json)
-          request = Yajl.parse(json)
-          parse(req['body'], request['params'].
-            inject({}) { |h, (k, v)| h.merge(k.to_sym => v) })
+          request = Yajl::Parser.parse(json)
+          symbolized_params = request['params'].reduce({}) { |h, (k, v)|
+            h.merge(k.to_sym => v) }
+          new(request['body'], symbolized_params)
         end
 
         def emits(*list)

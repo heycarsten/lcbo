@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 describe LCBO::CrawlKit::TitleCaseHelper do
-  EXPECTATIONS = {
+  @expectations = {
     'PURPLE DRANK'                     => 'Purple Drank',
     'BEST-WINE EVAR!'                  => 'Best-Wine Evar!',
     'MONDAVI TO-KALON FUMÉ BLANC'      => 'Mondavi To-Kalon Fumé Blanc',
@@ -14,7 +14,7 @@ describe LCBO::CrawlKit::TitleCaseHelper do
     'A PRODUCT NAME (WITH STUPID CRAP' => 'A Product Name',
     'A PRODUCT NAME (FROM FRANCE)'     => 'A Product Name' }
 
-  EXPECTATIONS.each_pair do |input, expectation|
+  @expectations.each_pair do |input, expectation|
     it "should convert: #{input.inspect} to: #{expectation.inspect}" do
       LCBO::CrawlKit::TitleCaseHelper[input].should == expectation
     end
