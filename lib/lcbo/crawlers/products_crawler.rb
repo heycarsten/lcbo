@@ -6,7 +6,7 @@ module LCBO
       product_nos.each do |product_no|
         begin
           yield ProductRequest.parse(:product_no => product_no).as_hash
-        rescue LCBO::CrawlKit::Errors::MissingResourceError, Errno::ETIMEDOUT, Timeout::Error
+        rescue CrawlKit::MissingResourceError, Errno::ETIMEDOUT, Timeout::Error
           # Ignore products with no data, and timeouts.
         end
       end

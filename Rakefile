@@ -1,19 +1,10 @@
-require 'bundler'
-Bundler.setup
+require 'spec/rake/spectask'
 
-require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new do |t|
-  t.pattern    = 'spec/*_spec.rb'
-  t.ruby_opts  = %w[--color]
-  t.warning    = true
+desc 'Run the specs'
+Spec::Rake::SpecTask.new do |t|
+  t.spec_files = FileList['spec/**/*_spec.rb']
+  t.spec_opts  = %w[-fs --color]
+  #t.warning    = true
 end
 
-gemspec = eval(File.read('lcbo.gemspec'))
-# 
-# task :build => "#{gemspec.full_name}.gem"
-# 
-# file "#{gemspec.full_name}.gem" => gemspec.files + ['lcbo.gemspec'] do
-#   system "gem build lcbo.gemspec"
-#   system "gem install lcbo-#{LCBO::VERSION}.gem"
-# end
-# 
+task :default => :spec

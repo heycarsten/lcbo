@@ -1,10 +1,2 @@
-require 'bundler'
-Bundler.setup
-
-require 'rspec'
+require 'spec'
 require 'lcbo'
-require 'support/matchers'
-
-Rspec.configure do |config|
-  config.include LCBO::Spec::Matchers
-end

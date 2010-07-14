@@ -15,13 +15,13 @@ Gem::Specification.new do |s|
   # Required for validation
   s.rubyforge_project = 'lcbo'
 
-  # If you have other dependencies, add them here
   s.add_dependency 'typhoeus',    '0.1.29'
   s.add_dependency 'addressable', '2.1.2'
   s.add_dependency 'nokogiri',    '1.4.2'
   s.add_dependency 'yajl-ruby',   '0.7.7'
 
-  # If you need to check in files that aren't .rb files, add them here
+  s.add_development_dependency 'rspec', '1.3.0'
+
   s.files        = Dir['{lib}/**/*.rb', '*.md']
   s.require_path = 'lib'
 
