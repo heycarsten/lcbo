@@ -47,7 +47,7 @@ module LCBO
     end
 
     def name
-      TitleCaseHelper[info_nodes[1].content.strip]
+      CrawlKit::TitleCaseHelper[info_nodes[1].content.strip]
     end
 
     def address_line_1
