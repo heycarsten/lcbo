@@ -28,8 +28,7 @@ module LCBO
 
         def parser(parser_class = nil)
           @parser_class ||= begin
-            default = self.name.sub('Request', 'Parser')
-            Object.const_defined?(default) ? Object.const_get(default) : nil
+            eval(self.name.sub('Request', 'Parser'))
           end
           parser_class ? @parser_class = parser_class : @parser_class
         end

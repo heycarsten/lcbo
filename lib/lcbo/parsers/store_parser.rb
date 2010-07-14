@@ -56,19 +56,19 @@ module LCBO
         raise MalformedDocumentError,
           "unable to locate address for store #{store_no}"
       end
-      TitleCaseHelper[data.gsub(/[\n\r\t]+/, ' ').strip]
+      CrawlKit::TitleCaseHelper[data.gsub(/[\n\r\t]+/, ' ').strip]
     end
 
     def address_line_2
       data = info_nodes[2].content.strip.split(',')[1]
       return unless data
-      TitleCaseHelper[data.gsub(/[\n\r\t]+/, ' ').strip]
+      CrawlKit::TitleCaseHelper[data.gsub(/[\n\r\t]+/, ' ').strip]
     end
 
     def city
       data = info_nodes[3].content.strip.split(',')[0]
       return unless data
-      TitleCaseHelper[data.gsub(/[\n\r\t]+/, ' ').strip]
+      CrawlKit::TitleCaseHelper[data.gsub(/[\n\r\t]+/, ' ').strip]
     end
 
     def postal_code

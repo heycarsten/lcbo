@@ -28,7 +28,7 @@ module LCBO
     end
 
     def name
-      TitleCaseHelper[product_details_form('itemName')]
+      CrawlKit::TitleCaseHelper[product_details_form('itemName')]
     end
 
     def price_in_cents
@@ -74,7 +74,7 @@ module LCBO
     end
 
     def volume_in_milliliters
-      VolumeHelper[package]
+      CrawlKit::VolumeHelper[package]
     end
 
     def alcohol_content
