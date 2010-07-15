@@ -54,22 +54,13 @@ module LCBO
 
       def uri
         @uri ||= begin
-          Addressable::URI.parse(self.class.uri_template.expand(params || {}).to_str)
+          Addressable::URI.parse(
+            self.class.uri_template.expand(params || {}).to_str)
         end
       end
 
       def parse
         self.class.parser.new(body, params)
-      end
-
-      def as_json
-        @as_json ||= begin
-          h = {}
-          h[:uri] = uri.to_s
-          h[:params] = params
-          h[:body] = body
-          JSON.dump(h)
-        end
       end
 
       protected
@@ -86,13 +77,17 @@ module LCBO
         Typhoeus::Hydra.hydra
       end
 
+      def request_options
+        opts = {}
+        opts[:method] = request_method
+        opts[:user_agent] = user_agent
+        opts[:params] = body_params.update(params) if post?
+        opts
+      end
+
       def request
         @request ||= begin
-          opts = {}
-          opts[:method] = request_method
-          opts[:user_agent] = user_agent
-          opts[:params] = body_params.update(params) if post?
-          req = Typhoeus::Request.new(uri.to_s, opts)
+          req = Typhoeus::Request.new(uri.to_s, request_options)
           req.on_complete do |response|
             ensure_success!
             @body = response.body.gsub("\r\n", "\n")
@@ -103,15 +98,21 @@ module LCBO
 
       def user_agent
         @user_agent ||= begin
-          ENV['LCBO_USER_AGENT'] || Typhoeus::USER_AGENT
+          LCBO.config[:user_agent] ||
+          ENV['LCBO_USER_AGENT'] ||
+          Typhoeus::USER_AGENT
         end
+      end
+
+      def enqueue_and_run_request
+        hydra.queue(request)
+        hydra.run
       end
 
       def request!
         return if requested?
         fire :before_request
-        hydra.queue(request)
-        hydra.run
+        enqueue_and_run_request
         fire :after_request
       end
 

@@ -127,10 +127,10 @@ module LCBO
           text = td.text.gsub(/\s+/, ' ')
           day = text.match(/[MTWTFS]{1}[a-z]+/).to_s.downcase
           times = text.scan(/[0-9]{1,2}:[0-9]{2}/)
-          open, close = *times.map do |time|
+          open, close = *times.map { |time|
             hour, min = *time.split(':').map { |t| t.to_i }
             (hour * 60) + min
-          end
+          }
           hsh.merge(day => (open == close ? [nil, nil] : [open, close]))
         end
       end
