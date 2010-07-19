@@ -20,3 +20,16 @@ describe LCBO::CrawlKit::Request do
   end
 
 end
+
+
+class StorePage
+
+  include SyncKit::Page
+
+  uri_template 'http://lcbo.com/assfaces/{id}'
+
+  params :page => 1, :cool => 'no'
+
+  emits :name
+
+end

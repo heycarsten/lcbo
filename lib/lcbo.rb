@@ -32,6 +32,7 @@ module LCBO
 end
 
 require 'lcbo/version'
+require 'lcbo/ext'
 require 'lcbo/crawlkit'
 require 'lcbo/crawlers'
 require 'lcbo/parsers'

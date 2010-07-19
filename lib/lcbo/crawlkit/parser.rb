@@ -1,5 +1,43 @@
 module LCBO
   module CrawlKit
+    class Parser
+
+      attr_reader :body, :query_args, :body_params
+
+      def initialize(body = nil, query_args = {}, body_params = {})
+        @body = body
+        @query_args = query_args
+        @body_params = body_params
+        @fields = []
+      end
+
+      def self.parse_response(response)
+        new(response.body, response.query_args, response.body_params).parse
+      end
+
+      def emits(*args, &block)
+        if block_given?
+          emit(args[0], &block)
+        else
+          @fields.concat(args[0].is_a?(Array) ? args[0] : args)
+        end
+      end
+
+      def emit(field, &block)
+        @fields << field
+        define_method(field, &block) if block_given?
+      end
+
+      def parse
+        
+      end
+
+      def as_hash
+        
+      end
+
+    end
+
     module Parser
 
       def self.included(mod)
