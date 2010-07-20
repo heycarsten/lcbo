@@ -1,35 +1,42 @@
 require 'spec_helper'
 
-# See spec_helper.rb for example Request classes.
 describe LCBO::CrawlKit::Request do
 
-  it 'should have an assoicated parser' do
-    SpecHelper::BroRequest.parser.should == SpecHelper::BroParser
+  context 'GetRequest' do
+    before :all do
+      pro = LCBO::CrawlKit::RequestPrototype.new('http://bros.local/bros/{bro_no}')
+      @response = LCBO::CrawlKit::Request.new(pro, :bro_no => 1)
+    end
+
+    it 'should perform a get request' do
+      @response.config[:method].should == :get
+    end
+
+    it 'should build a uri based on the query param input' do
+      @response.uri.should == 'http://bros.local/bros/1'
+    end
+
+    it 'should perform the request' do
+      @response.run.body.should == BRO_HTML
+    end
   end
 
-  it 'should have a URI template' do
-    SpecHelper::BroRequest.uri_template.should be_a(Addressable::Template)
+  context 'PostRequest' do
+    before :all do
+      pro = LCBO::CrawlKit::RequestPrototype.new(
+        'http://bros.local/search', :post,
+        { :q => '', :type => 'all' })
+      @response = LCBO::CrawlKit::Request.new(
+        pro, {}, { :q => 'test', :type => 'bro' }
+      )
+    end
+
+    it 'should build a uri appropriately' do
+      @response.uri.should == 'http://bros.local/search'
+    end
+
+    it 'should perform the request' do
+      @response.run.body.should == BRO_SEARCH_HTML
+    end
   end
-
-  it 'should parse a bro' do
-    SpecHelper::BroRequest.parse(:id => 1).as_hash[:name].should == 'Carsten'
-  end
-
-  it 'should find bros' do
-    SpecHelper::BroSearchRequest.parse.as_hash[:names].size.should == 3
-  end
-
-end
-
-
-class StorePage
-
-  include SyncKit::Page
-
-  uri_template 'http://lcbo.com/assfaces/{id}'
-
-  params :page => 1, :cool => 'no'
-
-  emits :name
-
 end

@@ -34,6 +34,5 @@ end
 require 'lcbo/version'
 require 'lcbo/ext'
 require 'lcbo/crawlkit'
+require 'lcbo/pages'
 require 'lcbo/crawlers'
-require 'lcbo/parsers'
-require 'lcbo/requests'

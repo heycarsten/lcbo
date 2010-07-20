@@ -3,7 +3,8 @@ module LCBO
 
     include CrawlKit::Page
 
-    uri_template 'http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber={product_no}'
+    uri 'http://lcbo.com/lcbo-ear/lcbo/product/details.do?' \
+        'language=EN&itemNumber={product_no}'
 
     on :before_parse, :verify_response_not_blank
     on :before_parse, :verify_not_discontinued
@@ -11,22 +12,8 @@ module LCBO
     on :after_parse,  :verify_product_name
     on :after_parse,  :verify_second_info_cell
 
-    emits \
-      :product_no,
-      :name,
-      :price_in_cents,
-      :stock_type,
-      :primary_category,
-      :secondary_category,
-      :origin,
-      :package,
-      :volume_in_milliliters,
-      :alcohol_content,
-      :sugar_content,
-      :producer_name
-
     emits :product_no do
-      params[:product_no].to_i
+      query[:product_no].to_i
     end
 
     emits :name do

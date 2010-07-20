@@ -1,30 +1,21 @@
 module LCBO
-  class InventoryParser
+  class InventoryPage
 
-    include CrawlKit::Parser
+    include CrawlKit::Page
 
-    def product_no
-      params[:product_no].to_i
+    uri 'http://lcbo.com/lcbo-ear/lcbo/product/inventory/searchResults.do?' \
+        'language=EN&itemNumber={product_no}'
+
+    emits :product_no do
+      query[:product_no].to_i
     end
 
-    def as_array
-      return [] if @html.include?('No store in the selected city')
-      inventories
-    end
-
-    def as_hash
-      { :product_no => product_no,
-        :inventories => as_array }
-    end
-
-    private
-
-    def inventories
+    emits :inventories do
       # [updated_on, store_no, quantity]
       inventory_table_rows.inject([]) do |ary, node|
         h = {}
         h[:updated_on] = begin
-          FastDateHelper[
+          CrawlKit::FastDateHelper[
           node.
           css('td[width="17%"]')[-1].
           text.
@@ -50,6 +41,8 @@ module LCBO
         ary << h
       end
     end
+
+    private
 
     def inventory_table
       doc.css('table[cellpadding="3"]')

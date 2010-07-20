@@ -3,7 +3,8 @@ module LCBO
 
     include CrawlKit::Page
 
-    uri_template 'http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE={store_no}&language=EN'
+    uri 'http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?' \
+        'STORE={store_no}&language=EN'
 
     DAY_NAMES = %w[
       monday
@@ -19,7 +20,7 @@ module LCBO
     on :after_parse,  :verify_telephone_number
 
     emits :store_no do
-      params[:store_no].to_i
+      query[:store_no].to_i
     end
 
     DAY_NAMES.each do |day|
