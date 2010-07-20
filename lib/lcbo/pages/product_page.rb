@@ -13,7 +13,7 @@ module LCBO
     on :after_parse,  :verify_second_info_cell
 
     emits :product_no do
-      query[:product_no].to_i
+      query_params[:product_no].to_i
     end
 
     emits :name do

@@ -20,7 +20,7 @@ module LCBO
     on :after_parse,  :verify_telephone_number
 
     emits :store_no do
-      query[:store_no].to_i
+      query_params[:store_no].to_i
     end
 
     DAY_NAMES.each do |day|

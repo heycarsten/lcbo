@@ -2,12 +2,12 @@ module LCBO
   module CrawlKit
     class RequestPrototype
 
-      attr_reader :http_method, :uri_template, :params
+      attr_reader :http_method, :uri_template, :body_params
 
-      def initialize(uri_template = nil, http_method = :get, params = {})
+      def initialize(uri_template = nil, http_method = :get, body_params = {})
         self.uri_template = uri_template
         self.http_method  = http_method
-        self.params       = params
+        self.body_params  = body_params
       end
 
       def http_method=(value)
@@ -18,12 +18,12 @@ module LCBO
         @uri_template = Addressable::Template.new(value) if value
       end
 
-      def params=(value)
-        @params = value ? HashExt.symbolize_keys(value) : {}
+      def body_params=(value)
+        @body_params = value ? HashExt.symbolize_keys(value) : {}
       end
 
-      def request(args = {}, params = {})
-        Request.new(self, args, params).perform
+      def request(query_params = {}, body_params = {})
+        Request.new(self, query_params, body_params).run
       end
 
     end

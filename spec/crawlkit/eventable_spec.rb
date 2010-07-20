@@ -2,21 +2,22 @@ require 'spec_helper'
 
 describe LCBO::CrawlKit::Eventable, 'when mixed into a class' do
 
-  class Evented
-    include LCBO::CrawlKit::Eventable
-    on :before_request, :test_method
-    attr_reader :test_called
-    def test_method; @test_called = true; end
+  it 'should have three callbacks' do
+    SpecHelper::Evented.callbacks.size.should == 3
   end
 
-  it 'should have one callback' do
-    Evented.callbacks.size.should == 1
-  end
+  context 'upon firing the events' do
+    before :all do
+      @evented = SpecHelper::Evented.new
+      @evented.request!
+    end
 
-  it 'should call the associated callback method when firing an event' do
-    @evented = Evented.new
-    @evented.fire(:before_request)
-    @evented.test_called.should be_true
+    it 'should run all events and fire all callbacks' do
+      @evented.requested.should be_true
+      @evented.test_1.should be_true
+      @evented.test_2.should be_true
+      @evented.test_3.should be_true
+    end
   end
 
 end

@@ -7,7 +7,7 @@ module LCBO
 
     http_method :post
     uri 'http://lcbo.com/lcbo-ear/lcbo/product/searchResults.do'
-    default_params \
+    default_body_params \
       :STOCK_TYPE_NAME    => 'All',
       :ITEM_NAME          => '',
       :KEYWORDS           => '',
@@ -35,7 +35,7 @@ module LCBO
       :action             => 'result'
 
     emits :page do
-      params[:page].to_i
+      body_params[:page].to_i
     end
 
     emits :final_page do

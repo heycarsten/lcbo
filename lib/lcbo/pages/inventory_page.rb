@@ -7,7 +7,7 @@ module LCBO
         'language=EN&itemNumber={product_no}'
 
     emits :product_no do
-      query[:product_no].to_i
+      query_params[:product_no].to_i
     end
 
     emits :inventories do
