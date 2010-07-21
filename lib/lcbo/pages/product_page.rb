@@ -45,10 +45,17 @@ module LCBO
 
     emits :bonus_reward_miles do
       if has_bonus_reward_miles
-        require 'pp'
-        pp info_cell_lines
+        info_cell_line_after('Earn').to_i
       else
         0
+      end
+    end
+
+    emits :bonus_reward_miles_ends_on do
+      if has_bonus_reward_miles
+        CrawlKit::FastDateHelper[info_cell_line_after('Until')]
+      else
+        nil
       end
     end
 
@@ -138,6 +145,12 @@ module LCBO
     end
 
     emits :released_on do
+      if html.include?('Release Date:')
+        date = info_cell_line_after('Release Date:')
+        date == 'N/A' ? nil : CrawlKit::FastDateHelper[date]
+      else
+        nil
+      end
     end
 
     emits :is_discontinued do

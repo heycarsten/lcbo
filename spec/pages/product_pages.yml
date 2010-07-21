@@ -11,7 +11,7 @@
     :limited_time_offer_savings_in_cents: 0
     :limited_time_offer_ends_on:
     :bonus_reward_miles: 0
-    :bonus_reward_miles_end_on:
+    :bonus_reward_miles_ends_on:
     :alcohol_content: 1270
     :sugar_content: "1"
     :package: 750 mL bottle
@@ -47,7 +47,7 @@
     :limited_time_offer_savings_in_cents: 100
     :limited_time_offer_ends_on: "2010-08-15"
     :bonus_reward_miles: 0
-    :bonus_reward_miles_end_on:
+    :bonus_reward_miles_ends_on:
     :alcohol_content: 500
     :sugar_content: "7"
     :package: 6x330 mL bottle
@@ -83,7 +83,7 @@
     :limited_time_offer_savings_in_cents: 0
     :limited_time_offer_ends_on:
     :bonus_reward_miles: 30
-    :bonus_reward_miles_end_on: "2010-08-14"
+    :bonus_reward_miles_ends_on: "2010-08-14"
     :alcohol_content: 1250
     :sugar_content: XD
     :package: 750 mL bottle
@@ -119,7 +119,7 @@
     :limited_time_offer_savings_in_cents: 0
     :limited_time_offer_ends_on:
     :bonus_reward_miles: 0
-    :bonus_reward_miles_end_on:
+    :bonus_reward_miles_ends_on:
     :alcohol_content: 350
     :sugar_content: "8"
     :package: 330 mL bottle
@@ -155,7 +155,7 @@
     :limited_time_offer_savings_in_cents: 0
     :limited_time_offer_ends_on:
     :bonus_reward_miles: 0
-    :bonus_reward_miles_end_on:
+    :bonus_reward_miles_ends_on:
     :alcohol_content: 1320
     :sugar_content: "XD"
     :package: 750 mL bottle
@@ -191,7 +191,7 @@
     :limited_time_offer_savings_in_cents: 0
     :limited_time_offer_ends_on:
     :bonus_reward_miles: 0
-    :bonus_reward_miles_end_on:
+    :bonus_reward_miles_ends_on:
     :alcohol_content: 4000
     :sugar_content:
     :package: 1750 mL bottle
@@ -227,7 +227,7 @@
     :limited_time_offer_savings_in_cents: 0
     :limited_time_offer_ends_on:
     :bonus_reward_miles: 0
-    :bonus_reward_miles_end_on:
+    :bonus_reward_miles_ends_on:
     :alcohol_content: 1220
     :sugar_content:
     :package: 750 mL bottle
