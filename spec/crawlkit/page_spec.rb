@@ -22,6 +22,10 @@ describe LCBO::CrawlKit::Page do
         @page.should be_a(SpecHelper::GetPage)
       end
 
+      it 'should expand the URI template' do
+        @page.response.uri.should == 'http://bros.local/bros/1'
+      end
+
       it 'should emit expected values' do
         @page.bro_no.should == 1
         @page.name.should == 'Carsten'

@@ -4,25 +4,29 @@ module LCBO
 
       attr_reader :request_prototype, :query_params, :body_params
 
-      def initialize(request_prototype, query_params = {}, body_params = {})
+      def initialize(request_prototype, query_p = {}, body_p = {})
         @request_prototype = request_prototype
-        self.query_params  = query_params
-        self.body_params   = body_params
+        self.query_params  = query_p
+        self.body_params   = body_p
       end
 
       def query_params=(value)
-        @query_params = value ? value : {}
+        @query_params = (value || {})
       end
 
       def body_params=(value)
         @body_params = request_prototype.body_params.merge(value || {})
       end
 
+      def gettable?
+        [:head, :get].include?(request_prototype.http_method)
+      end
+
       def config
         opts = {}
         opts[:method]     = request_prototype.http_method
         opts[:user_agent] = USER_AGENT
-        opts[:params]     = body_params
+        opts[:params]     = body_params unless gettable?
         opts
       end
 

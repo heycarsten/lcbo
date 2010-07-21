@@ -173,6 +173,33 @@ module LCBO
       html.include?('This is a <B>VQA</B> wine')
     end
 
+    emits :description do
+      if html.include?('<B>Description</B>')
+        match = html.match(/<B>Description<\/B><\/font><BR>\n\t\t\t(.*)<BR>\n\t\t\t<BR>/m)
+        match ? match.captures[0] : nil
+      else
+        nil
+      end
+    end
+
+    emits :serving_suggestion do
+      if html.include?('<B>Serving Suggestion</B>')
+        match = html.match(/<B>Serving Suggestion<\/B><\/font><BR>\n\t\t\t(.*)<BR><BR>/m)
+        match ? match.captures[0] : nil
+      else
+        nil
+      end
+    end
+
+    emits :tasting_note do
+      if html.include?('<B>Tasting Note</B>')
+        match = html.match(/<B>Tasting Note<\/B><\/font><BR>\n\t\t\t(.*)<BR>\n\t\t\t<BR>/m)
+        match ? match.captures[0] : nil
+      else
+        nil
+      end
+    end
+
     private
 
     def volume_helper
@@ -209,7 +236,7 @@ module LCBO
     end
 
     def info_cell_text
-      info_cell_lines.join("\n")
+      @info_cell_text ||= info_cell_lines.join("\n")
     end
 
     def find_info_line(regexp)
@@ -217,7 +244,7 @@ module LCBO
     end
 
     def raw_info_cell_lines
-      info_cell_element.content.split(/\n/)
+      @raw_info_cell_lines ||= info_cell_element.content.split(/\n/)
     end
 
     def info_cell_lines
@@ -230,6 +257,10 @@ module LCBO
       i = info_cell_lines.index(item)
       return unless i
       info_cell_lines[i + 1]
+    end
+
+    def info_cell_html
+      @info_cell_html ||= info_cell_element.inner_html
     end
 
     def info_cell_element

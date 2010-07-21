@@ -14,19 +14,19 @@ module LCBO
   end
 
   def self.product(product_no)
-    ProductRequest.parse(:product_no => product_no).as_hash
+    ProductPage.request(:product_no => product_no)
   end
 
   def self.store(store_no)
-    StoreRequest.parse(:store_no => store_no).as_hash
+    StorePage.request(:store_no => store_no)
   end
 
   def self.inventory(product_no)
-    InventoryRequest.parse(:product_no => product_no).as_hash
+    InventoryPage.request(:product_no => product_no)
   end
 
   def self.products_list(page = 1, per_page = nil)
-    ProductsListRequest.parse(:page => page).as_hash
+    ProductsListPage.request({}, { :page => page })
   end
 
 end

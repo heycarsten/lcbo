@@ -2,21 +2,23 @@ module LCBO
   module CrawlKit
     class Response
 
-      attr_reader :response, :body, :query_params, :body_params, :uri, :code
+      attr_reader :response, :body, :query_params, :body_params, :uri,
+        :code, :time
 
       def initialize(response, query_params, body_params)
         @response     = response
         @code         = response.code
-        @uri          = response.requested_url
-        @http_method  = response.requested_http_method
-        if response.body.valid_encoding?
-          @body       = response.body.gsub("\r\n", "\n")
-        else
-          response.body.force_encoding('ISO-8859-1')
-          @body       = response.body.encode('UTF-8')
-        end
+        @uri          = response.request.url
+        @http_method  = response.request.method
+        @time         = response.time
         @query_params = query_params
         @body_params  = body_params
+        @body = if response.body.valid_encoding?
+          response.body
+        else
+          response.body.force_encoding('ISO-8859-1')
+          response.body.encode('UTF-8')
+        end.gsub("\r\n", "\n")
         ensure_success!
       end
 
