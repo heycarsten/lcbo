@@ -9,7 +9,12 @@ module LCBO
         @code         = response.code
         @uri          = response.requested_url
         @http_method  = response.requested_http_method
-        @body         = response.body.gsub("\r\n", "\n")
+        if response.body.valid_encoding?
+          @body       = response.body.gsub("\r\n", "\n")
+        else
+          response.body.force_encoding('ISO-8859-1')
+          @body       = response.body.encode('UTF-8')
+        end
         @query_params = query_params
         @body_params  = body_params
         ensure_success!

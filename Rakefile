@@ -9,3 +9,19 @@ Spec::Rake::SpecTask.new do |t|
 end
 
 task :default => :spec
+
+namespace :support do
+  desc 'Download all HTML indicated in yaml files'
+  task :download do
+    require 'yaml'
+    require 'pp'
+    require 'open-uri'
+    product_pages = YAML.load_file('./spec/support/product_pages.yml')
+    product_pages.each do |spec|
+      html = open(spec[:uri]).read
+      File.open("./spec/support/product_pages/#{spec[:file]}", ?w) { |file|
+        file.print(html)
+      }
+    end
+  end
+end

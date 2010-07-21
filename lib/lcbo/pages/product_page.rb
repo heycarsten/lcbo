@@ -134,30 +134,33 @@ module LCBO
 
     def verify_second_info_cell
       return unless info_cell_lines[1][-1, 1] != '|'
-      raise MalformedDocumentError,
+      raise CrawlKit::MalformedDocumentError,
         'Expected second line in info cell to end with bar for product ' \
         "#{product_no}: #{info_cell_lines[1][-1, 1]}"
     end
 
     def verify_response_not_blank
       return unless html.strip == ''
-      raise MissingResourceError, "product #{product_no} does not appear to exist"
+      raise CrawlKit::MissingResourceError,
+        "product #{product_no} does not appear to exist"
     end
 
     def verify_product_name
       return unless product_details_form('itemName').strip == ''
-      raise MissingResourceError, "can not locate name for product #{product_no}"
+      raise CrawlKit::MissingResourceError,
+        "can not locate name for product #{product_no}"
     end
 
     def verify_product_details_form
       return unless doc.css('form[name="productdetails"]').empty?
-      raise MalformedDocumentError,
+      raise CrawlKit::MalformedDocumentError,
         "productdetails form not found in doc for product #{product_no}"
     end
 
     def verify_not_discontinued
       return unless html.include?('PRODUCT DISCONTINUED')
-      raise MissingResourceError, "product #{product_no} has been discontinued"
+      raise CrawlKit::MissingResourceError,
+        "product #{product_no} has been discontinued"
     end
 
   end

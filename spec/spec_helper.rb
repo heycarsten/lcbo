@@ -7,22 +7,19 @@ BRO_HTML        = '<h1>Carsten</h1><p>Carsten is a bro.</p>'
 BRO_SEARCH_HTML = '<ul><li>Carsten</li><li>Kevin</li><li>Kieran</li></ul>'
 BRO_ICE_HTML    = '<h1>Bro!</h1><p>You just icy yo fellow bro, dude!</p>'
 
-def hydrastub(method, uri, response_opts = {})
-  response_params = {
-    :code => 200,
-    :headers => '',
-    :body => '',
-    :time => 0.3
-  }.merge(response_opts)
-  response = Typhoeus::Response.new(response_params)
-  Typhoeus::Hydra.hydra.stub(method, uri).and_return(response)
-end
-
-hydrastub :get,  /http\:\/\/bros\.local\/bros\/.+/, :body => BRO_HTML
-hydrastub :post, /http\:\/\/bros\.local\/search/,   :body => BRO_SEARCH_HTML
-hydrastub :put,  /http\:\/\/bros\.local\/ice\/.+/,  :body => BRO_ICE_HTML
-
 module SpecHelper
+
+  def self.hydrastub(method, uri, response_opts = {})
+    response_params = {
+      :code => 200,
+      :headers => '',
+      :body => '',
+      :time => 0.3
+    }.merge(response_opts)
+    uri_re = uri.is_a?(String) ? Regexp.new(Regexp.escape(uri)) : uri
+    response = ::Typhoeus::Response.new(response_params)
+    ::Typhoeus::Hydra.hydra.stub(method, uri_re).and_return(response)
+  end
 
   class Evented
     include LCBO::CrawlKit::Eventable
@@ -75,3 +72,7 @@ module SpecHelper
   end
 
 end
+
+SpecHelper.hydrastub :get,  /http\:\/\/bros\.local\/bros\/.+/, :body => BRO_HTML
+SpecHelper.hydrastub :post, /http\:\/\/bros\.local\/search/,   :body => BRO_SEARCH_HTML
+SpecHelper.hydrastub :put,  /http\:\/\/bros\.local\/ice\/.+/,  :body => BRO_ICE_HTML
