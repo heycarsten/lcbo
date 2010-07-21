@@ -1,5 +1,4 @@
--
-  :file: 1.html
+- :file: 1.html
   :desc: Seasonal product
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=122408
   :query_params:
@@ -13,16 +12,17 @@
     :limited_time_offer_ends_on:
     :bonus_reward_miles: 0
     :bonus_reward_miles_end_on:
-    :alcohol_content: 127
+    :alcohol_content: 1270
     :sugar_content: "1"
     :package: 750 mL bottle
+    :package_unit_type: bottle
     :package_unit_volume_in_milliliters: 750
     :total_package_units: 1
     :total_package_volume_in_milliliters: 750
     :origin: Argentina
     :producer_name: Pascual Toso
     :released_on:
-    :stock_type: lcbo
+    :stock_type: LCBO
     :primary_category: Wine
     :secondary_category:
     :is_vqa: false
@@ -30,10 +30,11 @@
     :has_limited_time_offer: false
     :is_discontinued: false
     :is_seasonal: true
+    :description:
     :tasting_note:
     :serving_suggestion:
--
-  :file: 2.html
+
+- :file: 2.html
   :desc: Product with limited time offer
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=18
   :query_params:
@@ -44,32 +45,32 @@
     :price_in_cents: 1250
     :regular_price_in_cents: 1350
     :limited_time_offer_savings_in_cents: 100
-    :limited_time_offer_ends_on: 2010-08-15
+    :limited_time_offer_ends_on: "2010-08-15"
     :bonus_reward_miles: 0
     :bonus_reward_miles_end_on:
-    :alcohol_content: 127
+    :alcohol_content: 500
     :sugar_content: "7"
     :package: 6x330 mL bottle
     :package_unit_type: bottle
     :package_unit_volume_in_milliliters: 330
     :total_package_units: 6
-    :total_package_volume_in_milliliters: 1989
+    :total_package_volume_in_milliliters: 1980
     :origin: Netherlands
     :producer_name: Heineken's Brouwerijen Nederland Bv
     :released_on:
-    :stock_type: lcbo
+    :stock_type: LCBO
     :primary_category: Beer
     :secondary_category: Lager
     :has_bonus_reward_miles: false
     :has_limited_time_offer: true
     :is_vqa: false
     :is_discontinued: false
-    :is_seasonal: true
+    :is_seasonal: false
     :description:
     :tasting_note: "Pale gold colour; softly perfumed nose with some hoppy elements; soft grain taste; gently bitter finish."
     :serving_suggestion: "Medium curry, pizza or burgers"
--
-  :file: 3.html
+
+- :file: 3.html
   :desc: Product with bonus air miles
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=280461
   :query_params:
@@ -82,8 +83,8 @@
     :limited_time_offer_savings_in_cents: 0
     :limited_time_offer_ends_on:
     :bonus_reward_miles: 30
-    :bonus_reward_miles_end_on: 2010-08-14
-    :alcohol_content: 125
+    :bonus_reward_miles_end_on: "2010-08-14"
+    :alcohol_content: 1250
     :sugar_content: XD
     :package: 750 mL bottle
     :package_unit_type: bottle
@@ -92,8 +93,8 @@
     :total_package_volume_in_milliliters: 750
     :origin: Champagne, France
     :producer_name: Moet & Chandon S.A.
-    :released_on: 2010-05-15
-    :stock_type: vintages
+    :released_on: "2010-05-15"
+    :stock_type: VINTAGES
     :primary_category: Wine
     :secondary_category: Champagne
     :has_bonus_reward_miles: true
@@ -104,8 +105,8 @@
     :description: "The legend now joins our Essentials Collection. Purported to be the father of all Champagne, Dom Pérignon continues to impress generation after generation. This ultimate anniversary, or birthday celebration, bubbly is only made in the greatest years. Loaded with stylish aromas of citrus, artisanal bread, green apple, mineral and pear, it's quite dry and vibrantly refreshing on the palate. Every vintage Robert Parker has reviewed from 1982 to the present has received scores in the range of 92 to 98 points! Expect to be impressed."
     :tasting_note:
     :serving_suggestion:
--
-  :file: 4.html
+
+- :file: 4.html
   :desc: Discontinued product
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=479154
   :query_params:
@@ -119,7 +120,7 @@
     :limited_time_offer_ends_on:
     :bonus_reward_miles: 0
     :bonus_reward_miles_end_on:
-    :alcohol_content: 35
+    :alcohol_content: 350
     :sugar_content: "8"
     :package: 330 mL bottle
     :package_unit_type: bottle
@@ -129,7 +130,7 @@
     :origin: Belgium
     :producer_name: Brouwerij Huyghe
     :released_on:
-    :stock_type: lcbo
+    :stock_type: LCBO
     :primary_category: Beer
     :secondary_category: Ale
     :has_bonus_reward_miles: false
@@ -140,8 +141,8 @@
     :description:
     :tasting_note:
     :serving_suggestion:
--
-  :file: 5.html
+
+- :file: 5.html
   :desc: Product with release date
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=148528
   :query_params:
@@ -155,7 +156,7 @@
     :limited_time_offer_ends_on:
     :bonus_reward_miles: 0
     :bonus_reward_miles_end_on:
-    :alcohol_content: 132
+    :alcohol_content: 1320
     :sugar_content: "XD"
     :package: 750 mL bottle
     :package_unit_type: bottle
@@ -164,8 +165,8 @@
     :total_package_volume_in_milliliters: 750
     :origin: Rioja, Spain
     :producer_name: Bodegas Ruconia S.L.
-    :released_on: 2010-01-23
-    :stock_type: vintages
+    :released_on: "2010-01-23"
+    :stock_type: VINTAGES
     :primary_category: Wine
     :secondary_category: Red Wine
     :has_bonus_reward_miles: false
@@ -176,8 +177,8 @@
     :description:
     :tasting_note: "Excellent example of a more mature Crianza, featuring aromas of cherry, dried fruit, vanilla and sweet oak spice. Dry and fruity, this wine's tannins have softened out considerably making this wine very approachable. A fine wine for a rich lamb stew or roast beef. (VINTAGES panel, July 2009)"
     :serving_suggestion:
--
-  :file: 6.html
+
+- :file: 6.html
   :desc: Standard product
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=582973
   :query_params:
@@ -191,7 +192,7 @@
     :limited_time_offer_ends_on:
     :bonus_reward_miles: 0
     :bonus_reward_miles_end_on:
-    :alcohol_content: 400
+    :alcohol_content: 4000
     :sugar_content:
     :package: 1750 mL bottle
     :package_unit_type: bottle
@@ -201,7 +202,7 @@
     :origin: England, United Kingdom
     :producer_name: Bombay Spirits Company Ltd.
     :released_on:
-    :stock_type: lcbo
+    :stock_type: LCBO
     :primary_category: Spirits
     :secondary_category: Gin
     :has_bonus_reward_miles: false
@@ -212,14 +213,14 @@
     :description:
     :tasting_note: "Clear water white; complex mix of herbs and juniper on the nose with crisp lemon peel flavours; smooth and refreshing"
     :serving_suggestion: "Martinis, mixed drinks"
--
-  :file: 7.html
+
+- :file: 7.html
   :desc: VQA product
-  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=183079
+  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=2183079
   :query_params:
-    :product_no: 183079
+    :product_no: 2183079
   :expectation:
-    :product_no: 183079
+    :product_no: 2183079
     :name: Lake & River Series Cabernet Franc VQA
     :price_in_cents: 1095
     :regular_price_in_cents: 1095
@@ -227,7 +228,7 @@
     :limited_time_offer_ends_on:
     :bonus_reward_miles: 0
     :bonus_reward_miles_end_on:
-    :alcohol_content: 122
+    :alcohol_content: 1220
     :sugar_content:
     :package: 750 mL bottle
     :package_unit_type: bottle
@@ -235,9 +236,9 @@
     :total_package_units: 1
     :total_package_volume_in_milliliters: 750
     :origin: Ontario, Canada
-    :producer_name: Colio Wines Of Canada Ltd.
+    :producer_name: Colio Wines of Canada Ltd.
     :released_on:
-    :stock_type: lcbo
+    :stock_type: LCBO
     :primary_category: Wine
     :secondary_category:
     :has_bonus_reward_miles: false

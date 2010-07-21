@@ -7,10 +7,9 @@ module LCBO
         'language=EN&itemNumber={product_no}'
 
     on :before_parse, :verify_response_not_blank
-    on :before_parse, :verify_not_discontinued
     on :after_parse,  :verify_product_details_form
     on :after_parse,  :verify_product_name
-    on :after_parse,  :verify_second_info_cell
+    on :after_parse,  :verify_third_info_cell
 
     emits :product_no do
       query_params[:product_no].to_i
@@ -24,42 +23,90 @@ module LCBO
       (product_details_form('price').to_f * 100).to_i
     end
 
+    emits :regular_price_in_cents do
+      if has_limited_time_offer
+        info_cell_line_after('Was:').sub('$ ', '').to_f * 100
+      else
+        price_in_cents
+      end
+    end
+
+    emits :limited_time_offer_savings_in_cents do
+      regular_price_in_cents - price_in_cents
+    end
+
+    emits :limited_time_offer_ends_on do
+      if has_limited_time_offer
+        CrawlKit::FastDateHelper[info_cell_line_after('Until')]
+      else
+        nil
+      end
+    end
+
+    emits :bonus_reward_miles do
+      if has_bonus_reward_miles
+        require 'pp'
+        pp info_cell_lines
+      else
+        0
+      end
+    end
+
     emits :stock_type do
       product_details_form('stock type')
     end
 
     emits :primary_category do
-      return unless stock_category
-      cat = stock_category.split(',')[0]
-      cat ? cat.strip : cat
+      if stock_category
+        cat = stock_category.split(',')[0]
+        cat ? cat.strip : cat
+      end
     end
 
     emits :secondary_category do
-      return unless stock_category
-      cat = stock_category.split(',')[1]
-      cat ? cat.strip : cat
+      if stock_category
+        cat = stock_category.split(',')[1]
+        cat ? cat.strip : cat
+      end
     end
 
     emits :origin do
       match = find_info_line(/\AMade in: /)
-      return unless match
-      place = match.
-        gsub('Made in: ', '').
-        gsub('/Californie', '').
-        gsub('Bosnia\'Hercegovina', 'Bosnia and Herzegovina').
-        gsub('Is. Of', 'Island of').
-        gsub('Italy Quality', 'Italy').
-        gsub('Usa-', '').
-        gsub(', Rep. Of', '').
-        gsub('&', 'and')
-      place.split(',').map { |s| s.strip }.uniq.join(', ')
+      if match
+        place = match.
+          gsub('Made in: ', '').
+          gsub('/Californie', '').
+          gsub('Bosnia\'Hercegovina', 'Bosnia and Herzegovina').
+          gsub('Is. Of', 'Island of').
+          gsub('Italy Quality', 'Italy').
+          gsub('Usa-', '').
+          gsub(', Rep. Of', '').
+          gsub('&', 'and')
+        place.split(',').map { |s| s.strip }.uniq.join(', ')
+      end
     end
 
     emits :package do
       @package ||= begin
         string = info_cell_lines[2]
-        string.include?('Price: ') ? nil : string
+        string.include?('Price: ') ? nil : string.sub('|','').strip
       end
+    end
+
+    emits :package_unit_type do
+      volume_helper.unit_type
+    end
+
+    emits :package_unit_volume_in_milliliters do
+      volume_helper.unit_volume
+    end
+
+    emits :total_package_units do
+      volume_helper.total_units
+    end
+
+    emits :total_package_volume_in_milliliters do
+      volume_helper.package_volume
     end
 
     emits :volume_in_milliliters do
@@ -68,24 +115,60 @@ module LCBO
 
     emits :alcohol_content do
       match = find_info_line(/ Alcohol\/Vol.\Z/)
-      return unless match
-      ac = match.gsub(/%| Alcohol\/Vol./, '').to_f
-      ac.zero? ? nil : (ac * 100).to_i
+      if match
+        ac = match.gsub(/%| Alcohol\/Vol./, '').to_f
+        ac.zero? ? nil : (ac * 100).to_i
+      end
     end
 
     emits :sugar_content do
       match = match = find_info_line(/\ASugar Content : /)
-      return unless match
-      match.gsub('Sugar Content : ', '')
+      if match
+        match.gsub('Sugar Content : ', '')
+      end
     end
 
     emits :producer_name do
       match = find_info_line(/\ABy: /)
-      return unless match
-      match.gsub(/By: |Tasting Note|Serving Suggestion|NOTE:/, '')
+      if match
+        CrawlKit::TitleCaseHelper[
+          match.gsub(/By: |Tasting Note|Serving Suggestion|NOTE:/, '')
+        ]
+      end
+    end
+
+    emits :released_on do
+    end
+
+    emits :is_discontinued do
+      html.include?('PRODUCT DISCONTINUED')
+    end
+
+    emits :has_limited_time_offer do
+      html.include?('<B>Limited Time Offer</B>')
+    end
+
+    emits :has_bonus_reward_miles do
+      html.include?('<B>Bonus Reward Miles Offer</B>')
+    end
+
+    emits :is_seasonal do
+      html.include?('<font color="#ff0000">SEASONAL/LIMITED QUANTITIES</font>')
+    end
+
+    emits :is_vqa do
+      html.include?('This is a <B>VQA</B> wine')
     end
 
     private
+
+    def volume_helper
+      @volume_helper ||= CrawlKit::VolumeHelper.new(package)
+    end
+
+    def has_package?
+      !info_cell_lines[2].include?('Price:')
+    end
 
     def stock_category
       cat = get_info_lines_at_offset(12).reject do |line|
@@ -125,18 +208,26 @@ module LCBO
     end
 
     def info_cell_lines
-      raw_info_cell_lines.map { |l| l.strip }.reject { |l| l == '' }
+      @info_cell_lines ||= begin
+        raw_info_cell_lines.map { |l| l.strip }.reject { |l| l == '' }
+      end
+    end
+
+    def info_cell_line_after(item)
+      i = info_cell_lines.index(item)
+      return unless i
+      info_cell_lines[i + 1]
     end
 
     def info_cell_element
       doc.css('table[width="478"] td[height="271"] td[colspan="2"].main_font')[0]
     end
 
-    def verify_second_info_cell
-      return unless info_cell_lines[1][-1, 1] != '|'
+    def verify_third_info_cell
+      return unless has_package? && info_cell_lines[2][0,1] != '|'
       raise CrawlKit::MalformedDocumentError,
-        'Expected second line in info cell to end with bar for product ' \
-        "#{product_no}: #{info_cell_lines[1][-1, 1]}"
+        "Expected third line in info cell to begin with bar. LCBO No: " \
+        "#{product_no}, Dump: #{info_cell_lines[2].inspect}"
     end
 
     def verify_response_not_blank
@@ -155,12 +246,6 @@ module LCBO
       return unless doc.css('form[name="productdetails"]').empty?
       raise CrawlKit::MalformedDocumentError,
         "productdetails form not found in doc for product #{product_no}"
-    end
-
-    def verify_not_discontinued
-      return unless html.include?('PRODUCT DISCONTINUED')
-      raise CrawlKit::MissingResourceError,
-        "product #{product_no} has been discontinued"
     end
 
   end

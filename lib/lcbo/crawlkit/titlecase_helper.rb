@@ -30,7 +30,9 @@ module LCBO
 
       def self.preclean(string)
         # Strip useless bracketed crap: Some Product Name (Some Redundant Stuff)**
-        string.gsub(/\(.+\Z/, '')
+        string.gsub(/\(.+\Z/, '').
+        # Strip trailing stars.
+        gsub(/\*+\Z/, '')
       end
 
       def self.capitalize(string)
@@ -72,7 +74,9 @@ module LCBO
               word.capitalize
             end
           end.join(' ')
-        end.join(' ')
+        end.join(' ').
+        # Special case for Word'S
+        gsub(/(['’])S\b/, '\1s')
       end
 
       def self.phrases(title)

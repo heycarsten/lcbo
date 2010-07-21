@@ -3,10 +3,12 @@ module LCBO
     module Page
 
       def self.included(mod)
-        mod.send(:include, Eventable)
-        mod.send(:attr_reader, :html, :query_params, :body_params, :response)
-        mod.instance_variable_set(:@request_prototype, RequestPrototype.new)
-        mod.instance_variable_set(:@fields, [])
+        mod.module_eval do
+          include Eventable
+          attr_reader :html, :query_params, :body_params, :response
+          instance_variable_set :@request_prototype, RequestPrototype.new
+          instance_variable_set :@fields, []
+        end
         mod.extend(ClassMethods)
       end
 
@@ -59,6 +61,10 @@ module LCBO
         @html         = html
       end
 
+      def [](field)
+        as_hash[field.to_sym]
+      end
+
       def request_prototype
         self.class.request_prototype
       end
@@ -96,7 +102,9 @@ module LCBO
       end
 
       def as_hash
-        fields.reduce({}) { |hsh, field| hsh.merge(field => send(field)) }
+        @as_hash ||= begin
+          fields.reduce({}) { |hsh, field| hsh.merge(field => send(field)) }
+        end
       end
 
       protected

@@ -10,6 +10,11 @@ end
 
 task :default => :spec
 
+desc 'Start an irb console'
+task :console do
+  system 'irb -I lib -r lcbo'
+end
+
 namespace :support do
   desc 'Download all HTML indicated in yaml files'
   task :download do
