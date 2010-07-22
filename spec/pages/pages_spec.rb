@@ -3,22 +3,27 @@ require 'yaml'
 
 describe LCBO::ProductPage do
 
-  @products = YAML.load_file('spec/pages/product_pages.yml')
-  @products.each do |product|
-    body = File.read("spec/pages/product_pages/#{product[:file]}")
-    product[:body] = body
-    SpecHelper.hydrastub(:get, product[:uri], :body => product[:body])
-  end
+  { :product_pages => LCBO::ProductPage,
+    :store_pages   => LCBO::StorePage
+  }.each_pair do |type, page|
+    expectations = YAML.load_file("spec/pages/#{type}.yml")
 
-  @products.each do |product|
-    context "given a #{product[:desc]}" do
-      before :all do
-        @page = LCBO::ProductPage.request(product[:query_params])
-      end
+    expectations.each do |expectation|
+      body = File.read("spec/pages/#{type}/#{expectation[:file]}")
+      expectation[:body] = body
+      SpecHelper.hydrastub(:get, expectation[:uri], :body => expectation[:body])
+    end
 
-      product[:expectation].each_pair do |key, value|
-        it "should have the expected value for :#{key}" do
-          @page[key].should == value
+    expectations.each do |expectation|
+      context "given a #{expectation[:desc]}" do
+        before :all do
+          @page = page.request(expectation[:query_params])
+        end
+
+        expectation[:expectation].each_pair do |key, value|
+          it "should have the expected value for :#{key}" do
+            @page[key].should == value
+          end
         end
       end
     end

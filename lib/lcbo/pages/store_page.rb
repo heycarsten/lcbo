@@ -1,3 +1,5 @@
+require 'cgi'
+
 module LCBO
   class StorePage
 
@@ -48,14 +50,12 @@ module LCBO
 
     emits :address_line_2 do
       data = info_nodes[2].content.strip.split(',')[1]
-      return unless data
-      CrawlKit::TitleCaseHelper[data.gsub(/[\n\r\t]+/, ' ').strip]
+      CrawlKit::TitleCaseHelper[data.gsub(/[\n\r\t]+/, ' ').strip] if data
     end
 
     emits :city do
       data = info_nodes[3].content.strip.split(',')[0]
-      return unless data
-      CrawlKit::TitleCaseHelper[data.gsub(/[\n\r\t]+/, ' ').strip]
+      CrawlKit::TitleCaseHelper[data.gsub(/[\n\r\t]+/, ' ').strip] if data
     end
 
     emits :postal_code do
@@ -75,11 +75,9 @@ module LCBO
     end
 
     emits :fax do
-      return unless has_fax?
-      info_nodes[5].content.
-        gsub(/[\n\r\t]+/, ' ').
-        gsub('Fax:', '').
-        strip
+      if has_fax?
+        info_nodes[5].content.gsub(/[\n\r\t]+/, ' ').gsub('Fax:', '').strip
+      end
     end
 
     emits :latitude do
