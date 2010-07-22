@@ -3,8 +3,8 @@ module LCBO
 
     include CrawlKit::Page
 
-    uri 'http://lcbo.com/lcbo-ear/lcbo/product/inventory/searchResults.do?' \
-        'language=EN&itemNumber={product_no}'
+    uri 'http://www.lcbo.com/lcbo-ear/lcbo/product/inventory/searchResults.do' \
+        '?language=EN&itemNumber={product_no}'
 
     emits :product_no do
       query_params[:product_no].to_i
@@ -12,7 +12,7 @@ module LCBO
 
     emits :inventories do
       # [updated_on, store_no, quantity]
-      inventory_table_rows.reduce({}) do |ary, node|
+      inventory_table_rows.reduce([]) do |ary, node|
         h = {}
         h[:updated_on] = begin
           CrawlKit::FastDateHelper[
