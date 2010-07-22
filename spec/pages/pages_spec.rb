@@ -1,11 +1,11 @@
 require 'spec_helper'
 require 'yaml'
 
-describe LCBO::ProductPage do
+{ :product_pages => LCBO::ProductPage,
+  :store_pages   => LCBO::StorePage
+}.each_pair do |type, page|
 
-  { :product_pages => LCBO::ProductPage,
-    :store_pages   => LCBO::StorePage
-  }.each_pair do |type, page|
+  describe(page) do
     expectations = YAML.load_file("spec/pages/#{type}.yml")
 
     expectations.each do |expectation|

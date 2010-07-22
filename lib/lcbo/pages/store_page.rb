@@ -17,6 +17,17 @@ module LCBO
       saturday
       sunday ]
 
+    DETAIL_FIELDS = {
+      :has_wheelchair_accessability => 'wheelchair',
+      :has_bilingual_services       => 'bilingual',
+      :has_product_consultant       => 'consultant',
+      :has_tasting_bar              => 'tasting',
+      :has_beer_cold_room           => 'cold',
+      :has_special_occasion_permits => 'permits',
+      :has_vintages_corner          => 'vintages',
+      :has_parking                  => 'parking',
+      :has_transit_access           => 'transit' }
+
     on :before_parse, :verify_store_returned
     on :after_parse,  :verify_node_count
     on :after_parse,  :verify_telephone_number
@@ -88,7 +99,27 @@ module LCBO
       location['longitude'][0].to_f
     end
 
+    DETAIL_FIELDS.keys.each do |field|
+      emits(field) { details[field] }
+    end
+
     protected
+
+    def detail_rows
+      @detail_rows ||= begin
+        doc.css('input[type="checkbox"]').map { |e| e.parent.parent.inner_html }
+      end
+    end
+
+    def details
+      @details ||= begin
+        DETAIL_FIELDS.reduce({}) do |hsh, (field, term)|
+          row   = detail_rows.detect { |row| row.include?(term) }
+          value = row.include?('checked')
+          hsh.merge(field => value)
+        end
+      end
+    end
 
     def map_anchor_href
       info_nodes[has_fax? ? 6 : 5].css('a').first.attributes['href'].to_s
