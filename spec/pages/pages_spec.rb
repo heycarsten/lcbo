@@ -1,8 +1,10 @@
 require 'spec_helper'
 require 'yaml'
 
-{ :product_pages => LCBO::ProductPage,
-  :store_pages   => LCBO::StorePage
+{ :product_pages       => LCBO::ProductPage,
+  :store_pages         => LCBO::StorePage,
+  :inventory_pages     => LCBO::InventoryPage,
+  :products_list_pages => LCBO::ProductsListPage
 }.each_pair do |type, page|
 
   describe(page) do

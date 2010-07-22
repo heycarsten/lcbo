@@ -12,7 +12,7 @@ module LCBO
 
     emits :inventories do
       # [updated_on, store_no, quantity]
-      inventory_table_rows.inject([]) do |ary, node|
+      inventory_table_rows.reduce({}) do |ary, node|
         h = {}
         h[:updated_on] = begin
           CrawlKit::FastDateHelper[
@@ -34,7 +34,7 @@ module LCBO
         h[:quantity] = begin
           node.
           css('td[width="13%"]')[0].
-          text.
+          content.
           strip.
           to_i
         end

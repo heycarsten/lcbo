@@ -1,0 +1,1674 @@
+- :file: 1.html
+  :desc: Product with inventories
+  :uri: http://lcbo.com/lcbo-ear/lcbo/product/inventory/searchResults.do?language=EN&itemNumber=18
+  :query_params:
+    :product_no: 18
+  :expectation:
+    :product_no: 18
+    :inventories: 
+    - :updated_on: "2010-07-21"
+      :store_no: 444
+      :quantity: 1303
+    - :updated_on: "2010-07-21"
+      :store_no: 355
+      :quantity: 1146
+    - :updated_on: "2010-07-21"
+      :store_no: 228
+      :quantity: 1139
+    - :updated_on: "2010-07-21"
+      :store_no: 329
+      :quantity: 1138
+    - :updated_on: "2010-07-21"
+      :store_no: 171
+      :quantity: 1106
+    - :updated_on: "2010-07-21"
+      :store_no: 226
+      :quantity: 1022
+    - :updated_on: "2010-07-21"
+      :store_no: 6
+      :quantity: 842
+    - :updated_on: "2010-07-21"
+      :store_no: 416
+      :quantity: 803
+    - :updated_on: "2010-07-21"
+      :store_no: 555
+      :quantity: 768
+    - :updated_on: "2010-07-20"
+      :store_no: 458
+      :quantity: 763
+    - :updated_on: "2010-07-21"
+      :store_no: 408
+      :quantity: 731
+    - :updated_on: "2010-07-21"
+      :store_no: 590
+      :quantity: 731
+    - :updated_on: "2010-07-21"
+      :store_no: 164
+      :quantity: 604
+    - :updated_on: "2010-07-21"
+      :store_no: 383
+      :quantity: 603
+    - :updated_on: "2010-07-21"
+      :store_no: 1
+      :quantity: 596
+    - :updated_on: "2010-07-21"
+      :store_no: 19
+      :quantity: 596
+    - :updated_on: "2010-07-21"
+      :store_no: 523
+      :quantity: 569
+    - :updated_on: "2010-07-21"
+      :store_no: 436
+      :quantity: 564
+    - :updated_on: "2010-07-21"
+      :store_no: 182
+      :quantity: 562
+    - :updated_on: "2010-07-21"
+      :store_no: 703
+      :quantity: 558
+    - :updated_on: "2010-07-21"
+      :store_no: 346
+      :quantity: 529
+    - :updated_on: "2010-07-21"
+      :store_no: 183
+      :quantity: 519
+    - :updated_on: "2010-07-21"
+      :store_no: 360
+      :quantity: 493
+    - :updated_on: "2010-07-21"
+      :store_no: 3
+      :quantity: 489
+    - :updated_on: "2010-07-21"
+      :store_no: 553
+      :quantity: 475
+    - :updated_on: "2010-07-21"
+      :store_no: 445
+      :quantity: 455
+    - :updated_on: "2010-07-21"
+      :store_no: 632
+      :quantity: 448
+    - :updated_on: "2010-07-21"
+      :store_no: 5
+      :quantity: 444
+    - :updated_on: "2010-07-21"
+      :store_no: 334
+      :quantity: 435
+    - :updated_on: "2010-07-21"
+      :store_no: 470
+      :quantity: 430
+    - :updated_on: "2010-07-21"
+      :store_no: 362
+      :quantity: 428
+    - :updated_on: "2010-07-21"
+      :store_no: 511
+      :quantity: 428
+    - :updated_on: "2010-07-21"
+      :store_no: 564
+      :quantity: 426
+    - :updated_on: "2010-07-21"
+      :store_no: 188
+      :quantity: 425
+    - :updated_on: "2010-07-21"
+      :store_no: 14
+      :quantity: 422
+    - :updated_on: "2010-07-21"
+      :store_no: 572
+      :quantity: 417
+    - :updated_on: "2010-07-21"
+      :store_no: 217
+      :quantity: 414
+    - :updated_on: "2010-07-21"
+      :store_no: 12
+      :quantity: 413
+    - :updated_on: "2010-07-21"
+      :store_no: 533
+      :quantity: 411
+    - :updated_on: "2010-07-21"
+      :store_no: 140
+      :quantity: 401
+    - :updated_on: "2010-07-21"
+      :store_no: 218
+      :quantity: 394
+    - :updated_on: "2010-07-21"
+      :store_no: 269
+      :quantity: 389
+    - :updated_on: "2010-07-21"
+      :store_no: 542
+      :quantity: 388
+    - :updated_on: "2010-07-21"
+      :store_no: 485
+      :quantity: 383
+    - :updated_on: "2010-07-21"
+      :store_no: 11
+      :quantity: 378
+    - :updated_on: "2010-07-21"
+      :store_no: 356
+      :quantity: 374
+    - :updated_on: "2010-07-21"
+      :store_no: 771
+      :quantity: 371
+    - :updated_on: "2010-07-21"
+      :store_no: 398
+      :quantity: 362
+    - :updated_on: "2010-07-21"
+      :store_no: 618
+      :quantity: 358
+    - :updated_on: "2010-07-21"
+      :store_no: 536
+      :quantity: 357
+    - :updated_on: "2010-07-21"
+      :store_no: 601
+      :quantity: 356
+    - :updated_on: "2010-07-21"
+      :store_no: 534
+      :quantity: 354
+    - :updated_on: "2010-07-21"
+      :store_no: 20
+      :quantity: 351
+    - :updated_on: "2010-07-21"
+      :store_no: 698
+      :quantity: 350
+    - :updated_on: "2010-07-21"
+      :store_no: 452
+      :quantity: 348
+    - :updated_on: "2010-07-21"
+      :store_no: 185
+      :quantity: 340
+    - :updated_on: "2010-07-21"
+      :store_no: 619
+      :quantity: 338
+    - :updated_on: "2010-07-21"
+      :store_no: 525
+      :quantity: 314
+    - :updated_on: "2010-07-21"
+      :store_no: 629
+      :quantity: 308
+    - :updated_on: "2010-07-21"
+      :store_no: 321
+      :quantity: 301
+    - :updated_on: "2010-07-21"
+      :store_no: 434
+      :quantity: 291
+    - :updated_on: "2010-07-21"
+      :store_no: 630
+      :quantity: 285
+    - :updated_on: "2010-07-21"
+      :store_no: 426
+      :quantity: 282
+    - :updated_on: "2010-07-21"
+      :store_no: 545
+      :quantity: 281
+    - :updated_on: "2010-07-21"
+      :store_no: 198
+      :quantity: 270
+    - :updated_on: "2010-07-21"
+      :store_no: 115
+      :quantity: 266
+    - :updated_on: "2010-07-21"
+      :store_no: 486
+      :quantity: 261
+    - :updated_on: "2010-07-21"
+      :store_no: 21
+      :quantity: 255
+    - :updated_on: "2010-07-21"
+      :store_no: 200
+      :quantity: 254
+    - :updated_on: "2010-07-21"
+      :store_no: 15
+      :quantity: 253
+    - :updated_on: "2010-07-21"
+      :store_no: 499
+      :quantity: 247
+    - :updated_on: "2010-07-21"
+      :store_no: 568
+      :quantity: 232
+    - :updated_on: "2010-07-21"
+      :store_no: 428
+      :quantity: 224
+    - :updated_on: "2010-07-21"
+      :store_no: 9
+      :quantity: 221
+    - :updated_on: "2010-07-21"
+      :store_no: 163
+      :quantity: 216
+    - :updated_on: "2010-07-21"
+      :store_no: 617
+      :quantity: 209
+    - :updated_on: "2010-07-21"
+      :store_no: 10
+      :quantity: 199
+    - :updated_on: "2010-07-21"
+      :store_no: 390
+      :quantity: 197
+    - :updated_on: "2010-07-21"
+      :store_no: 584
+      :quantity: 197
+    - :updated_on: "2010-07-21"
+      :store_no: 65
+      :quantity: 192
+    - :updated_on: "2010-07-21"
+      :store_no: 546
+      :quantity: 189
+    - :updated_on: "2010-07-21"
+      :store_no: 776
+      :quantity: 187
+    - :updated_on: "2010-07-21"
+      :store_no: 326
+      :quantity: 185
+    - :updated_on: "2010-07-21"
+      :store_no: 149
+      :quantity: 184
+    - :updated_on: "2010-07-21"
+      :store_no: 279
+      :quantity: 183
+    - :updated_on: "2010-07-21"
+      :store_no: 18
+      :quantity: 182
+    - :updated_on: "2010-07-21"
+      :store_no: 361
+      :quantity: 181
+    - :updated_on: "2010-07-21"
+      :store_no: 265
+      :quantity: 179
+    - :updated_on: "2010-07-21"
+      :store_no: 631
+      :quantity: 178
+    - :updated_on: "2010-07-21"
+      :store_no: 253
+      :quantity: 177
+    - :updated_on: "2010-07-21"
+      :store_no: 187
+      :quantity: 174
+    - :updated_on: "2010-07-21"
+      :store_no: 212
+      :quantity: 173
+    - :updated_on: "2010-07-21"
+      :store_no: 8
+      :quantity: 172
+    - :updated_on: "2010-07-21"
+      :store_no: 191
+      :quantity: 171
+    - :updated_on: "2010-07-21"
+      :store_no: 415
+      :quantity: 171
+    - :updated_on: "2010-07-21"
+      :store_no: 505
+      :quantity: 167
+    - :updated_on: "2010-07-21"
+      :store_no: 623
+      :quantity: 167
+    - :updated_on: "2010-07-21"
+      :store_no: 494
+      :quantity: 163
+    - :updated_on: "2010-07-21"
+      :store_no: 443
+      :quantity: 161
+    - :updated_on: "2010-07-21"
+      :store_no: 587
+      :quantity: 158
+    - :updated_on: "2010-07-21"
+      :store_no: 73
+      :quantity: 156
+    - :updated_on: "2010-07-21"
+      :store_no: 495
+      :quantity: 152
+    - :updated_on: "2010-07-21"
+      :store_no: 148
+      :quantity: 151
+    - :updated_on: "2010-07-21"
+      :store_no: 404
+      :quantity: 151
+    - :updated_on: "2010-07-21"
+      :store_no: 378
+      :quantity: 148
+    - :updated_on: "2010-07-21"
+      :store_no: 25
+      :quantity: 147
+    - :updated_on: "2010-07-21"
+      :store_no: 624
+      :quantity: 146
+    - :updated_on: "2010-07-21"
+      :store_no: 242
+      :quantity: 145
+    - :updated_on: "2010-07-21"
+      :store_no: 481
+      :quantity: 145
+    - :updated_on: "2010-07-21"
+      :store_no: 34
+      :quantity: 141
+    - :updated_on: "2010-07-21"
+      :store_no: 243
+      :quantity: 140
+    - :updated_on: "2010-07-21"
+      :store_no: 573
+      :quantity: 140
+    - :updated_on: "2010-07-21"
+      :store_no: 22
+      :quantity: 139
+    - :updated_on: "2010-07-21"
+      :store_no: 95
+      :quantity: 137
+    - :updated_on: "2010-07-21"
+      :store_no: 27
+      :quantity: 136
+    - :updated_on: "2010-07-21"
+      :store_no: 411
+      :quantity: 135
+    - :updated_on: "2010-07-21"
+      :store_no: 154
+      :quantity: 134
+    - :updated_on: "2010-07-21"
+      :store_no: 179
+      :quantity: 134
+    - :updated_on: "2010-07-21"
+      :store_no: 214
+      :quantity: 134
+    - :updated_on: "2010-07-21"
+      :store_no: 263
+      :quantity: 134
+    - :updated_on: "2010-07-21"
+      :store_no: 2
+      :quantity: 132
+    - :updated_on: "2010-07-21"
+      :store_no: 252
+      :quantity: 132
+    - :updated_on: "2010-07-21"
+      :store_no: 384
+      :quantity: 132
+    - :updated_on: "2010-07-21"
+      :store_no: 84
+      :quantity: 130
+    - :updated_on: "2010-07-21"
+      :store_no: 432
+      :quantity: 129
+    - :updated_on: "2010-07-21"
+      :store_no: 324
+      :quantity: 126
+    - :updated_on: "2010-07-21"
+      :store_no: 325
+      :quantity: 125
+    - :updated_on: "2010-07-21"
+      :store_no: 371
+      :quantity: 125
+    - :updated_on: "2010-07-21"
+      :store_no: 31
+      :quantity: 124
+    - :updated_on: "2010-07-21"
+      :store_no: 167
+      :quantity: 122
+    - :updated_on: "2010-07-21"
+      :store_no: 38
+      :quantity: 120
+    - :updated_on: "2010-07-21"
+      :store_no: 186
+      :quantity: 120
+    - :updated_on: "2010-07-21"
+      :store_no: 344
+      :quantity: 117
+    - :updated_on: "2010-07-21"
+      :store_no: 248
+      :quantity: 115
+    - :updated_on: "2010-07-21"
+      :store_no: 437
+      :quantity: 115
+    - :updated_on: "2010-07-21"
+      :store_no: 366
+      :quantity: 114
+    - :updated_on: "2010-07-21"
+      :store_no: 4
+      :quantity: 113
+    - :updated_on: "2010-07-21"
+      :store_no: 412
+      :quantity: 113
+    - :updated_on: "2010-07-21"
+      :store_no: 64
+      :quantity: 112
+    - :updated_on: "2010-07-21"
+      :store_no: 425
+      :quantity: 111
+    - :updated_on: "2010-07-21"
+      :store_no: 288
+      :quantity: 109
+    - :updated_on: "2010-07-21"
+      :store_no: 438
+      :quantity: 108
+    - :updated_on: "2010-07-21"
+      :store_no: 636
+      :quantity: 106
+    - :updated_on: "2010-07-21"
+      :store_no: 209
+      :quantity: 104
+    - :updated_on: "2010-07-21"
+      :store_no: 359
+      :quantity: 104
+    - :updated_on: "2010-07-21"
+      :store_no: 465
+      :quantity: 104
+    - :updated_on: "2010-07-21"
+      :store_no: 417
+      :quantity: 101
+    - :updated_on: "2010-07-21"
+      :store_no: 40
+      :quantity: 100
+    - :updated_on: "2010-07-21"
+      :store_no: 57
+      :quantity: 99
+    - :updated_on: "2010-07-21"
+      :store_no: 549
+      :quantity: 99
+    - :updated_on: "2010-07-21"
+      :store_no: 233
+      :quantity: 97
+    - :updated_on: "2010-07-21"
+      :store_no: 237
+      :quantity: 96
+    - :updated_on: "2010-07-21"
+      :store_no: 559
+      :quantity: 96
+    - :updated_on: "2010-07-21"
+      :store_no: 207
+      :quantity: 95
+    - :updated_on: "2010-07-21"
+      :store_no: 143
+      :quantity: 94
+    - :updated_on: "2010-07-21"
+      :store_no: 152
+      :quantity: 94
+    - :updated_on: "2010-07-21"
+      :store_no: 373
+      :quantity: 94
+    - :updated_on: "2010-07-21"
+      :store_no: 407
+      :quantity: 94
+    - :updated_on: "2010-07-21"
+      :store_no: 556
+      :quantity: 93
+    - :updated_on: "2010-07-21"
+      :store_no: 700
+      :quantity: 92
+    - :updated_on: "2010-07-21"
+      :store_no: 106
+      :quantity: 90
+    - :updated_on: "2010-07-21"
+      :store_no: 515
+      :quantity: 89
+    - :updated_on: "2010-07-21"
+      :store_no: 313
+      :quantity: 88
+    - :updated_on: "2010-07-21"
+      :store_no: 385
+      :quantity: 88
+    - :updated_on: "2010-07-21"
+      :store_no: 431
+      :quantity: 87
+    - :updated_on: "2010-07-21"
+      :store_no: 62
+      :quantity: 86
+    - :updated_on: "2010-07-21"
+      :store_no: 586
+      :quantity: 86
+    - :updated_on: "2010-07-21"
+      :store_no: 36
+      :quantity: 85
+    - :updated_on: "2010-07-21"
+      :store_no: 528
+      :quantity: 85
+    - :updated_on: "2010-07-21"
+      :store_no: 287
+      :quantity: 84
+    - :updated_on: "2010-07-21"
+      :store_no: 589
+      :quantity: 84
+    - :updated_on: "2010-07-21"
+      :store_no: 382
+      :quantity: 83
+    - :updated_on: "2010-07-21"
+      :store_no: 575
+      :quantity: 83
+    - :updated_on: "2010-07-21"
+      :store_no: 386
+      :quantity: 82
+    - :updated_on: "2010-07-21"
+      :store_no: 387
+      :quantity: 82
+    - :updated_on: "2010-07-21"
+      :store_no: 532
+      :quantity: 82
+    - :updated_on: "2010-07-21"
+      :store_no: 602
+      :quantity: 82
+    - :updated_on: "2010-07-21"
+      :store_no: 44
+      :quantity: 81
+    - :updated_on: "2010-07-21"
+      :store_no: 101
+      :quantity: 81
+    - :updated_on: "2010-07-21"
+      :store_no: 512
+      :quantity: 81
+    - :updated_on: "2010-07-21"
+      :store_no: 702
+      :quantity: 78
+    - :updated_on: "2010-07-21"
+      :store_no: 249
+      :quantity: 77
+    - :updated_on: "2010-07-21"
+      :store_no: 255
+      :quantity: 77
+    - :updated_on: "2010-07-21"
+      :store_no: 156
+      :quantity: 76
+    - :updated_on: "2010-07-21"
+      :store_no: 420
+      :quantity: 76
+    - :updated_on: "2010-07-21"
+      :store_no: 13
+      :quantity: 75
+    - :updated_on: "2010-07-20"
+      :store_no: 145
+      :quantity: 75
+    - :updated_on: "2010-07-21"
+      :store_no: 389
+      :quantity: 75
+    - :updated_on: "2010-07-21"
+      :store_no: 393
+      :quantity: 75
+    - :updated_on: "2010-07-21"
+      :store_no: 457
+      :quantity: 75
+    - :updated_on: "2010-07-21"
+      :store_no: 323
+      :quantity: 72
+    - :updated_on: "2010-07-21"
+      :store_no: 742
+      :quantity: 71
+    - :updated_on: "2010-07-21"
+      :store_no: 35
+      :quantity: 70
+    - :updated_on: "2010-07-21"
+      :store_no: 130
+      :quantity: 70
+    - :updated_on: "2010-07-21"
+      :store_no: 132
+      :quantity: 70
+    - :updated_on: "2010-07-21"
+      :store_no: 459
+      :quantity: 68
+    - :updated_on: "2010-07-21"
+      :store_no: 37
+      :quantity: 67
+    - :updated_on: "2010-07-21"
+      :store_no: 227
+      :quantity: 67
+    - :updated_on: "2010-07-21"
+      :store_no: 367
+      :quantity: 67
+    - :updated_on: "2010-07-21"
+      :store_no: 250
+      :quantity: 66
+    - :updated_on: "2010-07-21"
+      :store_no: 598
+      :quantity: 66
+    - :updated_on: "2010-07-21"
+      :store_no: 192
+      :quantity: 65
+    - :updated_on: "2010-07-21"
+      :store_no: 394
+      :quantity: 65
+    - :updated_on: "2010-07-21"
+      :store_no: 563
+      :quantity: 65
+    - :updated_on: "2010-07-21"
+      :store_no: 23
+      :quantity: 64
+    - :updated_on: "2010-07-21"
+      :store_no: 55
+      :quantity: 64
+    - :updated_on: "2010-07-21"
+      :store_no: 251
+      :quantity: 64
+    - :updated_on: "2010-07-21"
+      :store_no: 497
+      :quantity: 64
+    - :updated_on: "2010-07-21"
+      :store_no: 340
+      :quantity: 63
+    - :updated_on: "2010-07-21"
+      :store_no: 354
+      :quantity: 62
+    - :updated_on: "2010-07-21"
+      :store_no: 544
+      :quantity: 62
+    - :updated_on: "2010-07-21"
+      :store_no: 561
+      :quantity: 62
+    - :updated_on: "2010-07-20"
+      :store_no: 388
+      :quantity: 61
+    - :updated_on: "2010-07-21"
+      :store_no: 175
+      :quantity: 60
+    - :updated_on: "2010-07-21"
+      :store_no: 301
+      :quantity: 60
+    - :updated_on: "2010-07-21"
+      :store_no: 345
+      :quantity: 60
+    - :updated_on: "2010-07-21"
+      :store_no: 333
+      :quantity: 59
+    - :updated_on: "2010-07-21"
+      :store_no: 195
+      :quantity: 58
+    - :updated_on: "2010-07-21"
+      :store_no: 298
+      :quantity: 58
+    - :updated_on: "2010-07-20"
+      :store_no: 521
+      :quantity: 58
+    - :updated_on: "2010-07-21"
+      :store_no: 593
+      :quantity: 58
+    - :updated_on: "2010-07-21"
+      :store_no: 400
+      :quantity: 56
+    - :updated_on: "2010-07-21"
+      :store_no: 599
+      :quantity: 56
+    - :updated_on: "2010-07-21"
+      :store_no: 540
+      :quantity: 55
+    - :updated_on: "2010-07-21"
+      :store_no: 16
+      :quantity: 54
+    - :updated_on: "2010-07-21"
+      :store_no: 311
+      :quantity: 53
+    - :updated_on: "2010-07-21"
+      :store_no: 456
+      :quantity: 53
+    - :updated_on: "2010-07-21"
+      :store_no: 582
+      :quantity: 53
+    - :updated_on: "2010-07-21"
+      :store_no: 60
+      :quantity: 52
+    - :updated_on: "2010-07-21"
+      :store_no: 201
+      :quantity: 52
+    - :updated_on: "2010-07-21"
+      :store_no: 203
+      :quantity: 52
+    - :updated_on: "2010-07-21"
+      :store_no: 59
+      :quantity: 51
+    - :updated_on: "2010-07-21"
+      :store_no: 446
+      :quantity: 50
+    - :updated_on: "2010-07-21"
+      :store_no: 467
+      :quantity: 50
+    - :updated_on: "2010-07-21"
+      :store_no: 566
+      :quantity: 50
+    - :updated_on: "2010-07-21"
+      :store_no: 616
+      :quantity: 50
+    - :updated_on: "2010-07-21"
+      :store_no: 365
+      :quantity: 49
+    - :updated_on: "2010-07-21"
+      :store_no: 194
+      :quantity: 48
+    - :updated_on: "2010-07-21"
+      :store_no: 453
+      :quantity: 48
+    - :updated_on: "2010-07-21"
+      :store_no: 168
+      :quantity: 47
+    - :updated_on: "2010-07-21"
+      :store_no: 335
+      :quantity: 46
+    - :updated_on: "2010-07-21"
+      :store_no: 697
+      :quantity: 46
+    - :updated_on: "2010-07-21"
+      :store_no: 594
+      :quantity: 46
+    - :updated_on: "2010-07-21"
+      :store_no: 297
+      :quantity: 45
+    - :updated_on: "2010-07-21"
+      :store_no: 569
+      :quantity: 45
+    - :updated_on: "2010-07-21"
+      :store_no: 278
+      :quantity: 44
+    - :updated_on: "2010-07-21"
+      :store_no: 222
+      :quantity: 44
+    - :updated_on: "2010-07-21"
+      :store_no: 295
+      :quantity: 44
+    - :updated_on: "2010-07-21"
+      :store_no: 312
+      :quantity: 44
+    - :updated_on: "2010-07-21"
+      :store_no: 613
+      :quantity: 44
+    - :updated_on: "2010-07-21"
+      :store_no: 83
+      :quantity: 43
+    - :updated_on: "2010-07-21"
+      :store_no: 221
+      :quantity: 43
+    - :updated_on: "2010-07-21"
+      :store_no: 579
+      :quantity: 43
+    - :updated_on: "2010-07-21"
+      :store_no: 82
+      :quantity: 42
+    - :updated_on: "2010-07-21"
+      :store_no: 522
+      :quantity: 42
+    - :updated_on: "2010-07-21"
+      :store_no: 310
+      :quantity: 41
+    - :updated_on: "2010-07-21"
+      :store_no: 320
+      :quantity: 41
+    - :updated_on: "2010-07-21"
+      :store_no: 461
+      :quantity: 41
+    - :updated_on: "2010-07-21"
+      :store_no: 472
+      :quantity: 41
+    - :updated_on: "2010-07-21"
+      :store_no: 50
+      :quantity: 39
+    - :updated_on: "2010-07-21"
+      :store_no: 93
+      :quantity: 39
+    - :updated_on: "2010-07-21"
+      :store_no: 97
+      :quantity: 39
+    - :updated_on: "2010-07-21"
+      :store_no: 381
+      :quantity: 39
+    - :updated_on: "2010-07-21"
+      :store_no: 547
+      :quantity: 39
+    - :updated_on: "2010-07-21"
+      :store_no: 153
+      :quantity: 38
+    - :updated_on: "2010-07-21"
+      :store_no: 165
+      :quantity: 38
+    - :updated_on: "2010-07-21"
+      :store_no: 229
+      :quantity: 38
+    - :updated_on: "2010-07-21"
+      :store_no: 234
+      :quantity: 38
+    - :updated_on: "2010-07-21"
+      :store_no: 403
+      :quantity: 38
+    - :updated_on: "2010-07-21"
+      :store_no: 80
+      :quantity: 37
+    - :updated_on: "2010-07-21"
+      :store_no: 268
+      :quantity: 37
+    - :updated_on: "2010-07-21"
+      :store_no: 318
+      :quantity: 37
+    - :updated_on: "2010-07-21"
+      :store_no: 347
+      :quantity: 37
+    - :updated_on: "2010-07-21"
+      :store_no: 74
+      :quantity: 36
+    - :updated_on: "2010-07-21"
+      :store_no: 88
+      :quantity: 36
+    - :updated_on: "2010-07-21"
+      :store_no: 205
+      :quantity: 36
+    - :updated_on: "2010-07-21"
+      :store_no: 409
+      :quantity: 36
+    - :updated_on: "2010-07-21"
+      :store_no: 135
+      :quantity: 35
+    - :updated_on: "2010-07-21"
+      :store_no: 406
+      :quantity: 35
+    - :updated_on: "2010-07-21"
+      :store_no: 449
+      :quantity: 35
+    - :updated_on: "2010-07-21"
+      :store_no: 24
+      :quantity: 34
+    - :updated_on: "2010-07-21"
+      :store_no: 395
+      :quantity: 34
+    - :updated_on: "2010-07-21"
+      :store_no: 401
+      :quantity: 34
+    - :updated_on: "2010-07-21"
+      :store_no: 32
+      :quantity: 33
+    - :updated_on: "2010-07-21"
+      :store_no: 210
+      :quantity: 33
+    - :updated_on: "2010-07-21"
+      :store_no: 261
+      :quantity: 33
+    - :updated_on: "2010-07-21"
+      :store_no: 380
+      :quantity: 33
+    - :updated_on: "2010-07-21"
+      :store_no: 454
+      :quantity: 33
+    - :updated_on: "2010-07-21"
+      :store_no: 502
+      :quantity: 33
+    - :updated_on: "2010-07-21"
+      :store_no: 508
+      :quantity: 33
+    - :updated_on: "2010-07-21"
+      :store_no: 26
+      :quantity: 32
+    - :updated_on: "2010-07-21"
+      :store_no: 45
+      :quantity: 32
+    - :updated_on: "2010-07-21"
+      :store_no: 351
+      :quantity: 32
+    - :updated_on: "2010-07-21"
+      :store_no: 94
+      :quantity: 31
+    - :updated_on: "2010-07-21"
+      :store_no: 162
+      :quantity: 31
+    - :updated_on: "2010-07-20"
+      :store_no: 520
+      :quantity: 31
+    - :updated_on: "2010-07-21"
+      :store_no: 539
+      :quantity: 31
+    - :updated_on: "2010-07-21"
+      :store_no: 277
+      :quantity: 30
+    - :updated_on: "2010-07-21"
+      :store_no: 43
+      :quantity: 29
+    - :updated_on: "2010-07-21"
+      :store_no: 244
+      :quantity: 29
+    - :updated_on: "2010-07-21"
+      :store_no: 423
+      :quantity: 29
+    - :updated_on: "2010-07-21"
+      :store_no: 58
+      :quantity: 28
+    - :updated_on: "2010-07-21"
+      :store_no: 113
+      :quantity: 28
+    - :updated_on: "2010-07-21"
+      :store_no: 116
+      :quantity: 28
+    - :updated_on: "2010-07-21"
+      :store_no: 124
+      :quantity: 28
+    - :updated_on: "2010-07-21"
+      :store_no: 159
+      :quantity: 28
+    - :updated_on: "2010-07-21"
+      :store_no: 419
+      :quantity: 28
+    - :updated_on: "2010-07-21"
+      :store_no: 474
+      :quantity: 28
+    - :updated_on: "2010-07-21"
+      :store_no: 571
+      :quantity: 28
+    - :updated_on: "2010-07-21"
+      :store_no: 588
+      :quantity: 28
+    - :updated_on: "2010-07-20"
+      :store_no: 48
+      :quantity: 27
+    - :updated_on: "2010-07-21"
+      :store_no: 54
+      :quantity: 27
+    - :updated_on: "2010-07-21"
+      :store_no: 77
+      :quantity: 27
+    - :updated_on: "2010-07-21"
+      :store_no: 123
+      :quantity: 27
+    - :updated_on: "2010-07-21"
+      :store_no: 61
+      :quantity: 26
+    - :updated_on: "2010-07-21"
+      :store_no: 155
+      :quantity: 26
+    - :updated_on: "2010-07-21"
+      :store_no: 196
+      :quantity: 26
+    - :updated_on: "2010-07-21"
+      :store_no: 300
+      :quantity: 26
+    - :updated_on: "2010-07-21"
+      :store_no: 468
+      :quantity: 26
+    - :updated_on: "2010-07-21"
+      :store_no: 612
+      :quantity: 26
+    - :updated_on: "2010-07-21"
+      :store_no: 99
+      :quantity: 25
+    - :updated_on: "2010-07-21"
+      :store_no: 219
+      :quantity: 25
+    - :updated_on: "2010-07-21"
+      :store_no: 257
+      :quantity: 25
+    - :updated_on: "2010-07-21"
+      :store_no: 430
+      :quantity: 25
+    - :updated_on: "2010-07-21"
+      :store_no: 442
+      :quantity: 25
+    - :updated_on: "2010-07-21"
+      :store_no: 483
+      :quantity: 25
+    - :updated_on: "2010-07-21"
+      :store_no: 527
+      :quantity: 25
+    - :updated_on: "2010-07-21"
+      :store_no: 626
+      :quantity: 25
+    - :updated_on: "2010-07-21"
+      :store_no: 108
+      :quantity: 24
+    - :updated_on: "2010-07-21"
+      :store_no: 128
+      :quantity: 24
+    - :updated_on: "2010-07-21"
+      :store_no: 190
+      :quantity: 24
+    - :updated_on: "2010-07-21"
+      :store_no: 349
+      :quantity: 24
+    - :updated_on: "2010-07-21"
+      :store_no: 402
+      :quantity: 24
+    - :updated_on: "2010-07-21"
+      :store_no: 482
+      :quantity: 24
+    - :updated_on: "2010-07-21"
+      :store_no: 558
+      :quantity: 24
+    - :updated_on: "2010-07-21"
+      :store_no: 85
+      :quantity: 23
+    - :updated_on: "2010-07-21"
+      :store_no: 136
+      :quantity: 23
+    - :updated_on: "2010-07-21"
+      :store_no: 343
+      :quantity: 23
+    - :updated_on: "2010-07-21"
+      :store_no: 427
+      :quantity: 23
+    - :updated_on: "2010-07-21"
+      :store_no: 90
+      :quantity: 22
+    - :updated_on: "2010-07-21"
+      :store_no: 110
+      :quantity: 22
+    - :updated_on: "2010-07-21"
+      :store_no: 267
+      :quantity: 22
+    - :updated_on: "2010-07-21"
+      :store_no: 216
+      :quantity: 22
+    - :updated_on: "2010-07-21"
+      :store_no: 266
+      :quantity: 22
+    - :updated_on: "2010-07-21"
+      :store_no: 462
+      :quantity: 22
+    - :updated_on: "2010-07-21"
+      :store_no: 513
+      :quantity: 22
+    - :updated_on: "2010-07-21"
+      :store_no: 47
+      :quantity: 21
+    - :updated_on: "2010-07-21"
+      :store_no: 79
+      :quantity: 21
+    - :updated_on: "2010-07-21"
+      :store_no: 98
+      :quantity: 21
+    - :updated_on: "2010-07-21"
+      :store_no: 126
+      :quantity: 21
+    - :updated_on: "2010-07-21"
+      :store_no: 260
+      :quantity: 21
+    - :updated_on: "2010-07-21"
+      :store_no: 276
+      :quantity: 21
+    - :updated_on: "2010-07-21"
+      :store_no: 306
+      :quantity: 21
+    - :updated_on: "2010-07-21"
+      :store_no: 490
+      :quantity: 21
+    - :updated_on: "2010-07-21"
+      :store_no: 557
+      :quantity: 21
+    - :updated_on: "2010-07-21"
+      :store_no: 39
+      :quantity: 20
+    - :updated_on: "2010-07-21"
+      :store_no: 81
+      :quantity: 20
+    - :updated_on: "2010-07-21"
+      :store_no: 105
+      :quantity: 20
+    - :updated_on: "2010-07-21"
+      :store_no: 119
+      :quantity: 20
+    - :updated_on: "2010-07-21"
+      :store_no: 169
+      :quantity: 20
+    - :updated_on: "2010-07-21"
+      :store_no: 231
+      :quantity: 20
+    - :updated_on: "2010-07-21"
+      :store_no: 283
+      :quantity: 20
+    - :updated_on: "2010-07-21"
+      :store_no: 352
+      :quantity: 20
+    - :updated_on: "2010-07-21"
+      :store_no: 363
+      :quantity: 20
+    - :updated_on: "2010-07-21"
+      :store_no: 560
+      :quantity: 20
+    - :updated_on: "2010-07-21"
+      :store_no: 69
+      :quantity: 19
+    - :updated_on: "2010-07-21"
+      :store_no: 264
+      :quantity: 19
+    - :updated_on: "2010-07-21"
+      :store_no: 286
+      :quantity: 19
+    - :updated_on: "2010-07-21"
+      :store_no: 418
+      :quantity: 19
+    - :updated_on: "2010-07-21"
+      :store_no: 501
+      :quantity: 19
+    - :updated_on: "2010-07-21"
+      :store_no: 548
+      :quantity: 19
+    - :updated_on: "2010-07-21"
+      :store_no: 567
+      :quantity: 19
+    - :updated_on: "2010-07-21"
+      :store_no: 605
+      :quantity: 19
+    - :updated_on: "2010-07-21"
+      :store_no: 29
+      :quantity: 18
+    - :updated_on: "2010-07-21"
+      :store_no: 72
+      :quantity: 18
+    - :updated_on: "2010-07-21"
+      :store_no: 109
+      :quantity: 18
+    - :updated_on: "2010-07-21"
+      :store_no: 197
+      :quantity: 18
+    - :updated_on: "2010-07-21"
+      :store_no: 232
+      :quantity: 18
+    - :updated_on: "2010-07-21"
+      :store_no: 293
+      :quantity: 18
+    - :updated_on: "2010-07-21"
+      :store_no: 294
+      :quantity: 18
+    - :updated_on: "2010-07-21"
+      :store_no: 518
+      :quantity: 18
+    - :updated_on: "2010-07-21"
+      :store_no: 543
+      :quantity: 18
+    - :updated_on: "2010-07-21"
+      :store_no: 86
+      :quantity: 17
+    - :updated_on: "2010-07-21"
+      :store_no: 181
+      :quantity: 17
+    - :updated_on: "2010-07-21"
+      :store_no: 211
+      :quantity: 17
+    - :updated_on: "2010-07-21"
+      :store_no: 240
+      :quantity: 17
+    - :updated_on: "2010-07-21"
+      :store_no: 317
+      :quantity: 17
+    - :updated_on: "2010-07-21"
+      :store_no: 370
+      :quantity: 17
+    - :updated_on: "2010-07-21"
+      :store_no: 348
+      :quantity: 17
+    - :updated_on: "2010-07-21"
+      :store_no: 538
+      :quantity: 17
+    - :updated_on: "2010-07-21"
+      :store_no: 28
+      :quantity: 16
+    - :updated_on: "2010-07-21"
+      :store_no: 56
+      :quantity: 16
+    - :updated_on: "2010-07-21"
+      :store_no: 68
+      :quantity: 16
+    - :updated_on: "2010-07-21"
+      :store_no: 125
+      :quantity: 16
+    - :updated_on: "2010-07-21"
+      :store_no: 270
+      :quantity: 16
+    - :updated_on: "2010-07-21"
+      :store_no: 372
+      :quantity: 16
+    - :updated_on: "2010-07-21"
+      :store_no: 504
+      :quantity: 16
+    - :updated_on: "2010-07-21"
+      :store_no: 595
+      :quantity: 16
+    - :updated_on: "2010-07-21"
+      :store_no: 144
+      :quantity: 15
+    - :updated_on: "2010-07-21"
+      :store_no: 166
+      :quantity: 15
+    - :updated_on: "2010-07-21"
+      :store_no: 235
+      :quantity: 15
+    - :updated_on: "2010-07-21"
+      :store_no: 327
+      :quantity: 15
+    - :updated_on: "2010-07-21"
+      :store_no: 392
+      :quantity: 15
+    - :updated_on: "2010-07-21"
+      :store_no: 529
+      :quantity: 15
+    - :updated_on: "2010-07-21"
+      :store_no: 146
+      :quantity: 14
+    - :updated_on: "2010-07-21"
+      :store_no: 160
+      :quantity: 14
+    - :updated_on: "2010-07-21"
+      :store_no: 173
+      :quantity: 14
+    - :updated_on: "2010-07-21"
+      :store_no: 224
+      :quantity: 14
+    - :updated_on: "2010-07-21"
+      :store_no: 421
+      :quantity: 14
+    - :updated_on: "2010-07-21"
+      :store_no: 435
+      :quantity: 14
+    - :updated_on: "2010-07-21"
+      :store_no: 478
+      :quantity: 14
+    - :updated_on: "2010-07-21"
+      :store_no: 479
+      :quantity: 14
+    - :updated_on: "2010-07-21"
+      :store_no: 562
+      :quantity: 14
+    - :updated_on: "2010-07-21"
+      :store_no: 49
+      :quantity: 13
+    - :updated_on: "2010-07-21"
+      :store_no: 53
+      :quantity: 13
+    - :updated_on: "2010-07-21"
+      :store_no: 111
+      :quantity: 13
+    - :updated_on: "2010-07-21"
+      :store_no: 139
+      :quantity: 13
+    - :updated_on: "2010-07-21"
+      :store_no: 259
+      :quantity: 13
+    - :updated_on: "2010-07-21"
+      :store_no: 353
+      :quantity: 13
+    - :updated_on: "2010-07-21"
+      :store_no: 455
+      :quantity: 13
+    - :updated_on: "2010-07-21"
+      :store_no: 52
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 71
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 78
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 92
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 122
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 127
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 161
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 202
+      :quantity: 12
+    - :updated_on: "2010-07-20"
+      :store_no: 225
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 236
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 238
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 247
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 299
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 328
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 339
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 429
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 439
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 441
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 484
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 496
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 530
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 531
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 535
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 578
+      :quantity: 12
+    - :updated_on: "2010-07-21"
+      :store_no: 118
+      :quantity: 11
+    - :updated_on: "2010-07-21"
+      :store_no: 246
+      :quantity: 11
+    - :updated_on: "2010-07-21"
+      :store_no: 303
+      :quantity: 11
+    - :updated_on: "2010-07-21"
+      :store_no: 314
+      :quantity: 11
+    - :updated_on: "2010-07-21"
+      :store_no: 375
+      :quantity: 11
+    - :updated_on: "2010-07-21"
+      :store_no: 379
+      :quantity: 11
+    - :updated_on: "2010-07-21"
+      :store_no: 410
+      :quantity: 11
+    - :updated_on: "2010-07-21"
+      :store_no: 509
+      :quantity: 11
+    - :updated_on: "2010-07-21"
+      :store_no: 30
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 70
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 96
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 137
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 142
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 157
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 178
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 239
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 275
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 337
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 338
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 433
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 448
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 475
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 487
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 489
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 507
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 583
+      :quantity: 10
+    - :updated_on: "2010-07-21"
+      :store_no: 63
+      :quantity: 9
+    - :updated_on: "2010-07-21"
+      :store_no: 134
+      :quantity: 9
+    - :updated_on: "2010-07-21"
+      :store_no: 141
+      :quantity: 9
+    - :updated_on: "2010-07-21"
+      :store_no: 199
+      :quantity: 9
+    - :updated_on: "2010-07-21"
+      :store_no: 273
+      :quantity: 9
+    - :updated_on: "2010-07-21"
+      :store_no: 304
+      :quantity: 9
+    - :updated_on: "2010-07-21"
+      :store_no: 316
+      :quantity: 9
+    - :updated_on: "2010-07-21"
+      :store_no: 330
+      :quantity: 9
+    - :updated_on: "2010-07-21"
+      :store_no: 451
+      :quantity: 9
+    - :updated_on: "2010-07-21"
+      :store_no: 565
+      :quantity: 9
+    - :updated_on: "2010-07-21"
+      :store_no: 603
+      :quantity: 9
+    - :updated_on: "2010-07-21"
+      :store_no: 604
+      :quantity: 9
+    - :updated_on: "2010-07-21"
+      :store_no: 608
+      :quantity: 9
+    - :updated_on: "2010-07-21"
+      :store_no: 67
+      :quantity: 8
+    - :updated_on: "2010-07-21"
+      :store_no: 208
+      :quantity: 8
+    - :updated_on: "2010-07-21"
+      :store_no: 213
+      :quantity: 8
+    - :updated_on: "2010-07-21"
+      :store_no: 281
+      :quantity: 8
+    - :updated_on: "2010-07-21"
+      :store_no: 450
+      :quantity: 8
+    - :updated_on: "2010-07-21"
+      :store_no: 492
+      :quantity: 8
+    - :updated_on: "2010-07-21"
+      :store_no: 524
+      :quantity: 8
+    - :updated_on: "2010-07-21"
+      :store_no: 526
+      :quantity: 8
+    - :updated_on: "2010-07-21"
+      :store_no: 570
+      :quantity: 8
+    - :updated_on: "2010-07-21"
+      :store_no: 51
+      :quantity: 7
+    - :updated_on: "2010-07-21"
+      :store_no: 282
+      :quantity: 7
+    - :updated_on: "2010-07-21"
+      :store_no: 103
+      :quantity: 7
+    - :updated_on: "2010-07-21"
+      :store_no: 114
+      :quantity: 7
+    - :updated_on: "2010-07-21"
+      :store_no: 174
+      :quantity: 7
+    - :updated_on: "2010-07-21"
+      :store_no: 176
+      :quantity: 7
+    - :updated_on: "2010-07-21"
+      :store_no: 245
+      :quantity: 7
+    - :updated_on: "2010-07-21"
+      :store_no: 256
+      :quantity: 7
+    - :updated_on: "2010-07-21"
+      :store_no: 358
+      :quantity: 7
+    - :updated_on: "2010-07-21"
+      :store_no: 463
+      :quantity: 7
+    - :updated_on: "2010-07-21"
+      :store_no: 517
+      :quantity: 7
+    - :updated_on: "2010-07-21"
+      :store_no: 552
+      :quantity: 7
+    - :updated_on: "2010-07-21"
+      :store_no: 576
+      :quantity: 7
+    - :updated_on: "2010-07-21"
+      :store_no: 596
+      :quantity: 7
+    - :updated_on: "2010-07-21"
+      :store_no: 597
+      :quantity: 7
+    - :updated_on: "2010-07-21"
+      :store_no: 66
+      :quantity: 6
+    - :updated_on: "2010-07-21"
+      :store_no: 89
+      :quantity: 6
+    - :updated_on: "2010-07-21"
+      :store_no: 112
+      :quantity: 6
+    - :updated_on: "2010-07-21"
+      :store_no: 131
+      :quantity: 6
+    - :updated_on: "2010-07-21"
+      :store_no: 220
+      :quantity: 6
+    - :updated_on: "2010-07-21"
+      :store_no: 274
+      :quantity: 6
+    - :updated_on: "2010-07-21"
+      :store_no: 302
+      :quantity: 6
+    - :updated_on: "2010-07-21"
+      :store_no: 350
+      :quantity: 6
+    - :updated_on: "2010-07-21"
+      :store_no: 377
+      :quantity: 6
+    - :updated_on: "2010-07-21"
+      :store_no: 460
+      :quantity: 6
+    - :updated_on: "2010-07-21"
+      :store_no: 466
+      :quantity: 6
+    - :updated_on: "2010-07-21"
+      :store_no: 133
+      :quantity: 5
+    - :updated_on: "2010-07-21"
+      :store_no: 254
+      :quantity: 5
+    - :updated_on: "2010-07-21"
+      :store_no: 291
+      :quantity: 5
+    - :updated_on: "2010-07-21"
+      :store_no: 374
+      :quantity: 5
+    - :updated_on: "2010-07-21"
+      :store_no: 405
+      :quantity: 5
+    - :updated_on: "2010-07-21"
+      :store_no: 550
+      :quantity: 5
+    - :updated_on: "2010-07-21"
+      :store_no: 46
+      :quantity: 4
+    - :updated_on: "2010-07-21"
+      :store_no: 121
+      :quantity: 4
+    - :updated_on: "2010-07-21"
+      :store_no: 172
+      :quantity: 4
+    - :updated_on: "2010-07-21"
+      :store_no: 189
+      :quantity: 4
+    - :updated_on: "2010-07-21"
+      :store_no: 289
+      :quantity: 4
+    - :updated_on: "2010-07-21"
+      :store_no: 296
+      :quantity: 4
+    - :updated_on: "2010-07-21"
+      :store_no: 315
+      :quantity: 4
+    - :updated_on: "2010-07-21"
+      :store_no: 319
+      :quantity: 4
+    - :updated_on: "2010-07-21"
+      :store_no: 414
+      :quantity: 4
+    - :updated_on: "2010-07-21"
+      :store_no: 476
+      :quantity: 4
+    - :updated_on: "2010-07-21"
+      :store_no: 91
+      :quantity: 3
+    - :updated_on: "2010-07-21"
+      :store_no: 184
+      :quantity: 3
+    - :updated_on: "2010-07-21"
+      :store_no: 369
+      :quantity: 3
+    - :updated_on: "2010-07-21"
+      :store_no: 510
+      :quantity: 3
+    - :updated_on: "2010-07-21"
+      :store_no: 541
+      :quantity: 3
+    - :updated_on: "2010-07-21"
+      :store_no: 577
+      :quantity: 3
+    - :updated_on: "2010-07-21"
+      :store_no: 591
+      :quantity: 3
+    - :updated_on: "2010-07-21"
+      :store_no: 615
+      :quantity: 3
+    - :updated_on: "2010-07-21"
+      :store_no: 271
+      :quantity: 2
+    - :updated_on: "2010-07-21"
+      :store_no: 258
+      :quantity: 2
+    - :updated_on: "2010-07-21"
+      :store_no: 331
+      :quantity: 2
+    - :updated_on: "2010-07-21"
+      :store_no: 514
+      :quantity: 2
+    - :updated_on: "2010-07-21"
+      :store_no: 87
+      :quantity: 1
+    - :updated_on: "2010-07-21"
+      :store_no: 170
+      :quantity: 1
+    - :updated_on: "2010-07-21"
+      :store_no: 262
+      :quantity: 1
+    - :updated_on: "2010-07-21"
+      :store_no: 284
+      :quantity: 1
+    - :updated_on: "2010-07-21"
+      :store_no: 336
+      :quantity: 1
+    - :updated_on: "2010-07-21"
+      :store_no: 364
+      :quantity: 1
+    - :updated_on: "2010-07-21"
+      :store_no: 399
+      :quantity: 1
+    - :updated_on: "2010-07-21"
+      :store_no: 480
+      :quantity: 1
+    - :updated_on: "2010-07-21"
+      :store_no: 607
+      :quantity: 1
+    

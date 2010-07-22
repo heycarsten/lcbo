@@ -1,6 +1,6 @@
 - :file: 1.html
   :desc: Store with all information
-  :uri: http://lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE=444&language=EN
+  :uri: http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE=444&language=EN
   :query_params:
     :store_no: 444
   :expectation:
@@ -37,7 +37,42 @@
     :saturday_close: 1320
     :sunday_open: 720
     :sunday_close: 1020
-
-# - :file: 2.yml
-#   :desc: Store that is not open on some days
-#   :uri:
+- :file: 2.html
+  :desc: Store that is not open on some days
+  :uri: http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE=610&language=EN
+  :query_params:
+    :store_no: 610
+  :expectation:
+    :store_no: 610
+    :monday_open:
+    :monday_close:
+    :tuesday_open: 570
+    :tuesday_close: 1080
+    :wednesday_open: 570
+    :wednesday_close: 1080
+    :thursday_open: 570
+    :thursday_close: 1080
+    :friday_open: 570
+    :friday_close: 1200
+    :saturday_open: 570
+    :saturday_close: 1080
+    :sunday_open: 720
+    :sunday_close: 960
+    :name: Flora & Clinton Street
+    :address_line_1: 1 Industrial Road
+    :address_line_2: Unit B
+    :city: Teeswater
+    :postal_code: N0G2S0
+    :telephone: (519) 392-6837
+    :fax: (519) 392-8481
+    :latitude: 44.0017
+    :longitude: -81.2876
+    :has_wheelchair_accessability: true
+    :has_bilingual_services: false
+    :has_product_consultant: false
+    :has_tasting_bar: false
+    :has_beer_cold_room: true
+    :has_special_occasion_permits: false
+    :has_vintages_corner: false
+    :has_parking: true
+    :has_transit_access: false
