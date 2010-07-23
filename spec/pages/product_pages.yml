@@ -1,6 +1,7 @@
 - :file: 1.html
   :desc: Seasonal product
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=122408
+  :method: :get
   :query_params:
     :product_no: 122408
   :expectation:
@@ -37,6 +38,7 @@
 - :file: 2.html
   :desc: Product with limited time offer
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=18
+  :method: :get
   :query_params:
     :product_no: 18
   :expectation:
@@ -73,6 +75,7 @@
 - :file: 3.html
   :desc: Product with bonus air miles
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=280461
+  :method: :get
   :query_params:
     :product_no: 280461
   :expectation:
@@ -109,6 +112,7 @@
 - :file: 4.html
   :desc: Discontinued product
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=479154
+  :method: :get
   :query_params:
     :product_no: 479154
   :expectation:
@@ -145,6 +149,7 @@
 - :file: 5.html
   :desc: Product with release date
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=148528
+  :method: :get
   :query_params:
     :product_no: 148528
   :expectation:
@@ -181,6 +186,7 @@
 - :file: 6.html
   :desc: Standard product
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=582973
+  :method: :get
   :query_params:
     :product_no: 582973
   :expectation:
@@ -217,6 +223,7 @@
 - :file: 7.html
   :desc: VQA product
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=2183079
+  :method: :get
   :query_params:
     :product_no: 2183079
   :expectation:

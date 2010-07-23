@@ -16,9 +16,8 @@ module SpecHelper
       :body => '',
       :time => 0.3
     }.merge(response_opts)
-    #uri_re = uri.is_a?(String) ? /#{Regexp.escape(uri)}/ : uri
-    response = ::Typhoeus::Response.new(response_params)
-    ::Typhoeus::Hydra.hydra.stub(method, uri).and_return(response)
+    response = Typhoeus::Response.new(response_params)
+    Typhoeus::Hydra.hydra.stub(method, uri).and_return(response)
   end
 
   class Evented

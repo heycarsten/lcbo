@@ -8,21 +8,21 @@ require 'yaml'
 }.each_pair do |type, page|
 
   describe(page) do
-    expectations = YAML.load_file("spec/pages/#{type}.yml")
+    requests = YAML.load_file("spec/pages/#{type}.yml")
 
-    expectations.each do |expectation|
-      body = File.read("spec/pages/#{type}/#{expectation[:file]}")
-      expectation[:body] = body
-      SpecHelper.hydrastub(:get, expectation[:uri], :body => expectation[:body])
+    requests.each do |req|
+      body = File.read("spec/pages/#{type}/#{req[:file]}")
+      req[:body] = body
+      SpecHelper.hydrastub(req[:method], req[:uri], :body => req[:body])
     end
 
-    expectations.each do |expectation|
-      context "given a #{expectation[:desc]}" do
+    requests.each do |req|
+      context "given a #{req[:desc]}" do
         before :all do
-          @page = page.request(expectation[:query_params])
+          @page = page.request(req[:query_params], req[:body_params])
         end
 
-        expectation[:expectation].each_pair do |key, value|
+        req[:expectation].each_pair do |key, value|
           it "should have the expected value for :#{key}" do
             @page[key].should == value
           end

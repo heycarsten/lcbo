@@ -1,11 +1,12 @@
 - :file: 1.html
   :desc: Product with inventories
   :uri: http://www.lcbo.com/lcbo-ear/lcbo/product/inventory/searchResults.do?language=EN&itemNumber=18
+  :method: :get
   :query_params:
     :product_no: 18
   :expectation:
     :product_no: 18
-    :inventories: 
+    :inventories:
     - :updated_on: "2010-07-21"
       :store_no: 444
       :quantity: 1303
@@ -1674,6 +1675,7 @@
 - :file: 2.html
   :desc: Product with no inventories
   :uri: http://www.lcbo.com/lcbo-ear/lcbo/product/inventory/searchResults.do?language=EN&itemNumber=8466
+  :method: :get
   :query_params:
     :product_no: 8466
   :expectation:

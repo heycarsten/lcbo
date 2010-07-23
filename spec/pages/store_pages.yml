@@ -1,6 +1,7 @@
 - :file: 1.html
   :desc: Store with all information
   :uri: http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE=444&language=EN
+  :method: :get
   :query_params:
     :store_no: 444
   :expectation:
@@ -40,6 +41,7 @@
 - :file: 2.html
   :desc: Store that is not open on some days
   :uri: http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE=610&language=EN
+  :method: :get
   :query_params:
     :store_no: 610
   :expectation:

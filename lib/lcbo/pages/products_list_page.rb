@@ -6,7 +6,9 @@ module LCBO
     include CrawlKit::Page
 
     http_method :post
-    uri 'http://lcbo.com/lcbo-ear/lcbo/product/searchResults.do'
+
+    uri 'http://www.lcbo.com/lcbo-ear/lcbo/product/searchResults.do'
+
     default_body_params \
       :STOCK_TYPE_NAME    => 'All',
       :ITEM_NAME          => '',
@@ -27,12 +29,15 @@ module LCBO
       :VALUE_ADD_SALES_CO => 'N',
       :AIR_MILES_SALES_CO => 'N',
       :language           => 'EN',
-      :style              => ' LCBO.css',
+      :style              => 'LCBO.css',
       :sort               => 'sortedProduct',
       :order              => '1',
       :resultsPerPage     => PER_PAGE.to_s,
       :page               => '1',
-      :action             => 'result'
+      :action             => 'result',
+      :sortby             => 'sortedProduct',
+      :orderby            => '',
+      :numPerPage         => PER_PAGE.to_s
 
     emits :page do
       body_params[:page].to_i
