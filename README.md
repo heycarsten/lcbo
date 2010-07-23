@@ -10,8 +10,7 @@ Pages represent HTML pages available on the LCBO website.
 
 Allows you to collect all information for a store.
 
-<pre><code class="ruby">
-LCBO.store(511)
+<pre><code class="ruby">LCBO.store(511)
 </code></pre>
 
 ### LCBO::ProductPage
@@ -19,24 +18,21 @@ LCBO.store(511)
 Returns information for a specific product by ID. You can use
 `LCBO::ProductsListPage` to crawl for available product numbers.
 
-<pre><code class="ruby">
-LCBO.product(18)
+<pre><code class="ruby">LCBO.product(18)
 </code></pre>
 
 ### LCBO::InventoryPage
 
 Returns inventory information for a product at all stores which it is available.
 
-<pre><code class="ruby">
-LCBO.inventory(18)
+<pre><code class="ruby">LCBO.inventory(18)
 </code></pre>
 
 ### LCBO::ProductsListPage
 
 Returns product search index results by page number.
 
-<pre><code class="ruby">
-LCBO.products_list(1)
+<pre><code class="ruby">LCBO.products_list(1)
 </code></pre>
 
 ## Crawlers
