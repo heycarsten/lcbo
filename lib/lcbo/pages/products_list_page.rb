@@ -67,7 +67,7 @@ module LCBO
     end
 
     emits :product_nos do
-      product_anchors.inject([]) do |ary, a|
+      product_anchors.reduce([]) do |ary, a|
         if (match = a.attribute('href').value.match(/\&itemNumber=([0-9]+)/))
           ary << (match.captures[0].to_i)
         else
