@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'typhoeus',    '0.1.29'
   s.add_dependency 'addressable', '2.1.2'
-  s.add_dependency 'nokogiri',    '1.4.3'
+  s.add_dependency 'nokogiri',    '1.4.3.1'
   s.add_dependency 'yajl-ruby',   '0.7.7'
 
   s.add_development_dependency 'rspec', '1.3.0'
