@@ -14,19 +14,19 @@ module LCBO
   end
 
   def self.product(product_no)
-    ProductPage.request(:product_no => product_no)
+    ProductPage.process(:product_no => product_no)
   end
 
   def self.store(store_no)
-    StorePage.request(:store_no => store_no)
+    StorePage.process(:store_no => store_no)
   end
 
   def self.inventory(product_no)
-    InventoryPage.request(:product_no => product_no)
+    InventoryPage.process(:product_no => product_no)
   end
 
   def self.products_list(page = 1)
-    ProductsListPage.request({}, { :page => page })
+    ProductsListPage.process({}, { :page => page })
   end
 
 end

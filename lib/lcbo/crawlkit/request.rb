@@ -36,7 +36,14 @@ module LCBO
 
       def run
         response = Typhoeus::Request.run(uri, config)
-        Response.new(response, query_params, body_params)
+        Response.new \
+          :code         => response.code,
+          :uri          => response.request.url,
+          :http_method  => response.request.method,
+          :time         => response.time,
+          :query_params => query_params,
+          :body_params  => body_params,
+          :body         => response.body
       end
 
     end

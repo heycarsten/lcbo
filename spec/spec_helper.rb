@@ -5,7 +5,7 @@ require 'lcbo'
 
 BRO_HTML        = '<h1>Carsten</h1><p>Carsten is a bro.</p>'
 BRO_SEARCH_HTML = '<ul><li>Carsten</li><li>Kevin</li><li>Kieran</li></ul>'
-BRO_ICE_HTML    = '<h1>Bro!</h1><p>You just icy yo fellow bro, dude!</p>'
+BRO_ICE_HTML    = '<h1>Bro!</h1><p>Yall just icy yo fellow bros!</p>'
 
 module SpecHelper
 

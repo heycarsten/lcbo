@@ -42,8 +42,16 @@ module LCBO
           define_method(field) { instance_exec(field, &block) } if block_given?
         end
 
-        def request(query_params = {}, body_params = {}, html = nil)
-          new(query_params, body_params, html).process
+        def request(query_params = {}, body_params = {})
+          new(query_params, body_params).request
+        end
+
+        def parse(response)
+          new(nil, nil, response).parse
+        end
+
+        def process(query_params = {}, body_params = {})
+          new(query_params, body_params).process
         end
 
         def fields
@@ -55,10 +63,16 @@ module LCBO
         end
       end
 
-      def initialize(query_params = {}, body_params = {}, html = nil)
-        @query_params = query_params
-        @body_params  = body_params
-        @html         = html
+      def initialize(query_params = {}, body_params = {}, response = nil)
+        if response
+          @response     = response.is_a?(Hash) ? Response.new(response) : response
+          @query_params = @response.query_params
+          @body_params  = @response.body_params
+          @html         = @response.body
+        else
+          @query_params = query_params
+          @body_params  = body_params
+        end
       end
 
       def [](field)
@@ -93,12 +107,16 @@ module LCBO
       end
 
       def parse
+        return if is_parsed?
         return unless @html
-        return if @doc
         fire :before_parse
         @doc = Nokogiri::HTML(@html)
         fire :after_parse
         self
+      end
+
+      def is_parsed?
+        doc ? true : false
       end
 
       def as_hash

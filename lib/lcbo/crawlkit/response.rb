@@ -3,17 +3,17 @@ module LCBO
     class Response
 
       attr_reader :response, :body, :query_params, :body_params, :uri,
-        :code, :time
+        :code, :time, :http_method
 
-      def initialize(response, query_params, body_params)
-        @response     = response
-        @code         = response.code
-        @uri          = response.request.url
-        @http_method  = response.request.method
-        @time         = response.time
-        @query_params = query_params
-        @body_params  = body_params
-        @body         = self.class.normalize_encoding(response.body)
+      def initialize(response)
+        params        = HashExt.symbolize_keys(response)
+        @code         = params[:code]
+        @uri          = params[:uri]
+        @http_method  = params[:http_method]
+        @time         = params[:time]
+        @query_params = params[:query_params]
+        @body_params  = params[:body_params]
+        @body         = self.class.normalize_encoding(params[:body])
         ensure_success!
       end
 
@@ -24,6 +24,16 @@ module LCBO
           html.force_encoding('ISO-8859-1')
           html.encode('UTF-8')
         end.gsub("\r\n", "\n")
+      end
+
+      def as_hash
+        { :code         => code,
+          :uri          => uri,
+          :http_method  => http_method,
+          :time         => time,
+          :query_params => query_params,
+          :body_params  => body_params,
+          :body         => body }
       end
 
       protected

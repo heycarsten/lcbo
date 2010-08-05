@@ -19,7 +19,7 @@ require 'yaml'
     requests.each do |req|
       context "given a #{req[:desc]}" do
         before :all do
-          @page = page.request(req[:query_params], req[:body_params])
+          @page = page.process(req[:query_params], req[:body_params])
         end
 
         req[:expectation].each_pair do |key, value|
