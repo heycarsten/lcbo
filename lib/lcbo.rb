@@ -4,6 +4,17 @@ module LCBO
     :user_agent => nil,
   }
 
+  PAGE_TYPES = {
+    :product => 'ProductPage',
+    :products_list => 'ProductsListPage',
+    :store => 'StorePage',
+    :inventory => 'InventoryPage'
+  }
+
+  def self.page(type)
+    Object.const_get(PAGE_TYPES[type.to_sym])
+  end
+
   def self.config
     reset_config! unless @config
     @config
@@ -11,6 +22,10 @@ module LCBO
 
   def self.reset_config!
     @config = DEFAULT_CONFIG.dup
+  end
+
+  def self.parse(page_type, response)
+    page[page_type].parse(response)
   end
 
   def self.product(product_no)

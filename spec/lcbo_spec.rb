@@ -15,6 +15,10 @@ describe LCBO do
   end
 
   context 'helper methods' do
+    it 'provides LCBO.parse' do
+      LCBO.should respond_to(:parse)
+    end
+
     it 'provides LCBO.product' do
       LCBO.should respond_to(:product)
     end
