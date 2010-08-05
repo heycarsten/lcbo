@@ -25,7 +25,7 @@ module LCBO
     InventoryPage.request(:product_no => product_no)
   end
 
-  def self.products_list(page = 1, per_page = nil)
+  def self.products_list(page = 1)
     ProductsListPage.request({}, { :page => page })
   end
 

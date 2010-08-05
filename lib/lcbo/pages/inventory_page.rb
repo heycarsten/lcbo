@@ -10,6 +10,10 @@ module LCBO
       query_params[:product_no].to_i
     end
 
+    emits :inventory_count do
+      inventories.reduce(0) { |sum, inv| sum + inv[:quantity] }
+    end
+
     emits :inventories do
       # [updated_on, store_no, quantity]
       inventory_table_rows.reduce([]) do |ary, node|
