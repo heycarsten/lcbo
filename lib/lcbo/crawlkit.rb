@@ -7,11 +7,6 @@ require 'yajl'
 
 module LCBO
   module CrawlKit
-    class Error < StandardError; end
-    class MalformedDocumentError < Error; end
-    class MissingResourceError < Error; end
-    class RequestFailedError < Error; end
-
     USER_AGENT ||= begin
       LCBO.config[:user_agent] ||
       ENV['LCBO_USER_AGENT'] ||
