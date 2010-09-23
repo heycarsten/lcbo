@@ -1,3 +1,4 @@
+# coding: utf-8
 require File.expand_path("../lib/lcbo/version", __FILE__)
 
 Gem::Specification.new do |s|
@@ -7,23 +8,21 @@ Gem::Specification.new do |s|
   s.authors     = ['Carsten Nielsen']
   s.email       = ['heycarsten@gmail.com']
   s.homepage    = 'http://github.com/heycarsten/lcbo'
-  s.summary     = 'Library for scraping and parsing LCBO data.'
-  s.description = 'Contains components for scraping and normalizing LCBO data.'
+  s.summary     = %q{A library for parsing HTML pages from http://lcbo.com}
+  s.description = %q{Provides the ability to request and parse product, store, inventory, and product search pages from the official LCBO website.}
 
   s.required_rubygems_version = '>= 1.3.6'
-
-  # Required for validation
   s.rubyforge_project = 'lcbo'
 
-  s.add_dependency 'typhoeus',    '0.1.29'
-  s.add_dependency 'addressable', '2.1.2'
-  s.add_dependency 'nokogiri',    '1.4.3.1'
-  s.add_dependency 'yajl-ruby',   '0.7.7'
+  s.add_dependency 'typhoeus'
+  s.add_dependency 'addressable'
+  s.add_dependency 'nokogiri'
 
   s.add_development_dependency 'rspec', '1.3.0'
 
-  s.files        = Dir['{lib}/**/*.rb', '*.md']
-  s.require_path = 'lib'
+  s.files         = `git ls-files`.split(?\n)
+  s.test_files    = `git ls-files -- {test,spec}/*`.split(?\n)
+  s.require_paths = ['lib']
 
   # If you need an executable, add it here
   # s.executables = ['lcbo']
