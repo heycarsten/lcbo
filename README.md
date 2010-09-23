@@ -1,12 +1,12 @@
 # LCBO Gem
 
-Request and parse store, product, inventory, and product search pages directly from the [LCBO website](http://lcbo.com).
+This library is used to gather data for [LCBO API](http://lcboapi.com). It allows you to request and parse store, product, inventory, and product search pages directly from the [LCBO](http://lcbo.com) website.
 
-_This library is used to gather data for [LCBO API](http://lcboapi.com)._
-
-## Installation & Use
+## Install it
 
 Install it using Ruby Gems: `gem install lcbo`
+
+## Use it
 
     require 'lcbo'
 
