@@ -6,6 +6,8 @@ Request and parse store, product, inventory, and product search pages directly f
 
 Install it using Ruby Gems: `gem install lcbo`
 
+    require 'lcbo'
+
     LCBO.store(511)
     # => { :store_no => 511, :name => "King & Spadina", ... }
 
