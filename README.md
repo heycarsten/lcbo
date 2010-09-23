@@ -26,7 +26,7 @@ Use Ruby Gems: `gem install lcbo`
 
  * Works with Ruby 1.9.2, not tested with 1.8.X or 1.9.1.
  * Don't be evil, be nice.
- * Lots of room to improve; fork your face off!
+ * Lots of room to improve &mdash; fork your face off!
 
 ## Links
 
