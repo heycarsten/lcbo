@@ -1,3 +1,3 @@
 module LCBO
-  VERSION = '0.32.1'
+  VERSION = '0.9.0'
 end

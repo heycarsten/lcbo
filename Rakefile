@@ -16,22 +16,22 @@ task :console do
   system 'irb -I lib -r lcbo'
 end
 
-desc "Validates the gemspec"
+desc 'Validates the gemspec'
 task :gemspec do
   gemspec.validate
 end
 
-desc "Displays the current version"
+desc 'Displays the current version'
 task :version do
   puts "Current version: #{gemspec.version}"
 end
 
-desc "Installs the gem locally"
+desc 'Installs the gem locally'
 task :install => :package do
   sh "gem install pkg/#{gemspec.name}-#{gemspec.version}"
 end
 
-desc "Release the gem"
+desc 'Release the gem'
 task :release => :package do
   sh "gem push pkg/#{gemspec.name}-#{gemspec.version}.gem"
 end
