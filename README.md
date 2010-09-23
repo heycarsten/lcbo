@@ -22,6 +22,12 @@ This library is used to gather data for [LCBO API](http://lcboapi.com). It allow
 
 Use Ruby Gems: `gem install lcbo`
 
+## Notes
+
+ * Works with Ruby 1.9.2, not tested with 1.8.X or 1.9.1.
+ * Don't be evil, be nice.
+ * Lots of room to improve; fork your face off!
+
 ## Links
 
  * [Issue tracker](http://github.com/heycarsten/lcbo/issues)
