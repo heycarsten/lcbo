@@ -1,12 +1,10 @@
 module LCBO
-  class ProductsListPage
-
-    PER_PAGE = 100
+  class ProductListPage
 
     include CrawlKit::Page
 
+    PER_PAGE = 100
     http_method :post
-
     uri 'http://www.lcbo.com/lcbo-ear/lcbo/product/searchResults.do'
 
     default_body_params \

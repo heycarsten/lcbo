@@ -1,5 +1,5 @@
 module LCBO
-  class ProductsListCrawler
+  class ProductListsCrawler
 
     MAX_RETRIES = 10
 
@@ -9,7 +9,7 @@ module LCBO
     def self.run(params = {}, tries = 0, &block)
       raise ArgumentError, 'block expected' unless block_given?
       begin
-        payload = ProductsListRequest.parse(params).as_hash
+        payload = ProductListRequest.parse(params).as_hash
         yield(payload)
         run(:page => payload[:next_page], &block) if payload[:next_page]
       rescue Errno::ETIMEDOUT, Timeout::Error

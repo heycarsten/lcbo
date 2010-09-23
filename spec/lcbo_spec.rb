@@ -32,7 +32,7 @@ describe LCBO do
     end
 
     it 'provides LCBO.product_list' do
-      LCBO.should respond_to(:products_list)
+      LCBO.should respond_to(:product_list)
     end
   end
 end
