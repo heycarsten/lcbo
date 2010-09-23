@@ -3,7 +3,6 @@ require 'addressable/uri'
 require 'nokogiri'
 require 'typhoeus'
 require 'uri'
-require 'yajl'
 
 module LCBO
   module CrawlKit
