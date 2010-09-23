@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = ['heycarsten@gmail.com']
   s.homepage    = 'http://github.com/heycarsten/lcbo'
   s.summary     = %q{A library for parsing HTML pages from http://lcbo.com}
-  s.description = %q{Provides the ability to request and parse product, store, inventory, and product search pages from the official LCBO website.}
+  s.description = %q{Request and parse product, store, inventory, and product search pages directly from the official LCBO website.}
 
   s.required_rubygems_version = '>= 1.3.6'
   s.rubyforge_project = 'lcbo'
