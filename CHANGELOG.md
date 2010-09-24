@@ -1,3 +1,7 @@
+Version 0.9.3
+
+  * 4x speed boost to InventoryPage.parse courtesy of Justin Giancola.
+
 Version 0.9.2
 
  * Fixed potential bug in some versions of Ruby where Object#send semantics
