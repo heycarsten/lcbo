@@ -15,7 +15,7 @@ module LCBO
       end
 
       def uri_template=(value)
-        @uri_template = Addressable::Template.new(value) if value
+        @uri_template = value
       end
 
       def body_params=(value)

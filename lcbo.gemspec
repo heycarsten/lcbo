@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
   s.rubyforge_project = 'lcbo'
 
   s.add_dependency 'typhoeus'
-  s.add_dependency 'addressable'
   s.add_dependency 'nokogiri'
 
   s.add_development_dependency 'rspec', '1.3.0'

@@ -1,5 +1,3 @@
-require 'addressable/template'
-require 'addressable/uri'
 require 'nokogiri'
 require 'typhoeus'
 require 'uri'

@@ -31,7 +31,10 @@ module LCBO
       end
 
       def uri
-        request_prototype.uri_template.expand(query_params).to_s
+        template = request_prototype.uri_template.dup
+        query_params.reduce(template) do |mem, (key, value)|
+          mem.gsub("{#{key}}", value.to_s)
+        end
       end
 
       def run
