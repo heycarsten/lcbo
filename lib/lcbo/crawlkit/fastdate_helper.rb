@@ -16,17 +16,11 @@ module LCBO
         'Nov' => '11',
         'Dec' => '12' }
 
-      attr_reader :input
-
-      def initialize(input_string)
-        @input = input_string
+      def self.[](input)
+        sql_date(input)
       end
 
-      def self.[](input_string)
-        new(input_string).as_sql_date
-      end
-
-      def as_sql_date
+      def self.sql_date(input)
         return nil unless input
         parts = input.gsub(',', '').split
         month = MONTH_NAMES_TO_NUMBERS[parts[0]]
