@@ -200,8 +200,6 @@ module LCBO
       end
     end
 
-    private
-
     def volume_helper
       @volume_helper ||= CrawlKit::VolumeHelper.new(package)
     end

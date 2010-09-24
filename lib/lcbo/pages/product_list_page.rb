@@ -75,8 +75,6 @@ module LCBO
     end
     alias_method :as_array, :product_nos
 
-    protected
-
     def product_anchors
       doc.css('td[style="padding: 5 5 5 0;"] a.item-details-col2')
     end

@@ -27,9 +27,7 @@ module LCBO
         end
         h[:store_no] = begin
           node.
-          css('td[width="38%"] a.item-details-col2').
-          attribute('href').
-          value.
+          to_s.
           match(/\?STORE=([0-9]{1,3})\&/).
           captures[0].
           to_s.
@@ -45,8 +43,6 @@ module LCBO
         ary << h
       end
     end
-
-    private
 
     def inventory_table
       doc.css('table[cellpadding="3"]')

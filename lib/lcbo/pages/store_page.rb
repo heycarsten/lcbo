@@ -103,8 +103,6 @@ module LCBO
       emits(field) { details[field] }
     end
 
-    protected
-
     def detail_rows
       @detail_rows ||= begin
         doc.css('input[type="checkbox"]').map { |e| e.parent.parent.inner_html }
