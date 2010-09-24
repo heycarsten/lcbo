@@ -16,40 +16,15 @@ module LCBO
 
     emits :inventories do
       # [updated_on, store_no, quantity]
-      inventory_table_rows.reduce([]) do |ary, node|
-        h = {}
-        h[:updated_on] = begin
-          CrawlKit::FastDateHelper[
-          node.
-          css('td[width="17%"]')[-1].
-          text.
-          strip]
-        end
-        h[:store_no] = begin
-          node.css('td a.item-details-col0').
-          first["href"].
-          match(/\?STORE=([0-9]{1,3})\&/).
-          captures[0].
-          to_i
-        end
-        h[:quantity] = begin
-          node.
-          css('td[width="13%"]')[0].
-          content.
-          strip.
-          to_i
-        end
-        ary << h
+      doc.css('table[cellpadding="3"] tr[bgcolor] > td[width="17%"] > a.item-details-col5').zip(
+      doc.css('table[cellpadding="3"] tr[bgcolor] > td > a.item-details-col0'),
+      doc.css('table[cellpadding="3"] tr[bgcolor] > td[width="13%"]')).map do |updated_on, store_no, quantity|
+        {
+          :updated_on => CrawlKit::FastDateHelper[updated_on.text.strip],
+          :store_no => store_no["href"].match(/\?STORE=([0-9]{1,3})\&/)[1].to_i,
+          :quantity => quantity.content.strip.to_i,
+        }
       end
     end
-
-    def inventory_table
-      doc.css('table[cellpadding="3"]')
-    end
-
-    def inventory_table_rows
-      inventory_table.css('tr[bgcolor]')
-    end
-
   end
 end
