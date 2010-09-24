@@ -12,7 +12,7 @@ describe LCBO::CrawlKit::FastDateHelper do
 
   @expectations.each_pair do |input, expectation|
     it "should translate: #{input.inspect} to: #{expectation.inspect}" do
-      LCBO::CrawlKit::FastDateHelper[input].should == expectation
+      LCBO::CrawlKit::FastDateHelper[input].must_equal expectation
     end
   end
 end

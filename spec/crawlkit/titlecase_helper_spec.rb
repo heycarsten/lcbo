@@ -17,14 +17,14 @@ describe LCBO::CrawlKit::TitleCaseHelper do
 
   @expectations.each_pair do |input, expectation|
     it "should convert: #{input.inspect} to: #{expectation.inspect}" do
-      LCBO::CrawlKit::TitleCaseHelper[input].should == expectation
+      LCBO::CrawlKit::TitleCaseHelper[input].must_equal expectation
     end
   end
 
   it 'should translate lowercase characters to uppercase characters properly' do
     upper = LCBO::CrawlKit::TitleCaseHelper::UPPER_CHARS
     lower = LCBO::CrawlKit::TitleCaseHelper::LOWER_CHARS
-    LCBO::CrawlKit::TitleCaseHelper.upcase(lower).should == upper
+    LCBO::CrawlKit::TitleCaseHelper.upcase(lower).must_equal upper
   end
 
 end

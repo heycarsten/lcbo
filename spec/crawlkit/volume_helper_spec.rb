@@ -15,7 +15,7 @@ describe LCBO::CrawlKit::VolumeHelper do
 
   @expectations.each_pair do |input, expectation|
     it "should convert: #{input.inspect} to: #{expectation.inspect}" do
-      LCBO::CrawlKit::VolumeHelper[input].should == expectation
+      LCBO::CrawlKit::VolumeHelper[input].must_equal expectation
     end
   end
 end

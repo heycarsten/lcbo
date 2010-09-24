@@ -1,15 +1,14 @@
-gem 'rspec', '1.3.0'
 require 'rubygems/specification' unless defined?(Gem::Specification)
-require 'spec/rake/spectask'
 require 'rake/gempackagetask'
-
-task :default => :spec
+require 'rake/testtask'
 
 def gemspec
   @gemspec ||= begin
     Gem::Specification.load(File.expand_path('lcbo.gemspec'))
   end
 end
+
+task :default => :spec
 
 desc 'Start an irb console'
 task :console do
@@ -42,10 +41,10 @@ end
 task :gem => :gemspec
 task :package => :gemspec
 
-desc 'Run the specs'
-Spec::Rake::SpecTask.new do |t|
-  t.spec_files = FileList['spec/**/*_spec.rb']
-  t.spec_opts  = %w[-fs --color]
+Rake::TestTask.new(:spec) do |t|
+  t.libs += %w[lcbo spec]
+  t.test_files = FileList['spec/**/*.rb']
+  t.verbose = true
 end
 
 desc 'Download all HTML indicated in YAML assertion files'

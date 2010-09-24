@@ -3,110 +3,122 @@ require 'spec_helper'
 describe LCBO::CrawlKit::Page do
 
   it 'should have a collection of emittable fields' do
-    SpecHelper::GetPage.fields.should include(:bro_no, :name, :desc)
-    SpecHelper::PostPage.fields.should include(:q, :type, :names)
-    SpecHelper::EventedPage.fields.should include(:message)
+    f = SpecHelper::GetPage.fields
+    f.must_include :bro_no
+    f.must_include :name
+    f.must_include :desc
+    f = SpecHelper::PostPage.fields
+    f.must_include :q
+    f.must_include :type
+    f.must_include :names
+    SpecHelper::EventedPage.fields.must_include :message
   end
 
   describe SpecHelper::GetPage do
     it 'should default to a GET request' do
-      SpecHelper::GetPage.http_method.should == :get
+      SpecHelper::GetPage.http_method.must_equal :get
     end
 
-    context 'when requested' do
-      before :all do
+    describe 'when requested' do
+      before do
         @page = SpecHelper::GetPage.request(:bro_no => 1)
       end
 
       it 'should not be parsed' do
-        @page.is_parsed?.should be_false
+        @page.is_parsed?.must_equal false
       end
 
       it 'should have a valid response object' do
-        @page.response.should be_a(LCBO::CrawlKit::Response)
+        @page.response.must_be_instance_of LCBO::CrawlKit::Response
       end
 
-      context 'the response' do
-        before :all do
+      describe 'the response' do
+        before do
           @page.process
         end
 
         it 'should be directly parsable' do
           page = SpecHelper::GetPage.parse(@page.response)
-          page.as_hash.values.should include(*@page.as_hash.values)
+          @page.as_hash.values.each do |value|
+            page.as_hash.values.must_include value
+          end
         end
 
         it 'should be parsable from a hash representation' do
           page = SpecHelper::GetPage.parse(@page.response.as_hash)
-          page.as_hash.values.should include(*@page.as_hash.values)
+          @page.as_hash.values.each do |value|
+            page.as_hash.values.must_include value
+          end
         end
       end
     end
 
-    context 'when processed' do
-      before :all do
+    describe 'when processed' do
+      before do
         @page = SpecHelper::GetPage.process(:bro_no => 1)
       end
 
       it 'should expand the URI template' do
-        @page.response.uri.should == 'http://bros.local/bros/1'
+        @page.response.uri.must_equal 'http://bros.local/bros/1'
       end
 
       it 'should emit expected values' do
-        @page.bro_no.should == 1
-        @page.name.should == 'Carsten'
-        @page.desc.should == 'Carsten is a bro.'
+        @page.bro_no.must_equal 1
+        @page.name.must_equal 'Carsten'
+        @page.desc.must_equal 'Carsten is a bro.'
       end
 
       it 'should emit a hash of expected values' do
         hsh = @page.as_hash
-        hsh[:bro_no].should == 1
-        hsh[:name].should == 'Carsten'
-        hsh[:desc].should == 'Carsten is a bro.'
+        hsh[:bro_no].must_equal 1
+        hsh[:name].must_equal 'Carsten'
+        hsh[:desc].must_equal 'Carsten is a bro.'
       end
     end
   end
 
   describe SpecHelper::PostPage do
     it 'should overide the default get http method with post' do
-      SpecHelper::PostPage.http_method.should == :post
+      SpecHelper::PostPage.http_method.must_equal :post
     end
 
-    context 'when processed' do
-      before :all do
+    describe 'when processed' do
+      before do
         @page = SpecHelper::PostPage.process(nil, :q => 'test', :type => 'test')
       end
 
       it 'should overide default body params with provided params' do
-        @page.body_params[:q].should == 'test'
-        @page.body_params[:type].should == 'test'
+        @page.body_params[:q].must_equal 'test'
+        @page.body_params[:type].must_equal 'test'
       end
 
       it 'should have a valid uri template' do
-        @page.response.uri.should == 'http://bros.local/search'
+        @page.response.uri.must_equal 'http://bros.local/search'
       end
 
       it 'should parse the page' do
-        @page.as_hash[:names].should include('Carsten', 'Kieran', 'Kevin')
+        %w[Carsten Kieran Kevin].each do |name|
+          @page.as_hash[:names].must_include name
+        end
       end
     end
   end
 
   describe SpecHelper::EventedPage do
     it 'should override the default http method with PUT' do
-      SpecHelper::EventedPage.http_method.should == :put
+      SpecHelper::EventedPage.http_method.must_equal :put
     end
 
-    context '(instantiated)' do
-      before :all do
+    describe '(instantiated)' do
+      before do
         @page = SpecHelper::EventedPage.process(:bro_no => 1)
       end
 
       it 'should fire the included events' do
-        @page.before_request.should be_true
-        @page.after_request.should be_true
-        @page.before_parse.should be_true
-        @page.after_parse.should be_true
+        @page.before_request.must_equal true
+        @page.after_request.must_equal true
+        @page.before_parse.must_equal true
+        @page.after_parse.must_equal true
       end
     end
   end

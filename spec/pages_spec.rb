@@ -17,14 +17,18 @@ require 'yaml'
     end
 
     requests.each do |req|
-      context "given a #{req[:desc]}" do
-        before :all do
+      describe "given a #{req[:desc]}" do
+        before do
           @page = page.process(req[:query_params], req[:body_params])
         end
 
         req[:expectation].each_pair do |key, value|
           it "should have the expected value for :#{key}" do
-            @page[key].should == value
+            if (value.is_a?(String))
+              @page[key].must_equal value
+            else
+              @page[key].must_equal value
+            end
           end
         end
       end
