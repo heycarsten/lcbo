@@ -26,11 +26,10 @@ module LCBO
           strip]
         end
         h[:store_no] = begin
-          node.
-          to_s.
+          node.css('td a.item-details-col0').
+          first["href"].
           match(/\?STORE=([0-9]{1,3})\&/).
           captures[0].
-          to_s.
           to_i
         end
         h[:quantity] = begin
