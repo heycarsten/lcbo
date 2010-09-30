@@ -3,14 +3,13 @@ module LCBO
 
     MAX_RETRIES = 10
 
-    class Error < StandardError; end
-    class EpicTimeoutError < Error; end
+    class EpicTimeoutError < StandardError; end
 
     def self.run(params = {}, tries = 0, &block)
       raise ArgumentError, 'block expected' unless block_given?
       begin
-        payload = ProductListRequest.parse(params).as_hash
-        yield(payload)
+        payload = LCBO.product_list(params[:page])
+        yield payload
         run(:page => payload[:next_page], &block) if payload[:next_page]
       rescue Errno::ETIMEDOUT, Timeout::Error
         # On timeout, try again.
