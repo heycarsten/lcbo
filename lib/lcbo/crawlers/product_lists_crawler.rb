@@ -8,8 +8,8 @@ module LCBO
     def self.run(params = {}, tries = 0, &block)
       raise ArgumentError, 'block expected' unless block_given?
       begin
-        payload = LCBO.product_list(params[:page])
-        yield payload
+        payload = LCBO.product_list(params[:page] || 1)
+        yield(payload)
         run(:page => payload[:next_page], &block) if payload[:next_page]
       rescue Errno::ETIMEDOUT, Timeout::Error
         # On timeout, try again.
