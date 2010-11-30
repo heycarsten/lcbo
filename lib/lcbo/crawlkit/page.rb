@@ -126,11 +126,7 @@ module LCBO
 
       def as_hash
         @as_hash ||= begin
-          fields.reduce({}) do |hsh, field|
-            value = send(field)
-            hsh[field] = value.is_a?(String) ? value.encode('utf-8') : value
-            hsh
-          end
+          fields.reduce({}) { |hsh, field| hsh.merge(field => send(field)) }
         end
       end
 

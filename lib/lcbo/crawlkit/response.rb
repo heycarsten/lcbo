@@ -21,8 +21,7 @@ module LCBO
         if html.valid_encoding?
           html
         else
-          html.force_encoding('ISO-8859-1')
-          html.encode('UTF-8')
+          html.encode('UTF-8', 'ISO-8859-1')
         end.gsub("\r\n", "\n")
       end
 
