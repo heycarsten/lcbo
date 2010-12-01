@@ -14,6 +14,8 @@
     :bonus_reward_miles: 0
     :bonus_reward_miles_ends_on:
     :alcohol_content: 1270
+    :price_per_liter_of_alcohol_in_cents: 1254
+    :price_per_liter_in_cents: 1593
     :sugar_content: "1"
     :package: 750 mL bottle
     :package_unit_type: bottle
@@ -51,6 +53,8 @@
     :bonus_reward_miles: 0
     :bonus_reward_miles_ends_on:
     :alcohol_content: 500
+    :price_per_liter_of_alcohol_in_cents: 1262
+    :price_per_liter_in_cents: 631
     :sugar_content: "7"
     :package: 6x330 mL bottle
     :package_unit_type: bottle
@@ -88,6 +92,8 @@
     :bonus_reward_miles: 30
     :bonus_reward_miles_ends_on: "2010-08-14"
     :alcohol_content: 1250
+    :price_per_liter_of_alcohol_in_cents: 23461
+    :price_per_liter_in_cents: 29326
     :sugar_content: XD
     :package: 750 mL bottle
     :package_unit_type: bottle
@@ -125,6 +131,8 @@
     :bonus_reward_miles: 0
     :bonus_reward_miles_ends_on:
     :alcohol_content: 350
+    :price_per_liter_of_alcohol_in_cents: 2164
+    :price_per_liter_in_cents: 757
     :sugar_content: "8"
     :package: 330 mL bottle
     :package_unit_type: bottle
@@ -162,6 +170,8 @@
     :bonus_reward_miles: 0
     :bonus_reward_miles_ends_on:
     :alcohol_content: 1320
+    :price_per_liter_of_alcohol_in_cents: 1611
+    :price_per_liter_in_cents: 2126
     :sugar_content: "XD"
     :package: 750 mL bottle
     :package_unit_type: bottle
@@ -199,6 +209,8 @@
     :bonus_reward_miles: 0
     :bonus_reward_miles_ends_on:
     :alcohol_content: 4000
+    :price_per_liter_of_alcohol_in_cents: 792
+    :price_per_liter_in_cents: 3168
     :sugar_content:
     :package: 1750 mL bottle
     :package_unit_type: bottle
@@ -236,6 +248,8 @@
     :bonus_reward_miles: 0
     :bonus_reward_miles_ends_on:
     :alcohol_content: 1220
+    :price_per_liter_of_alcohol_in_cents: 1196
+    :price_per_liter_in_cents: 1460
     :sugar_content:
     :package: 750 mL bottle
     :package_unit_type: bottle

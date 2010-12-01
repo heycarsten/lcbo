@@ -121,23 +121,40 @@ module LCBO
     end
 
     emits :alcohol_content do
-      match = find_info_line(/ Alcohol\/Vol.\Z/)
-      if match
+      if (match = find_info_line(/ Alcohol\/Vol.\Z/))
         ac = match.gsub(/%| Alcohol\/Vol./, '').to_f
-        ac.zero? ? nil : (ac * 100).to_i
+        (ac * 100).to_i
+      else
+        0
+      end
+    end
+
+    emits :price_per_liter_of_alcohol_in_cents do
+      if alcohol_content > 0 && volume_in_milliliters > 0
+        alc_frac = alcohol_content.to_f / 1000.0
+        alc_vol  = (volume_in_milliliters.to_f / 1000.0) * alc_frac
+        (price_in_cents.to_f / alc_vol).to_i
+      else
+        0
+      end
+    end
+
+    emits :price_per_liter_in_cents do
+      if volume_in_milliliters > 0
+        (price_in_cents.to_f / (volume_in_milliliters.to_f / 1000.0)).to_i
+      else
+        0
       end
     end
 
     emits :sugar_content do
-      match = match = find_info_line(/\ASugar Content : /)
-      if match
+      if (match = find_info_line(/\ASugar Content : /))
         match.gsub('Sugar Content : ', '')
       end
     end
 
     emits :producer_name do
-      match = find_info_line(/\ABy: /)
-      if match
+      if (match = find_info_line(/\ABy: /))
         CrawlKit::TitleCaseHelper[
           match.gsub(/By: |Tasting Note|Serving Suggestion|NOTE:/, '')
         ]
@@ -252,9 +269,7 @@ module LCBO
     end
 
     def info_cell_line_after(item)
-      i = info_cell_lines.index(item)
-      return unless i
-      info_cell_lines[i + 1]
+      (i = info_cell_lines.index(item)) ? info_cell_lines[i + 1] : nil
     end
 
     def info_cell_html
