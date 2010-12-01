@@ -2,11 +2,11 @@ module LCBO
   module HashExt
 
     def self.symbolize_keys(input)
-      input.reduce({}) { |hsh, (key, value)| hsh.merge(key.to_sym => value) }
+      Hash[input.map { |key, value| [key.to_sym, value] }]
     end
 
     def self.stringify_keys(input)
-      input.reduce({}) { |hsh, (key, value)| hsh.merge(key.to_s => value) }
+      Hash[input.map { |key, value| [key.to_sym, value] }]
     end
 
   end

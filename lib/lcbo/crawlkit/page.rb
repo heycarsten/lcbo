@@ -125,9 +125,7 @@ module LCBO
       end
 
       def as_hash
-        @as_hash ||= begin
-          fields.reduce({}) { |hsh, field| hsh.merge(field => send(field)) }
-        end
+        @as_hash ||= Hash[fields.map { |field| [field, send(field)] }]
       end
 
       protected
