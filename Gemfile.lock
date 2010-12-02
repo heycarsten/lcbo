@@ -5,6 +5,7 @@ GEM
     rack (1.2.1)
     typhoeus (0.1.31)
       rack
+    unicode_utils (1.0.0)
 
 PLATFORMS
   ruby
@@ -12,3 +13,4 @@ PLATFORMS
 DEPENDENCIES
   nokogiri
   typhoeus
+  unicode_utils

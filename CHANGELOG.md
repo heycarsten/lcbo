@@ -1,3 +1,7 @@
+Version 0.9.7
+
+  * Refactored `TitleCaseHelper` to use the UnicodeUtils library.
+
 Version 0.9.6
 
   * Removed instances of `Enumerable#reduce` in favour of `Hash[]` for
