@@ -1,3 +1,9 @@
+Version 0.10.0
+
+ * Added `ProductPage#is_kosher` to designate Kosher products.
+ * Added `StoreListPage` to allow all store IDs to be retrieved in one request.
+ * Removed all crawler related code.
+
 Version 0.9.8
 
  * Now returning Date objects instead of strings for all date attributes.
