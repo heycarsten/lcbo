@@ -49,7 +49,7 @@
     :price_in_cents: 1250
     :regular_price_in_cents: 1350
     :limited_time_offer_savings_in_cents: 100
-    :limited_time_offer_ends_on: "2010-08-15"
+    :limited_time_offer_ends_on: 2010-08-15
     :bonus_reward_miles: 0
     :bonus_reward_miles_ends_on:
     :alcohol_content: 500
@@ -90,7 +90,7 @@
     :limited_time_offer_savings_in_cents: 0
     :limited_time_offer_ends_on:
     :bonus_reward_miles: 30
-    :bonus_reward_miles_ends_on: "2010-08-14"
+    :bonus_reward_miles_ends_on: 2010-08-14
     :alcohol_content: 1250
     :price_per_liter_of_alcohol_in_cents: 23461
     :price_per_liter_in_cents: 29326
@@ -102,7 +102,7 @@
     :total_package_volume_in_milliliters: 750
     :origin: Champagne, France
     :producer_name: Moet & Chandon S.A.
-    :released_on: "2010-05-15"
+    :released_on: 2010-05-15
     :stock_type: VINTAGES
     :primary_category: Wine
     :secondary_category: Champagne
@@ -180,7 +180,7 @@
     :total_package_volume_in_milliliters: 750
     :origin: Rioja, Spain
     :producer_name: Bodegas Ruconia S.L.
-    :released_on: "2010-01-23"
+    :released_on: 2010-01-23
     :stock_type: VINTAGES
     :primary_category: Wine
     :secondary_category: Red Wine

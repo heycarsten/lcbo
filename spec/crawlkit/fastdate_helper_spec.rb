@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'date'
 
 describe LCBO::CrawlKit::FastDateHelper do
   @expectations = {
@@ -6,9 +7,9 @@ describe LCBO::CrawlKit::FastDateHelper do
     ' '            => nil,
     "\n"           => nil,
     'belch-fart-2' => nil,
-    'Jan 2, 2001'  => '2001-01-02',
-    'Dec 22, 2010' => '2010-12-22',
-    'Feb 26, 1960' => '1960-02-26' }
+    'Jan 2, 2001'  => Date.new(2001,  1,  2),
+    'Dec 22, 2010' => Date.new(2010, 12, 22),
+    'Feb 26, 1960' => Date.new(1960,  2, 26) }
 
   @expectations.each_pair do |input, expectation|
     it "should translate: #{input.inspect} to: #{expectation.inspect}" do

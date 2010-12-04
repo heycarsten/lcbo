@@ -1,10 +1,8 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    nokogiri (1.4.3.1)
-    rack (1.2.1)
-    typhoeus (0.1.31)
-      rack
+    nokogiri (1.4.4)
+    typhoeus (0.2.0)
     unicode_utils (1.0.0)
 
 PLATFORMS

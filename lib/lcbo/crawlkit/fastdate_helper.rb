@@ -3,30 +3,25 @@ module LCBO
     class FastDateHelper
 
       MONTH_NAMES_TO_NUMBERS = {
-        'Jan' => '01',
-        'Feb' => '02',
-        'Mar' => '03',
-        'Apr' => '04',
-        'May' => '05',
-        'Jun' => '06',
-        'Jul' => '07',
-        'Aug' => '08',
-        'Sep' => '09',
-        'Oct' => '10',
-        'Nov' => '11',
-        'Dec' => '12' }
+        'Jan' => 1,
+        'Feb' => 2,
+        'Mar' => 3,
+        'Apr' => 4,
+        'May' => 5,
+        'Jun' => 6,
+        'Jul' => 7,
+        'Aug' => 8,
+        'Sep' => 9,
+        'Oct' => 10,
+        'Nov' => 11,
+        'Dec' => 12 }
 
       def self.[](input)
-        sql_date(input)
-      end
-
-      def self.sql_date(input)
         return nil unless input
         parts = input.gsub(',', '').split
         month = MONTH_NAMES_TO_NUMBERS[parts[0]]
         return nil unless month
-        day = parts[1].rjust(2, '0')
-        "#{parts[2]}-#{month}-#{day}"
+        Date.new(parts[2].to_i, month, parts[1].to_i)
       end
 
     end
