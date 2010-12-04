@@ -1,10 +1,11 @@
 module LCBO
 
   PAGE_TYPES = {
-    :product => 'ProductPage',
+    :product      => 'ProductPage',
     :product_list => 'ProductListPage',
-    :store => 'StorePage',
-    :inventory => 'InventoryPage'
+    :store_list   => 'StoreListPage',
+    :store        => 'StorePage',
+    :inventory    => 'InventoryPage'
   }
 
   def self.page(type)
@@ -29,6 +30,10 @@ module LCBO
 
   def self.product_list(page_number)
     ProductListPage.process({}, { :page => page_number }).as_hash
+  end
+
+  def self.store_list
+    StoreListPage.process({}, {}).as_hash
   end
 
 end

@@ -4,7 +4,8 @@ require 'yaml'
 { :product_pages      => LCBO::ProductPage,
   :store_pages        => LCBO::StorePage,
   :inventory_pages    => LCBO::InventoryPage,
-  :product_list_pages => LCBO::ProductListPage
+  :product_list_pages => LCBO::ProductListPage,
+  :store_list_pages   => LCBO::StoreListPage
 }.each_pair do |type, page|
 
   describe(page) do
