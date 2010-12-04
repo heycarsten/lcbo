@@ -29,6 +29,7 @@
     :primary_category: Wine
     :secondary_category:
     :is_vqa: false
+    :is_kosher: false
     :has_bonus_reward_miles: false
     :has_limited_time_offer: false
     :is_discontinued: false
@@ -70,6 +71,7 @@
     :has_bonus_reward_miles: false
     :has_limited_time_offer: true
     :is_vqa: false
+    :is_kosher: false
     :is_discontinued: false
     :is_seasonal: false
     :description:
@@ -109,6 +111,7 @@
     :has_bonus_reward_miles: true
     :has_limited_time_offer: false
     :is_vqa: false
+    :is_kosher: false
     :is_discontinued: false
     :is_seasonal: false
     :description: "The legend now joins our Essentials Collection. Purported to be the father of all Champagne, Dom Pérignon continues to impress generation after generation. This ultimate anniversary, or birthday celebration, bubbly is only made in the greatest years. Loaded with stylish aromas of citrus, artisanal bread, green apple, mineral and pear, it's quite dry and vibrantly refreshing on the palate. Every vintage Robert Parker has reviewed from 1982 to the present has received scores in the range of 92 to 98 points! Expect to be impressed."
@@ -148,6 +151,7 @@
     :has_bonus_reward_miles: false
     :has_limited_time_offer: false
     :is_vqa: false
+    :is_kosher: false
     :is_discontinued: true
     :is_seasonal: false
     :description:
@@ -187,6 +191,7 @@
     :has_bonus_reward_miles: false
     :has_limited_time_offer: false
     :is_vqa: false
+    :is_kosher: false
     :is_discontinued: false
     :is_seasonal: false
     :description:
@@ -226,6 +231,7 @@
     :has_bonus_reward_miles: false
     :has_limited_time_offer: false
     :is_vqa: false
+    :is_kosher: false
     :is_discontinued: false
     :is_seasonal: false
     :description:
@@ -265,8 +271,50 @@
     :has_bonus_reward_miles: false
     :has_limited_time_offer: false
     :is_vqa: true
+    :is_kosher: false
     :is_discontinued: false
     :is_seasonal: false
     :description:
     :tasting_note:
     :serving_suggestion:
+
+- :file: 8.html
+  :desc: Kosher Product
+  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=114173
+  :method: :get
+  :query_params:
+    :product_no: 114173
+  :expectation:
+    :product_no: 114173
+    :name: 05 Sauv Blanc Weinstock Cellar K
+    :price_in_cents: 2295
+    :regular_price_in_cents: 2295
+    :limited_time_offer_savings_in_cents: 0
+    :limited_time_offer_ends_on:
+    :bonus_reward_miles: 0
+    :bonus_reward_miles_ends_on:
+    :stock_type: VINTAGES
+    :primary_category: Wine
+    :secondary_category:
+    :origin: California, United States
+    :package: 750 mL bottle
+    :package_unit_type: bottle
+    :package_unit_volume_in_milliliters: 750
+    :total_package_units: 1
+    :total_package_volume_in_milliliters: 750
+    :volume_in_milliliters: 750
+    :alcohol_content: 1350
+    :price_per_liter_of_alcohol_in_cents: 2266
+    :price_per_liter_in_cents: 3060
+    :sugar_content:
+    :producer_name: Royal Wines
+    :released_on:
+    :is_discontinued: false
+    :has_limited_time_offer: false
+    :has_bonus_reward_miles: false
+    :is_seasonal: false
+    :is_vqa: false
+    :is_kosher: true
+    :description:
+    :serving_suggestion:
+    :tasting_note:

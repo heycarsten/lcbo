@@ -190,6 +190,10 @@ module LCBO
       html.include?('This is a <B>VQA</B> wine')
     end
 
+    emits :is_kosher do
+      html.include?('This is a <B>Kosher</B> product')
+    end
+
     emits :description do
       if html.include?('<B>Description</B>')
         match = html.match(/<B>Description<\/B><\/font><BR>\n\t\t\t(.*)<BR>\n\t\t\t<BR>/m)
