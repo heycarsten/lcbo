@@ -1,4 +1,4 @@
-Version 0.10.0
+Version 0.9.9
 
  * Added `ProductPage#is_kosher` to designate Kosher products.
  * Added `StoreListPage` to allow all store IDs to be retrieved in one request.
