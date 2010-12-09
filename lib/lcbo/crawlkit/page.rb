@@ -2,11 +2,6 @@ module LCBO
   module CrawlKit
     module Page
 
-      class Error < StandardError; end
-      class MalformedDocumentError < Error; end
-      class MissingResourceError < Error; end
-      class RequestFailedError < Error; end
-
       def self.included(mod)
         mod.module_eval do
           include Eventable

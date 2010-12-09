@@ -42,7 +42,7 @@ module LCBO
 
     def verify_number_of_stores
       return if STORE_COUNT_RANGE.include?(store_nos.length)
-      raise CrawlKit::MalformedDocumentError,
+      raise CrawlKit::MalformedError,
         "Store count (#{total_stores}) not in range: #{STORE_COUNT_RANGE}"
     end
 

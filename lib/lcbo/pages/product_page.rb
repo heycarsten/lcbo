@@ -286,26 +286,26 @@ module LCBO
 
     def verify_third_info_cell
       return unless has_package? && info_cell_lines[2][0,1] != '|'
-      raise CrawlKit::MalformedDocumentError,
+      raise CrawlKit::MalformedError,
         "Expected third line in info cell to begin with bar. LCBO No: " \
         "#{product_no}, Dump: #{info_cell_lines[2].inspect}"
     end
 
     def verify_response_not_blank
       return unless html.strip == ''
-      raise CrawlKit::MissingResourceError,
+      raise CrawlKit::NotFoundError,
         "product #{product_no} does not appear to exist"
     end
 
     def verify_product_name
       return unless product_details_form('itemName').strip == ''
-      raise CrawlKit::MissingResourceError,
+      raise CrawlKit::NotFoundError,
         "can not locate name for product #{product_no}"
     end
 
     def verify_product_details_form
       return unless doc.css('form[name="productdetails"]').empty?
-      raise CrawlKit::MalformedDocumentError,
+      raise CrawlKit::MalformedError,
         "productdetails form not found in doc for product #{product_no}"
     end
 

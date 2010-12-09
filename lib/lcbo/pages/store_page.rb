@@ -53,8 +53,8 @@ module LCBO
     emits :address_line_1 do
       data = info_nodes[2].content.strip.split(',')[0]
       unless data
-        raise MalformedDocumentError,
-          "unable to locate address for store #{store_no}"
+        raise CrawlKit::MalformedError,
+        "unable to locate address for store #{store_no}"
       end
       CrawlKit::TitleCaseHelper[data.gsub(/[\n\r\t]+/, ' ').strip]
     end
@@ -72,7 +72,7 @@ module LCBO
     emits :postal_code do
       data = info_nodes[3].content.strip.split(',')[1]
       unless data
-        raise MalformedDocumentError,
+        raise CrawlKit::MalformedError,
         "unable to locate postal code for store #{store_no}"
       end
       data.gsub(/[\n\r\t]+/, ' ').strip.upcase
@@ -174,18 +174,18 @@ module LCBO
 
     def verify_store_returned
       return if !@html.include?('No stores were located using your criteria.')
-      raise MissingResourceError, "store #{store_no} does not exist"
+      raise CrawlKit::NotFoundError, "store #{store_no} does not exist"
     end
 
     def verify_telephone_number
       return if telephone
-      raise MalformedDocumentError,
+      raise CrawlKit::MalformedError,
         "unable to locate telephone number for store #{store_no}"
     end
 
     def verify_node_count
       return if expected_node_count == info_nodes.size
-      raise MalformedDocumentError,
+      raise CrawlKit::MalformedError,
         "Expected #{expected_node_count} nodes for store #{store_no} but found " \
         "#{info_nodes.size} instead."
     end

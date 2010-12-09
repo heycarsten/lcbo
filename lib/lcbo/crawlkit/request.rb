@@ -2,6 +2,8 @@ module LCBO
   module CrawlKit
     class Request
 
+      MAX_RETRIES = 8
+
       attr_reader :request_prototype, :query_params, :body_params
 
       def initialize(request_prototype, query_p = {}, body_p = {})
@@ -38,7 +40,15 @@ module LCBO
       end
 
       def run
-        response = Typhoeus::Request.run(uri, config)
+        _run
+      end
+
+      protected
+
+      def _run(tries = 0)
+        response = Timeout.timeout(LCBO.config[:timeout]) do
+          Typhoeus::Request.run(uri, config)
+        end
         Response.new \
           :code         => response.code,
           :uri          => response.request.url,
@@ -47,6 +57,11 @@ module LCBO
           :query_params => query_params,
           :body_params  => body_params,
           :body         => response.body
+      rescue Errno::ETIMEDOUT, Timeout::Error
+        if tries > LCBO.config[:max_retries]
+          raise TimeoutError, "Request failed after timing out #{tries} times"
+        end
+        _run(tries + 1)
       end
 
     end
