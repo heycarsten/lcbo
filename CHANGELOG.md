@@ -1,3 +1,12 @@
+Version 0.10.0
+
+ * Moved `CrawlKit` related errors into the `CrawlKit` namespace.
+ * Added `:timeout` and `:max_retries` to configuration options and enabled
+   auto _n_-retries for timed-out requests.
+ * Added `LCBO::CrawlKit::Crawler` mixin as a helper for making crawlers.
+ * Added example crawlers for inventories, products, stores, and product list
+   pages.
+
 Version 0.9.9
 
  * Added `ProductPage#is_kosher` to designate Kosher products.
