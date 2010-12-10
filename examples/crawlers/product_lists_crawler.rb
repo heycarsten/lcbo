@@ -1,6 +1,6 @@
 class ProductListsCrawler
 
-  include CrawlKit::Crawler
+  include LCBO::CrawlKit::Crawler
 
   def request(params)
     LCBO.product_list(params[:next_page] || 1)
@@ -11,7 +11,7 @@ class ProductListsCrawler
   end
 
   def reduce
-    requests.map { |params| params[:product_nos] }.flatten
+    responses.map { |params| params[:product_nos] }.flatten
   end
 
 end
