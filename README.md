@@ -1,8 +1,8 @@
 # LCBO: The Ruby Gem
 
 This library is used to gather data for [LCBO API](http://lcboapi.com). It
-allows you to request and parse store, product, inventory, and product list
-pages directly from the [LCBO](http://lcbo.com) website.
+allows you to request and parse store, product, inventory, product list, and
+store list pages directly from the [LCBO](http://lcbo.com) website.
 
 ## Synopsis
 
@@ -12,13 +12,24 @@ pages directly from the [LCBO](http://lcbo.com) website.
     # => { :store_no => 511, :name => "King & Spadina", ... }
 
     LCBO.product(18)
-    # => { :product_no => 11, :name => "Heineken Lager", ... }
+    # => { :product_no => 18, :name => "Heineken Lager", ... }
 
     LCBO.inventory(18)
     # => { :product_no => 18, :inventory_count => 40398, :inventories => [ ... ] }
 
     LCBO.products_list(1)
     # => { :page => 1, :final_page => 108, ..., :product_nos => [ ... ] }
+
+    LCBO.store_list
+    # => { :store_nos => [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, ...] }
+
+## Crawlers
+
+Some examples of crawlers exist
+[here](http://github.com/heycarsten/lcbo/blob/master/examples). You can also
+check out the
+[crawler spec](http://github.com/heycarsten/lcbo/blob/master/spec/crawlkit/crawler_spec.rb)
+to see how to interact with them.
 
 ## Installation
 
