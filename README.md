@@ -26,9 +26,9 @@ store list pages directly from the [LCBO](http://lcbo.com) website.
 ## Crawlers
 
 Some examples of crawlers exist
-[here](http://github.com/heycarsten/lcbo/blob/master/examples). You can also
-check out the
-[crawler spec](http://github.com/heycarsten/lcbo/blob/master/spec/crawlkit/crawler_spec.rb)
+[here](https://github.com/heycarsten/lcbo/tree/master/examples/crawlers).
+You can also check out the
+[crawler spec](https://github.com/heycarsten/lcbo/blob/master/spec/crawlkit/crawler_spec.rb)
 to see how to interact with them.
 
 ## Installation
