@@ -1,6 +1,7 @@
 require 'nokogiri'
 require 'typhoeus'
 require 'unicode_utils'
+require 'stringex'
 require 'uri'
 
 module LCBO
@@ -23,6 +24,7 @@ require 'lcbo/crawlkit/fastdate_helper'
 require 'lcbo/crawlkit/page'
 require 'lcbo/crawlkit/request'
 require 'lcbo/crawlkit/response'
+require 'lcbo/crawlkit/tag_helper'
 require 'lcbo/crawlkit/request_prototype'
 require 'lcbo/crawlkit/crawler'
 require 'lcbo/crawlkit/titlecase_helper'

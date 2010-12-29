@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'typhoeus'
   s.add_dependency 'nokogiri'
   s.add_dependency 'unicode_utils'
+  s.add_dependency 'stringex'
 
   s.files         = `git ls-files`.split(?\n)
   s.test_files    = `git ls-files -- {test,spec}/*`.split(?\n)

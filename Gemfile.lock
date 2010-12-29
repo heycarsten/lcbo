@@ -2,6 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     nokogiri (1.4.4)
+    stringex (1.1.0)
     typhoeus (0.2.0)
     unicode_utils (1.0.0)
 
@@ -10,5 +11,6 @@ PLATFORMS
 
 DEPENDENCIES
   nokogiri
+  stringex
   typhoeus
   unicode_utils
