@@ -1,13 +1,39 @@
 module LCBO
   module CrawlKit
-    class TagHelper
+    module TagHelper
+      DELETION_RE   = /\'|\"|\\|\/|\(|\)|\[|\]|\./
+      WHITESPACE_RE = /\*|\+|\&|\_|\,|\s/
 
-      def self.[](value)
-        return [] unless value && value.to_s.strip != ''
-        TitleCaseHelper.downcase(value).split.reduce([]) do |tags, word|
-          tags << word
-          tags << word.to_ascii
-        end.uniq.join(' ')
+      def self.flatten(values)
+        TitleCaseHelper.downcase(values.flatten.join(' ')).
+          gsub(DELETION_RE, '').
+          gsub(WHITESPACE_RE, ' ').
+          strip
+      end
+
+      def self.split(str)
+        [str, str.to_ascii].
+          join(' ').
+          split.
+          map { |word| stem(word) }.
+          flatten.
+          uniq
+      end
+
+      def self.stem(word)
+        if word.include?('-')
+          parts = word.split('-')
+          a = parts.dup
+          a << parts.join
+          a
+        else
+          word
+        end
+      end
+
+      def self.[](*values)
+        return [] if values.any? { |val| '' == val.to_s.strip }
+        split(flatten(values))
       end
 
     end

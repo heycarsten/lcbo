@@ -19,6 +19,17 @@ module LCBO
       CrawlKit::TitleCaseHelper[product_details_form('itemName')]
     end
 
+    emits :tags do
+      CrawlKit::TagHelper[
+        name,
+        primary_category,
+        secondary_category,
+        origin,
+        producer_name,
+        package_unit_type
+      ]
+    end
+
     emits :price_in_cents do
       (product_details_form('price').to_f * 100).to_i
     end

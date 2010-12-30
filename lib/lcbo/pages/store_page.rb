@@ -36,18 +36,18 @@ module LCBO
       query_params[:store_no].to_i
     end
 
-    DAY_NAMES.each do |day|
-      emits :"#{day}_open" do
-        time_open_close(day)[0]
-      end
-
-      emits :"#{day}_close" do
-        time_open_close(day)[1]
-      end
-    end
-
     emits :name do
       CrawlKit::TitleCaseHelper[info_nodes[1].content.strip]
+    end
+
+    emits :tags do
+      CrawlKit::TagHelper[
+        name,
+        address_line_1,
+        address_line_2,
+        city,
+        postal_code
+      ]
     end
 
     emits :address_line_1 do
@@ -97,6 +97,16 @@ module LCBO
 
     emits :longitude do
       location['longitude'][0].to_f
+    end
+
+    DAY_NAMES.each do |day|
+      emits :"#{day}_open" do
+        time_open_close(day)[0]
+      end
+
+      emits :"#{day}_close" do
+        time_open_close(day)[1]
+      end
     end
 
     DETAIL_FIELDS.keys.each do |field|

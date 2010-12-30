@@ -7,6 +7,7 @@
   :expectation:
     :product_no: 122408
     :name: Pascual Toso Malbec Rose
+    :tags: []
     :price_in_cents: 1195
     :regular_price_in_cents: 1195
     :limited_time_offer_savings_in_cents: 0
@@ -47,6 +48,7 @@
   :expectation:
     :product_no: 18
     :name: Heineken Lager
+    :tags: ["heineken", "lager", "beer", "netherlands", "heinekens", "brouwerijen", "nederland", "bv", "bottle"]
     :price_in_cents: 1250
     :regular_price_in_cents: 1350
     :limited_time_offer_savings_in_cents: 100
@@ -87,6 +89,7 @@
   :expectation:
     :product_no: 280461
     :name: Dom Pérignon Brut Champagne
+    :tags: ["dom", "pérignon", "brut", "champagne", "wine", "france", "moet", "chandon", "sa", "bottle", "perignon"]
     :price_in_cents: 21995
     :regular_price_in_cents: 21995
     :limited_time_offer_savings_in_cents: 0
@@ -127,6 +130,7 @@
   :expectation:
     :product_no: 479154
     :name: Floris Ninkeberry Gardenbeer
+    :tags: ["floris", "ninkeberry", "gardenbeer", "beer", "ale", "belgium", "brouwerij", "huyghe", "bottle"]
     :price_in_cents: 250
     :regular_price_in_cents: 250
     :limited_time_offer_savings_in_cents: 0
@@ -167,6 +171,7 @@
   :expectation:
     :product_no: 148528
     :name: Bodegas Ruconia Rey Don Garcia El de Najera Crianza 2005
+    :tags: ["bodegas", "ruconia", "rey", "don", "garcia", "el", "de", "najera", "crianza", "2005", "wine", "red", "rioja", "spain", "sl", "bottle"]
     :price_in_cents: 1595
     :regular_price_in_cents: 1595
     :limited_time_offer_savings_in_cents: 0
@@ -207,6 +212,7 @@
   :expectation:
     :product_no: 582973
     :name: Bombay Sapphire
+    :tags: ["bombay", "sapphire", "spirits", "gin", "england", "united", "kingdom", "company", "ltd", "bottle"]
     :price_in_cents: 5545
     :regular_price_in_cents: 5545
     :limited_time_offer_savings_in_cents: 0
@@ -247,6 +253,7 @@
   :expectation:
     :product_no: 2183079
     :name: Lake & River Series Cabernet Franc VQA
+    :tags: []
     :price_in_cents: 1095
     :regular_price_in_cents: 1095
     :limited_time_offer_savings_in_cents: 0
@@ -287,6 +294,7 @@
   :expectation:
     :product_no: 114173
     :name: 05 Sauv Blanc Weinstock Cellar K
+    :tags: []
     :price_in_cents: 2295
     :regular_price_in_cents: 2295
     :limited_time_offer_savings_in_cents: 0

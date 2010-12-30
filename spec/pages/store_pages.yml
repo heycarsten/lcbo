@@ -7,6 +7,7 @@
   :expectation:
     :store_no: 444
     :name: Kennedy & Sheppard
+    :tags: ["kennedy", "sheppard", "2356", "road", "agincourt", "mall", "toronto", "scarborough", "torontoscarborough", "m1t3h1"]
     :address_line_1: 2356 Kennedy Road
     :address_line_2: Agincourt Mall
     :city: Toronto-Scarborough
@@ -61,6 +62,7 @@
     :sunday_open: 720
     :sunday_close: 960
     :name: Flora & Clinton Street
+    :tags: ["flora", "clinton", "street", "1", "industrial", "road", "unit", "b", "teeswater", "n0g2s0"]
     :address_line_1: 1 Industrial Road
     :address_line_2: Unit B
     :city: Teeswater
