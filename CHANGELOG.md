@@ -1,3 +1,8 @@
+Version 0.10.1
+
+ * Added `#tags` attribute to `ProductPage` and `StorePage` to provide simple
+   stems for full-text search.
+
 Version 0.10.0
 
  * Moved `CrawlKit` related errors into the `CrawlKit` namespace.
