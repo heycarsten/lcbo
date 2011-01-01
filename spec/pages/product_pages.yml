@@ -7,7 +7,7 @@
   :expectation:
     :product_no: 122408
     :name: Pascual Toso Malbec Rose
-    :tags: []
+    :tags: ["pascual", "toso", "malbec", "rose", "wine", "argentina", "bottle"]
     :price_in_cents: 1195
     :regular_price_in_cents: 1195
     :limited_time_offer_savings_in_cents: 0
@@ -253,7 +253,7 @@
   :expectation:
     :product_no: 2183079
     :name: Lake & River Series Cabernet Franc VQA
-    :tags: []
+    :tags: ["lake", "river", "series", "cabernet", "franc", "vqa", "wine", "ontario", "canada", "colio", "wines", "of", "ltd", "bottle"]
     :price_in_cents: 1095
     :regular_price_in_cents: 1095
     :limited_time_offer_savings_in_cents: 0
@@ -294,7 +294,7 @@
   :expectation:
     :product_no: 114173
     :name: 05 Sauv Blanc Weinstock Cellar K
-    :tags: []
+    :tags: ["05", "sauv", "blanc", "weinstock", "cellar", "k", "wine", "california", "united", "states", "royal", "wines", "bottle"]
     :price_in_cents: 2295
     :regular_price_in_cents: 2295
     :limited_time_offer_savings_in_cents: 0
@@ -326,3 +326,47 @@
     :description:
     :serving_suggestion:
     :tasting_note:
+
+- :file: 9.html
+  :desc: Product with Value Added Promotion
+  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=56796
+  :method: :get
+  :query_params:
+    :product_no: 56796
+  :expectation:
+    :product_no: 56796
+    :name: Heineken Draught Keg
+    :tags: ["heineken", "draught", "keg", "beer", "lager", "netherlands", "heinekens", "brouwerijen", "nederland", "bv", "can"]
+    :price_in_cents: 2995
+    :regular_price_in_cents: 2995
+    :limited_time_offer_savings_in_cents: 0
+    :limited_time_offer_ends_on:
+    :bonus_reward_miles: 0
+    :bonus_reward_miles_ends_on:
+    :stock_type: LCBO
+    :primary_category: Beer
+    :secondary_category: Lager
+    :origin: Netherlands
+    :package: 5000 mL can
+    :package_unit_type: can
+    :package_unit_volume_in_milliliters: 5000
+    :total_package_units: 1
+    :total_package_volume_in_milliliters: 5000
+    :volume_in_milliliters: 5000
+    :alcohol_content: 500
+    :price_per_liter_of_alcohol_in_cents: 1198
+    :price_per_liter_in_cents: 599
+    :sugar_content: "3"
+    :producer_name: Heineken's Brouwerijen Nederland Bv
+    :released_on:
+    :is_discontinued: false
+    :has_limited_time_offer: false
+    :has_bonus_reward_miles: false
+    :has_value_added_promotion: true
+    :is_seasonal: false
+    :is_vqa: false
+    :is_kosher: false
+    :description:
+    :serving_suggestion: Medium curry, pizza or burgers
+    :tasting_note: Pale gold colour; softly perfumed nose with some hoppy elements; soft grain taste; gently bitter finish.
+    :value_added_promotion_description: 5000 mL can comes with FREE Cooler Bag Wrap until Jan 1, 2011 or while supplies last!

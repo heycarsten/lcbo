@@ -193,6 +193,10 @@ module LCBO
       html.include?('<B>Bonus Reward Miles Offer</B>')
     end
 
+    emits :has_value_added_promotion do
+      html.include?('<B>Value Added Promotion</B>')
+    end
+
     emits :is_seasonal do
       html.include?('<font color="#ff0000">SEASONAL/LIMITED QUANTITIES</font>')
     end
@@ -207,28 +211,29 @@ module LCBO
 
     emits :description do
       if html.include?('<B>Description</B>')
-        match = html.match(/<B>Description<\/B><\/font><BR>\n\t\t\t(.*)<BR>\n\t\t\t<BR>/m)
-        match ? match.captures[0] : nil
-      else
-        nil
+        match = html.match(/<B>Description<\/B><\/font><BR>\n\t\t\t(.+?)<BR>\n\t\t\t<BR>/m)
+        CrawlKit::CaptionHelper[match && match.captures[0]]
       end
     end
 
     emits :serving_suggestion do
       if html.include?('<B>Serving Suggestion</B>')
-        match = html.match(/<B>Serving Suggestion<\/B><\/font><BR>\n\t\t\t(.*)<BR><BR>/m)
-        match ? match.captures[0] : nil
-      else
-        nil
+        match = html.match(/<B>Serving Suggestion<\/B><\/font><BR>\n\t\t\t(.+?)<BR><BR>/m)
+        CrawlKit::CaptionHelper[match && match.captures[0]]
       end
     end
 
     emits :tasting_note do
       if html.include?('<B>Tasting Note</B>')
-        match = html.match(/<B>Tasting Note<\/B><\/font><BR>\n\t\t\t(.*)<BR>\n\t\t\t<BR>/m)
-        match ? match.captures[0] : nil
-      else
-        nil
+        match = html.match(/<B>Tasting Note<\/B><\/font><BR>\n\t\t\t(.+?)<BR>\n\t\t\t<BR>/m)
+        CrawlKit::CaptionHelper[match && match.captures[0]]
+      end
+    end
+
+    emits :value_added_promotion_description do
+      if has_value_added_promotion
+        match = html.match(/<B>Value Added Promotion<\/B><\/FONT><BR>(.+?)<BR><BR>/m)
+        CrawlKit::CaptionHelper[match && match.captures[0]]
       end
     end
 

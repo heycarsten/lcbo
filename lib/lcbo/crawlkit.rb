@@ -19,6 +19,7 @@ module LCBO
   end
 end
 
+require 'lcbo/crawlkit/caption_helper'
 require 'lcbo/crawlkit/eventable'
 require 'lcbo/crawlkit/fastdate_helper'
 require 'lcbo/crawlkit/page'
