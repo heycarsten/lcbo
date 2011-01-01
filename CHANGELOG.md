@@ -1,3 +1,12 @@
+Version 0.11.0
+
+ * Added helper to format phone numbers to (XXX) XXX-XXXX regardless of the
+   input format.
+ * Added `ProductPage#has_value_added_promotion` and
+   `ProductPage#value_added_promotion_description`.
+ * Fixed bug where `TagHelper` would return no tags if one of the input values
+   was nil.
+
 Version 0.10.1
 
  * Added `#tags` attribute to `ProductPage` and `StorePage` to provide simple
