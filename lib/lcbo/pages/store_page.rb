@@ -79,15 +79,19 @@ module LCBO
     end
 
     emits :telephone do
-      info_nodes[4].content.
-        gsub(/[\n\r\t]+/, ' ').
-        gsub('Telephone:', '').
-        strip
+      CrawlKit::PhoneHelper[
+        info_nodes[4].content.
+          gsub(/[\n\r\t]+/, ' ').
+          gsub('Telephone:', '').
+          strip
+      ]
     end
 
     emits :fax do
       if has_fax?
-        info_nodes[5].content.gsub(/[\n\r\t]+/, ' ').gsub('Fax:', '').strip
+        CrawlKit::PhoneHelper[
+          info_nodes[5].content.gsub(/[\n\r\t]+/, ' ').gsub('Fax:', '').strip
+        ]
       end
     end
 

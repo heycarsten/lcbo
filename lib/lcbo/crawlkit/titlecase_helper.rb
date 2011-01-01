@@ -1,5 +1,4 @@
 # coding: utf-8
-# TODO: This is an ugly piece of ass that should burn and die!
 module LCBO
   module CrawlKit
     class TitleCaseHelper

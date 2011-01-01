@@ -22,6 +22,7 @@ end
 require 'lcbo/crawlkit/eventable'
 require 'lcbo/crawlkit/fastdate_helper'
 require 'lcbo/crawlkit/page'
+require 'lcbo/crawlkit/phone_helper'
 require 'lcbo/crawlkit/request'
 require 'lcbo/crawlkit/response'
 require 'lcbo/crawlkit/tag_helper'
