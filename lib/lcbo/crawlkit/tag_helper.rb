@@ -32,7 +32,7 @@ module LCBO
       end
 
       def self.[](*values)
-        return [] if values.any? { |val| '' == val.to_s.strip }
+        return [] if values.all? { |val| '' == val.to_s.strip }
         split(flatten(values))
       end
 
