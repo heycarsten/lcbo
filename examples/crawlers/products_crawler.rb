@@ -6,14 +6,14 @@ class ProductsCrawler
     ProductListsCrawler.run
   end
 
-  def request(product_no)
-    LCBO.product(product_no)
+  def request(id)
+    LCBO.product(id)
   end
 
-  def failure(error, product_no)
+  def failure(error, id)
     case error
     when LCBO::CrawlKit::NotFoundError
-      puts "[missing] Skipped product ##{product_no}"
+      puts "[missing] Skipped product ##{id}"
     else
       raise error
     end

@@ -11,7 +11,7 @@ class ProductListsCrawler
   end
 
   def reduce
-    responses.map { |params| params[:product_nos] }.flatten
+    responses.map { |params| params[:product_ids] }.flatten
   end
 
 end

@@ -3,9 +3,9 @@
   :uri: http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE=444&language=EN
   :method: :get
   :query_params:
-    :store_no: 444
+    :id: 444
   :expectation:
-    :store_no: 444
+    :id: 444
     :name: Kennedy & Sheppard
     :tags: ["kennedy", "sheppard", "2356", "road", "agincourt", "mall", "toronto", "scarborough", "torontoscarborough", "m1t3h1"]
     :address_line_1: 2356 Kennedy Road
@@ -44,9 +44,9 @@
   :uri: http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE=610&language=EN
   :method: :get
   :query_params:
-    :store_no: 610
+    :id: 610
   :expectation:
-    :store_no: 610
+    :id: 610
     :monday_open:
     :monday_close:
     :tuesday_open: 570

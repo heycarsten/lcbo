@@ -5,8 +5,7 @@ module LCBO
 
     include CrawlKit::Page
 
-    uri 'http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?' \
-        'STORE={store_no}&language=EN'
+    uri 'http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE={id}&language=EN'
 
     DAY_NAMES = %w[
       monday
@@ -32,8 +31,8 @@ module LCBO
     on :after_parse,  :verify_node_count
     on :after_parse,  :verify_telephone_number
 
-    emits :store_no do
-      query_params[:store_no].to_i
+    emits :id do
+      query_params[:id].to_i
     end
 
     emits :name do
@@ -54,7 +53,7 @@ module LCBO
       data = info_nodes[2].content.strip.split(',')[0]
       unless data
         raise CrawlKit::MalformedError,
-        "unable to locate address for store #{store_no}"
+        "unable to locate address for store #{idid}"
       end
       CrawlKit::TitleCaseHelper[data.gsub(/[\n\r\t]+/, ' ').strip]
     end
@@ -73,7 +72,7 @@ module LCBO
       data = info_nodes[3].content.strip.split(',')[1]
       unless data
         raise CrawlKit::MalformedError,
-        "unable to locate postal code for store #{store_no}"
+        "unable to locate postal code for store #{id}"
       end
       data.gsub(/[\n\r\t]+/, ' ').strip.upcase
     end
@@ -188,19 +187,19 @@ module LCBO
 
     def verify_store_returned
       return if !@html.include?('No stores were located using your criteria.')
-      raise CrawlKit::NotFoundError, "store #{store_no} does not exist"
+      raise CrawlKit::NotFoundError, "store #{id} does not exist"
     end
 
     def verify_telephone_number
       return if telephone
       raise CrawlKit::MalformedError,
-        "unable to locate telephone number for store #{store_no}"
+        "unable to locate telephone number for store #{id}"
     end
 
     def verify_node_count
       return if expected_node_count == info_nodes.size
       raise CrawlKit::MalformedError,
-        "Expected #{expected_node_count} nodes for store #{store_no} but found " \
+        "Expected #{expected_node_count} nodes for store #{id} but found " \
         "#{info_nodes.size} instead."
     end
 

@@ -64,7 +64,7 @@ module LCBO
       end
     end
 
-    emits :product_nos do
+    emits :product_ids do
       product_anchors.reduce([]) do |ary, a|
         if (match = a.attribute('href').value.match(/\&itemNumber=([0-9]+)/))
           ary << (match.captures[0].to_i)
@@ -73,7 +73,7 @@ module LCBO
         end
       end
     end
-    alias_method :as_array, :product_nos
+    alias_method :as_array, :product_ids
 
     def product_anchors
       doc.css('td[style="padding: 5 5 5 0;"] a.item-details-col2')

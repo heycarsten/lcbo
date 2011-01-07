@@ -9,19 +9,19 @@ store list pages directly from the [LCBO](http://lcbo.com) website.
     require 'lcbo'
 
     LCBO.store(511)
-    # => { :store_no => 511, :name => "King & Spadina", ... }
+    # => { :id => 511, :name => "King & Spadina", ... }
 
     LCBO.product(18)
-    # => { :product_no => 18, :name => "Heineken Lager", ... }
+    # => { :id => 18, :name => "Heineken Lager", ... }
 
     LCBO.inventory(18)
-    # => { :product_no => 18, :inventory_count => 40398, :inventories => [ ... ] }
+    # => { :id => 18, :inventory_count => 40398, :inventories => [ ... ] }
 
     LCBO.products_list(1)
-    # => { :page => 1, :final_page => 108, ..., :product_nos => [ ... ] }
+    # => { :page => 1, :final_page => 108, ..., :product_ids => [ ... ] }
 
     LCBO.store_list
-    # => { :store_nos => [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, ...] }
+    # => { :store_ids => [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, ...] }
 
 ## Crawlers
 

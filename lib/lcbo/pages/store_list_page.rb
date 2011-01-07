@@ -24,8 +24,8 @@ module LCBO
       :'Find Stores.y'        => '9',
       :municipality_citywide  => ''
 
-    emits :store_nos do
-      @store_nos ||= begin
+    emits :store_ids do
+      @store_ids ||= begin
         anchors.reduce([]) { |ary, a|
           if (match = a.attribute('href').value.match(/\&STORE=([0-9]+)/))
             ary << match.captures[0].to_i
@@ -41,7 +41,7 @@ module LCBO
     end
 
     def verify_number_of_stores
-      return if STORE_COUNT_RANGE.include?(store_nos.length)
+      return if STORE_COUNT_RANGE.include?(store_ids.length)
       raise CrawlKit::MalformedError,
         "Store count (#{total_stores}) not in range: #{STORE_COUNT_RANGE}"
     end

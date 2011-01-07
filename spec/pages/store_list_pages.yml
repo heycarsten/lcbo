@@ -5,7 +5,7 @@
   :query_params: {}
   :body_params: {}
   :expectation:
-    :store_nos:
+    :store_ids:
       - 1
       - 2
       - 3

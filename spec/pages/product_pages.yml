@@ -3,9 +3,9 @@
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=122408
   :method: :get
   :query_params:
-    :product_no: 122408
+    :id: 122408
   :expectation:
-    :product_no: 122408
+    :id: 122408
     :name: Pascual Toso Malbec Rose
     :tags: ["pascual", "toso", "malbec", "rose", "wine", "argentina", "bottle"]
     :price_in_cents: 1195
@@ -44,9 +44,9 @@
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=18
   :method: :get
   :query_params:
-    :product_no: 18
+    :id: 18
   :expectation:
-    :product_no: 18
+    :id: 18
     :name: Heineken Lager
     :tags: ["heineken", "lager", "beer", "netherlands", "heinekens", "brouwerijen", "nederland", "bv", "bottle"]
     :price_in_cents: 1250
@@ -85,9 +85,9 @@
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=280461
   :method: :get
   :query_params:
-    :product_no: 280461
+    :id: 280461
   :expectation:
-    :product_no: 280461
+    :id: 280461
     :name: Dom Pérignon Brut Champagne
     :tags: ["dom", "pérignon", "brut", "champagne", "wine", "france", "moet", "chandon", "sa", "bottle", "perignon"]
     :price_in_cents: 21995
@@ -126,9 +126,9 @@
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=479154
   :method: :get
   :query_params:
-    :product_no: 479154
+    :id: 479154
   :expectation:
-    :product_no: 479154
+    :id: 479154
     :name: Floris Ninkeberry Gardenbeer
     :tags: ["floris", "ninkeberry", "gardenbeer", "beer", "ale", "belgium", "brouwerij", "huyghe", "bottle"]
     :price_in_cents: 250
@@ -167,9 +167,9 @@
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=148528
   :method: :get
   :query_params:
-    :product_no: 148528
+    :id: 148528
   :expectation:
-    :product_no: 148528
+    :id: 148528
     :name: Bodegas Ruconia Rey Don Garcia El de Najera Crianza 2005
     :tags: ["bodegas", "ruconia", "rey", "don", "garcia", "el", "de", "najera", "crianza", "2005", "wine", "red", "rioja", "spain", "sl", "bottle"]
     :price_in_cents: 1595
@@ -208,9 +208,9 @@
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=582973
   :method: :get
   :query_params:
-    :product_no: 582973
+    :id: 582973
   :expectation:
-    :product_no: 582973
+    :id: 582973
     :name: Bombay Sapphire
     :tags: ["bombay", "sapphire", "spirits", "gin", "england", "united", "kingdom", "company", "ltd", "bottle"]
     :price_in_cents: 5545
@@ -249,9 +249,9 @@
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=2183079
   :method: :get
   :query_params:
-    :product_no: 2183079
+    :id: 2183079
   :expectation:
-    :product_no: 2183079
+    :id: 2183079
     :name: Lake & River Series Cabernet Franc VQA
     :tags: ["lake", "river", "series", "cabernet", "franc", "vqa", "wine", "ontario", "canada", "colio", "wines", "of", "ltd", "bottle"]
     :price_in_cents: 1095
@@ -290,9 +290,9 @@
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=114173
   :method: :get
   :query_params:
-    :product_no: 114173
+    :id: 114173
   :expectation:
-    :product_no: 114173
+    :id: 114173
     :name: 05 Sauv Blanc Weinstock Cellar K
     :tags: ["05", "sauv", "blanc", "weinstock", "cellar", "k", "wine", "california", "united", "states", "royal", "wines", "bottle"]
     :price_in_cents: 2295
@@ -332,9 +332,9 @@
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=56796
   :method: :get
   :query_params:
-    :product_no: 56796
+    :id: 56796
   :expectation:
-    :product_no: 56796
+    :id: 56796
     :name: Heineken Draught Keg
     :tags: ["heineken", "draught", "keg", "beer", "lager", "netherlands", "heinekens", "brouwerijen", "nederland", "bv", "can"]
     :price_in_cents: 2995

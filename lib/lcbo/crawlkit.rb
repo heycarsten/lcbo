@@ -2,6 +2,7 @@ require 'nokogiri'
 require 'typhoeus'
 require 'unicode_utils'
 require 'stringex'
+require 'timeout'
 require 'uri'
 
 module LCBO

@@ -16,20 +16,20 @@ module LCBO
     page[page_type].parse(response)
   end
 
-  def self.product(product_no)
-    ProductPage.process(:product_no => product_no).as_hash
+  def self.product(id)
+    ProductPage.process(:id => id).as_hash
   end
 
-  def self.store(store_no)
-    StorePage.process(:store_no => store_no).as_hash
+  def self.store(id)
+    StorePage.process(:id => id).as_hash
   end
 
-  def self.inventory(product_no)
-    InventoryPage.process(:product_no => product_no).as_hash
+  def self.inventory(product_id)
+    InventoryPage.process(:product_id => product_id).as_hash
   end
 
-  def self.product_list(page_number)
-    ProductListPage.process({}, { :page => page_number }).as_hash
+  def self.product_list(page_num)
+    ProductListPage.process({}, :page => page_num).as_hash
   end
 
   def self.store_list
