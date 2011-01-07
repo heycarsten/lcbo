@@ -1,3 +1,9 @@
+Version 1.0.0beta1
+
+ * Added rule to titlecase helper to account for names like L'Andéol.
+ * Changed instances of `store_no`, and `product_no`, to `store_id`,
+   `product_id`, and `id` where appropriate.
+
 Version 0.11.0
 
  * Added helper to format phone numbers to (XXX) XXX-XXXX regardless of the
