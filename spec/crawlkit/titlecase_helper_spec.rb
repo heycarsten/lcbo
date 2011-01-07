@@ -13,7 +13,8 @@ describe LCBO::CrawlKit::TitleCaseHelper do
     'SOME NICE VQA WINE'               => 'Some Nice VQA Wine',
     'A PRODUCT NAME (WITH STUPID CRAP' => 'A Product Name',
     'A PRODUCT NAME (FROM FRANCE)'     => 'A Product Name',
-    'SOMEONE\'S PRODUCT'               => 'Someone\'s Product' }
+    'SOMEONE\'S PRODUCT'               => 'Someone\'s Product',
+    'CUVÉE DE L\'ÉCUSSON BRUT'         => 'Cuvée de L\'Écusson Brut' }
 
   @expectations.each_pair do |input, expectation|
     it "should convert: #{input.inspect} to: #{expectation.inspect}" do

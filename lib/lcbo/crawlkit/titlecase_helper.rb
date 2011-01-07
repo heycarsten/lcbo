@@ -4,15 +4,13 @@ module LCBO
     class TitleCaseHelper
 
       SMALL_WORDS = %w[
-        a an and as at but by en for
-        if in of del de on or the to
-        v v. via vs vs.
+        a an and as at but by en for if in of del de on or the to v v. via
+        vs.
       ]
 
       ACRONYMS = %w[
-        vqa vsop xo nq5 vs xxx igt
-        xiii xi xoxo srl bdb cvbg
-        ocb lcbo i ii iii
+        i ii iii iv v vi vii viii ix x xiii xi vqa vsop xo nq5 vs xxx igt xoxo
+        srl bdb cvbg ocb lcbo gtm hf yo vs
       ]
 
       attr_reader :input
@@ -57,7 +55,10 @@ module LCBO
           else
             word
           end
-        end.join(' ').gsub(/(['’])S\b/, '\1s')
+        end.
+        join(' ').
+        gsub(/(['’])S\b/, '\1s'). # Word'S => Word's
+        gsub(/(\S{1})'(\S{2,})/u) { "#{$1}'#{capitalize $2}" } # D'aux => D'Aux
       end
 
     end
