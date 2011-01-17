@@ -1,3 +1,8 @@
+Version 1.0.0
+
+ * Fixed issue that affected about 10 products in where if the name began
+   with a `(` character the output name would be blank.
+
 Version 1.0.0beta1
 
  * Added rule to titlecase helper to account for names like L'Andéol.
