@@ -34,7 +34,7 @@ module LCBO
       def self.titlecase(string)
         preclean = lambda { |s|
           # Strip bracketed stuff and trailing junk: Product (Junk)**
-          s.gsub(/\(.+\Z/, '').gsub(/\*+\Z/, '').strip
+          s.gsub(/\((.+?)\)|\*+|\((.+?)\Z/, '').strip
         }
         count = 0 # Ewwww
         capitalize(preclean.(string)).split.map do |word|
