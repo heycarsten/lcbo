@@ -1,3 +1,8 @@
+Version 1.0.1
+
+ * Fixed issue where `TagHelper` was not including words with apostrophes (')
+   or dashes (-).
+
 Version 1.0.0
 
  * Fixed issue that affected about 10 products in where if the name began
