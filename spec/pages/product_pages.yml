@@ -48,7 +48,7 @@
   :expectation:
     :id: 18
     :name: Heineken Lager
-    :tags: ["heineken", "lager", "beer", "netherlands", "heinekens", "brouwerijen", "nederland", "bv", "bottle"]
+    :tags: ["heineken", "lager", "beer", "netherlands", "heineken's", "heinekens", "brouwerijen", "nederland", "bv", "bottle"]
     :price_in_cents: 1250
     :regular_price_in_cents: 1350
     :limited_time_offer_savings_in_cents: 100
@@ -336,7 +336,7 @@
   :expectation:
     :id: 56796
     :name: Heineken Draught Keg
-    :tags: ["heineken", "draught", "keg", "beer", "lager", "netherlands", "heinekens", "brouwerijen", "nederland", "bv", "can"]
+    :tags: ["heineken", "draught", "keg", "beer", "lager", "netherlands", "heineken's", "heinekens", "brouwerijen", "nederland", "bv", "can"]
     :price_in_cents: 2995
     :regular_price_in_cents: 2995
     :limited_time_offer_savings_in_cents: 0

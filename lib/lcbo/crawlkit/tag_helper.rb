@@ -1,7 +1,7 @@
 module LCBO
   module CrawlKit
     module TagHelper
-      DELETION_RE   = /\'|\"|\\|\/|\(|\)|\[|\]|\./
+      DELETION_RE   = /\"|\\|\/|\(|\)|\[|\]|\./
       WHITESPACE_RE = /\*|\+|\&|\_|\,|\s/
 
       def self.flatten(values)
@@ -21,14 +21,27 @@ module LCBO
       end
 
       def self.stem(word)
-        if word.include?('-')
-          parts = word.split('-')
-          a = parts.dup
-          a << parts.join
-          a
-        else
-          word
-        end
+        split = lambda { |word|
+          if word.include?('-')
+            words = word.split('-')
+            a = words.dup
+            a << word
+            a << words.join
+            a
+          else
+            [word]
+          end
+        }
+
+        tokenize = lambda { |words|
+          words.reduce([]) do |tokens, word|
+            tokens << word
+            tokens << word.gsub("'", '') if word.include?("'")
+            tokens
+          end
+        }
+
+        tokenize.(split.(word))
       end
 
       def self.[](*values)

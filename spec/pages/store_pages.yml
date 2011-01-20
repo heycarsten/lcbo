@@ -7,7 +7,7 @@
   :expectation:
     :id: 444
     :name: Kennedy & Sheppard
-    :tags: ["kennedy", "sheppard", "2356", "road", "agincourt", "mall", "toronto", "scarborough", "torontoscarborough", "m1t3h1"]
+    :tags: ["kennedy", "sheppard", "2356", "road", "agincourt", "mall", "toronto", "scarborough", "toronto-scarborough", "torontoscarborough", "m1t3h1"]
     :address_line_1: 2356 Kennedy Road
     :address_line_2: Agincourt Mall
     :city: Toronto-Scarborough
