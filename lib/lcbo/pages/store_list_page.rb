@@ -30,7 +30,7 @@ module LCBO
           if (match = a.attribute('href').value.match(/\&STORE=([0-9]+)/))
             ary << match.captures[0].to_i
           else
-            next nos
+            next ary
           end
         }.sort
       end
@@ -43,7 +43,7 @@ module LCBO
     def verify_number_of_stores
       return if STORE_COUNT_RANGE.include?(store_ids.length)
       raise CrawlKit::MalformedError,
-        "Store count (#{total_stores}) not in range: #{STORE_COUNT_RANGE}"
+        "Store count (#{store_ids.length}) not in range: #{STORE_COUNT_RANGE}"
     end
 
   end

@@ -1,16 +1,25 @@
+PATH
+  remote: .
+  specs:
+    lcbo (1.0.2)
+      nokogiri (~> 1.4.4)
+      stringex (~> 1.2.0)
+      typhoeus (~> 0.2.4)
+      unicode_utils (~> 1.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
+    mime-types (1.16)
     nokogiri (1.4.4)
     stringex (1.2.0)
-    typhoeus (0.2.0)
+    typhoeus (0.2.4)
+      mime-types
+      mime-types
     unicode_utils (1.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  nokogiri
-  stringex
-  typhoeus
-  unicode_utils
+  lcbo!

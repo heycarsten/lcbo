@@ -14,10 +14,10 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = '>= 1.3.6'
   s.rubyforge_project = 'lcbo'
 
-  s.add_dependency 'typhoeus'
-  s.add_dependency 'nokogiri'
-  s.add_dependency 'unicode_utils'
-  s.add_dependency 'stringex'
+  s.add_dependency 'typhoeus',      '~> 0.2.4'
+  s.add_dependency 'nokogiri',      '~> 1.4.4'
+  s.add_dependency 'unicode_utils', '~> 1.0.0'
+  s.add_dependency 'stringex',      '~> 1.2.0'
 
   s.files         = `git ls-files`.split(?\n)
   s.test_files    = `git ls-files -- {test,spec}/*`.split(?\n)

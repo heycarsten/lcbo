@@ -28,7 +28,7 @@ module LCBO
         opts = {}
         opts[:method]     = request_prototype.http_method
         opts[:user_agent] = USER_AGENT
-        opts[:params]     = body_params unless gettable?
+        opts[:body]       = _body if body_params && !gettable?
         opts
       end
 
@@ -44,6 +44,11 @@ module LCBO
       end
 
       protected
+
+      def _body
+        traversal = Typhoeus::Utils.traverse_params_hash(body_params)
+        Typhoeus::Utils.traversal_to_param_string(traversal)
+      end
 
       def _run(tries = 0)
         response = Timeout.timeout(LCBO.config[:timeout]) do

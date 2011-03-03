@@ -1,3 +1,8 @@
+Version 1.0.2
+
+ * Specified Typhoeus 0.2.4 in gemspec and fixed issue where post body was not
+   being sent with requests.
+
 Version 1.0.1
 
  * Fixed issue where `TagHelper` was not including words with apostrophes (')
