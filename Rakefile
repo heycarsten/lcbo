@@ -1,5 +1,5 @@
 require 'rubygems/specification' unless defined?(Gem::Specification)
-require 'rake/gempackagetask'
+require 'rubygems/package_task'
 require 'rake/testtask'
 
 def gemspec
@@ -35,7 +35,7 @@ task :release => :package do
   sh "gem push pkg/#{gemspec.name}-#{gemspec.version}.gem"
 end
 
-Rake::GemPackageTask.new(gemspec) do |pkg|
+Gem::PackageTask.new(gemspec) do |pkg|
   pkg.gem_spec = gemspec
 end
 task :gem => :gemspec

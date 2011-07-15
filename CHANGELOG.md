@@ -1,3 +1,8 @@
+Version 1.1.0
+
+ * Added image URLs to products when available.
+ * Added "IPA" to the list of initialisms.
+
 Version 1.0.2
 
  * Specified Typhoeus 0.2.4 in gemspec and fixed issue where post body was not

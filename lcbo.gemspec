@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{A library for parsing HTML pages from http://lcbo.com}
   s.description = %q{Request and parse product, store, inventory, and product search pages directly from the official LCBO website.}
 
-  s.required_rubygems_version = '>= 1.3.6'
+  s.required_rubygems_version = '>= 1.8.5'
   s.rubyforge_project = 'lcbo'
 
   s.add_dependency 'typhoeus',      '~> 0.2.4'
