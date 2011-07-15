@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lcbo (1.0.2)
+    lcbo (1.1.0)
       nokogiri (~> 1.4.4)
       stringex (~> 1.2.0)
       typhoeus (~> 0.2.4)
@@ -11,7 +11,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     mime-types (1.16)
-    nokogiri (1.4.4)
+    nokogiri (1.4.5)
     stringex (1.2.0)
     typhoeus (0.2.4)
       mime-types

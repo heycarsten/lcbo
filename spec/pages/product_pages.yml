@@ -38,6 +38,8 @@
     :description:
     :tasting_note:
     :serving_suggestion:
+    :image_thumb_url:
+    :image_url:
 
 - :file: 2.html
   :desc: Product with limited time offer
@@ -79,6 +81,8 @@
     :description:
     :tasting_note: "Pale gold colour; softly perfumed nose with some hoppy elements; soft grain taste; gently bitter finish."
     :serving_suggestion: "Medium curry, pizza or burgers"
+    :image_thumb_url:
+    :image_url:
 
 - :file: 3.html
   :desc: Product with bonus air miles
@@ -120,6 +124,8 @@
     :description: "The legend now joins our Essentials Collection. Purported to be the father of all Champagne, Dom Pérignon continues to impress generation after generation. This ultimate anniversary, or birthday celebration, bubbly is only made in the greatest years. Loaded with stylish aromas of citrus, artisanal bread, green apple, mineral and pear, it's quite dry and vibrantly refreshing on the palate. Every vintage Robert Parker has reviewed from 1982 to the present has received scores in the range of 92 to 98 points! Expect to be impressed."
     :tasting_note:
     :serving_suggestion:
+    :image_thumb_url:
+    :image_url:
 
 - :file: 4.html
   :desc: Discontinued product
@@ -161,6 +167,8 @@
     :description:
     :tasting_note:
     :serving_suggestion:
+    :image_thumb_url:
+    :image_url:
 
 - :file: 5.html
   :desc: Product with release date
@@ -202,6 +210,8 @@
     :description:
     :tasting_note: "Excellent example of a more mature Crianza, featuring aromas of cherry, dried fruit, vanilla and sweet oak spice. Dry and fruity, this wine's tannins have softened out considerably making this wine very approachable. A fine wine for a rich lamb stew or roast beef. (VINTAGES panel, July 2009)"
     :serving_suggestion:
+    :image_thumb_url:
+    :image_url:
 
 - :file: 6.html
   :desc: Standard product
@@ -243,6 +253,8 @@
     :description:
     :tasting_note: "Clear water white; complex mix of herbs and juniper on the nose with crisp lemon peel flavours; smooth and refreshing"
     :serving_suggestion: "Martinis, mixed drinks"
+    :image_thumb_url:
+    :image_url:
 
 - :file: 7.html
   :desc: VQA product
@@ -284,6 +296,8 @@
     :description:
     :tasting_note:
     :serving_suggestion:
+    :image_thumb_url:
+    :image_url:
 
 - :file: 8.html
   :desc: Kosher Product
@@ -326,6 +340,8 @@
     :description:
     :serving_suggestion:
     :tasting_note:
+    :image_thumb_url:
+    :image_url:
 
 - :file: 9.html
   :desc: Product with Value Added Promotion
@@ -370,3 +386,51 @@
     :serving_suggestion: Medium curry, pizza or burgers
     :tasting_note: Pale gold colour; softly perfumed nose with some hoppy elements; soft grain taste; gently bitter finish.
     :value_added_promotion_description: 5000 mL can comes with FREE Cooler Bag Wrap until Jan 1, 2011 or while supplies last!
+    :image_thumb_url:
+    :image_url:
+
+- :file: 10.html
+  :desc: Product with Image
+  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=90399
+  :method: :get
+  :query_params:
+    :id: 90399
+  :expectation:
+    :id: 90399
+    :name: Yellow Tail Bubbles Rose
+    :tags: ["yellow", "tail", "bubbles", "rose", "wine", "sparkling", "australia", "casella", "wines", "bottle"]
+    :price_in_cents: 1395
+    :regular_price_in_cents: 1395
+    :limited_time_offer_savings_in_cents: 0
+    :limited_time_offer_ends_on:
+    :bonus_reward_miles: 0
+    :bonus_reward_miles_ends_on:
+    :stock_type: LCBO
+    :primary_category: Wine
+    :secondary_category: Sparkling Wine
+    :origin: Australia
+    :package: 750 mL bottle
+    :package_unit_type: bottle
+    :package_unit_volume_in_milliliters: 750
+    :total_package_units: 1
+    :total_package_volume_in_milliliters: 750
+    :volume_in_milliliters: 750
+    :alcohol_content: 1200
+    :price_per_liter_of_alcohol_in_cents: 1550
+    :price_per_liter_in_cents: 1860
+    :sugar_content: "2"
+    :producer_name: Casella Wines
+    :released_on:
+    :is_discontinued: false
+    :has_limited_time_offer: false
+    :has_bonus_reward_miles: false
+    :has_value_added_promotion: false
+    :is_seasonal: false
+    :is_vqa: false
+    :is_kosher: false
+    :description:
+    :serving_suggestion: "Perfect on its own or with appetizers"
+    :tasting_note: "Pale salmon colour with medium-sized bubbles; aromas of candied raspberry, strawberry, and pink grapefruit; dry, very crisp and fresh acidity, laden with candied fruit flavours through to the finish."
+    :value_added_promotion_description:
+    :image_thumb_url: http://lcbo.com/app/images/products/website/0090399.jpg
+    :image_url: http://lcbo.com/app/images/products/0090399.jpg

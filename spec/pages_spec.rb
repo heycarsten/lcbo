@@ -25,11 +25,7 @@ require 'yaml'
 
         req[:expectation].each_pair do |key, value|
           it "should have the expected value for :#{key}" do
-            if (value.is_a?(String))
-              @page[key].must_equal value
-            else
-              @page[key].must_equal value
-            end
+            @page[key].must_equal value
           end
         end
       end

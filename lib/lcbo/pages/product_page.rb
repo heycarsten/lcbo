@@ -99,7 +99,8 @@ module LCBO
           gsub('Italy Quality', 'Italy').
           gsub('Usa-', '').
           gsub(', Rep. Of', '').
-          gsub('&', 'and')
+          gsub('&', 'and').
+          gsub('Region Not Specified, ', '')
         place.split(',').map { |s| s.strip }.uniq.join(', ')
       end
     end
@@ -237,6 +238,18 @@ module LCBO
       end
     end
 
+    emits :image_thumb_url do
+      if (img = doc.css('#image_holder img').first)
+        normalize_image_url(img[:src])
+      end
+    end
+
+    emits :image_url do
+      if (img = doc.css('#enlargement img').first)
+        normalize_image_url(img[:src])
+      end
+    end
+
     def volume_helper
       @volume_helper ||= CrawlKit::VolumeHelper.new(package)
     end
@@ -298,6 +311,12 @@ module LCBO
 
     def info_cell_element
       doc.css('table[width="478"] td[height="271"] td[colspan="2"].main_font')[0]
+    end
+
+    def normalize_image_url(url)
+      return unless url
+      return if url.include?('default.jpg')
+      url.include?('http://') ? url : File.join('http://lcbo.com', url)
     end
 
     def verify_third_info_cell
