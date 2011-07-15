@@ -10,7 +10,7 @@ module LCBO
 
       ACRONYMS = %w[
         i ii iii iv v vi vii viii ix x xiii xi vqa vsop xo nq5 vs xxx igt xoxo
-        srl bdb cvbg ocb lcbo gtm hf yo vs
+        srl bdb cvbg ocb lcbo gtm hf yo vs ipa
       ]
 
       attr_reader :input

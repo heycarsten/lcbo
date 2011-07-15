@@ -16,7 +16,8 @@ describe LCBO::CrawlKit::TitleCaseHelper do
     '(V) SOME PRODUCT (FROM FRANCE'    => 'Some Product',
     '(V) A PRODUCT ** (FROM FRANCE)'   => 'A Product',
     'SOMEONE\'S PRODUCT'               => 'Someone\'s Product',
-    'CUVÉE DE L\'ÉCUSSON BRUT'         => 'Cuvée de L\'Écusson Brut' }
+    'CUVÉE DE L\'ÉCUSSON BRUT'         => 'Cuvée de L\'Écusson Brut',
+    'SECULAR IPA'                      => 'Secular IPA' }
 
   @expectations.each_pair do |input, expectation|
     it "should convert: #{input.inspect} to: #{expectation.inspect}" do
