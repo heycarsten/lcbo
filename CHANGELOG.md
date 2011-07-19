@@ -1,3 +1,7 @@
+Version 1.1.1
+
+  * Added case to ignore default thumbnail images for Vintages.
+
 Version 1.1.0
 
  * Added image URLs to products when available.
