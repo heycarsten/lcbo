@@ -315,7 +315,7 @@ module LCBO
 
     def normalize_image_url(url)
       return unless url
-      return if url.include?('default.jpg')
+      return if url.include?('default')
       url.include?('http://') ? url : File.join('http://lcbo.com', url)
     end
 

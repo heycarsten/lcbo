@@ -434,3 +434,49 @@
     :value_added_promotion_description:
     :image_thumb_url: http://lcbo.com/app/images/products/website/0090399.jpg
     :image_url: http://lcbo.com/app/images/products/0090399.jpg
+
+- :file: 11.html
+  :desc: Vintages product with no image
+  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=905596
+  :method: :get
+  :query_params:
+    :id: 905596
+  :expectation:
+    :id: 905596
+    :name: Terredora Campore Fiano Di Avellino 2008
+    :tags: ["terredora", "campore", "fiano", "di", "avellino", "2008", "wine", "white", "campania", "italy", "terre", "dora", "paulo", "ss", "bottle"]
+    :price_in_cents: 2895
+    :regular_price_in_cents: 2895
+    :limited_time_offer_savings_in_cents: 0
+    :limited_time_offer_ends_on:
+    :bonus_reward_miles: 0
+    :bonus_reward_miles_ends_on:
+    :stock_type: VINTAGES
+    :primary_category: Wine
+    :secondary_category: White Wine
+    :origin: "Campania, Italy"
+    :package: 750 mL bottle
+    :package_unit_type: bottle
+    :package_unit_volume_in_milliliters: 750
+    :total_package_units: 1
+    :total_package_volume_in_milliliters: 750
+    :volume_in_milliliters: 750
+    :alcohol_content: 1300
+    :price_per_liter_of_alcohol_in_cents: 2969
+    :price_per_liter_in_cents: 3860
+    :sugar_content: D
+    :producer_name: "Terre Dora Di Paulo S.S."
+    :released_on: 2011-01-22
+    :is_discontinued: false
+    :has_limited_time_offer: false
+    :has_bonus_reward_miles: false
+    :has_value_added_promotion: false
+    :is_seasonal: false
+    :is_vqa: false
+    :is_kosher: false
+    :description: "TASTING NOTE: Delivers amazing aromas of lemon and lime, with hints of mineral. A full-bodied, late-harvest style, offering lots of dried fruits, from citrus to melon. Spicy. If you want a denser, richer Fiano, this is for you. Drink now. Score: 91 (James Suckling, www.winespectator.com, April 30, 2010)"
+    :serving_suggestion:
+    :tasting_note:
+    :value_added_promotion_description:
+    :image_thumb_url:
+    :image_url:
