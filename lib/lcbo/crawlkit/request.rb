@@ -26,9 +26,9 @@ module LCBO
 
       def config
         opts = {}
-        opts[:method]     = request_prototype.http_method
-        opts[:user_agent] = USER_AGENT
-        opts[:body]       = _body if body_params && !gettable?
+        opts[:method]  = request_prototype.http_method
+        opts[:headers] = { 'User-Agent' => USER_AGENT }
+        opts[:body]    = _body if body_params && !gettable?
         opts
       end
 

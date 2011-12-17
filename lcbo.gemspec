@@ -11,18 +11,14 @@ Gem::Specification.new do |s|
   s.summary     = %q{A library for parsing HTML pages from http://lcbo.com}
   s.description = %q{Request and parse product, store, inventory, and product search pages directly from the official LCBO website.}
 
-  s.required_rubygems_version = '>= 1.8.5'
   s.rubyforge_project = 'lcbo'
 
-  s.add_dependency 'typhoeus',      '~> 0.2.4'
-  s.add_dependency 'nokogiri',      '~> 1.4.4'
-  s.add_dependency 'unicode_utils', '~> 1.0.0'
-  s.add_dependency 'stringex',      '~> 1.2.0'
+  s.add_dependency 'typhoeus',      '~> 0.3.3'
+  s.add_dependency 'nokogiri',      '~> 1.5.0'
+  s.add_dependency 'unicode_utils', '~> 1.2.2'
+  s.add_dependency 'stringex',      '~> 1.3.0'
 
   s.files         = `git ls-files`.split(?\n)
   s.test_files    = `git ls-files -- {test,spec}/*`.split(?\n)
   s.require_paths = ['lib']
-
-  # If you need an executable, add it here
-  # s.executables = ['lcbo']
 end
