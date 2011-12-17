@@ -6,6 +6,9 @@
 
 
 
+
+
+
 			
 
 
@@ -60,8 +63,8 @@ function PrintItemDetails() {
 {
         background-color:#D6DE9D;
 }
-#theDiv {width:215px;background-color:white;white-space:nowrap; overflow:hidden;}
-#theDiv2 {width:215px;background-color:white;white-space:nowrap; overflow:hidden;}
+#theDiv {width:215px;background-color:white;white-space:nowrap; overflow:hidden;z-index:1000 !important;}
+#theDiv2 {width:215px;background-color:white;white-space:nowrap; overflow:hidden;z-index:1000 !important;}
 </style>
 
 <script type="text/javascript" src="/ssi/primary.js"></script>
@@ -101,9 +104,9 @@ quickSearchForm_setItemnameResults("15");
 quickSearchForm_setItemnameLength("32");
 var set_inputForm_setItemnameResults = false;
 </script>
-<!--[if IE 6]>
+<!--[if lt IE 8]>
 <script type="text/javascript">
-quickSearchForm_setItemnameResults("4");
+quickSearchForm_setItemnameResults("1");
 </script>
 <![endif]-->
 
@@ -206,6 +209,8 @@ quickSearchForm_setItemnameResults("4");
 																<td width="48%"><span class="main_font"><font
 																	color="#859234" class="main_font"><b>LCBO Store #&nbsp;444:</b></font></span><br>
 															</tr>
+															
+
 															<tr>
 																<td><img name="nav_rde_r1_c2"
 																	src="/images/storesearch/nav_rde_r1_c2.gif" width="25"
@@ -231,7 +236,10 @@ quickSearchForm_setItemnameResults("4");
 															</tr>
 															<tr>
 																<td width="48%" class="main_font">TORONTO-SCARBOROUGH,
-																M1T3H1 </td>
+
+
+																
+																M1T 3H1</td>
 															</tr>
 															<tr>
 																<td class="main_font"><img name="nav_rde_r1_c2"
@@ -263,7 +271,7 @@ quickSearchForm_setItemnameResults("4");
 															<tr>
 																<td width="48%">
 																<p><a
-																	href="/lcbo-ear/mapquest/map.jsp?latitude=43.7838&longitude=-79.2902"
+																	href="http://maps.google.ca/maps?q=43.7838,-79.2902&hl=EN"
 																	name="Show Map" target="lcbo_showmap"><img
 																	src="/images/storesearch/showmap.gif" width=144
 																	height=20 border=0 alt=""></a></p>
@@ -301,7 +309,7 @@ quickSearchForm_setItemnameResults("4");
 																<td class="main_font" align="left">Monday:&nbsp;</td>
 																
 																<td class="main_font" align="right">
-																	10:00 - 22:00
+																	09:30 - 22:00
 																
 																</td>
 															</tr>
@@ -315,7 +323,7 @@ quickSearchForm_setItemnameResults("4");
 																<td class="main_font" align="left">Tuesday:&nbsp;</td>
 																
 																<td class="main_font" align="right">
-																	10:00 - 22:00
+																	09:30 - 22:00
 																
 																</td>
 															</tr>
@@ -329,7 +337,7 @@ quickSearchForm_setItemnameResults("4");
 																<td class="main_font" align="left">Wednesday:&nbsp;</td>
 																
 																<td class="main_font" align="right">
-																	10:00 - 22:00
+																	09:30 - 22:00
 																
 																</td>
 															</tr>
@@ -343,7 +351,7 @@ quickSearchForm_setItemnameResults("4");
 																<td class="main_font" align="left">Thursday:&nbsp;</td>
 																
 																<td class="main_font" align="right">
-																	10:00 - 22:00
+																	09:30 - 22:00
 																
 																</td>
 															</tr>
@@ -357,7 +365,7 @@ quickSearchForm_setItemnameResults("4");
 																<td class="main_font" align="left">Friday:&nbsp;</td>
 																
 																<td class="main_font" align="right">
-																	10:00 - 22:00
+																	09:30 - 22:00
 																
 																</td>
 															</tr>
@@ -371,7 +379,7 @@ quickSearchForm_setItemnameResults("4");
 																<td class="main_font" align="left">Saturday:&nbsp;</td>
 																
 																<td class="main_font" align="right">
-																	10:00 - 22:00
+																	09:30 - 22:00
 																
 																</td>
 															</tr>
@@ -423,7 +431,7 @@ quickSearchForm_setItemnameResults("4");
 															</tr>
 															<!-- wine consultant -->
 															<tr>
-																<td colspan="2" class="main_font"><input type="checkbox" name="checkbox" disabled value="checkbox" >&nbsp;product consultant</td>
+																<td colspan="2" class="main_font"><input type="checkbox" name="checkbox" disabled value="checkbox" checked>&nbsp;product consultant</td>
 															</tr>
 															<tr>
 																<td class="main_font"><img name="nav_rde_r1_c2" src="/images/storesearch/nav_rde_r1_c2.gif" width="25" height="12" border="0"></td>
@@ -556,8 +564,8 @@ win = window.open(mypage,myname,settings)}
 
 <!--copyright notice begins//-->
 
-<div align="center"><br><table width="774" border="0" cellspacing="0" cellpadding="0"><tr><td width="10"><img src="/images/spacer.gif" width="25" height="4" border="0"></td><td width="764"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><span class="textlinks" style="color:#666666">&copy; 2000/2010 LCBO</span><span class="textlinks"> | <a id="privacy" href="/privacy/index.shtml">Privacy Policy</a> | <a id="terms" href="/terms/index.shtml">Terms &amp; Conditions</a> | <a id="language" href="/french.html">
-	Français</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.lcbotrade.com/" target="_blank">TRADE RESOURCES</a></span></td><td align="right"><a href="/bagitback/bib_en.shtml" target="_blank"><img onmouseover="this.src='/ssi/images/bagitback_on.gif';" onmouseout="this.src='/ssi/images/bagitback_off.gif';" src="/ssi/images/bagitback_off.gif" width="110" height="14" border="0" alt="BAGITBACK.CA" style="margin-right:25px;"></a></td></tr></table></td></tr><tr><td width="10">&nbsp;</td><td width="764">&nbsp;</td></tr></table></div>
+<div align="center"><br><table width="774" border="0" cellspacing="0" cellpadding="0"><tr><td width="10"><img src="/images/spacer.gif" width="25" height="4" border="0"></td><td width="764"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><span class="textlinks" style="color:#666666">&copy; 2000/2011 LCBO</span><span class="textlinks"> | <a id="privacy" href="/privacy/index.shtml">Privacy Policy</a> | <a id="terms" href="/terms/index.shtml">Terms &amp; Conditions</a> | <a id="language" href="/french.html">
+	FranÃ§ais</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.doingbusinesswithlcbo.com/" target="_blank">TRADE RESOURCES</a></span></td><td align="right"><a href="/bagitback/bib_en.shtml" target="_blank"><img onmouseover="this.src='/ssi/images/bagitback_on.gif';" onmouseout="this.src='/ssi/images/bagitback_off.gif';" src="/ssi/images/bagitback_off.gif" width="110" height="14" border="0" alt="BAGITBACK.CA" style="margin-right:25px;"></a></td></tr></table></td></tr><tr><td width="10">&nbsp;</td><td width="764">&nbsp;</td></tr></table></div>
 
 <!--copyright notice ends//-->
 
@@ -570,21 +578,28 @@ if (set_inputForm_setItemnameResults) {
 	inputForm_setItemnameLength("32"); 
 	}
 </script>
-<!--[if IE 6]>
+<!--[if lt IE 8]>
 <script type="text/javascript">
 if (set_inputForm_setItemnameResults) {
-	inputForm_setItemnameResults("4"); }
+	inputForm_setItemnameResults("1"); }
 </script>
 <![endif]-->
 
 <script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-553500-6");
-pageTracker._trackPageview();
-</script>
+       var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-553500-6']);
+       _gaq.push(['_trackPageview']);
+   </script>
+   <script type="text/javascript">  (function() {
+       var ga = document.createElement('script');     ga.type =
+   'text/javascript'; ga.async = true;
+       ga.src = ('https:'   == document.location.protocol ?
+   'https://ssl'   : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0];
+   s.parentNode.insertBefore(ga, s);
+       })();
+   </script>
+
 
 	
 									

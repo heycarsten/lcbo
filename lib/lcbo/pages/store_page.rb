@@ -95,11 +95,11 @@ module LCBO
     end
 
     emits :latitude do
-      location['latitude'][0].to_f
+      location[0].to_f
     end
 
     emits :longitude do
-      location['longitude'][0].to_f
+      location[1].to_f
     end
 
     DAY_NAMES.each do |day|
@@ -133,11 +133,15 @@ module LCBO
     end
 
     def map_anchor_href
-      info_nodes[has_fax? ? 6 : 5].css('a').first.attributes['href'].to_s
+      @map_anchor_href ||= begin
+        info_nodes[has_fax? ? 6 : 5].css('a').first.attributes['href'].to_s
+      end
     end
 
     def location
-      CGI.parse(URI.parse(map_anchor_href).query)
+      @location ||= begin
+        CGI.parse(URI.parse(map_anchor_href).query)['q'][0].to_s.split(',')
+      end
     end
 
     def has_fax?

@@ -7,11 +7,11 @@
   :expectation:
     :id: 444
     :name: Kennedy & Sheppard
-    :tags: ["kennedy", "sheppard", "2356", "road", "agincourt", "mall", "toronto", "scarborough", "toronto-scarborough", "torontoscarborough", "m1t3h1"]
+    :tags: ["kennedy", "sheppard", "2356", "road", "agincourt", "mall", "toronto", "scarborough", "toronto-scarborough", "torontoscarborough", "m1t", "3h1"]
     :address_line_1: 2356 Kennedy Road
     :address_line_2: Agincourt Mall
     :city: Toronto-Scarborough
-    :postal_code: M1T3H1
+    :postal_code: M1T 3H1
     :telephone: (416) 291-5304
     :fax: (416) 291-0246
     :latitude: 43.7838
@@ -20,22 +20,22 @@
     :has_transit_access: true
     :has_wheelchair_accessability: true
     :has_bilingual_services: false
-    :has_product_consultant: false
+    :has_product_consultant: true
     :has_tasting_bar: true
     :has_beer_cold_room: false
     :has_special_occasion_permits: true
     :has_vintages_corner: true
-    :monday_open: 600
+    :monday_open: 570
     :monday_close: 1320
-    :tuesday_open: 600
+    :tuesday_open: 570
     :tuesday_close: 1320
-    :wednesday_open: 600
+    :wednesday_open: 570
     :wednesday_close: 1320
-    :thursday_open: 600
+    :thursday_open: 570
     :thursday_close: 1320
-    :friday_open: 600
+    :friday_open: 570
     :friday_close: 1320
-    :saturday_open: 600
+    :saturday_open: 570
     :saturday_close: 1320
     :sunday_open: 720
     :sunday_close: 1020
@@ -56,17 +56,17 @@
     :thursday_open: 570
     :thursday_close: 1080
     :friday_open: 570
-    :friday_close: 1200
+    :friday_close: 1080
     :saturday_open: 570
     :saturday_close: 1080
-    :sunday_open: 720
-    :sunday_close: 960
-    :name: Flora & Clinton Street
-    :tags: ["flora", "clinton", "street", "1", "industrial", "road", "unit", "b", "teeswater", "n0g2s0"]
+    :sunday_open:
+    :sunday_close:
+    :name: Industrial Road & Clinton Street
+    :tags: ["industrial", "road", "clinton", "street", "1", "unit", "b", "teeswater", "n0g", "2s0"]
     :address_line_1: 1 Industrial Road
     :address_line_2: Unit B
     :city: Teeswater
-    :postal_code: N0G2S0
+    :postal_code: N0G 2S0
     :telephone: (519) 392-6837
     :fax: (519) 392-8481
     :latitude: 44.0017
