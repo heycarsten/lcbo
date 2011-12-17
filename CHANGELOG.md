@@ -1,3 +1,8 @@
+Version 1.2.0
+
+  * Updated dependencies.
+  * Fixed latitude/longitude parsing for stores.
+
 Version 1.1.1
 
   * Added case to ignore default thumbnail images for Vintages.
