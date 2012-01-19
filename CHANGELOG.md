@@ -1,3 +1,7 @@
+Version 1.2.1
+
+  * Updated `StorePage` to deal with changes made on LCBO.com.
+
 Version 1.2.0
 
   * Updated dependencies.
