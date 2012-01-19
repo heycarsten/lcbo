@@ -7,28 +7,18 @@ module LCBO
 
     uri 'http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE={id}&language=EN'
 
-    DAY_NAMES = %w[
-      monday
-      tuesday
-      wednesday
-      thursday
-      friday
-      saturday
-      sunday ]
-
-    DETAIL_FIELDS = {
+    FEATURE_FIELDS = {
       :has_wheelchair_accessability => 'wheelchair',
       :has_bilingual_services       => 'bilingual',
       :has_product_consultant       => 'consultant',
       :has_tasting_bar              => 'tasting',
       :has_beer_cold_room           => 'cold',
       :has_special_occasion_permits => 'permits',
-      :has_vintages_corner          => 'vintages',
+      :has_vintages_corner          => 'corner',
       :has_parking                  => 'parking',
       :has_transit_access           => 'transit' }
 
     on :before_parse, :verify_store_returned
-    on :after_parse,  :verify_node_count
     on :after_parse,  :verify_telephone_number
 
     emits :id do
@@ -36,7 +26,7 @@ module LCBO
     end
 
     emits :name do
-      CrawlKit::TitleCaseHelper[info_nodes[1].content.strip]
+      CrawlKit::TitleCaseHelper[doc.css('.infoWindowTitle')[0].content.strip]
     end
 
     emits :tags do
@@ -50,7 +40,7 @@ module LCBO
     end
 
     emits :address_line_1 do
-      data = info_nodes[2].content.strip.split(',')[0]
+      data = info_nodes[2].content.strip
       unless data
         raise CrawlKit::MalformedError,
         "unable to locate address for store #{idid}"
@@ -59,134 +49,116 @@ module LCBO
     end
 
     emits :address_line_2 do
-      data = info_nodes[2].content.strip.split(',')[1]
-      CrawlKit::TitleCaseHelper[data.gsub(/[\n\r\t]+/, ' ').strip] if data
+      data = info_nodes[3].content.strip
+      CrawlKit::TitleCaseHelper[data] if data != ''
     end
 
     emits :city do
-      data = info_nodes[3].content.strip.split(',')[0]
-      CrawlKit::TitleCaseHelper[data.gsub(/[\n\r\t]+/, ' ').strip] if data
+      pos = get_info_node_offset(4)
+      data = info_nodes[pos].content.strip.split(',')[0]
+      CrawlKit::TitleCaseHelper[data.strip] if data
     end
 
     emits :postal_code do
-      data = info_nodes[3].content.strip.split(',')[1]
+      pos = get_info_node_offset(4)
+      data = info_nodes[pos].content.strip.split(',')[1]
       unless data
         raise CrawlKit::MalformedError,
         "unable to locate postal code for store #{id}"
       end
-      data.gsub(/[\n\r\t]+/, ' ').strip.upcase
+      data.strip.upcase
     end
 
     emits :telephone do
+      pos = get_info_node_offset(6)
       CrawlKit::PhoneHelper[
-        info_nodes[4].content.
-          gsub(/[\n\r\t]+/, ' ').
-          gsub('Telephone:', '').
-          strip
+        info_nodes[pos].content.sub('Telephone:', '').strip
       ]
     end
 
     emits :fax do
       if has_fax?
+        pos = (info_nodes_count - 1)
         CrawlKit::PhoneHelper[
-          info_nodes[5].content.gsub(/[\n\r\t]+/, ' ').gsub('Fax:', '').strip
+          info_nodes[pos].content.sub('Fax:', '').strip
         ]
       end
     end
 
     emits :latitude do
-      location[0].to_f
+      node = doc.css('#latitude').first
+      node ? node[:value].to_f : nil
     end
 
     emits :longitude do
-      location[1].to_f
+      node = doc.css('#longitude').first
+      node ? node[:value].to_f : nil
     end
 
-    DAY_NAMES.each do |day|
+    Date::DAYNAMES.map { |d| d.downcase }.each do |day|
       emits :"#{day}_open" do
-        time_open_close(day)[0]
+        open_close_times[day.downcase][0]
       end
 
       emits :"#{day}_close" do
-        time_open_close(day)[1]
+        open_close_times[day.downcase][1]
       end
     end
 
-    DETAIL_FIELDS.keys.each do |field|
-      emits(field) { details[field] }
+    FEATURE_FIELDS.keys.each do |field|
+      emits(field) { features[field] }
     end
 
-    def detail_rows
-      @detail_rows ||= begin
-        doc.css('input[type="checkbox"]').map { |e| e.parent.parent.inner_html }
+    def get_info_node_offset(index)
+      pos = (info_nodes_count == 9 ? index : index + 1)
+      pos += (info_nodes_count == 9 ? 1 : -1) unless has_fax?
+      pos
+    end
+
+    def feature_cells
+      @feature_cells ||= begin
+        doc.css('input[type="checkbox"]').map { |el| el.parent.inner_html }
       end
     end
 
-    def details
+    def features
       @details ||= begin
-        DETAIL_FIELDS.reduce({}) do |hsh, (field, term)|
-          row   = detail_rows.detect { |row| row.include?(term) }
-          value = row.include?('checked')
-          hsh.merge(field => value)
-        end
-      end
-    end
-
-    def map_anchor_href
-      @map_anchor_href ||= begin
-        info_nodes[has_fax? ? 6 : 5].css('a').first.attributes['href'].to_s
-      end
-    end
-
-    def location
-      @location ||= begin
-        CGI.parse(URI.parse(map_anchor_href).query)['q'][0].to_s.split(',')
+        Hash[FEATURE_FIELDS.map { |field, term|
+          cell = feature_cells.detect { |cell| cell.include?(term) }
+          value = cell.include?('checked')
+          [field, value]
+        }]
       end
     end
 
     def has_fax?
-      info_nodes.to_s.include?('Fax: ')
-    end
-
-    def time_open_close(day)
-      open_close_times[day.to_s.downcase]
+      info_nodes.to_s.include?('Fax:')
     end
 
     def open_close_times
       @open_close_times ||= begin
-        time_cells.inject({}) do |hsh, td|
-          text = td.text.gsub(/\s+/, ' ')
-          day = text.match(/[MTWTFS]{1}[a-z]+/).to_s.downcase
-          times = text.scan(/[0-9]{1,2}:[0-9]{2}/)
+        days = Date::DAYNAMES.map { |d| d.downcase }
+        Hash[days.each_with_index.map { |day, idx|
+          text = doc.css("#row#{idx}Time.hours")[0].content
+          next [day, [nil, nil]] if text.include?('Closed')
+          times = text.split('-')
           open, close = *times.map { |time|
-            hour, min = *time.split(':').map { |t| t.to_i }
+            ord = time.include?('PM') ? 12 : 0
+            hour, min = *time.sub(/AM|PM/, '').strip.split(':').map { |t| t.to_i }
+            hour += ord
             (hour * 60) + min
           }
-          hsh.merge(day => (open == close ? [nil, nil] : [open, close]))
-        end
+          [day, (open == close ? [nil, nil] : [open, close])]
+        }]
       end
     end
 
-    def container_table
-      @doc.css('table.border[width="478"]')
-    end
-
-    def hours_table
-      container_table.css('table[width="100%"]')
+    def info_nodes_count
+      info_nodes.size
     end
 
     def info_nodes
-      container_table.css('td[width="48%"]')
-    end
-
-    def time_cells
-      hours_table.
-        css('td[width="50%"] tr').
-        select { |td| td.to_s =~ /[MTWTFS]{1}[onuesdhriat]{2,5}day/ }
-    end
-
-    def expected_node_count
-      has_fax? ? 8 : 7
+      doc.css('#storeDetails td.main_font')
     end
 
     def verify_store_returned
@@ -198,13 +170,6 @@ module LCBO
       return if telephone
       raise CrawlKit::MalformedError,
         "unable to locate telephone number for store #{id}"
-    end
-
-    def verify_node_count
-      return if expected_node_count == info_nodes.size
-      raise CrawlKit::MalformedError,
-        "Expected #{expected_node_count} nodes for store #{id} but found " \
-        "#{info_nodes.size} instead."
     end
 
   end
