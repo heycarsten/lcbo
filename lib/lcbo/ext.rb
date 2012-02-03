@@ -6,7 +6,7 @@ module LCBO
     end
 
     def self.stringify_keys(input)
-      Hash[input.map { |key, value| [key.to_sym, value] }]
+      Hash[input.map { |key, value| [key.to_s, value] }]
     end
 
   end
