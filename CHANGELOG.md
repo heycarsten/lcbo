@@ -1,3 +1,8 @@
+Version 1.2.3
+
+  * Updated `ProductPage` to return `RedirectedError` for gift cards which now
+    redirect to a special page.
+
 Version 1.2.2
 
   * Updated `ProductListPage` to deal with changes made on LCBO.com which were
