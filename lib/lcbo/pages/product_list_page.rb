@@ -56,7 +56,7 @@ module LCBO
 
     emits :total_products do
       @total_products ||= begin
-        doc.css('td[width="42%"] font.main_font b')[0].
+        doc.css('td[width="58%"] font.main_font b')[0].
         text.
         gsub(/\s+/, ' ').
         strip.
