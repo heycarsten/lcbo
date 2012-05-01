@@ -1,3 +1,8 @@
+Version 1.2.2
+
+  * Updated `ProductListPage` to deal with changes made on LCBO.com which were
+    causing it to fail.
+
 Version 1.2.1
 
   * Updated `StorePage` to deal with changes made on LCBO.com.
