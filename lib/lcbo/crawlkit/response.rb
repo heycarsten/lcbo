@@ -39,6 +39,7 @@ module LCBO
 
       def ensure_success!
         return if @code == 200
+        raise RedirectedError, "<#{@uri}> returned status 302" if @code == 302
         raise RequestFailedError, "<#{@uri}> failed with status: #{@code}"
       end
 

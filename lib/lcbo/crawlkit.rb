@@ -15,6 +15,7 @@ module LCBO
 
     class MalformedError < StandardError; end
     class NotFoundError < StandardError; end
+    class RedirectedError < StandardError; end
     class RequestFailedError < StandardError; end
     class TimeoutError < StandardError; end
   end
