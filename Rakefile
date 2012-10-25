@@ -12,7 +12,7 @@ task :default => :spec
 
 desc 'Start an irb console'
 task :console do
-  system 'irb -I lib -r lcbo'
+  system 'irb -I lib -r lcbo -r bcl'
 end
 
 desc 'Validates the gemspec'
@@ -43,7 +43,9 @@ task :package => :gemspec
 
 Rake::TestTask.new(:spec) do |t|
   t.libs += %w[lcbo spec]
-  t.test_files = FileList['spec/**/*.rb']
+  # t.test_files = FileList['spec/**/*.rb']
+  # t.test_files = FileList[ENV['SPEC'] || 'spec/**/*.rb']
+  t.test_files = FileList['spec/bcl_spec.rb']
   t.verbose = true
 end
 
@@ -51,11 +53,13 @@ desc 'Download all HTML indicated in YAML assertion files'
 task :download_support do
   require 'yaml'
   require 'open-uri'
-  product_pages = YAML.load_file('./spec/support/product_pages.yml')
-  product_pages.each do |spec|
-    html = open(spec[:uri]).read
-    File.open("./spec/support/product_pages/#{spec[:file]}", ?w) { |file|
-      file.print(html)
-    }
+  pages = YAML.load_file('./spec/support/pages.yml')
+  pages.each do |type, uris|
+    uris.each_with_index do |uri, i|
+      html = open(uri).read
+      File.open("./spec/support/#{type}/#{i}.html", ?w) { |file|
+        file.print(html)
+      }
+    end
   end
 end
