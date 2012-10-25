@@ -1,3 +1,6 @@
 Gemfile.lock
 pkg
+.DS_Store
+.rvmrc
+/spec/support
 
