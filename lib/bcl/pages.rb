@@ -1,0 +1,5 @@
+require 'bcl/pages/inventory_page'
+require 'bcl/pages/product_list_page'
+require 'bcl/pages/product_page'
+require 'bcl/pages/store_list_page'
+require 'bcl/pages/store_page'
