@@ -1,5 +1,4 @@
-- :file: 1.html
-  :scrapper: lcbo
+- :file: 1_lcbo.html
   :desc: Store with all information
   :uri: http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE=444&language=EN
   :method: :get
@@ -52,8 +51,7 @@
     :has_vintages_corner: true
     :has_parking: true
     :has_transit_access: true
-- :file: 2.html
-  :scrapper: lcbo
+- :file: 2_lcbo.html
   :desc: Store that is not open on some days
   :uri: http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE=610&language=EN
   :method: :get
@@ -107,8 +105,7 @@
     :has_vintages_corner: false
     :has_parking: true
     :has_transit_access: false
-- :file: 3.html
-  :scrapper: bcl
+- :file: 3_bcl.html
   # :desc: Store that is not open on some days
   :uri: http://www.bcliquorstores.com/store/2
   :method: :get
@@ -136,6 +133,60 @@
     :city: Ashcroft
     :postal_code: V0K 1A0
     :telephone: (250) 453-2542
+    # :fax: (519) 392-8481
+    # :latitude: 44.0017
+    # :longitude: -81.2876
+    # :sunday_open: 
+    # :sunday_close: 
+    # :monday_open: 
+    # :monday_close: 
+    # :tuesday_open: 600
+    # :tuesday_close: 1080
+    # :wednesday_open: 600
+    # :wednesday_close: 1080
+    # :thursday_open: 600
+    # :thursday_close: 1080
+    # :friday_open: 600
+    # :friday_close: 1080
+    # :saturday_open: 600
+    # :saturday_close: 1080
+    # :has_wheelchair_accessability: true
+    # :has_bilingual_services: false
+    # :has_product_consultant: false
+    # :has_tasting_bar: false
+    # :has_beer_cold_room: true
+    # :has_special_occasion_permits: false
+    # :has_vintages_corner: false
+    # :has_parking: true
+    # :has_transit_access: false
+- :file: 4_bcl.html
+  # :desc: Store that is not open on some days
+  :uri: http://www.bcliquorstores.com/store/3
+  :method: :get
+  :query_params:
+    :id: 3
+  :expectation:
+    :id: 3
+    :name: Fort St. John
+    # :tags:
+    # - industrial
+    # - road
+    # - clinton
+    # - street
+    # - '1'
+    # - unit
+    # - b
+    # - po
+    # - box
+    # - '239'
+    # - teeswater
+    # - n0g
+    # - 2s0
+    :address_line_1: 10444 - 100th St
+    :address_line_2: ~
+    :city: Fort St John
+    :postal_code: V1J 3Z1
+    :telephone: (250) 787-3405
     # :fax: (519) 392-8481
     # :latitude: 44.0017
     # :longitude: -81.2876

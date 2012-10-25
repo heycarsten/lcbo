@@ -7,12 +7,13 @@ require 'yaml'
   :product_list_pages => LCBO::ProductListPage,
   :store_list_pages   => LCBO::StoreListPage
 }.each_pair do |type, page|
+  valid_scraper_type = 'lcbo.html'  
 
   describe(page) do
     requests = YAML.load_file("spec/pages/#{type}.yml")
 
     requests.each do |req|
-      if req[:scrapper] == 'lcbo'
+      if req[:file].split("_")[1] == valid_scraper_type
         body = File.read("spec/pages/#{type}/#{req[:file]}")
         req[:body] = body
         SpecHelper.hydrastub(req[:method], req[:uri], :body => req[:body])
@@ -20,7 +21,7 @@ require 'yaml'
     end
 
     requests.each do |req|
-      if req[:scrapper] == 'lcbo'
+      if req[:file].split("_")[1] == valid_scraper_type
         describe "given a #{req[:desc]}" do
           before do
             @page = page.process(req[:query_params], req[:body_params])

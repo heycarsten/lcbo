@@ -1,4 +1,4 @@
-- :file: 1.html
+- :file: 1_lcbo.html
   :desc: Product with inventories
   :uri: http://www.lcbo.com/lcbo-ear/lcbo/product/inventory/searchResults.do?language=EN&itemNumber=18
   :method: :get
@@ -1673,7 +1673,7 @@
     - :updated_on: 2010-07-21
       :store_id: 607
       :quantity: 1
-- :file: 2.html
+- :file: 2_lcbo.html
   :desc: Product with no inventories
   :uri: http://www.lcbo.com/lcbo-ear/lcbo/product/inventory/searchResults.do?language=EN&itemNumber=8466
   :method: :get
@@ -1683,3 +1683,414 @@
     :inventory_count: 0
     :product_id: 8466
     :inventories: []
+
+- :file: 3_bcl.html
+  :desc: Product with low inventories
+  :uri: http://www.bcliquorstores.com/store/locator/location_data_js/150334/product
+  :method: :get
+  :query_params:
+    :product_id: 150334
+  :expectation:
+    :product_id: 150334
+    :inventory_count: 13
+    :inventories:
+    - :store_id: 38795
+      :quantity: 6
+    - :store_id: 38870
+      :quantity: 7
+
+- :file: 4_bcl.html
+  :desc: Product with LOTS of inventory
+  :uri: http://www.bcliquorstores.com/store/locator/location_data_js/307082/product
+  :method: :get
+  :query_params:
+    :product_id: 307082
+  :expectation:
+    :product_id: 307082
+    :inventory_count: 6118
+    :inventories:
+    - :store_id: 38754
+      :quantity: 15
+    - :store_id: 38822
+      :quantity: 30
+    - :store_id: 38932
+      :quantity: 21
+    - :store_id: 38775
+      :quantity: 39
+    - :store_id: 39162
+      :quantity: 19
+    - :store_id: 38792
+      :quantity: 40
+    - :store_id: 38749
+      :quantity: 12
+    - :store_id: 38852
+      :quantity: 11
+    - :store_id: 38779
+      :quantity: 35
+    - :store_id: 38814
+      :quantity: 10
+    - :store_id: 38806
+      :quantity: 14
+    - :store_id: 38757
+      :quantity: 23
+    - :store_id: 38895
+      :quantity: 5
+    - :store_id: 38766
+      :quantity: 22
+    - :store_id: 38767
+      :quantity: 24
+    - :store_id: 38802
+      :quantity: 8
+    - :store_id: 38900
+      :quantity: 8
+    - :store_id: 38778
+      :quantity: 23
+    - :store_id: 38784
+      :quantity: 51
+    - :store_id: 38913
+      :quantity: 30
+    - :store_id: 38921
+      :quantity: 14
+    - :store_id: 38902
+      :quantity: 16
+    - :store_id: 38794
+      :quantity: 14
+    - :store_id: 38768
+      :quantity: 39
+    - :store_id: 39123
+      :quantity: 27
+    - :store_id: 38926
+      :quantity: 15
+    - :store_id: 38818
+      :quantity: 18
+    - :store_id: 38752
+      :quantity: 41
+    - :store_id: 38826
+      :quantity: 22
+    - :store_id: 38774
+      :quantity: 18
+    - :store_id: 38812
+      :quantity: 50
+    - :store_id: 38923
+      :quantity: 50
+    - :store_id: 38912
+      :quantity: 56
+    - :store_id: 38891
+      :quantity: 28
+    - :store_id: 38881
+      :quantity: 31
+    - :store_id: 38849
+      :quantity: 67
+    - :store_id: 38803
+      :quantity: 37
+    - :store_id: 38887
+      :quantity: 43
+    - :store_id: 38790
+      :quantity: 19
+    - :store_id: 38883
+      :quantity: 33
+    - :store_id: 38858
+      :quantity: 32
+    - :store_id: 38910
+      :quantity: 28
+    - :store_id: 38893
+      :quantity: 43
+    - :store_id: 38892
+      :quantity: 39
+    - :store_id: 38805
+      :quantity: 36
+    - :store_id: 38869
+      :quantity: 30
+    - :store_id: 38861
+      :quantity: 32
+    - :store_id: 38855
+      :quantity: 46
+    - :store_id: 38748
+      :quantity: 35
+    - :store_id: 38842
+      :quantity: 16
+    - :store_id: 38793
+      :quantity: 23
+    - :store_id: 38865
+      :quantity: 23
+    - :store_id: 38884
+      :quantity: 10
+    - :store_id: 38816
+      :quantity: 20
+    - :store_id: 38764
+      :quantity: 14
+    - :store_id: 38800
+      :quantity: 47
+    - :store_id: 38765
+      :quantity: 48
+    - :store_id: 38859
+      :quantity: 27
+    - :store_id: 38847
+      :quantity: 36
+    - :store_id: 38890
+      :quantity: 48
+    - :store_id: 38917
+      :quantity: 35
+    - :store_id: 38772
+      :quantity: 32
+    - :store_id: 38868
+      :quantity: 56
+    - :store_id: 38777
+      :quantity: 23
+    - :store_id: 38860
+      :quantity: 41
+    - :store_id: 38898
+      :quantity: 28
+    - :store_id: 38795
+      :quantity: 17
+    - :store_id: 38838
+      :quantity: 44
+    - :store_id: 38834
+      :quantity: 53
+    - :store_id: 39161
+      :quantity: 19
+    - :store_id: 38882
+      :quantity: 27
+    - :store_id: 38927
+      :quantity: 12
+    - :store_id: 38876
+      :quantity: 35
+    - :store_id: 38928
+      :quantity: 50
+    - :store_id: 38820
+      :quantity: 47
+    - :store_id: 38850
+      :quantity: 59
+    - :store_id: 38810
+      :quantity: 29
+    - :store_id: 38844
+      :quantity: 36
+    - :store_id: 38959
+      :quantity: 26
+    - :store_id: 38870
+      :quantity: 148
+    - :store_id: 38877
+      :quantity: 62
+    - :store_id: 38846
+      :quantity: 32
+    - :store_id: 38763
+      :quantity: 47
+    - :store_id: 38935
+      :quantity: 24
+    - :store_id: 38836
+      :quantity: 39
+    - :store_id: 38813
+      :quantity: 27
+    - :store_id: 38830
+      :quantity: 57
+    - :store_id: 38889
+      :quantity: 54
+    - :store_id: 38831
+      :quantity: 26
+    - :store_id: 38824
+      :quantity: 17
+    - :store_id: 38817
+      :quantity: 38
+    - :store_id: 38771
+      :quantity: 26
+    - :store_id: 38785
+      :quantity: 33
+    - :store_id: 38903
+      :quantity: 12
+    - :store_id: 38839
+      :quantity: 32
+    - :store_id: 38819
+      :quantity: 17
+    - :store_id: 38843
+      :quantity: 31
+    - :store_id: 38894
+      :quantity: 22
+    - :store_id: 38888
+      :quantity: 90
+    - :store_id: 38897
+      :quantity: 20
+    - :store_id: 38879
+      :quantity: 50
+    - :store_id: 38922
+      :quantity: 50
+    - :store_id: 38828
+      :quantity: 58
+    - :store_id: 38899
+      :quantity: 16
+    - :store_id: 38821
+      :quantity: 34
+    - :store_id: 38848
+      :quantity: 30
+    - :store_id: 38760
+      :quantity: 22
+    - :store_id: 38759
+      :quantity: 24
+    - :store_id: 38797
+      :quantity: 24
+    - :store_id: 38873
+      :quantity: 14
+    - :store_id: 38886
+      :quantity: 56
+    - :store_id: 38756
+      :quantity: 33
+    - :store_id: 38930
+      :quantity: 51
+    - :store_id: 38867
+      :quantity: 17
+    - :store_id: 38787
+      :quantity: 53
+    - :store_id: 38815
+      :quantity: 47
+    - :store_id: 38920
+      :quantity: 53
+    - :store_id: 38866
+      :quantity: 35
+    - :store_id: 38885
+      :quantity: 44
+    - :store_id: 38853
+      :quantity: 52
+    - :store_id: 38807
+      :quantity: 49
+    - :store_id: 38878
+      :quantity: 99
+    - :store_id: 38911
+      :quantity: 77
+    - :store_id: 38840
+      :quantity: 59
+    - :store_id: 38857
+      :quantity: 45
+    - :store_id: 38929
+      :quantity: 45
+    - :store_id: 38896
+      :quantity: 32
+    - :store_id: 38931
+      :quantity: 13
+    - :store_id: 38905
+      :quantity: 12
+    - :store_id: 38916
+      :quantity: 9
+    - :store_id: 38934
+      :quantity: 19
+    - :store_id: 38751
+      :quantity: 37
+    - :store_id: 39163
+      :quantity: 22
+    - :store_id: 38919
+      :quantity: 4
+    - :store_id: 38798
+      :quantity: 18
+    - :store_id: 38804
+      :quantity: 5
+    - :store_id: 38906
+      :quantity: 17
+    - :store_id: 38758
+      :quantity: 13
+    - :store_id: 38825
+      :quantity: 4
+    - :store_id: 38862
+      :quantity: 27
+    - :store_id: 38773
+      :quantity: 18
+    - :store_id: 38880
+      :quantity: 22
+    - :store_id: 38833
+      :quantity: 28
+    - :store_id: 38904
+      :quantity: 50
+    - :store_id: 38780
+      :quantity: 50
+    - :store_id: 38762
+      :quantity: 33
+    - :store_id: 38829
+      :quantity: 31
+    - :store_id: 38871
+      :quantity: 10
+    - :store_id: 38832
+      :quantity: 17
+    - :store_id: 38909
+      :quantity: 17
+    - :store_id: 38750
+      :quantity: 16
+    - :store_id: 38809
+      :quantity: 48
+    - :store_id: 38753
+      :quantity: 4
+    - :store_id: 38845
+      :quantity: 80
+    - :store_id: 38874
+      :quantity: 102
+    - :store_id: 39102
+      :quantity: 17
+    - :store_id: 38827
+      :quantity: 20
+    - :store_id: 38789
+      :quantity: 39
+    - :store_id: 38841
+      :quantity: 30
+    - :store_id: 38769
+      :quantity: 13
+    - :store_id: 38781
+      :quantity: 42
+    - :store_id: 39164
+      :quantity: 29
+    - :store_id: 38854
+      :quantity: 41
+    - :store_id: 38872
+      :quantity: 21
+    - :store_id: 38788
+      :quantity: 37
+    - :store_id: 38875
+      :quantity: 19
+    - :store_id: 39159
+      :quantity: 39
+    - :store_id: 38811
+      :quantity: 47
+    - :store_id: 38801
+      :quantity: 14
+    - :store_id: 38786
+      :quantity: 14
+    - :store_id: 38796
+      :quantity: 47
+    - :store_id: 38864
+      :quantity: 48
+    - :store_id: 38823
+      :quantity: 21
+    - :store_id: 38808
+      :quantity: 24
+    - :store_id: 38924
+      :quantity: 25
+    - :store_id: 38835
+      :quantity: 18
+    - :store_id: 38770
+      :quantity: 34
+    - :store_id: 38837
+      :quantity: 40
+    - :store_id: 38782
+      :quantity: 25
+    - :store_id: 38908
+      :quantity: 13
+    - :store_id: 38851
+      :quantity: 19
+    - :store_id: 38799
+      :quantity: 12
+    - :store_id: 38933
+      :quantity: 21
+    - :store_id: 39158
+      :quantity: 7
+    - :store_id: 38755
+      :quantity: 34
+    - :store_id: 38914
+      :quantity: 36
+    - :store_id: 38863
+      :quantity: 18
+    - :store_id: 38856
+      :quantity: 28
+    - :store_id: 38761
+      :quantity: 30
+    - :store_id: 38776
+      :quantity: 34
+    - :store_id: 38918
+      :quantity: 14
+    - :store_id: 38783
+      :quantity: 19
+
