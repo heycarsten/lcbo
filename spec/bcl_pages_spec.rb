@@ -3,9 +3,10 @@ require 'yaml'
 
 { :product_pages      => BCL::ProductPage,
   :store_pages        => BCL::StorePage,
-  :inventory_pages    => BCL::InventoryPage
-  #:product_list_pages => BCL::ProductListPage,
-  #:store_list_pages   => BCL::StoreListPage
+  :inventory_pages    => BCL::InventoryPage,
+  :cities_list_pages  => BCL::CitiesListPage,
+  :store_list_pages   => BCL::StoreListPage,
+  :product_list_pages => BCL::ProductListPage
 }.each_pair do |type, page|
   valid_scraper_type = 'bcl.html'
 

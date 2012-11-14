@@ -5,13 +5,10 @@ Gem::Specification.new do |s|
   s.name        = 'lcbo'
   s.version     = LCBO::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ['Carsten Nielsen']
-  s.email       = ['heycarsten@gmail.com']
-  s.homepage    = 'http://github.com/heycarsten/lcbo'
+  s.authors     = ['Carsten Nielsen', 'Lenard Andal', 'Ahmed El-Daly']
+  s.email       = ['aeldaly@developergurus.com']
   s.summary     = %q{A library for parsing HTML pages from http://lcbo.com}
   s.description = %q{Request and parse product, store, inventory, and product search pages directly from the official LCBO website.}
-
-  s.rubyforge_project = 'lcbo'
 
   s.add_dependency 'typhoeus',      '~> 0.3.3'
   s.add_dependency 'nokogiri',      '~> 1.5.0'

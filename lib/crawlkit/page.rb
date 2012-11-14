@@ -29,6 +29,14 @@
           end
         end
 
+        def default_query_params(value = nil)
+          if value
+            @request_prototype.query_params = value
+          else
+            @request_prototype.query_params
+          end
+        end
+
         def http_method(value = nil)
           if value
             @request_prototype.http_method = value
@@ -103,7 +111,6 @@
         @response = request_prototype.request(query_params, body_params)
         @html     = @response.body
 
-        # puts @response, @html
         fire :after_request
         self
       end

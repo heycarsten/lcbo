@@ -4,38 +4,37 @@ module BCL
     include CrawlKit::Page
 
     PER_PAGE = 100
-    http_method :post
-    uri 'http://www.lcbo.com/lcbo-ear/lcbo/product/searchResults.do'
+    uri "http://www.bcliquorstores.com/product-catalogue?perPage={perPage}&page={page}"
 
-    default_body_params \
-      :STOCK_TYPE_NAME    => 'All',
-      :ITEM_NAME          => '',
-      :KEYWORDS           => '',
-      :ITEM_NUMBER        => '',
-      :productListingType => '',
-      :LIQUOR_TYPE_SHORT_ => '*',
-      :CATEGORY_NAME      => '*',
-      :SUB_CATEGORY_NAME  => '*',
-      :PRODUCING_CNAME    => '*',
-      :PRODUCING_REGION_N => '*',
-      :UNIT_VOLUME        => '*',
-      :SELLING_PRICE      => '*',
-      :LTO_SALES_CODE     => 'N',
-      :VQA_CODE           => 'N',
-      :KOSHER_CODE        => 'N',
-      :VINTAGES_CODE      => 'N',
-      :VALUE_ADD_SALES_CO => 'N',
-      :AIR_MILES_SALES_CO => 'N',
-      :language           => 'EN',
-      :style              => 'LCBO.css',
-      :sort               => 'sortedProduct',
-      :order              => '1',
-      :resultsPerPage     => PER_PAGE.to_s,
-      :page               => '1',
-      :action             => 'result',
-      :sortby             => 'sortedProduct',
-      :orderby            => '',
-      :numPerPage         => PER_PAGE.to_s
+    default_query_params \
+      :perPage            => PER_PAGE.to_s,
+      :page               => '1'
+      # :STOCK_TYPE_NAME    => 'All',
+      # :ITEM_NAME          => '',
+      # :KEYWORDS           => '',
+      # :ITEM_NUMBER        => '',
+      # :productListingType => '',
+      # :LIQUOR_TYPE_SHORT_ => '*',
+      # :CATEGORY_NAME      => '*',
+      # :SUB_CATEGORY_NAME  => '*',
+      # :PRODUCING_CNAME    => '*',
+      # :PRODUCING_REGION_N => '*',
+      # :UNIT_VOLUME        => '*',
+      # :SELLING_PRICE      => '*',
+      # :LTO_SALES_CODE     => 'N',
+      # :VQA_CODE           => 'N',
+      # :KOSHER_CODE        => 'N',
+      # :VINTAGES_CODE      => 'N',
+      # :VALUE_ADD_SALES_CO => 'N',
+      # :AIR_MILES_SALES_CO => 'N',
+      # :language           => 'EN',
+      # :style              => 'LCBO.css',
+      # :sort               => 'sortedProduct',
+      # :order              => '1',
+      # :action             => 'result',
+      # :sortby             => 'sortedProduct',
+      # :orderby            => '',
+      # :numPerPage         => PER_PAGE.to_s
 
     emits :page do
       body_params[:page].to_i
@@ -56,27 +55,26 @@ module BCL
 
     emits :total_products do
       @total_products ||= begin
-        doc.css('td[width="58%"] font.main_font b')[0].
-        text.
-        gsub(/\s+/, ' ').
-        strip.
-        to_i
+        doc.css(".currentPage").first.text =~ /Viewing \d+-\d+ of (\d+) Matches/
+        $1.to_i
       end
     end
 
-    emits :product_ids do
-      product_anchors.reduce([]) do |ary, a|
-        if (match = a.attribute('href').value.match(/\&itemNumber=([0-9]+)/))
-          ary << (match.captures[0].to_i)
-        else
-          next ary
-        end
+    def product_ids
+      doc.css("#product-catalogue-results-body .productImage-front a").map do |divs|
+        divs['href'].split("/")[2]
       end
     end
-    alias_method :as_array, :product_ids
 
-    def product_anchors
-      doc.css('td[style="padding: 5 5 5 0;"] a.item-details-col2')
+    def products
+      doc.css("#product-catalogue-results-body .productImage-front a").each do |divs|
+        api_id = divs['href'].split("/")[2]
+        yield BCL.product(api_id)
+      end
+    end
+
+    def dox
+      doc
     end
 
   end

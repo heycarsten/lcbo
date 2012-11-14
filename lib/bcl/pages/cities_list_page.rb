@@ -1,5 +1,5 @@
 module BCL
-  class StoreListPage
+  class CitiesListPage
 
     include CrawlKit::Page
 
@@ -62,15 +62,15 @@ module BCL
     #   end
     # end
 
-    emits :store_ids do
-      store_hash.keys
+    emits :city_ids do
+      city_hash.keys
     end
 
-    emits :store_hash do
+    emits :city_hash do
       result = {}
-      stores do |store_hash, city_hash, region_hash|
-        store_hash['city'] = city_hash
-        result[store_hash['store_id']] = store_hash
+      cities do |city_hash|
+        city_hash.delete('stores')
+        result[city_hash['city_id']] = city_hash
       end
       result
     end
@@ -88,25 +88,11 @@ module BCL
 
     def cities
       regions do |region_hash|
-        tmp_cities = region_hash['cities']
-        region_hash.delete('cities')
-        tmp_cities.each do |city_id, city_hash|
-          yield city_hash, region_hash
-        end if tmp_cities
+        region_hash['cities'].each do |city_id, city_hash|
+          yield city_hash
+        end
       end
     end
-
-
-    def stores
-      cities do |city_hash, region_hash|
-        tmp_stores = city_hash['stores']
-        city_hash.delete('stores')
-        tmp_stores.each do |store_id, store_hash|
-          yield store_hash, city_hash, region_hash
-        end if tmp_stores
-      end
-    end
-
 
 
   end
