@@ -35,15 +35,27 @@ module LCBO
     end
 
     emits :regular_price_in_cents do
-      if has_limited_time_offer
-        info_cell_line_after('Was:').sub('$ ', '').to_f * 100
+      if has_limited_time_offer || has_clearance_sale
+        (info_cell_line_after('Was:').sub('$ ', '').to_f * 100).to_i
       else
         price_in_cents
       end
     end
 
+    emits :clearance_sale_savings_in_cents do
+      if has_clearance_sale
+        regular_price_in_cents - price_in_cents
+      else
+        0
+      end
+    end
+
     emits :limited_time_offer_savings_in_cents do
-      regular_price_in_cents - price_in_cents
+      if has_limited_time_offer
+        regular_price_in_cents - price_in_cents
+      else
+        0
+      end
     end
 
     emits :limited_time_offer_ends_on do
@@ -192,6 +204,9 @@ module LCBO
 
     emits :has_limited_time_offer do
       html.include?('<B>Limited Time Offer</B>')
+
+    emits :has_clearance_sale do
+      info_cell_text.include?('CLEARANCE SALE')
     end
 
     emits :has_bonus_reward_miles do
