@@ -213,26 +213,27 @@ module LCBO
     end
 
     emits :is_discontinued do
-      html.include?('PRODUCT DISCONTINUED')
+      info_cell_text.include?('PRODUCT DISCONTINUED')
     end
 
     emits :has_limited_time_offer do
-      html.include?('<B>Limited Time Offer</B>')
+      info_cell_text.include?('Limited Time Offer')
+    end
 
     emits :has_clearance_sale do
       info_cell_text.include?('CLEARANCE SALE')
     end
 
     emits :has_bonus_reward_miles do
-      html.include?('<B>Bonus Reward Miles Offer</B>')
+      info_cell_text.include?('Bonus Reward Miles Offer')
     end
 
     emits :has_value_added_promotion do
-      html.include?('<B>Value Added Promotion</B>')
+      info_cell_text.include?('Value Added Promotion')
     end
 
     emits :is_seasonal do
-      html.include?('<font color="#ff0000">SEASONAL/LIMITED QUANTITIES</font>')
+      info_cell_text.include?('SEASONAL/LIMITED QUANTITIES')
     end
 
     emits :is_vqa do
