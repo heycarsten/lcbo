@@ -149,8 +149,8 @@ module LCBO
     end
 
     emits :alcohol_content do
-      if (match = find_info_line(/ Alcohol\/Vol.\Z/))
-        ac = match.gsub(/%| Alcohol\/Vol./, '').to_f
+      if (match = find_info_line(/% Alcohol\/Vol\./))
+        ac = match.gsub('% Alcohol/Vol.', '').to_f
         (ac * 100).to_i
       else
         0
