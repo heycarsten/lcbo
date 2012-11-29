@@ -195,6 +195,14 @@ module LCBO
       end
     end
 
+    emits :varietal do
+      if (match = find_info_line(/\AVarietal: /))
+        match.sub('Varietal: ', '').strip
+      else
+        nil
+      end
+    end
+
     emits :released_on do
       if html.include?('Release Date:')
         date = info_cell_line_after('Release Date:')
