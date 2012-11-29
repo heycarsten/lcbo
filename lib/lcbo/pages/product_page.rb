@@ -182,8 +182,14 @@ module LCBO
     end
 
     emits :sugar_content do
-      if (match = find_info_line(/\ASugar Content : /))
-        match.gsub('Sugar Content : ', '')
+      if (match = find_info_line(/\ASweetness Descriptor: /))
+        match.sub('Sweetness Descriptor: ', '')
+      end
+    end
+
+    emits :sugar_in_grams_per_liter do
+      if (match = find_info_line(/\ASugar Content: /))
+        match.sub('Sugar Content: ', '').to_i
       end
     end
 
