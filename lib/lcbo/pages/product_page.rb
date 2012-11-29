@@ -175,6 +175,12 @@ module LCBO
       end
     end
 
+    emits :style do
+      if (match = find_info_line(/\AStyle: /))
+        match.sub('Style: ', '')
+      end
+    end
+
     emits :sugar_content do
       if (match = find_info_line(/\ASugar Content : /))
         match.gsub('Sugar Content : ', '')
