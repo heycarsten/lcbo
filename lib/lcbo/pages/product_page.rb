@@ -75,16 +75,20 @@ module LCBO
     end
 
     emits :primary_category do
-      if stock_category
-        cat = stock_category.split(',')[0]
-        cat ? cat.strip : cat
+      if (cats = stock_categories)
+        cats[0]
       end
     end
 
     emits :secondary_category do
-      if stock_category
-        cat = stock_category.split(',')[1]
-        cat ? cat.strip : cat
+      if (cats = stock_categories)
+        cats[1]
+      end
+    end
+
+    emits :tertiary_category do
+      if (cats = stock_categories)
+        cats[2]
       end
     end
 
@@ -258,17 +262,19 @@ module LCBO
       !info_cell_lines[2].include?('Price:')
     end
 
-    def stock_category
-      cat = get_info_lines_at_offset(12).reject do |line|
-        l = line.strip
-        l == '' ||
-        l.include?('Price:') ||
-        l.include?('Bonus Reward Miles Offer') ||
-        l.include?('Value Added Promotion') ||
-        l.include?('Limited Time Offer') ||
-        l.include?('NOTE:')
-      end.first
-      cat ? cat.strip : nil
+    def stock_categories
+      @stock_categories ||= begin
+        # Always appears above alcohol content
+        if (idx = info_cell_lines.index { |l| l =~ /Alcohol\/Vol\./ })
+          cats = info_cell_lines[idx - 1].
+            split(',').
+            map(&:strip).
+            reject { |cat| cat == '' || cat.nil? }
+          cats.empty? ? nil : cats
+        else
+          nil
+        end
+      end
     end
 
     def product_details_form(name)
