@@ -252,21 +252,21 @@ module LCBO
 
     emits :description do
       if html.include?('<B>Description</B>')
-        match = html.match(/<B>Description<\/B><\/font><BR>\n\t\t\t(.+?)<BR>\n\t\t\t<BR>/m)
+        match = html.match(/<B>Description<\/B><\/font>\n\t\t\t<BR>\n\t\t\t(.+?)\n\t\t\t<BR>/m)
         CrawlKit::CaptionHelper[match && match.captures[0]]
       end
     end
 
     emits :serving_suggestion do
       if html.include?('<B>Serving Suggestion</B>')
-        match = html.match(/<B>Serving Suggestion<\/B><\/font><BR>\n\t\t\t(.+?)<BR><BR>/m)
+        match = html.match(/<B>Serving Suggestion<\/B><\/font><BR>\n\t\t\t(.+?)\n\t\t\t<BR>/m)
         CrawlKit::CaptionHelper[match && match.captures[0]]
       end
     end
 
     emits :tasting_note do
       if html.include?('<B>Tasting Note</B>')
-        match = html.match(/<B>Tasting Note<\/B><\/font><BR>\n\t\t\t(.+?)<BR>\n\t\t\t<BR>/m)
+        match = html.match(/<B>Tasting Note<\/B><\/font>\n\t\t\t<BR>\n\t\t\t(.+?)\n\t\t\t<BR>/m)
         CrawlKit::CaptionHelper[match && match.captures[0]]
       end
     end
