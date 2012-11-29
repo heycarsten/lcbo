@@ -143,9 +143,9 @@ module LCBO
           next [day, [nil, nil]] if text.include?('Closed')
           times = text.split('-')
           open, close = *times.map { |time|
-            ord = time.include?('PM') ? 12 : 0
             hour, min = *time.sub(/AM|PM/, '').strip.split(':').map { |t| t.to_i }
-            hour += ord
+            hour += 12 if time.include?('PM') && (hour >= 1 && hour <= 11)
+            hour = 0   if time.include?('AM') && hour == 12
             (hour * 60) + min
           }
           [day, (open == close ? [nil, nil] : [open, close])]
