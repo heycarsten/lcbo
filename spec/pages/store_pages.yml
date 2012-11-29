@@ -28,7 +28,7 @@
     :fax: (416) 291-0246
     :latitude: 43.7838
     :longitude: -79.2902
-    :sunday_open: 1440
+    :sunday_open: 720
     :sunday_close: 1020
     :monday_open: 600
     :monday_close: 1320
@@ -51,6 +51,7 @@
     :has_vintages_corner: true
     :has_parking: true
     :has_transit_access: true
+
 - :file: 2.html
   :desc: Store that is not open on some days
   :uri: http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE=610&language=EN
@@ -93,7 +94,7 @@
     :thursday_open: 600
     :thursday_close: 1080
     :friday_open: 600
-    :friday_close: 1080
+    :friday_close: 1200
     :saturday_open: 600
     :saturday_close: 1080
     :has_wheelchair_accessability: true

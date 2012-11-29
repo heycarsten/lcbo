@@ -25,9 +25,57 @@
 	
 
 
+
 <META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <TITLE>Product Information</TITLE>
 <link rel="stylesheet" href="/products/lcbo.css" type="text/css">
+<style>
+
+	/* the overlayed element */
+	.overlays {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		/*left: 25%;*/
+		min-width:100px;
+		min-height: 100px;
+		display:none;
+		z-index:999;
+		border:1px solid #BAB8B8;
+		padding: 0px;
+		-moz-box-shadow:0 0 15px 5px #666666;
+		-webkit-box-shadow: 0 0 15px #666666;
+		box-shadow: 0 0 15px #666666;
+		}
+
+	/* close button positioned on upper right corner */
+	.overlays .close {
+		background-image:url(/app/images/products/website/close-button.png);
+		background-repeat:no-repeat;
+		position:absolute;
+		right:-15px;
+		top:-15px;
+		cursor:pointer;
+		height:32px;
+		width:32px;
+	}
+	 #image_holder {
+	 position: relative;
+	  width:236px;
+	  height:189px;
+	
+	 }
+	 #image_overlay {
+	position: absolute;
+	top: 7px;
+	left: 7px;
+	  z-index:998;
+	
+	 }
+
+</style>
+<script type="text/javascript" src="/global/jquery.js"></script>
+<script type="text/javascript" src="/global/jquery-center.js"></script>
 <base target="_top" /></head>
 
 <BODY>
@@ -39,40 +87,32 @@
       <table width="774" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr> 
           <td> 
-			 <!--Beginning of Primary SSI file 2009//-->
+			 <!--Beginning of Primary SSI file 2012//-->
 
 <noscript><div style="position:absolute;top:0;left:0;background-color:#DADEAF;width:100%;text-align:center;font-size:10px;font-family:verdana,arial,helvetica,sans-serif;padding:5px 0px;color:#193105;">Please note: JavaScript (scripting) must be enabled for this site to work as intended.</div></noscript>
 
-
-
 <style>
-.AutoCompleteBackground
-{
-        background-color:white;
-}
-.AutoCompleteHighlight
-{
-        background-color:#D6DE9D;
-}
-#theDiv {width:215px;background-color:white;white-space:nowrap; overflow:hidden;}
-#theDiv2 {width:215px;background-color:white;white-space:nowrap; overflow:hidden;}
+html {overflow-y: scroll;}
+.AutoCompleteBackground {background-color:white;}
+.AutoCompleteHighlight {background-color:#D6DE9D;}
+#theDiv {width:282px;background-color:white;white-space:nowrap; overflow:hidden;z-index:1000 !important;}
+#theDiv2 {width:282px;background-color:white;white-space:nowrap; overflow:hidden;z-index:1000 !important;}
 </style>
 
 <script type="text/javascript" src="/ssi/primary.js"></script>
-<table border="0" cellpadding="0" cellspacing="0" width="774"><tr><td><a href="/english.html"><img src="/ssi/images/logo.gif" width="97" height="64" border="0"></a></td><td><table border="0" cellpadding="0" cellspacing="0" width="677"><tr><td>
-	<img src="/images/spacer.gif" width="677" height="16" border="0"></td></tr><tr><td>
-<table border="0" cellpadding="0" cellspacing="0" width="677"><tr>
-<td title="Discover" style="cursor:pointer;" onclick="document.location.href='/discover/index.shtml';"><a id="graphic-discover" title="Discover" href="/discover/index.shtml" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('topnav_r2_c2','','/ssi/images/topnav_r2_c2_f2.gif',1);" ><img name="topnav_r2_c2" src="/ssi/images/topnav_r2_c2.gif" width="84" height="22" border="0" alt="Discover"></a></td>
+<table border="0" cellpadding="0" cellspacing="0" width="774"><tr><td><a href="/english.html"><img src="/ssi/images/logo.gif" width="97" height="64" border="0"></a></td><td><table border="0" cellpadding="0" cellspacing="0" width="677"><tr><td><img src="/images/spacer.gif" width="677" height="16" border="0"></td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0" width="677"><tr><td title="Discover" style="cursor:pointer;" onclick="document.location.href='/discover/index.shtml';"><a id="graphic-discover" title="Discover" href="/discover/index.shtml" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('topnav_r2_c2','','/ssi/images/topnav_r2_c2_f2.gif',1);" ><img name="topnav_r2_c2" src="/ssi/images/topnav_r2_c2.gif" width="84" height="22" border="0" alt="Discover"></a></td>
 <td title="FOOD &amp; DRINK" style="cursor:pointer;" onclick="document.location.href='/fooddrink/index.shtml';"><a id="graphic-fooddrink" title="FOOD &amp; DRINK" href="/fooddrink/index.shtml" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('topnav_r2_c3','','/ssi/images/topnav_r2_c3_f2.gif',1);" ><img name="topnav_r2_c3" src="/ssi/images/topnav_r2_c3.gif" width="115" height="22" border="0" alt="FOOD &amp; DRINK"></a></td>
 <td title="Products" style="cursor:pointer;" onclick="document.location.href='/products/index.shtml';"><a id="graphic-products" title="Products" href="/products/index.shtml" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('topnav_r2_c4','','/ssi/images/topnav_r2_c4_f2.gif',1);" ><img name="topnav_r2_c4" src="/ssi/images/topnav_r2_c4.gif" width="86" height="22" border="0" alt="Products"></a></td>
 <td title="Events & Courses | Podcasts | Planning Tips | The Basics" style="cursor:pointer;" onclick="document.location.href='/learn/index.shtml';"><a id="graphic-learn" title="Events & Courses | Podcasts | Planning Tips | The Basics" href="/learn/index.shtml" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('topnav_r2_c5','','/ssi/images/topnav_r2_c5_f2.gif',1);" ><img name="topnav_r2_c5" src="/ssi/images/topnav_r2_c5.gif" width="68" height="22" border="0" alt="Events & Courses | Podcasts | Planning Tips | The Basics"></a></td>
-<td title="Gifts" style="cursor:pointer;" onclick="document.location.href='/gifts/index.shtml';"><a id="graphic-gifts" title="Gifts" href="/gifts/index.shtml" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('topnav_r2_c6','','/ssi/images/topnav_r2_c6_f2.gif',1);" ><img name="topnav_r2_c6" src="/ssi/images/topnav_r2_c6.gif" width="59" height="22" border="0" alt="Gifts"></a></td>
-<td title="Search"><a id="graphic-search" title="Search"><img name="topnav_r2_c7" src="/ssi/images/topnav_r2_c7.gif" width="72" height="22" border="0" alt="Search"></a></td>
+
+<td title="Gift Cards" style="cursor:pointer;" onclick="document.location.href='/gifts/index.shtml';"><a id="graphic-gifts" title="Gift Cards" href="/gifts/index.shtml" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('topnav_r2_c6','','/ssi/images/topnav_r2_c6_f2.gif',1);" ><img name="topnav_r2_c6" src="/ssi/images/topnav_r2_c6.gif" width="96" height="22" border="0" alt="Gift Cards"></a></td>
+
+<td><img src="/images/spacer.gif" width="20" height="22" border="0"></td>
 
 <td>
 <form name="quickSearchForm" id="quickSearchForm" method="get" action="/lcbo-ear/lcbo/product/searchResults.do" onsubmit="quickSearchForm_checkNameOrNumber()" style="padding: 0; margin: 0;">
 <div style="position:relative;overflow:visible;cursor:pointer;">
-<input name="ITEM_NAME" id="ITEM_NAME" value="Product Name or Item #" type="text" autocomplete="off" style="border: 1px solid black; font-size: 9px; height: 20px; padding-top:3px; font-family: arial;/*\*//*/height: 15px;/**/" size="22" onfocus="this.value=''">
+<input name="ITEM_NAME" id="ITEM_NAME" value="Product Name, Item# or UPC code" type="text" autocomplete="off" style="color:#535C2C;border: 1px solid #D6DE9D; font-size: 9px; height: 20px;width:155px;padding-top:3px; padding-left:3px; font-family: arial,helvetica,sans-serif;" size="33" onfocus="this.value=''">
 <div id="theDiv" style="padding:4px;position:absolute;left:0px;top:21px;visibility:hidden;border:solid #D6DE9D 1px;background-color:white;z-index:1;font-family:arial;font-size:10px;">
 </div>
 </div>
@@ -83,7 +123,7 @@
 
 <td><img src="/images/spacer.gif" width="3" height="22" border="0"></td>
 <td><a href="#" onclick="quickSearchForm_checkNameOrNumber(); quickSearchForm.submit()" target="_self"><img src="/ssi/images/topnav_r2_c10.gif" width="22" height="22" border="0" alt="Go"></a></td>
-<td><img src="/images/spacer.gif" width="26" height="22" border="0"></td></tr></table></td></tr>
+<td><img src="/images/spacer.gif" width="28" height="22" border="0"></td></tr></table></td></tr>
 
 <tr><td><img src="/images/spacer.gif" width="677" height="16" border="0"></td></tr></table></td></tr></table>
 
@@ -92,17 +132,16 @@
 <script type="text/javascript">
 quickSearchForm_setLanguage("EN");
 quickSearchForm_setItemnameResults("15");
-quickSearchForm_setItemnameLength("32");
+quickSearchForm_setItemnameLength("45");
 var set_inputForm_setItemnameResults = false;
 </script>
-<!--[if IE 6]>
+<!--[if lt IE 9]>
 <script type="text/javascript">
-quickSearchForm_setItemnameResults("4");
+quickSearchForm_setItemnameResults("3");
 </script>
 <![endif]-->
 
 <!--End of Primary SSI file//-->
-
 			
 
 			
@@ -111,15 +150,48 @@ quickSearchForm_setItemnameResults("4");
         </tr>
         <tr> 
           <td> 
-<form method= "post" name="productdetails" action="/lcbo-ear/lcbo/product/inventory/searchResults.do?language=EN&itemNumber=582973" >
-		<input name="printerFriendlyVersion" value="true" type="hidden">
-		<input name="action" value="inventory" type="hidden">
-		<input name="itemName" value="BOMBAY SAPPHIRE" type="hidden">
-		<input name="itemNumber" value="582973" type="hidden">
-		<input name="language" value="EN" type="hidden">
-		<input name="stock type" value="LCBO" type="hidden">
-		<input name="price" value="55.45" type="hidden">
-		<input name="style" value="LCBO.css" type="hidden">
+<form method= "post" name="productdetails" action="/lcbo-ear/lcbo/product/inventory/searchResults.do?language=EN&itemNumber=125310" >
+<input name="printerFriendlyVersion" value="true" type="hidden">
+<input name="action" value="inventory" type="hidden">
+<input name="itemName" value="NORMAN HARDIE COUNTY UNFILTERED PINOT NOIR 2010" type="hidden">
+<input name="itemNumber" value="125310" type="hidden">
+<input name="language" value="EN" type="hidden">
+<input name="stock type" value="VINTAGES" type="hidden">
+<input name="price" value="35.0" type="hidden">
+<input name="clrsave" value="0.0" type="hidden">
+<input name="style" value="LCBO.css" type="hidden">
+<input name="action" value="result" type="hidden">
+
+
+<input name="STOCK_TYPE_NAME" value="" type="hidden">
+<input name="ITEM_NAME" value="" type="hidden">
+<input name="KEYWORDS" value="" type="hidden">
+<input name="ITEM_NUMBER" value="125310" type="hidden">
+<input name="productListingType" value="" type="hidden">
+<input name="LIQUOR_TYPE_SHORT_" value="*" type="hidden">
+<input name="CATEGORY_NAME" value="*" type="hidden">
+<input name="SUB_CATEGORY_NAME" value="*" type="hidden">
+<input name="PRODUCING_CNAME" value="*" type="hidden">
+<input name="PRODUCING_REGION_N" value="*" type="hidden">
+<input name="UNIT_VOLUME" value="*" type="hidden">
+<input name="SELLING_PRICE" value="*" type="hidden">
+<input name="LTO_SALES_CODE" value="" type="hidden">
+<input name="VQA_CODE" value="" type="hidden">
+<input name="KOSHER_CODE" value="" type="hidden">
+<input name="VINTAGES_CODE" value="" type="hidden">
+<input name="VALUE_ADD_SALES_CO" value="" type="hidden">
+<input name="AIR_MILES_SALES_CO" value="" type="hidden">
+<input name="SWEETNESS_DESCRIPTOR" value="" type="hidden">
+<input name="VARIETAL_NAME" value="" type="hidden">
+<input name="WINE_STYLE" value="" type="hidden">
+<input name="language" value="EN" type="hidden">
+<input name="style" value="LCBO.css" type="hidden">
+<input name="sort" value="sortedName" type="hidden">
+<input name="order" value="1" type="hidden">
+<input name="resultsPerPage" value="10" type="hidden">
+<input name="page" value="1" type="hidden">
+
+		
           
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr> 
@@ -130,8 +202,6 @@ quickSearchForm_setItemnameResults("4");
 		#2nd_productsearch {color:#cccc99;}
 	</style>
 
-
-
                 
     	            <!--2009//-->
 
@@ -141,25 +211,23 @@ quickSearchForm_setItemnameResults("4");
 
 <nobr><a id="2nd_limitedtimeoffers" class="limitedtimeoffers" href="/products/limitedtimeoffers.shtml">Limited Time Offers</a>&nbsp;|</nobr>
 
-<nobr><a id="2nd_airmiles" class="airmiles" href="/products/airmiles.shtml">AIR MILES&reg; Offers</a></nobr><br>
+<nobr><a id="2nd_airmiles" class="airmiles" href="/products/airmiles.shtml">AIR MILES&reg; Offers</a>&nbsp;|</nobr>
 
-<nobr><a id="worldofwine" href="/products/wine/en/index.shtml">World of Wine</a>&nbsp;|</nobr>
+<nobr><a id="2nd_clearance" class="clearance" href="/products/clearance.shtml">Clearance Sale</a></nobr><br>
+
+<nobr><a id="worldofwine" href="/winestyles/index.shtml">Wine Shopping Made Easy</a>&nbsp;|</nobr>
 
 <nobr><a id="beergarden" href="/products/beer/en/index.shtml">Beer Garden</a>&nbsp;|</nobr>
 
-<!--<nobr><a id="grillo" href="/products/sections/grillo/index.shtml">Grillo</a>&nbsp;|</nobr>//-->
+<nobr><a id="whiskyshop" href="/whisky/shop/section.shtml">Whisky Shop</a>&nbsp;|</nobr>
 
-<!--<nobr><a id="rethinkpink" href="/products/sections/rethinkpink/index.shtml">Rethink Pink</a>&nbsp;|</nobr>//-->
+<nobr><a id="ontario" href="/superstars/index.shtml" onclick="window.open(this.href,'superstarsPOP','height=480, width=337,toolbar=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes'); return false;">Ontario Superstars</a>&nbsp;|</nobr>
 
-<nobr><a id="returningproducts" href="/products/returningproducts.shtml">Returning Products</a>&nbsp;|</nobr>
+
 
 <nobr><a id="privateordering" href="/programs_services/private_ordering/content_priv_ordering.shtml">Private Ordering</a>&nbsp;|</nobr>
 
-<nobr><a id="permits" href="/products/permits.shtml">Event Permits</a>&nbsp;|</nobr>
-
-<nobr><a id="ontario" href="/ontario2/index.shtml">Wines of the Month</a>&nbsp;|</nobr>
-
-<nobr><a id="premium_spirits" href="/premium_spirits/index.shtml">Premium&nbsp;Spirits</a></nobr>
+<nobr><a id="returningproducts" href="/products/returningproducts.shtml">Returning Products</a></nobr>
 
 </span>
 
@@ -176,6 +244,7 @@ if (document.title == "Product Information") {document.write('<style>.productsea
 if (document.title == "Inventory Position") {document.write('<style>.productsearch {color:#CCCC99 !important;}</style>');};
 if (document.title == "Limited Time Offers") {document.write('<style>.limitedtimeoffers {color:#CCCC99 !important;}</style>');};
 if (document.title == "AIR MILES® Offers") {document.write('<style>.airmiles {color:#CCCC99 !important;}</style>');};
+if (document.title == "CLEARANCE SALE") {document.write('<style>.clearance {color:#CCCC99 !important;}</style>');};
 }
 
 //-->
@@ -227,7 +296,21 @@ if (document.title == "AIR MILES® Offers") {document.write('<style>.airmiles {co
                         <table width="11%" border="0" cellspacing="0" cellpadding="0">
                           <tr> 
        
-                            <td><img name="food_drink_r1_c1" src="/images/products/product3.jpg" width="236" height="189" border="0" alt="Product"></td>
+                            <!--  PRODUCT IMAGE -->
+                            <td>
+                            	<div name="food_drink_r1_c1" id="image_holder">
+                            		<img src="/app/images/products/website/0125310.jpg" 
+                            			alt="NORMAN HARDIE COUNTY UNFILTERED PINOT NOIR 2010"
+                            			style="border: 1px solid #D6DE9D; border-bottom: 0px; display:block;"/>
+                           			
+	                           			<div id="image_overlay">							
+									   	<img id="img_magnify" 
+									   		src="/app/images/products/website/magnify_lcbo.png" />
+									   	</div>
+								   								
+                            	</div>
+                           	</td>
+                           	
                           </tr>
                           <tr> 
                             <td><img name="food_drink_r2_c1" src="/images/products/product_info.gif" width="236" height="84" border="0" alt="Product Details"></td>
@@ -248,19 +331,19 @@ if (document.title == "AIR MILES® Offers") {document.write('<style>.airmiles {co
                                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr> 
                                               <td colspan="2" class="main_font">
-                                              <font color="#546415"><b><span class="titlefont">BOMBAY SAPPHIRE</span></b></font>
+                                              <font color="#546415"><b><span class="titlefont">NORMAN HARDIE COUNTY UNFILTERED PINOT NOIR 2010</span></b></font>
                                               <br>
                                               
                                               
                                               
-                                                LCBO 582973
+                                                VINTAGES 125310
 												
-													| 1750 mL bottle
+													| 750 mL bottle
 												
 												<br>
 												
                                                 <br>
-                                                <b><font color="#546415">Price: $ 55.45</font></b>
+                                                <b><font color="#546415">Price $ 35.00</font></b>
 												<br>
                                               
                                                 
@@ -271,43 +354,70 @@ if (document.title == "AIR MILES® Offers") {document.write('<style>.airmiles {co
 		
 		
 
-
-
 		
-            Spirits, Gin<br>
-			40.0% Alcohol/Vol.<BR>
-            <br>
+			<BR>
+			This is a <B>VQA</B> wine<BR>
 		
 		
+		<br>
+		Made in: Ontario, Canada
+		<br>
+		By: Hardie Wines
+		<br>
 		
-		<BR>
-		Made in: England, United Kingdom<BR>
-		By: Bombay Spirits Company Ltd.<BR>
-                                                <br>
-		
-
-		
-
-		
-			<br><font color="#546415"><B>Tasting Note</B></font><BR>
-			Clear water white; complex mix of herbs and juniper on the nose with crisp lemon peel flavours; smooth and refreshing<BR>
+	        <br>
+			Release Date:
+			N/A
 			<BR>
 		
 
-		
-			<font color="#546415"><B>Serving Suggestion</B></font><BR>
-			Martinis, mixed drinks<BR><BR>
-		
+		<br>
+
 		
 
-<br>
+		
+            Wine, Red Wine<br>
+            
+            
+            
+			11.5% Alcohol/Vol.<br>
+		
+
+		
+			<br>
+			Varietal: Pinot Noir
+			<br>
+			<a href="/lcbo-ear/lcbo/product/searchResults.do?STOCK_TYPE_NAME=&ITEM_NAME=&KEYWORDS=&ITEM_NUMBER=&productListingType=&LIQUOR_TYPE_SHORT_=*&CATEGORY_NAME=*&SUB_CATEGORY_NAME=*&PRODUCING_CNAME=*&PRODUCING_SUBREGION_N=*&PRODUCING_REGION_N=*&UNIT_VOLUME=*&SELLING_PRICE=*&LTO_SALES_CODE=*&VQA_CODE=*&KOSHER_CODE=*&VINTAGES_CODE=*&VALUE_ADD_SALES_CO=*&AIR_MILES_SALES_CO=*&SWEETNESS_DESCRIPTOR=&VARIETAL_NAME=Pinot Noir&WINE_STYLE=&language=EN&style=LCBO.css&sort=&order=1&resultsPerPage=10&page=1&action=result&utm_source=LCBOproductDetail125310&utm_medium=wineVarietalHyperlink&utm_campaign=winestyles">All other wines that match this varietal »</a>
+			<br>
+		
+		
+		
+			<br>
+		
+		
+		
+			Sugar Content: <a href="javascript:void(0);" onclick="$('#sweetnessDescOverlay').fadeIn('slow');" class="moreDetailonHover">3 g/L</a>
+			<br>
+		
+
+		
+
+		
+
+		
+
+		
+
+<br><br>
 <b>NOTE:</b>
 Prices subject to change without notice.
 Prices include container deposit fees where applicable.
 All products may not be available in all stores.
 
+Select products may be available to customers in limited quantity.
 Please see store personnel for details.
 
+The above noted alcohol content may differ from the alcohol content displayed on the bottle label due to the timing of changes in vintage dates or production lot codes.  Customers are advised to read the bottle labels to confirm the actual alcohol content of their purchases.
 
 
                                                 <br><br>
@@ -323,21 +433,8 @@ Please see store personnel for details.
                                         <td><img name="navigation_r1_c2" src="/images/products/navigation_r1_c2.gif " width="12" height="20" border="0"></td>
                                         <td valign="top"> 
                                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                          <tr>
-                                          	<td class="main_font" align="right">
-                                          		<a href="#" onclick="javascript:PrintItemDetails();"><img src="/images/food_drink/green_arrow.gif" border="0"/>Printer friendly version</a>
-                                          	</td>
-                                          </tr>
-                                            <tr> 
-                                              <td> 
-                                                <div align="center">
-                                                </div>
-                                              </td>
-                                            </tr>
-                                            <tr> 
-                                              <td>&nbsp;</td>
-                                            </tr>
-                                            <tr> 
+                                            <tr>
+
                                               <td height="11"><b><font color="#546415" class="main_font">STORE INVENTORY<br>
                                                 &nbsp; </font></b></td>
                                             </tr>
@@ -347,827 +444,825 @@ Please see store personnel for details.
 													<OPTION value="All Cities" selected>
 													All Cities
 													</OPTION>
-
-		  <option value="ACTON">ACTON</option>
-
-		  <option value="AJAX">AJAX</option>
-
-		  <option value="ALBAN">ALBAN</option>
-
-		  <option value="ALEXANDRIA">ALEXANDRIA</option>
-
-		  <option value="ALFRED">ALFRED</option>
-
-		  <option value="ALLISTON">ALLISTON</option>
-
-		  <option value="ALMONTE">ALMONTE</option>
-
-		  <option value="AMHERSTBURG">AMHERSTBURG</option>
-
-		  <option value="AMHERSTVIEW">AMHERSTVIEW</option>
-
-		  <option value="ANCASTER">ANCASTER</option>
-
-		  <option value="ANGUS">ANGUS</option>
-
-		  <option value="APSLEY">APSLEY</option>
-
-		  <option value="ARNPRIOR">ARNPRIOR</option>
-
-		  <option value="ARTHUR">ARTHUR</option>
-
-		  <option value="ATHENS">ATHENS</option>
-
-		  <option value="ATIKOKAN">ATIKOKAN</option>
-
-		  <option value="AURORA">AURORA</option>
-
-		  <option value="AYLMER">AYLMER</option>
-
-		  <option value="AZILDA">AZILDA</option>
-
-		  <option value="BALA">BALA</option>
-
-		  <option value="BANCROFT">BANCROFT</option>
-
-		  <option value="BARRIE">BARRIE</option>
-
-		  <option value="BARRY'S BAY">BARRY'S BAY</option>
-
-		  <option value="BAYFIELD">BAYFIELD</option>
-
-		  <option value="BAYSVILLE">BAYSVILLE</option>
-
-		  <option value="BEACHBURG">BEACHBURG</option>
-
-		  <option value="BEAMSVILLE">BEAMSVILLE</option>
-
-		  <option value="BEARDMORE">BEARDMORE</option>
-
-		  <option value="BEAVERTON">BEAVERTON</option>
-
-		  <option value="BELLE RIVER">BELLE RIVER</option>
-
-		  <option value="BELLEVILLE">BELLEVILLE</option>
-
-		  <option value="BELMONT">BELMONT</option>
-
-		  <option value="BEWDLEY">BEWDLEY</option>
-
-		  <option value="BLENHEIM">BLENHEIM</option>
-
-		  <option value="BLIND RIVER">BLIND RIVER</option>
-
-		  <option value="BOBCAYGEON-ONTARIO">BOBCAYGEON-ONTARIO</option>
-
-		  <option value="BOLTON">BOLTON</option>
-
-		  <option value="BONFIELD">BONFIELD</option>
-
-		  <option value="BOTHWELL">BOTHWELL</option>
-
-		  <option value="BOURGET">BOURGET</option>
-
-		  <option value="BOWMANVILLE">BOWMANVILLE</option>
-
-		  <option value="BRACEBRIDGE">BRACEBRIDGE</option>
-
-		  <option value="BRADFORD">BRADFORD</option>
-
-		  <option value="BRAMALEA">BRAMALEA</option>
-
-		  <option value="BRAMPTON">BRAMPTON</option>
-
-		  <option value="BRANTFORD">BRANTFORD</option>
-
-		  <option value="BRECHIN">BRECHIN</option>
-
-		  <option value="BRIDGENORTH">BRIDGENORTH</option>
-
-		  <option value="BRIGHTON">BRIGHTON</option>
-
-		  <option value="BROCKVILLE">BROCKVILLE</option>
-
-		  <option value="BROOKLIN">BROOKLIN</option>
-
-		  <option value="BRUCE MINES">BRUCE MINES</option>
-
-		  <option value="BRUSSELS">BRUSSELS</option>
-
-		  <option value="BUCKHORN">BUCKHORN</option>
-
-		  <option value="BURFORD">BURFORD</option>
-
-		  <option value="BURK'S FALLS">BURK'S FALLS</option>
-
-		  <option value="BURLINGTON">BURLINGTON</option>
-
-		  <option value="CALABOGIE">CALABOGIE</option>
-
-		  <option value="CALEDON">CALEDON</option>
-
-		  <option value="CALEDONIA">CALEDONIA</option>
-
-		  <option value="CALLANDER">CALLANDER</option>
-
-		  <option value="CAMBRIDGE">CAMBRIDGE</option>
-
-		  <option value="CAMPBELLFORD">CAMPBELLFORD</option>
-
-		  <option value="CANNINGTON">CANNINGTON</option>
-
-		  <option value="CAPREOL">CAPREOL</option>
-
-		  <option value="CARDINAL">CARDINAL</option>
-
-		  <option value="CARLETON PLACE">CARLETON PLACE</option>
-
-		  <option value="CARP">CARP</option>
-
-		  <option value="CASSELMAN">CASSELMAN</option>
-
-		  <option value="CAYUGA">CAYUGA</option>
-
-		  <option value="CHAPLEAU">CHAPLEAU</option>
-
-		  <option value="CHATHAM">CHATHAM</option>
-
-		  <option value="CHELMSFORD">CHELMSFORD</option>
-
-		  <option value="CHESLEY">CHESLEY</option>
-
-		  <option value="CHESTERVILLE">CHESTERVILLE</option>
-
-		  <option value="CLINTON">CLINTON</option>
-
-		  <option value="COBALT">COBALT</option>
-
-		  <option value="COBDEN">COBDEN</option>
-
-		  <option value="COBOCONK">COBOCONK</option>
-
-		  <option value="COBOURG">COBOURG</option>
-
-		  <option value="COCHRANE">COCHRANE</option>
-
-		  <option value="COE HILL">COE HILL</option>
-
-		  <option value="COLBORNE">COLBORNE</option>
-
-		  <option value="COLDWATER">COLDWATER</option>
-
-		  <option value="COLLINGWOOD">COLLINGWOOD</option>
-
-		  <option value="CONCORD">CONCORD</option>
-
-		  <option value="CONISTON">CONISTON</option>
-
-		  <option value="COOKSTOWN">COOKSTOWN</option>
-
-		  <option value="COPPER CLIFF">COPPER CLIFF</option>
-
-		  <option value="CORNWALL">CORNWALL</option>
-
-		  <option value="CORUNNA">CORUNNA</option>
-
-		  <option value="COURTRIGHT">COURTRIGHT</option>
-
-		  <option value="CREEMORE">CREEMORE</option>
-
-		  <option value="DEEP RIVER">DEEP RIVER</option>
-
-		  <option value="DELHI">DELHI</option>
-
-		  <option value="DELTA">DELTA</option>
-
-		  <option value="DENBIGH">DENBIGH</option>
-
-		  <option value="DESERONTO">DESERONTO</option>
-
-		  <option value="DORCHESTER">DORCHESTER</option>
-
-		  <option value="DORSET">DORSET</option>
-
-		  <option value="DRESDEN">DRESDEN</option>
-
-		  <option value="DRYDEN">DRYDEN</option>
-
-		  <option value="DUNCHURCH">DUNCHURCH</option>
-
-		  <option value="DUNDALK">DUNDALK</option>
-
-		  <option value="DUNDAS">DUNDAS</option>
-
-		  <option value="DUNNVILLE">DUNNVILLE</option>
-
-		  <option value="DURHAM">DURHAM</option>
-
-		  <option value="DUTTON">DUTTON</option>
-
-		  <option value="DWIGHT">DWIGHT</option>
-
-		  <option value="EAR FALLS">EAR FALLS</option>
-
-		  <option value="EARLTON">EARLTON</option>
-
-		  <option value="ECHO BAY">ECHO BAY</option>
-
-		  <option value="EGANVILLE">EGANVILLE</option>
-
-		  <option value="ELGIN">ELGIN</option>
-
-		  <option value="ELK LAKE">ELK LAKE</option>
-
-		  <option value="ELLIOT LAKE">ELLIOT LAKE</option>
-
-		  <option value="ELMIRA">ELMIRA</option>
-
-		  <option value="ELMVALE">ELMVALE</option>
-
-		  <option value="ELORA">ELORA</option>
-
-		  <option value="EMBRUN">EMBRUN</option>
-
-		  <option value="EMO">EMO</option>
-
-		  <option value="ENGLEHART">ENGLEHART</option>
-
-		  <option value="ERIN">ERIN</option>
-
-		  <option value="ESPANOLA">ESPANOLA</option>
-
-		  <option value="ESSEX">ESSEX</option>
-
-		  <option value="EXETER">EXETER</option>
-
-		  <option value="FENELON FALLS">FENELON FALLS</option>
-
-		  <option value="FERGUS">FERGUS</option>
-
-		  <option value="FOLEYET">FOLEYET</option>
-
-		  <option value="FONTHILL">FONTHILL</option>
-
-		  <option value="FOREST">FOREST</option>
-
-		  <option value="FORT ERIE">FORT ERIE</option>
-
-		  <option value="FORT FRANCES">FORT FRANCES</option>
-
-		  <option value="FRANKFORD">FRANKFORD</option>
-
-		  <option value="GANANOQUE">GANANOQUE</option>
-
-		  <option value="GARSON">GARSON</option>
-
-		  <option value="GEORGETOWN">GEORGETOWN</option>
-
-		  <option value="GERALDTON">GERALDTON</option>
-
-		  <option value="GLENCOE">GLENCOE</option>
-
-		  <option value="GODERICH">GODERICH</option>
-
-		  <option value="GOODERHAM">GOODERHAM</option>
-
-		  <option value="GORE BAY">GORE BAY</option>
-
-		  <option value="GOULAIS RIVER">GOULAIS RIVER</option>
-
-		  <option value="GRAND BEND">GRAND BEND</option>
-
-		  <option value="GRAND VALLEY">GRAND VALLEY</option>
-
-		  <option value="GRAVENHURST">GRAVENHURST</option>
-
-		  <option value="GRIMSBY">GRIMSBY</option>
-
-		  <option value="GUELPH">GUELPH</option>
-
-		  <option value="HAGAR">HAGAR</option>
-
-		  <option value="HAGERSVILLE">HAGERSVILLE</option>
-
-		  <option value="HAILEYBURY">HAILEYBURY</option>
-
-		  <option value="HALIBURTON">HALIBURTON</option>
-
-		  <option value="HAMILTON">HAMILTON</option>
-
-		  <option value="HANMER">HANMER</option>
-
-		  <option value="HANOVER">HANOVER</option>
-
-		  <option value="HARRISTON">HARRISTON</option>
-
-		  <option value="HARROW">HARROW</option>
-
-		  <option value="HASTINGS">HASTINGS</option>
-
-		  <option value="HAVELOCK">HAVELOCK</option>
-
-		  <option value="HAWKESBURY">HAWKESBURY</option>
-
-		  <option value="HEARST">HEARST</option>
-
-		  <option value="HENSALL">HENSALL</option>
-
-		  <option value="HONEY HARBOUR">HONEY HARBOUR</option>
-
-		  <option value="HORNEPAYNE">HORNEPAYNE</option>
-
-		  <option value="HUDSON">HUDSON</option>
-
-		  <option value="HUNTSVILLE">HUNTSVILLE</option>
-
-		  <option value="IGNACE">IGNACE</option>
-
-		  <option value="INGERSOLL">INGERSOLL</option>
-
-		  <option value="INNISFIL">INNISFIL</option>
-
-		  <option value="IRON BRIDGE">IRON BRIDGE</option>
-
-		  <option value="IROQUOIS">IROQUOIS</option>
-
-		  <option value="IROQUOIS FALLS">IROQUOIS FALLS</option>
-
-		  <option value="KAKABEKA FALLS">KAKABEKA FALLS</option>
-
-		  <option value="KAPUSKASING">KAPUSKASING</option>
-
-		  <option value="KEARNEY">KEARNEY</option>
-
-		  <option value="KEEWATIN">KEEWATIN</option>
-
-		  <option value="KEMPTVILLE">KEMPTVILLE</option>
-
-		  <option value="KENORA">KENORA</option>
-
-		  <option value="KESWICK">KESWICK</option>
-
-		  <option value="KILLALOE">KILLALOE</option>
-
-		  <option value="KILLARNEY">KILLARNEY</option>
-
-		  <option value="KINCARDINE">KINCARDINE</option>
-
-		  <option value="KINGSTON">KINGSTON</option>
-
-		  <option value="KINGSVILLE">KINGSVILLE</option>
-
-		  <option value="KINMOUNT">KINMOUNT</option>
-
-		  <option value="KIRKFIELD">KIRKFIELD</option>
-
-		  <option value="KIRKLAND LAKE">KIRKLAND LAKE</option>
-
-		  <option value="KITCHENER">KITCHENER</option>
-
-		  <option value="LAFONTAINE">LAFONTAINE</option>
-
-		  <option value="LAKEFIELD">LAKEFIELD</option>
-
-		  <option value="LANARK">LANARK</option>
-
-		  <option value="LANCASTER">LANCASTER</option>
-
-		  <option value="LANGTON">LANGTON</option>
-
-		  <option value="LANSDOWNE">LANSDOWNE</option>
-
-		  <option value="LARDER LAKE">LARDER LAKE</option>
-
-		  <option value="LASALLE">LASALLE</option>
-
-		  <option value="LEAMINGTON">LEAMINGTON</option>
-
-		  <option value="LINDSAY">LINDSAY</option>
-
-		  <option value="LION'S HEAD">LION'S HEAD</option>
-
-		  <option value="LISTOWEL">LISTOWEL</option>
-
-		  <option value="LITTLE CURRENT">LITTLE CURRENT</option>
-
-		  <option value="LIVELY">LIVELY</option>
-
-		  <option value="LONDON">LONDON</option>
-
-		  <option value="LONG SAULT">LONG SAULT</option>
-
-		  <option value="LONGLAC">LONGLAC</option>
-
-		  <option value="LUCAN">LUCAN</option>
-
-		  <option value="LUCKNOW">LUCKNOW</option>
-
-		  <option value="MACTIER">MACTIER</option>
-
-		  <option value="MADOC">MADOC</option>
-
-		  <option value="MAGNETAWAN">MAGNETAWAN</option>
-
-		  <option value="MANITOUWADGE">MANITOUWADGE</option>
-
-		  <option value="MANITOWANING">MANITOWANING</option>
-
-		  <option value="MANOTICK">MANOTICK</option>
-
-		  <option value="MAPLE">MAPLE</option>
-
-		  <option value="MARATHON">MARATHON</option>
-
-		  <option value="MARKDALE">MARKDALE</option>
-
-		  <option value="MARKHAM">MARKHAM</option>
-
-		  <option value="MARMORA">MARMORA</option>
-
-		  <option value="MASSEY">MASSEY</option>
-
-		  <option value="MATHESON">MATHESON</option>
-
-		  <option value="MATTAWA">MATTAWA</option>
-
-		  <option value="MATTICE">MATTICE</option>
-
-		  <option value="MAXVILLE">MAXVILLE</option>
-
-		  <option value="MAYNOOTH">MAYNOOTH</option>
-
-		  <option value="MEAFORD">MEAFORD</option>
-
-		  <option value="MERRICKVILLE">MERRICKVILLE</option>
-
-		  <option value="MIDLAND">MIDLAND</option>
-
-		  <option value="MILDMAY">MILDMAY</option>
-
-		  <option value="MILLBROOK">MILLBROOK</option>
-
-		  <option value="MILTON">MILTON</option>
-
-		  <option value="MILVERTON">MILVERTON</option>
-
-		  <option value="MINDEN">MINDEN</option>
-
-		  <option value="MISSISSAUGA">MISSISSAUGA</option>
-
-		  <option value="MITCHELL">MITCHELL</option>
-
-		  <option value="MOONBEAM">MOONBEAM</option>
-
-		  <option value="MOOSONEE">MOOSONEE</option>
-
-		  <option value="MORRISBURG">MORRISBURG</option>
-
-		  <option value="MOUNT FOREST">MOUNT FOREST</option>
-
-		  <option value="NAKINA">NAKINA</option>
-
-		  <option value="NAPANEE">NAPANEE</option>
-
-		  <option value="NEW HAMBURG">NEW HAMBURG</option>
-
-		  <option value="NEW LISKEARD">NEW LISKEARD</option>
-
-		  <option value="NEWCASTLE">NEWCASTLE</option>
-
-		  <option value="NEWMARKET">NEWMARKET</option>
-
-		  <option value="NIAGARA FALLS">NIAGARA FALLS</option>
-
-		  <option value="NIAGARA-ON-THE-LAKE">NIAGARA-ON-THE-LAKE</option>
-
-		  <option value="NIPIGON">NIPIGON</option>
-
-		  <option value="NOELVILLE">NOELVILLE</option>
-
-		  <option value="NORTH BAY">NORTH BAY</option>
-
-		  <option value="NORTHBROOK">NORTHBROOK</option>
-
-		  <option value="NORWICH">NORWICH</option>
-
-		  <option value="NORWOOD">NORWOOD</option>
-
-		  <option value="OAKVILLE">OAKVILLE</option>
-
-		  <option value="OMEMEE">OMEMEE</option>
-
-		  <option value="ONAPING">ONAPING</option>
-
-		  <option value="ORANGEVILLE">ORANGEVILLE</option>
-
-		  <option value="ORILLIA">ORILLIA</option>
-
-		  <option value="ORONO">ORONO</option>
-
-		  <option value="OSHAWA">OSHAWA</option>
-
-		  <option value="OTTAWA">OTTAWA</option>
-
-		  <option value="OTTAWA-GLOUCESTER">OTTAWA-GLOUCESTER</option>
-
-		  <option value="OTTAWA-KANATA">OTTAWA-KANATA</option>
-
-		  <option value="OTTAWA-NEPEAN">OTTAWA-NEPEAN</option>
-
-		  <option value="OTTAWA-ORLEANS">OTTAWA-ORLEANS</option>
-
-		  <option value="OTTAWA-VANIER">OTTAWA-VANIER</option>
-
-		  <option value="OWEN SOUND">OWEN SOUND</option>
-
-		  <option value="PAISLEY">PAISLEY</option>
-
-		  <option value="PALMERSTON">PALMERSTON</option>
-
-		  <option value="PARIS">PARIS</option>
-
-		  <option value="PARKHILL">PARKHILL</option>
-
-		  <option value="PARRY SOUND">PARRY SOUND</option>
-
-		  <option value="PEFFERLAW">PEFFERLAW</option>
-
-		  <option value="PELEE ISLAND">PELEE ISLAND</option>
-
-		  <option value="PEMBROKE">PEMBROKE</option>
-
-		  <option value="PENETANG">PENETANG</option>
-
-		  <option value="PERTH">PERTH</option>
-
-		  <option value="PETAWAWA">PETAWAWA</option>
-
-		  <option value="PETERBOROUGH">PETERBOROUGH</option>
-
-		  <option value="PETROLIA">PETROLIA</option>
-
-		  <option value="PICKERING">PICKERING</option>
-
-		  <option value="PICKLE LAKE">PICKLE LAKE</option>
-
-		  <option value="PICTON">PICTON</option>
-
-		  <option value="PLANTAGENET">PLANTAGENET</option>
-
-		  <option value="PLEVNA">PLEVNA</option>
-
-		  <option value="POINT EDWARD">POINT EDWARD</option>
-
-		  <option value="POINTE AU BARIL">POINTE AU BARIL</option>
-
-		  <option value="PONTYPOOL">PONTYPOOL</option>
-
-		  <option value="PORT BURWELL">PORT BURWELL</option>
-
-		  <option value="PORT CARLING">PORT CARLING</option>
-
-		  <option value="PORT COLBORNE">PORT COLBORNE</option>
-
-		  <option value="PORT DOVER">PORT DOVER</option>
-
-		  <option value="PORT ELGIN">PORT ELGIN</option>
-
-		  <option value="PORT HOPE">PORT HOPE</option>
-
-		  <option value="PORT LORING">PORT LORING</option>
-
-		  <option value="PORT MCNICOLL">PORT MCNICOLL</option>
-
-		  <option value="PORT PERRY">PORT PERRY</option>
-
-		  <option value="PORT ROWAN">PORT ROWAN</option>
-
-		  <option value="PORT SEVERN">PORT SEVERN</option>
-
-		  <option value="PORT STANLEY">PORT STANLEY</option>
-
-		  <option value="PORTLAND">PORTLAND</option>
-
-		  <option value="POWASSAN">POWASSAN</option>
-
-		  <option value="PRESCOTT">PRESCOTT</option>
-
-		  <option value="RAINY RIVER">RAINY RIVER</option>
-
-		  <option value="RED LAKE">RED LAKE</option>
-
-		  <option value="RED ROCK">RED ROCK</option>
-
-		  <option value="REECE'S CORNERS">REECE'S CORNERS</option>
-
-		  <option value="RENFREW">RENFREW</option>
-
-		  <option value="RICHARD'S LANDING">RICHARD'S LANDING</option>
-
-		  <option value="RICHMOND">RICHMOND</option>
-
-		  <option value="RICHMOND HILL">RICHMOND HILL</option>
-
-		  <option value="RIDGETOWN">RIDGETOWN</option>
-
-		  <option value="ROCKLAND">ROCKLAND</option>
-
-		  <option value="RODNEY">RODNEY</option>
-
-		  <option value="ROSSEAU">ROSSEAU</option>
-
-		  <option value="ROSSMORE">ROSSMORE</option>
-
-		  <option value="SARNIA">SARNIA</option>
-
-		  <option value="SAUBLE BEACH">SAUBLE BEACH</option>
-
-		  <option value="SAULT STE. MARIE">SAULT STE. MARIE</option>
-
-		  <option value="SCHOMBERG">SCHOMBERG</option>
-
-		  <option value="SCHREIBER">SCHREIBER</option>
-
-		  <option value="SEAFORTH">SEAFORTH</option>
-
-		  <option value="SEELEY'S BAY">SEELEY'S BAY</option>
-
-		  <option value="SHARBOT LAKE">SHARBOT LAKE</option>
-
-		  <option value="SHELBURNE">SHELBURNE</option>
-
-		  <option value="SIMCOE">SIMCOE</option>
-
-		  <option value="SIOUX LOOKOUT">SIOUX LOOKOUT</option>
-
-		  <option value="SIOUX NARROWS">SIOUX NARROWS</option>
-
-		  <option value="SMITHS FALLS">SMITHS FALLS</option>
-
-		  <option value="SMITHVILLE">SMITHVILLE</option>
-
-		  <option value="SMOOTH ROCK FALLS">SMOOTH ROCK FALLS</option>
-
-		  <option value="SOUTH PORCUPINE">SOUTH PORCUPINE</option>
-
-		  <option value="SOUTH RIVER">SOUTH RIVER</option>
-
-		  <option value="SOUTHAMPTON">SOUTHAMPTON</option>
-
-		  <option value="SPANISH">SPANISH</option>
-
-		  <option value="ST. CATHARINES">ST. CATHARINES</option>
-
-		  <option value="ST. CHARLES">ST. CHARLES</option>
-
-		  <option value="ST. ISIDORE">ST. ISIDORE</option>
-
-		  <option value="ST. MARY'S">ST. MARY'S</option>
-
-		  <option value="ST. THOMAS">ST. THOMAS</option>
-
-		  <option value="STAYNER">STAYNER</option>
-
-		  <option value="STIRLING">STIRLING</option>
-
-		  <option value="STITTSVILLE">STITTSVILLE</option>
-
-		  <option value="STONEY CREEK">STONEY CREEK</option>
-
-		  <option value="STOUFFVILLE">STOUFFVILLE</option>
-
-		  <option value="STRATFORD">STRATFORD</option>
-
-		  <option value="STRATHROY">STRATHROY</option>
-
-		  <option value="STURGEON FALLS">STURGEON FALLS</option>
-
-		  <option value="SUDBURY-DOWNTOWN">SUDBURY-DOWNTOWN</option>
-
-		  <option value="SUDBURY-NEW SUDBURY">SUDBURY-NEW SUDBURY</option>
-
-		  <option value="SUDBURY-SOUTH END">SUDBURY-SOUTH END</option>
-
-		  <option value="SUNDRIDGE">SUNDRIDGE</option>
-
-		  <option value="SUTTON">SUTTON</option>
-
-		  <option value="SYDENHAM">SYDENHAM</option>
-
-		  <option value="TAMWORTH">TAMWORTH</option>
-
-		  <option value="TAVISTOCK">TAVISTOCK</option>
-
-		  <option value="TECUMSEH">TECUMSEH</option>
-
-		  <option value="TEESWATER">TEESWATER</option>
-
-		  <option value="TEMAGAMI">TEMAGAMI</option>
-
-		  <option value="TERRACE BAY">TERRACE BAY</option>
-
-		  <option value="THAMESVILLE">THAMESVILLE</option>
-
-		  <option value="THEDFORD">THEDFORD</option>
-
-		  <option value="THESSALON">THESSALON</option>
-
-		  <option value="THORNBURY">THORNBURY</option>
-
-		  <option value="THORNHILL">THORNHILL</option>
-
-		  <option value="THUNDER BAY">THUNDER BAY</option>
-
-		  <option value="TILBURY">TILBURY</option>
-
-		  <option value="TILLSONBURG">TILLSONBURG</option>
-
-		  <option value="TIMMINS">TIMMINS</option>
-
-		  <option value="TOBERMORY">TOBERMORY</option>
-
-		  <option value="TORONTO">TORONTO</option>
-
-		  <option value="TORONTO-CENTRAL">TORONTO-CENTRAL</option>
-
-		  <option value="TORONTO-ETOBICOKE">TORONTO-ETOBICOKE</option>
-
-		  <option value="TORONTO-NORTH YORK">TORONTO-NORTH YORK</option>
-
-		  <option value="TORONTO-SCARBOROUGH">TORONTO-SCARBOROUGH</option>
-
-		  <option value="TOTTENHAM">TOTTENHAM</option>
-
-		  <option value="TRENTON">TRENTON</option>
-
-		  <option value="TWEED">TWEED</option>
-
-		  <option value="UXBRIDGE">UXBRIDGE</option>
-
-		  <option value="VAL CARON">VAL CARON</option>
-
-		  <option value="VANKLEEK HILL">VANKLEEK HILL</option>
-
-		  <option value="VAUGHAN">VAUGHAN</option>
-
-		  <option value="VERMILION BAY">VERMILION BAY</option>
-
-		  <option value="VERNER">VERNER</option>
-
-		  <option value="VICTORIA HARBOUR">VICTORIA HARBOUR</option>
-
-		  <option value="WALKERTON">WALKERTON</option>
-
-		  <option value="WALLACEBURG">WALLACEBURG</option>
-
-		  <option value="WARKWORTH">WARKWORTH</option>
-
-		  <option value="WARSAW">WARSAW</option>
-
-		  <option value="WASAGA BEACH">WASAGA BEACH</option>
-
-		  <option value="WASHAGO">WASHAGO</option>
-
-		  <option value="WATERDOWN">WATERDOWN</option>
-
-		  <option value="WATERFORD">WATERFORD</option>
-
-		  <option value="WATERLOO">WATERLOO</option>
-
-		  <option value="WATFORD">WATFORD</option>
-
-		  <option value="WAWA">WAWA</option>
-
-		  <option value="WELLAND">WELLAND</option>
-
-		  <option value="WELLINGTON">WELLINGTON</option>
-
-		  <option value="WESTPORT">WESTPORT</option>
-
-		  <option value="WHEATLEY">WHEATLEY</option>
-
-		  <option value="WHITBY">WHITBY</option>
-
-		  <option value="WHITE RIVER">WHITE RIVER</option>
-
-		  <option value="WHITNEY">WHITNEY</option>
-
-		  <option value="WIARTON">WIARTON</option>
-
-		  <option value="WILBERFORCE">WILBERFORCE</option>
-
-		  <option value="WINCHESTER">WINCHESTER</option>
-
-		  <option value="WINDSOR">WINDSOR</option>
-
-		  <option value="WINGHAM">WINGHAM</option>
-
-		  <option value="WOODBRIDGE">WOODBRIDGE</option>
-
-		  <option value="WOODSTOCK">WOODSTOCK</option>
-
-		  <option value="ZURICH">ZURICH</option>
-
+	
+			  <option value="ACTON">ACTON</option>
+	
+			  <option value="AJAX">AJAX</option>
+	
+			  <option value="ALBAN">ALBAN</option>
+	
+			  <option value="ALEXANDRIA">ALEXANDRIA</option>
+	
+			  <option value="ALFRED">ALFRED</option>
+	
+			  <option value="ALLISTON">ALLISTON</option>
+	
+			  <option value="ALMONTE">ALMONTE</option>
+	
+			  <option value="AMHERSTBURG">AMHERSTBURG</option>
+	
+			  <option value="AMHERSTVIEW">AMHERSTVIEW</option>
+	
+			  <option value="ANCASTER">ANCASTER</option>
+	
+			  <option value="ANGUS">ANGUS</option>
+	
+			  <option value="APSLEY">APSLEY</option>
+	
+			  <option value="ARNPRIOR">ARNPRIOR</option>
+	
+			  <option value="ARTHUR">ARTHUR</option>
+	
+			  <option value="ATHENS">ATHENS</option>
+	
+			  <option value="ATIKOKAN">ATIKOKAN</option>
+	
+			  <option value="AURORA">AURORA</option>
+	
+			  <option value="AYLMER">AYLMER</option>
+	
+			  <option value="AZILDA">AZILDA</option>
+	
+			  <option value="BALA">BALA</option>
+	
+			  <option value="BANCROFT">BANCROFT</option>
+	
+			  <option value="BARRIE">BARRIE</option>
+	
+			  <option value="BARRY'S BAY">BARRY'S BAY</option>
+	
+			  <option value="BAYFIELD">BAYFIELD</option>
+	
+			  <option value="BAYSVILLE">BAYSVILLE</option>
+	
+			  <option value="BEACHBURG">BEACHBURG</option>
+	
+			  <option value="BEAMSVILLE">BEAMSVILLE</option>
+	
+			  <option value="BEARDMORE">BEARDMORE</option>
+	
+			  <option value="BEAVERTON">BEAVERTON</option>
+	
+			  <option value="BELLE RIVER">BELLE RIVER</option>
+	
+			  <option value="BELLEVILLE">BELLEVILLE</option>
+	
+			  <option value="BELMONT">BELMONT</option>
+	
+			  <option value="BEWDLEY">BEWDLEY</option>
+	
+			  <option value="BLENHEIM">BLENHEIM</option>
+	
+			  <option value="BLIND RIVER">BLIND RIVER</option>
+	
+			  <option value="BOBCAYGEON">BOBCAYGEON</option>
+	
+			  <option value="BOLTON">BOLTON</option>
+	
+			  <option value="BONFIELD">BONFIELD</option>
+	
+			  <option value="BOTHWELL">BOTHWELL</option>
+	
+			  <option value="BOURGET">BOURGET</option>
+	
+			  <option value="BOWMANVILLE">BOWMANVILLE</option>
+	
+			  <option value="BRACEBRIDGE">BRACEBRIDGE</option>
+	
+			  <option value="BRADFORD">BRADFORD</option>
+	
+			  <option value="BRAMPTON">BRAMPTON</option>
+	
+			  <option value="BRANTFORD">BRANTFORD</option>
+	
+			  <option value="BRECHIN">BRECHIN</option>
+	
+			  <option value="BRIDGENORTH">BRIDGENORTH</option>
+	
+			  <option value="BRIGHTON">BRIGHTON</option>
+	
+			  <option value="BROCKVILLE">BROCKVILLE</option>
+	
+			  <option value="BROOKLIN">BROOKLIN</option>
+	
+			  <option value="BRUCE MINES">BRUCE MINES</option>
+	
+			  <option value="BRUSSELS">BRUSSELS</option>
+	
+			  <option value="BUCKHORN">BUCKHORN</option>
+	
+			  <option value="BURFORD">BURFORD</option>
+	
+			  <option value="BURK'S FALLS">BURK'S FALLS</option>
+	
+			  <option value="BURLINGTON">BURLINGTON</option>
+	
+			  <option value="CALABOGIE">CALABOGIE</option>
+	
+			  <option value="CALEDON">CALEDON</option>
+	
+			  <option value="CALEDONIA">CALEDONIA</option>
+	
+			  <option value="CALLANDER">CALLANDER</option>
+	
+			  <option value="CAMBRIDGE">CAMBRIDGE</option>
+	
+			  <option value="CAMBRIDGE-PRESTON">CAMBRIDGE-PRESTON</option>
+	
+			  <option value="CAMPBELLFORD">CAMPBELLFORD</option>
+	
+			  <option value="CANNINGTON">CANNINGTON</option>
+	
+			  <option value="CAPREOL">CAPREOL</option>
+	
+			  <option value="CARDINAL">CARDINAL</option>
+	
+			  <option value="CARLETON PLACE">CARLETON PLACE</option>
+	
+			  <option value="CARP">CARP</option>
+	
+			  <option value="CASSELMAN">CASSELMAN</option>
+	
+			  <option value="CAYUGA">CAYUGA</option>
+	
+			  <option value="CHAPLEAU">CHAPLEAU</option>
+	
+			  <option value="CHATHAM">CHATHAM</option>
+	
+			  <option value="CHELMSFORD">CHELMSFORD</option>
+	
+			  <option value="CHESLEY">CHESLEY</option>
+	
+			  <option value="CHESTERVILLE">CHESTERVILLE</option>
+	
+			  <option value="CLINTON">CLINTON</option>
+	
+			  <option value="COBALT">COBALT</option>
+	
+			  <option value="COBDEN">COBDEN</option>
+	
+			  <option value="COBOCONK">COBOCONK</option>
+	
+			  <option value="COBOURG">COBOURG</option>
+	
+			  <option value="COCHRANE">COCHRANE</option>
+	
+			  <option value="COE HILL">COE HILL</option>
+	
+			  <option value="COLBORNE">COLBORNE</option>
+	
+			  <option value="COLDWATER">COLDWATER</option>
+	
+			  <option value="COLLINGWOOD">COLLINGWOOD</option>
+	
+			  <option value="CONCORD">CONCORD</option>
+	
+			  <option value="CONISTON">CONISTON</option>
+	
+			  <option value="COOKSTOWN">COOKSTOWN</option>
+	
+			  <option value="COPPER CLIFF">COPPER CLIFF</option>
+	
+			  <option value="CORNWALL">CORNWALL</option>
+	
+			  <option value="CORUNNA">CORUNNA</option>
+	
+			  <option value="COURTRIGHT">COURTRIGHT</option>
+	
+			  <option value="CREEMORE">CREEMORE</option>
+	
+			  <option value="DEEP RIVER">DEEP RIVER</option>
+	
+			  <option value="DELHI">DELHI</option>
+	
+			  <option value="DELTA">DELTA</option>
+	
+			  <option value="DENBIGH">DENBIGH</option>
+	
+			  <option value="DESERONTO">DESERONTO</option>
+	
+			  <option value="DORCHESTER">DORCHESTER</option>
+	
+			  <option value="DORSET">DORSET</option>
+	
+			  <option value="DRESDEN">DRESDEN</option>
+	
+			  <option value="DRYDEN">DRYDEN</option>
+	
+			  <option value="DUNCHURCH">DUNCHURCH</option>
+	
+			  <option value="DUNDALK">DUNDALK</option>
+	
+			  <option value="DUNDAS">DUNDAS</option>
+	
+			  <option value="DUNNVILLE">DUNNVILLE</option>
+	
+			  <option value="DURHAM">DURHAM</option>
+	
+			  <option value="DUTTON">DUTTON</option>
+	
+			  <option value="DWIGHT">DWIGHT</option>
+	
+			  <option value="EAR FALLS">EAR FALLS</option>
+	
+			  <option value="EARLTON">EARLTON</option>
+	
+			  <option value="ECHO BAY">ECHO BAY</option>
+	
+			  <option value="EGANVILLE">EGANVILLE</option>
+	
+			  <option value="ELGIN">ELGIN</option>
+	
+			  <option value="ELK LAKE">ELK LAKE</option>
+	
+			  <option value="ELLIOT LAKE">ELLIOT LAKE</option>
+	
+			  <option value="ELMIRA">ELMIRA</option>
+	
+			  <option value="ELMVALE">ELMVALE</option>
+	
+			  <option value="ELORA">ELORA</option>
+	
+			  <option value="EMBRUN">EMBRUN</option>
+	
+			  <option value="EMO">EMO</option>
+	
+			  <option value="ENGLEHART">ENGLEHART</option>
+	
+			  <option value="ERIN">ERIN</option>
+	
+			  <option value="ESPANOLA">ESPANOLA</option>
+	
+			  <option value="ESSEX">ESSEX</option>
+	
+			  <option value="EXETER">EXETER</option>
+	
+			  <option value="FENELON FALLS">FENELON FALLS</option>
+	
+			  <option value="FERGUS">FERGUS</option>
+	
+			  <option value="FOLEYET">FOLEYET</option>
+	
+			  <option value="FONTHILL">FONTHILL</option>
+	
+			  <option value="FOREST">FOREST</option>
+	
+			  <option value="FORT ERIE">FORT ERIE</option>
+	
+			  <option value="FORT FRANCES">FORT FRANCES</option>
+	
+			  <option value="FRANKFORD">FRANKFORD</option>
+	
+			  <option value="GANANOQUE">GANANOQUE</option>
+	
+			  <option value="GARSON">GARSON</option>
+	
+			  <option value="GEORGETOWN">GEORGETOWN</option>
+	
+			  <option value="GERALDTON">GERALDTON</option>
+	
+			  <option value="GLENCOE">GLENCOE</option>
+	
+			  <option value="GODERICH">GODERICH</option>
+	
+			  <option value="GOODERHAM">GOODERHAM</option>
+	
+			  <option value="GORE BAY">GORE BAY</option>
+	
+			  <option value="GOULAIS RIVER">GOULAIS RIVER</option>
+	
+			  <option value="GRAND BEND">GRAND BEND</option>
+	
+			  <option value="GRAND VALLEY">GRAND VALLEY</option>
+	
+			  <option value="GRAVENHURST">GRAVENHURST</option>
+	
+			  <option value="GRIMSBY">GRIMSBY</option>
+	
+			  <option value="GUELPH">GUELPH</option>
+	
+			  <option value="HAGAR">HAGAR</option>
+	
+			  <option value="HAGERSVILLE">HAGERSVILLE</option>
+	
+			  <option value="HAILEYBURY">HAILEYBURY</option>
+	
+			  <option value="HALIBURTON">HALIBURTON</option>
+	
+			  <option value="HAMILTON">HAMILTON</option>
+	
+			  <option value="HANMER">HANMER</option>
+	
+			  <option value="HANOVER">HANOVER</option>
+	
+			  <option value="HARRISTON">HARRISTON</option>
+	
+			  <option value="HARROW">HARROW</option>
+	
+			  <option value="HASTINGS">HASTINGS</option>
+	
+			  <option value="HAVELOCK">HAVELOCK</option>
+	
+			  <option value="HAWKESBURY">HAWKESBURY</option>
+	
+			  <option value="HEARST">HEARST</option>
+	
+			  <option value="HENSALL">HENSALL</option>
+	
+			  <option value="HONEY HARBOUR">HONEY HARBOUR</option>
+	
+			  <option value="HORNEPAYNE">HORNEPAYNE</option>
+	
+			  <option value="HUDSON">HUDSON</option>
+	
+			  <option value="HUNTSVILLE">HUNTSVILLE</option>
+	
+			  <option value="IGNACE">IGNACE</option>
+	
+			  <option value="INGERSOLL">INGERSOLL</option>
+	
+			  <option value="INNISFIL">INNISFIL</option>
+	
+			  <option value="IRON BRIDGE">IRON BRIDGE</option>
+	
+			  <option value="IROQUOIS">IROQUOIS</option>
+	
+			  <option value="IROQUOIS FALLS">IROQUOIS FALLS</option>
+	
+			  <option value="KAKABEKA FALLS">KAKABEKA FALLS</option>
+	
+			  <option value="KAPUSKASING">KAPUSKASING</option>
+	
+			  <option value="KEARNEY">KEARNEY</option>
+	
+			  <option value="KEEWATIN">KEEWATIN</option>
+	
+			  <option value="KEMPTVILLE">KEMPTVILLE</option>
+	
+			  <option value="KENORA">KENORA</option>
+	
+			  <option value="KESWICK">KESWICK</option>
+	
+			  <option value="KILLALOE">KILLALOE</option>
+	
+			  <option value="KILLARNEY">KILLARNEY</option>
+	
+			  <option value="KINCARDINE">KINCARDINE</option>
+	
+			  <option value="KINGSTON">KINGSTON</option>
+	
+			  <option value="KINGSVILLE">KINGSVILLE</option>
+	
+			  <option value="KINMOUNT">KINMOUNT</option>
+	
+			  <option value="KIRKFIELD">KIRKFIELD</option>
+	
+			  <option value="KIRKLAND LAKE">KIRKLAND LAKE</option>
+	
+			  <option value="KITCHENER">KITCHENER</option>
+	
+			  <option value="LAFONTAINE">LAFONTAINE</option>
+	
+			  <option value="LAKEFIELD">LAKEFIELD</option>
+	
+			  <option value="LANARK">LANARK</option>
+	
+			  <option value="LANCASTER">LANCASTER</option>
+	
+			  <option value="LANGTON">LANGTON</option>
+	
+			  <option value="LANSDOWNE">LANSDOWNE</option>
+	
+			  <option value="LARDER LAKE">LARDER LAKE</option>
+	
+			  <option value="LASALLE">LASALLE</option>
+	
+			  <option value="LEAMINGTON">LEAMINGTON</option>
+	
+			  <option value="LINDSAY">LINDSAY</option>
+	
+			  <option value="LION'S HEAD">LION'S HEAD</option>
+	
+			  <option value="LISTOWEL">LISTOWEL</option>
+	
+			  <option value="LITTLE CURRENT">LITTLE CURRENT</option>
+	
+			  <option value="LIVELY">LIVELY</option>
+	
+			  <option value="LONDON">LONDON</option>
+	
+			  <option value="LONG SAULT">LONG SAULT</option>
+	
+			  <option value="LONGLAC">LONGLAC</option>
+	
+			  <option value="LUCAN">LUCAN</option>
+	
+			  <option value="LUCKNOW">LUCKNOW</option>
+	
+			  <option value="MACTIER">MACTIER</option>
+	
+			  <option value="MADOC">MADOC</option>
+	
+			  <option value="MAGNETAWAN">MAGNETAWAN</option>
+	
+			  <option value="MANITOUWADGE">MANITOUWADGE</option>
+	
+			  <option value="MANITOWANING">MANITOWANING</option>
+	
+			  <option value="MANOTICK">MANOTICK</option>
+	
+			  <option value="MAPLE">MAPLE</option>
+	
+			  <option value="MARATHON">MARATHON</option>
+	
+			  <option value="MARKDALE">MARKDALE</option>
+	
+			  <option value="MARKHAM">MARKHAM</option>
+	
+			  <option value="MARMORA">MARMORA</option>
+	
+			  <option value="MASSEY">MASSEY</option>
+	
+			  <option value="MATHESON">MATHESON</option>
+	
+			  <option value="MATTAWA">MATTAWA</option>
+	
+			  <option value="MATTICE">MATTICE</option>
+	
+			  <option value="MAXVILLE">MAXVILLE</option>
+	
+			  <option value="MAYNOOTH">MAYNOOTH</option>
+	
+			  <option value="MEAFORD">MEAFORD</option>
+	
+			  <option value="MERRICKVILLE">MERRICKVILLE</option>
+	
+			  <option value="MIDLAND">MIDLAND</option>
+	
+			  <option value="MILDMAY">MILDMAY</option>
+	
+			  <option value="MILLBROOK">MILLBROOK</option>
+	
+			  <option value="MILTON">MILTON</option>
+	
+			  <option value="MILVERTON">MILVERTON</option>
+	
+			  <option value="MINDEN">MINDEN</option>
+	
+			  <option value="MISSISSAUGA">MISSISSAUGA</option>
+	
+			  <option value="MITCHELL">MITCHELL</option>
+	
+			  <option value="MOONBEAM">MOONBEAM</option>
+	
+			  <option value="MOOSONEE">MOOSONEE</option>
+	
+			  <option value="MORRISBURG">MORRISBURG</option>
+	
+			  <option value="MOUNT FOREST">MOUNT FOREST</option>
+	
+			  <option value="NAKINA">NAKINA</option>
+	
+			  <option value="NAPANEE">NAPANEE</option>
+	
+			  <option value="NEW HAMBURG">NEW HAMBURG</option>
+	
+			  <option value="NEW LISKEARD">NEW LISKEARD</option>
+	
+			  <option value="NEWCASTLE">NEWCASTLE</option>
+	
+			  <option value="NEWMARKET">NEWMARKET</option>
+	
+			  <option value="NIAGARA FALLS">NIAGARA FALLS</option>
+	
+			  <option value="NIAGARA-ON-THE-LAKE">NIAGARA-ON-THE-LAKE</option>
+	
+			  <option value="NIPIGON">NIPIGON</option>
+	
+			  <option value="NOELVILLE">NOELVILLE</option>
+	
+			  <option value="NORTH BAY">NORTH BAY</option>
+	
+			  <option value="NORTHBROOK">NORTHBROOK</option>
+	
+			  <option value="NORWICH">NORWICH</option>
+	
+			  <option value="NORWOOD">NORWOOD</option>
+	
+			  <option value="OAKVILLE">OAKVILLE</option>
+	
+			  <option value="OMEMEE">OMEMEE</option>
+	
+			  <option value="ONAPING">ONAPING</option>
+	
+			  <option value="ORANGEVILLE">ORANGEVILLE</option>
+	
+			  <option value="ORILLIA">ORILLIA</option>
+	
+			  <option value="ORONO">ORONO</option>
+	
+			  <option value="OSHAWA">OSHAWA</option>
+	
+			  <option value="OTTAWA">OTTAWA</option>
+	
+			  <option value="OTTAWA-GLOUCESTER">OTTAWA-GLOUCESTER</option>
+	
+			  <option value="OTTAWA-KANATA">OTTAWA-KANATA</option>
+	
+			  <option value="OTTAWA-NEPEAN">OTTAWA-NEPEAN</option>
+	
+			  <option value="OTTAWA-ORLEANS">OTTAWA-ORLEANS</option>
+	
+			  <option value="OTTAWA-VANIER">OTTAWA-VANIER</option>
+	
+			  <option value="OWEN SOUND">OWEN SOUND</option>
+	
+			  <option value="PAISLEY">PAISLEY</option>
+	
+			  <option value="PALMERSTON">PALMERSTON</option>
+	
+			  <option value="PARIS">PARIS</option>
+	
+			  <option value="PARKHILL">PARKHILL</option>
+	
+			  <option value="PARRY SOUND">PARRY SOUND</option>
+	
+			  <option value="PEFFERLAW">PEFFERLAW</option>
+	
+			  <option value="PELEE ISLAND">PELEE ISLAND</option>
+	
+			  <option value="PEMBROKE">PEMBROKE</option>
+	
+			  <option value="PENETANG">PENETANG</option>
+	
+			  <option value="PERTH">PERTH</option>
+	
+			  <option value="PETAWAWA">PETAWAWA</option>
+	
+			  <option value="PETERBOROUGH">PETERBOROUGH</option>
+	
+			  <option value="PETROLIA">PETROLIA</option>
+	
+			  <option value="PICKERING">PICKERING</option>
+	
+			  <option value="PICKLE LAKE">PICKLE LAKE</option>
+	
+			  <option value="PICTON">PICTON</option>
+	
+			  <option value="PLANTAGENET">PLANTAGENET</option>
+	
+			  <option value="PLEVNA">PLEVNA</option>
+	
+			  <option value="POINT EDWARD">POINT EDWARD</option>
+	
+			  <option value="POINTE AU BARIL">POINTE AU BARIL</option>
+	
+			  <option value="PONTYPOOL">PONTYPOOL</option>
+	
+			  <option value="PORT BURWELL">PORT BURWELL</option>
+	
+			  <option value="PORT CARLING">PORT CARLING</option>
+	
+			  <option value="PORT COLBORNE">PORT COLBORNE</option>
+	
+			  <option value="PORT DOVER">PORT DOVER</option>
+	
+			  <option value="PORT ELGIN">PORT ELGIN</option>
+	
+			  <option value="PORT HOPE">PORT HOPE</option>
+	
+			  <option value="PORT LORING">PORT LORING</option>
+	
+			  <option value="PORT MCNICOLL">PORT MCNICOLL</option>
+	
+			  <option value="PORT PERRY">PORT PERRY</option>
+	
+			  <option value="PORT ROWAN">PORT ROWAN</option>
+	
+			  <option value="PORT SEVERN">PORT SEVERN</option>
+	
+			  <option value="PORT STANLEY">PORT STANLEY</option>
+	
+			  <option value="PORTLAND">PORTLAND</option>
+	
+			  <option value="POWASSAN">POWASSAN</option>
+	
+			  <option value="PRESCOTT">PRESCOTT</option>
+	
+			  <option value="RAINY RIVER">RAINY RIVER</option>
+	
+			  <option value="RED LAKE">RED LAKE</option>
+	
+			  <option value="RED ROCK">RED ROCK</option>
+	
+			  <option value="REECES CORNERS">REECES CORNERS</option>
+	
+			  <option value="RENFREW">RENFREW</option>
+	
+			  <option value="RICHARD'S LANDING">RICHARD'S LANDING</option>
+	
+			  <option value="RICHMOND">RICHMOND</option>
+	
+			  <option value="RICHMOND HILL">RICHMOND HILL</option>
+	
+			  <option value="RIDGETOWN">RIDGETOWN</option>
+	
+			  <option value="ROCKLAND">ROCKLAND</option>
+	
+			  <option value="RODNEY">RODNEY</option>
+	
+			  <option value="ROSSEAU">ROSSEAU</option>
+	
+			  <option value="ROSSMORE">ROSSMORE</option>
+	
+			  <option value="SARNIA">SARNIA</option>
+	
+			  <option value="SAUBLE BEACH">SAUBLE BEACH</option>
+	
+			  <option value="SAULT STE. MARIE">SAULT STE. MARIE</option>
+	
+			  <option value="SCHOMBERG">SCHOMBERG</option>
+	
+			  <option value="SCHREIBER">SCHREIBER</option>
+	
+			  <option value="SEAFORTH">SEAFORTH</option>
+	
+			  <option value="SEELEY'S BAY">SEELEY'S BAY</option>
+	
+			  <option value="SHARBOT LAKE">SHARBOT LAKE</option>
+	
+			  <option value="SHELBURNE">SHELBURNE</option>
+	
+			  <option value="SIMCOE">SIMCOE</option>
+	
+			  <option value="SIOUX LOOKOUT">SIOUX LOOKOUT</option>
+	
+			  <option value="SIOUX NARROWS">SIOUX NARROWS</option>
+	
+			  <option value="SMITHS FALLS">SMITHS FALLS</option>
+	
+			  <option value="SMITHVILLE">SMITHVILLE</option>
+	
+			  <option value="SMOOTH ROCK FALLS">SMOOTH ROCK FALLS</option>
+	
+			  <option value="SOUTH PORCUPINE">SOUTH PORCUPINE</option>
+	
+			  <option value="SOUTH RIVER">SOUTH RIVER</option>
+	
+			  <option value="SOUTHAMPTON">SOUTHAMPTON</option>
+	
+			  <option value="SPANISH">SPANISH</option>
+	
+			  <option value="ST. CATHARINES">ST. CATHARINES</option>
+	
+			  <option value="ST. CHARLES">ST. CHARLES</option>
+	
+			  <option value="ST. ISIDORE">ST. ISIDORE</option>
+	
+			  <option value="ST. MARY'S">ST. MARY'S</option>
+	
+			  <option value="ST. THOMAS">ST. THOMAS</option>
+	
+			  <option value="STAYNER">STAYNER</option>
+	
+			  <option value="STIRLING">STIRLING</option>
+	
+			  <option value="STITTSVILLE">STITTSVILLE</option>
+	
+			  <option value="STONEY CREEK">STONEY CREEK</option>
+	
+			  <option value="STOUFFVILLE">STOUFFVILLE</option>
+	
+			  <option value="STRATFORD">STRATFORD</option>
+	
+			  <option value="STRATHROY">STRATHROY</option>
+	
+			  <option value="STURGEON FALLS">STURGEON FALLS</option>
+	
+			  <option value="SUDBURY-DOWNTOWN">SUDBURY-DOWNTOWN</option>
+	
+			  <option value="SUDBURY-NEW SUDBURY">SUDBURY-NEW SUDBURY</option>
+	
+			  <option value="SUDBURY-SOUTH END">SUDBURY-SOUTH END</option>
+	
+			  <option value="SUNDRIDGE">SUNDRIDGE</option>
+	
+			  <option value="SUTTON">SUTTON</option>
+	
+			  <option value="SYDENHAM">SYDENHAM</option>
+	
+			  <option value="TAMWORTH">TAMWORTH</option>
+	
+			  <option value="TAVISTOCK">TAVISTOCK</option>
+	
+			  <option value="TECUMSEH">TECUMSEH</option>
+	
+			  <option value="TEESWATER">TEESWATER</option>
+	
+			  <option value="TEMAGAMI">TEMAGAMI</option>
+	
+			  <option value="TERRACE BAY">TERRACE BAY</option>
+	
+			  <option value="THAMESVILLE">THAMESVILLE</option>
+	
+			  <option value="THEDFORD">THEDFORD</option>
+	
+			  <option value="THESSALON">THESSALON</option>
+	
+			  <option value="THORNBURY">THORNBURY</option>
+	
+			  <option value="THORNHILL">THORNHILL</option>
+	
+			  <option value="THUNDER BAY">THUNDER BAY</option>
+	
+			  <option value="TILBURY">TILBURY</option>
+	
+			  <option value="TILLSONBURG">TILLSONBURG</option>
+	
+			  <option value="TIMMINS">TIMMINS</option>
+	
+			  <option value="TOBERMORY">TOBERMORY</option>
+	
+			  <option value="TORONTO-CENTRAL">TORONTO-CENTRAL</option>
+	
+			  <option value="TORONTO-ETOBICOKE">TORONTO-ETOBICOKE</option>
+	
+			  <option value="TORONTO-NORTH YORK">TORONTO-NORTH YORK</option>
+	
+			  <option value="TORONTO-SCARBOROUGH">TORONTO-SCARBOROUGH</option>
+	
+			  <option value="TOTTENHAM">TOTTENHAM</option>
+	
+			  <option value="TRENTON">TRENTON</option>
+	
+			  <option value="TWEED">TWEED</option>
+	
+			  <option value="UXBRIDGE">UXBRIDGE</option>
+	
+			  <option value="VAL CARON">VAL CARON</option>
+	
+			  <option value="VANKLEEK HILL">VANKLEEK HILL</option>
+	
+			  <option value="VAUGHAN">VAUGHAN</option>
+	
+			  <option value="VERMILION BAY">VERMILION BAY</option>
+	
+			  <option value="VERNER">VERNER</option>
+	
+			  <option value="VICTORIA HARBOUR">VICTORIA HARBOUR</option>
+	
+			  <option value="WALKERTON">WALKERTON</option>
+	
+			  <option value="WALLACEBURG">WALLACEBURG</option>
+	
+			  <option value="WARKWORTH">WARKWORTH</option>
+	
+			  <option value="WARSAW">WARSAW</option>
+	
+			  <option value="WASAGA BEACH">WASAGA BEACH</option>
+	
+			  <option value="WASHAGO">WASHAGO</option>
+	
+			  <option value="WATERDOWN">WATERDOWN</option>
+	
+			  <option value="WATERFORD">WATERFORD</option>
+	
+			  <option value="WATERLOO">WATERLOO</option>
+	
+			  <option value="WATFORD">WATFORD</option>
+	
+			  <option value="WAWA">WAWA</option>
+	
+			  <option value="WELLAND">WELLAND</option>
+	
+			  <option value="WELLINGTON">WELLINGTON</option>
+	
+			  <option value="WESTPORT">WESTPORT</option>
+	
+			  <option value="WHEATLEY">WHEATLEY</option>
+	
+			  <option value="WHITBY">WHITBY</option>
+	
+			  <option value="WHITE RIVER">WHITE RIVER</option>
+	
+			  <option value="WHITNEY">WHITNEY</option>
+	
+			  <option value="WIARTON">WIARTON</option>
+	
+			  <option value="WILBERFORCE">WILBERFORCE</option>
+	
+			  <option value="WINCHESTER">WINCHESTER</option>
+	
+			  <option value="WINDSOR">WINDSOR</option>
+	
+			  <option value="WINGHAM">WINGHAM</option>
+	
+			  <option value="WOODBRIDGE">WOODBRIDGE</option>
+	
+			  <option value="WOODSTOCK">WOODSTOCK</option>
+	
+			  <option value="ZURICH">ZURICH</option>
+	
 												</SELECT>
 
 												</td>
@@ -1177,6 +1272,7 @@ Please see store personnel for details.
 												<input type="hidden" name="store type" value="all carry" />
                                                 <a href="javascript:ToInventory()"><img src="/images/storesearch/button_findstores.gif" width="144" height="20" border="0" alt="Find Stores""></a> 
                                               </td>
+
                                             </tr>
                                           </table>
                                         </td>
@@ -1202,7 +1298,7 @@ Please see store personnel for details.
               <tr> 
                 <td>&nbsp;</td>
                 
-					<!--2008//-->
+					<!--2012//-->
 
 <script type="text/javascript" src="/ssi/footer.js"></script>
 
@@ -1222,8 +1318,8 @@ Please see store personnel for details.
 <a id="contactus" href="/contactus/index.shtml">Contact Us</a>&nbsp;|
 <a id="sitemap" href="/sitemap/index.shtml">Site Map</a>&nbsp;|
 <a id="storesearch" href="/storesearch/index.shtml">Store Search</a>
-
-
+</span>
+</td>
 
 <script>
 var win = null;
@@ -1234,12 +1330,10 @@ settings = 'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',s
 win = window.open(mypage,myname,settings)}
 </script>
 
-<!--
-<a id="fsi" target="_blank" href="/main/files/fsi/correction.html" onclick="NewWindow(this.href,'xmlPop','546','398','yes');return false" style="color:#E71838;" >Correction Notice</a>
-//-->
-</span></td>
-
-<script src="/ssi/footer_fsi.js"></script>
+<td><a href="/accessibility/essential.shtml"><img src="/ssi/images/eaccess.jpg" 
+width="59" height="22" border="0" 
+alt="This Web Accessibility icon serves as a link to download eSSENTIAL Accessibility assistive technology software for individuals with physical disabilities." 
+title="This Web Accessibility icon serves as a link to download eSSENTIAL Accessibility assistive technology software for individuals with physical disabilities."></a></td>
 
 </tr></table>
 
@@ -1266,8 +1360,8 @@ win = window.open(mypage,myname,settings)}
 
 <!--copyright notice begins//-->
 
-<div align="center"><br><table width="774" border="0" cellspacing="0" cellpadding="0"><tr><td width="10"><img src="/images/spacer.gif" width="25" height="4" border="0"></td><td width="764"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><span class="textlinks" style="color:#666666">&copy; 2000/2010 LCBO</span><span class="textlinks"> | <a id="privacy" href="/privacy/index.shtml">Privacy Policy</a> | <a id="terms" href="/terms/index.shtml">Terms &amp; Conditions</a> | <a id="language" href="/french.html">
-	Français</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.lcbotrade.com/" target="_blank">TRADE RESOURCES</a></span></td><td align="right"><a href="/bagitback/bib_en.shtml" target="_blank"><img onmouseover="this.src='/ssi/images/bagitback_on.gif';" onmouseout="this.src='/ssi/images/bagitback_off.gif';" src="/ssi/images/bagitback_off.gif" width="110" height="14" border="0" alt="BAGITBACK.CA" style="margin-right:25px;"></a></td></tr></table></td></tr><tr><td width="10">&nbsp;</td><td width="764">&nbsp;</td></tr></table></div>
+<div align="center"><br><table width="774" border="0" cellspacing="0" cellpadding="0"><tr><td width="10"><img src="/images/spacer.gif" width="25" height="4" border="0"></td><td width="764"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><span class="textlinks" style="color:#666666">&copy; 2000/2012 LCBO</span><span class="textlinks"> | <a id="privacy" href="/privacy/index.shtml">Privacy Policy</a> | <a id="terms" href="/terms/index.shtml">Terms &amp; Conditions</a> | <a id="language" href="/french.html">
+	Français</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.doingbusinesswithlcbo.com/" target="_blank">TRADE RESOURCES</a></span></td><td align="right"><a href="/bagitback/bib_en.shtml" target="_blank"><img onmouseover="this.src='/ssi/images/bagitback_on.gif';" onmouseout="this.src='/ssi/images/bagitback_off.gif';" src="/ssi/images/bagitback_off.gif" width="110" height="14" border="0" alt="BAGITBACK.CA" style="margin-right:25px;"></a></td></tr></table></td></tr><tr><td width="10">&nbsp;</td><td width="764">&nbsp;</td></tr></table></div>
 
 <!--copyright notice ends//-->
 
@@ -1277,28 +1371,51 @@ win = window.open(mypage,myname,settings)}
 <script type="text/javascript">
 if (set_inputForm_setItemnameResults) {
 	inputForm_setItemnameResults("15");
-	inputForm_setItemnameLength("32"); 
+	inputForm_setItemnameLength("45"); 
 	}
 </script>
-<!--[if IE 6]>
+<!--[if lt IE 8]>
 <script type="text/javascript">
 if (set_inputForm_setItemnameResults) {
-	inputForm_setItemnameResults("4"); }
+	inputForm_setItemnameResults("1"); }
 </script>
 <![endif]-->
 
 <script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-553500-6");
-pageTracker._trackPageview();
-</script>
+       var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-553500-6']);
+       _gaq.push(['_trackPageview']);
+   </script>
+   <script type="text/javascript">  (function() {
+       var ga = document.createElement('script');     ga.type =
+   'text/javascript'; ga.async = true;
+       ga.src = ('https:'   == document.location.protocol ?
+   'https://ssl'   : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0];
+   s.parentNode.insertBefore(ga, s);
+       })();
+   </script>
+
 
 
 
 <script>
+	$(document).ready(function() {
+	
+		 $("#image_holder").click(function(event){
+			 $("#enlargement").fadeIn('slow');
+			 event.stopPropagation();
+			 $("#enlargement").center();
+		 });
+		$("body").click(function(){ 
+			if ($("#enlargement").is(":visible")) {
+				$("#enlargement").fadeOut('slow');
+			}
+		});
+		
+
+	});
+
 function ToInventory() {
 	var form = document.productdetails;
 	form.action.value = 'inventory';	
@@ -1307,12 +1424,24 @@ function ToInventory() {
 }
 
 function PrintItemDetails() {
-	var localwin=window.open("/lcbo-ear/lcbo/product/printerFriendly.do?language=EN&itemNumber=582973","ProductPrintPopup","status=0,scrollbars=1,resizable=1,width=700,height=600,top=0,left=0");
+	var localwin=window.open("/lcbo-ear/lcbo/product/printerFriendly.do?language=EN&itemNumber=125310","ProductPrintPopup","status=0,scrollbars=1,resizable=1,width=700,height=600,top=0,left=0");
 }
 
-document.productdetails.city.focus();
+//document.productdetails.city.focus();
 
 </script>
+
+
+	<div class="overlays" id="enlargement">
+		<div class="close"></div>
+		<img alt="NORMAN HARDIE COUNTY UNFILTERED PINOT NOIR 2010" src="/app/images/products/0125310.jpg" />
+	</div>
+
+
+<div id="sweetnessDescOverlay" style="display: none;">
+	<img class="closeButtonOverlay" border="0" onclick="$('#sweetnessDescOverlay').fadeOut('slow');" src="/app/images/products/website/close-button.png">
+	<img border="0" src="/products/images/sweetness.jpg">
+</div>
 
 </BODY>
 
