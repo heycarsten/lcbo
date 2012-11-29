@@ -1,3 +1,20 @@
+Version 1.3.0
+
+  * Updated `StoreListPage` to use current XML-based store locator endpoint.
+  * Fixed issue where store opening times of 12:00 PM were reported as midnight.
+  * Fixed product description, serving suggestion, and tasting note parsing.
+  * Added new `#sugar_in_grams_per_liter` attribute to `ProductPage`,
+    `#sugar_content` still reflects the product sweetness descriptor if present.
+  * Added new `#varietal` attribute to `ProductPage`, this appears for some
+    wines selected by the LCBO.
+  * Added new `#style` attribute to `ProductPage`, this reflects the LCBO's
+    designated style for selected wines.
+  * Fixed alcohol content parsing for products.
+  * Added `#clearance_sale_savings_in_cents` and `#has_clearance_sale` indicator
+    to `ProductPage` and included savings calculation in product price.
+  * Fixed product category parsing and added new `#tertiary_category`.
+  * Updated dependencies.
+
 Version 1.2.3
 
   * Updated `ProductPage` to return `RedirectedError` for gift cards which now
