@@ -113,6 +113,10 @@ module BCL
       # end
     end
 
+    emits :region do
+      doc.css('.field-field-locality-of-origin div.field-item.odd')[0].content.strip rescue nil
+    end
+
     # emits :package do
     #   @package ||= begin
     #     string = info_cell_lines[2]
@@ -136,9 +140,28 @@ module BCL
     #   volume_helper.package_volume
     # end
 
-    # emits :volume_in_milliliters do
-    #   CrawlKit::VolumeHelper[package]
-    # end
+    emits :sku do
+      data = doc.css('.field-field-sku-upc div.field-item.odd')[0].content
+      if data
+        data.split("/")[0].strip.to_i
+      end      
+    end
+
+    emits :upc do
+      data = doc.css('.field-field-sku-upc div.field-item.odd')[0].content
+      if data
+        data.split("/")[1].strip.to_i
+      end
+    end
+
+    emits :volume_in_milliliters do
+      data = doc.css('.field-field-percent-volume div.field-item.odd')[0].content
+      if data
+        data.split(" ")[0].to_i
+      else
+        0
+      end
+    end
 
     emits :alcohol_content do
       data = doc.css('.field-field-percent-alcohol .field-item.odd')[0].content
@@ -220,9 +243,23 @@ module BCL
     #   html.include?('This is a <B>VQA</B> wine')
     # end
 
-    # emits :is_kosher do
-    #   html.include?('This is a <B>Kosher</B> product')
-    # end
+    emits :is_kosher do
+      data = doc.css('.field-field-kosher div.field-item.odd')[0].content
+      if data
+        data.strip != "No"
+      else
+        false
+      end
+    end
+
+    emits :is_organic do
+      data = doc.css('.field-field-organic div.field-item.odd')[0].content
+      if data
+        data.strip != "No"
+      else
+        false
+      end
+    end
 
     emits :description do
       doc.css('.productDescription')[0].content.strip

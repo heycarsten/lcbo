@@ -63,7 +63,7 @@ module BCL
     # end
 
     emits :city_ids do
-      city_hash.keys
+      city_hash.keys.sort
     end
 
     emits :city_hash do

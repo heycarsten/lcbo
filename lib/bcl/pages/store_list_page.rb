@@ -63,7 +63,7 @@ module BCL
     # end
 
     emits :store_ids do
-      store_hash.keys
+      store_hash.keys.sort
     end
 
     emits :store_hash do

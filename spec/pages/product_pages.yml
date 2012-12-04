@@ -535,6 +535,10 @@
     :name: Hester Creek - Character Red 10 / 11
     # :tags: ["bombay", "sapphire", "spirits", "gin", "england", "united", "kingdom", "company", "ltd", "bottle"]
     :price_in_cents: 1999
+    :sku: 158311
+    :upc: 626990112228
+    :volume_in_milliliters: 750
+    :region: British Columbia
     # :regular_price_in_cents: 5545
     # :limited_time_offer_savings_in_cents: 0
     # :limited_time_offer_ends_on:
@@ -558,7 +562,8 @@
     # :has_bonus_reward_miles: false
     # :has_limited_time_offer: false
     # :is_vqa: false
-    # :is_kosher: false
+    :is_kosher: false
+    :is_organic: false
     # :is_discontinued: false
     # :is_seasonal: false
     :description: "Hester Creek plantings from 1968 were not always identified as to what varietal. The unknown grapes provide some of the 'character' in this blended red. Black fruit flavours, licorice and earthy Golden Mile essence makeup the taste profile. A great match with wintry fare like casseroles, crockpot dishes or pasta."
