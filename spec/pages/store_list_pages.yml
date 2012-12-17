@@ -1,6 +1,7 @@
 - :file: 1.html
   :desc: Store listing page
   :uri: http://www.lcbo.com/lcbo-webapp/storequery.do?searchType=proximity&longitude=-79.0&latitude=43.0&numstores=999&language=EN
+  :method: :get
   :expectation:
     :store_ids:
     - 93
