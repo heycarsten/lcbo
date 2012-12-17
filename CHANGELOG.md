@@ -1,3 +1,9 @@
+Version 1.4.0
+
+  * Fixed issue with store list spec not using stubbed HTML data.
+  * Updated `ProductListPage` to use new style GET-based request instead of the
+    previously used POST-based request endpoint.
+
 Version 1.3.0
 
   * Updated `StoreListPage` to use current XML-based store locator endpoint.
