@@ -94,23 +94,13 @@ module BCL
     #   end
     # end
 
-    emits :origin do
-      doc.css('.countryFlagCont')[0].parent.content.strip
+    # NOT to happy about this !!
+    emits :type do
+      doc.css('.field-items')[2].content.strip.split(" - ")
+    end
 
-      # match = find_info_line(/\AMade in: /)
-      # if match
-      #   place = match.
-      #     gsub('Made in: ', '').
-      #     gsub('/Californie', '').
-      #     gsub('Bosnia\'Hercegovina', 'Bosnia and Herzegovina').
-      #     gsub('Is. Of', 'Island of').
-      #     gsub('Italy Quality', 'Italy').
-      #     gsub('Usa-', '').
-      #     gsub(', Rep. Of', '').
-      #     gsub('&', 'and').
-      #     gsub('Region Not Specified, ', '')
-      #   place.split(',').map { |s| s.strip }.uniq.join(', ')
-      # end
+    emits :country do
+      doc.css('.countryFlagCont')[0].parent.content.strip
     end
 
     emits :region do

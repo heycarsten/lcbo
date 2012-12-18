@@ -492,6 +492,10 @@
     :name: Absolut
     # :tags: ["bombay", "sapphire", "spirits", "gin", "england", "united", "kingdom", "company", "ltd", "bottle"]
     :price_in_cents: 2449
+    :region: ~
+    :type:
+      - Spirits
+      - Vodka
     # :regular_price_in_cents: 5545
     # :limited_time_offer_savings_in_cents: 0
     # :limited_time_offer_ends_on:
@@ -506,7 +510,7 @@
     # :package_unit_volume_in_milliliters: 1750
     # :total_package_units: 1
     # :total_package_volume_in_milliliters: 1750
-    :origin: Sweden
+    :country: Sweden
     # :producer_name: Bombay Spirits Company Ltd.
     # :released_on:
     :board: LCLB
@@ -539,6 +543,10 @@
     :upc: 626990112228
     :volume_in_milliliters: 750
     :region: British Columbia
+    :type:
+      - Wine
+      - Table Wine
+      - Red
     # :regular_price_in_cents: 5545
     # :limited_time_offer_savings_in_cents: 0
     # :limited_time_offer_ends_on:
@@ -553,7 +561,7 @@
     # :package_unit_volume_in_milliliters: 1750
     # :total_package_units: 1
     # :total_package_volume_in_milliliters: 1750
-    :origin: Canada
+    :country: Canada
     # :producer_name: Bombay Spirits Company Ltd.
     # :released_on:
     :board: LCLB
