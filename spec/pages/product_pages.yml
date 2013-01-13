@@ -526,7 +526,7 @@
     # :tasting_note: "Clear water white; complex mix of herbs and juniper on the nose with crisp lemon peel flavours; smooth and refreshing"
     # :serving_suggestion: "Martinis, mixed drinks"
     # :image_thumb_url:
-    # :image_url:
+    :image_url: "http://www.bcliquorstores.com/files/imagecache/product_image/products/110056.jpg"
 
 - :file: 13_bcl.html
   :desc: red wine
@@ -578,4 +578,4 @@
     # :tasting_note: "Clear water white; complex mix of herbs and juniper on the nose with crisp lemon peel flavours; smooth and refreshing"
     # :serving_suggestion: "Martinis, mixed drinks"
     # :image_thumb_url:
-    # :image_url:
+    :image_url: "http://www.bcliquorstores.com/files/imagecache/product_image/products/158311_0.jpg"

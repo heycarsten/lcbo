@@ -134,7 +134,7 @@ module BCL
       data = doc.css('.field-field-sku-upc div.field-item.odd')[0].content
       if data
         data.split("/")[0].strip.to_i
-      end      
+      end
     end
 
     emits :upc do
@@ -282,11 +282,11 @@ module BCL
     #   end
     # end
 
-    # emits :image_url do
-    #   if (img = doc.css('#enlargement img').first)
-    #     normalize_image_url(img[:src])
-    #   end
-    # end
+    emits :image_url do
+      if (img = doc.css('a.imagefield img').first)
+        normalize_image_url(img[:src])
+      end
+    end
 
     def volume_helper
       @volume_helper ||= CrawlKit::VolumeHelper.new(package)
@@ -353,8 +353,8 @@ module BCL
 
     def normalize_image_url(url)
       return unless url
-      return if url.include?('default')
-      url.include?('http://') ? url : File.join('http://lcbo.com', url)
+      return if url.include?('placeholders')
+      url.include?('http://') ? url : File.join('http://http://www.bcliquorstores.com', url)
     end
 
     def verify_third_info_cell
