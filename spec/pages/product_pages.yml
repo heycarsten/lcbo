@@ -496,6 +496,7 @@
     :type:
       - Spirits
       - Vodka
+    :volume_in_milliliters: 1140
     # :regular_price_in_cents: 5545
     # :limited_time_offer_savings_in_cents: 0
     # :limited_time_offer_ends_on:

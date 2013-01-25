@@ -146,8 +146,10 @@ module BCL
 
     emits :volume_in_milliliters do
       data = doc.css('.field-field-percent-volume div.field-item.odd')[0].content
-      if data
+      if data.split(" ")[1] == "mL"
         data.split(" ")[0].to_i
+      elsif data.split(" ")[1] == "L"
+        (data.split(" ")[0].to_f * 1000).to_i
       else
         0
       end
