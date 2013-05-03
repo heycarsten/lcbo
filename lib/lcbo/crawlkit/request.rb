@@ -28,14 +28,16 @@ module LCBO
         opts = {}
         opts[:method]  = request_prototype.http_method
         opts[:headers] = { 'User-Agent' => USER_AGENT }
-        opts[:body]    = _body if body_params && !gettable?
+        opts[:body]    = body_params if (body_params && body_params.any?) && !gettable?
         opts
       end
 
       def uri
-        template = request_prototype.uri_template.dup
-        query_params.reduce(template) do |mem, (key, value)|
-          mem.gsub("{#{key}}", value.to_s)
+        @uri ||= begin
+          template = request_prototype.uri_template.dup
+          query_params.reduce(template) do |mem, (key, value)|
+            mem.gsub("{#{key}}", value.to_s)
+          end
         end
       end
 
@@ -45,19 +47,14 @@ module LCBO
 
       protected
 
-      def _body
-        traversal = Typhoeus::Utils.traverse_params_hash(body_params)
-        Typhoeus::Utils.traversal_to_param_string(traversal)
-      end
-
       def _run(tries = 0)
         response = Timeout.timeout(LCBO.config[:timeout]) do
-          Typhoeus::Request.run(uri, config)
+          Typhoeus::Request.new(uri, config).run
         end
         Response.new \
           :code         => response.code,
-          :uri          => response.request.url,
-          :http_method  => response.request.method,
+          :uri          => uri,
+          :http_method  => (response.options[:method] || :get),
           :time         => response.time,
           :query_params => query_params,
           :body_params  => body_params,
