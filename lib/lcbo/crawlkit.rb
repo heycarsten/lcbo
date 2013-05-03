@@ -7,12 +7,6 @@ require 'uri'
 
 module LCBO
   module CrawlKit
-    USER_AGENT ||= begin
-      LCBO.config[:user_agent] ||
-      ENV['LCBO_USER_AGENT'] ||
-      Typhoeus::USER_AGENT
-    end
-
     class MalformedError < StandardError; end
     class NotFoundError < StandardError; end
     class RedirectedError < StandardError; end
