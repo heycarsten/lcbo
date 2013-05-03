@@ -25,26 +25,24 @@ store list pages directly from the [LCBO](http://lcbo.com) website.
   # => { :store_ids => [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, ...] }
 ```
 
-## Crawlers
+## Is It Good?
 
-Some examples of crawlers exist
-[here](https://github.com/heycarsten/lcbo/tree/master/examples/crawlers).
-You can also check out the
-[crawler spec](https://github.com/heycarsten/lcbo/blob/master/spec/crawlkit/crawler_spec.rb)
-to see how to interact with them.
+Yes.
 
-## Installation
+## Is It Production Ready?
 
-Use RubyGems: `gem install lcbo`
+Yes. This codebase has been in use for over 4 years powering [LCBO API](http://lcboapi.com).
+
+## Getting It
+
+Package available through [RubyGems](http://rubygems.org/gems/lcbo): `gem install lcbo`
+
+## Compatability
+
+* Ruby 1.9.3 MRI
+* Ruby 2.0.0 MRI
 
 ## Notes
 
- * Works with Ruby 1.9.2, not tested with 1.8.X or 1.9.1.
- * Don't be evil, be nice.
- * Lots of room to improve &mdash; fork your face off!
-
-## Links
-
- * [Issue tracker](http://github.com/heycarsten/lcbo/issues)
- * [Source code](http://github.com/heycarsten/lcbo)
- * [License](http://github.com/heycarsten/lcbo/blob/master/LICENSE)
+ * This is not "LCBO API In A Box", it is the data-gathering component of LCBO API.
+ * Don't be evil, be nice!
