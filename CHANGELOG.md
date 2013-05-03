@@ -1,3 +1,9 @@
+Version 1.5.0
+
+  * Updated Gemfile to use an explicit source URL.
+  * Updated dependencies to ensure compatability with Ruby 2.0.0.
+  * Updated default user-agent string to be more informative.
+
 Version 1.4.0
 
   * Fixed issue with store list spec not using stubbed HTML data.
