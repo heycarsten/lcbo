@@ -37,7 +37,7 @@ Yes. This codebase has been in use for over 4 years powering [LCBO API](http://l
 
 Package available through [RubyGems](http://rubygems.org/gems/lcbo): `gem install lcbo`
 
-## Compatability
+## Compatibility
 
 * Ruby 1.9.3 MRI
 * Ruby 2.0.0 MRI
