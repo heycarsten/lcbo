@@ -3,7 +3,7 @@ require File.expand_path("../lib/lcbo/version", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'lcbo'
-  s.version     = '1.3.4' # LCBO::VERSION
+  s.version     = '1.3.5' # LCBO::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Carsten Nielsen', 'Lenard Andal', 'Ahmed El-Daly']
   s.email       = ['aeldaly@developergurus.com']
