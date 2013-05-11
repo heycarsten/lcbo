@@ -32,7 +32,7 @@ module BCL
     # end
 
     emits :price_in_cents do
-      data = doc.css('.field-field-price .field-item.odd')[0].content.gsub("$",'').strip.to_f * 100
+      data = doc.css('.product-detail-item.reg-price')[0].content.gsub("$",'').strip.to_f * 100
       data.round
     end
 
@@ -96,15 +96,15 @@ module BCL
 
     # NOT to happy about this !!
     emits :type do
-      doc.css('.field-items')[2].content.strip.split(" - ")
+      doc.css('.product-detail-item.Type')[0].content[6..-1].strip.split(" - ")
     end
 
     emits :country do
-      doc.css('.countryFlagCont')[0].parent.content.strip
+      doc.css('.product-detail-item.Country')[0].content[8..-1].strip
     end
 
     emits :region do
-      doc.css('.field-field-locality-of-origin div.field-item.odd')[0].content.strip rescue nil
+      doc.css('.product-detail-item.Region')[0].content[8..-1].strip rescue nil
     end
 
     # emits :package do
@@ -130,22 +130,24 @@ module BCL
     #   volume_helper.package_volume
     # end
 
+    emits :nid do
+      data = doc.css('#edit-content-id')[0]['value'].to_i
+    end
+
     emits :sku do
-      data = doc.css('.field-field-sku-upc div.field-item.odd')[0].content
-      if data
-        data.split("/")[0].strip.to_i
-      end
+      data = doc.css('.product-detail-item.SKU')[0].content[5..-1].to_i
     end
 
     emits :upc do
-      data = doc.css('.field-field-sku-upc div.field-item.odd')[0].content
-      if data
-        data.split("/")[1].strip.to_i
-      end
+      data = doc.css('.product-detail-item.UPC')[0].content[5..-1].to_i
+    end
+
+    emits :total_units do
+      data = doc.css('.availability-available')[0].content.match(/\d+/)[0].to_i
     end
 
     emits :volume_in_milliliters do
-      data = doc.css('.field-field-percent-volume div.field-item.odd')[0].content
+      data = doc.css('.product-detail-item.Volume')[0].content[7..-1]
       if data.split(" ")[1] == "mL"
         data.split(" ")[0].to_i
       elsif data.split(" ")[1] == "L"
@@ -156,7 +158,7 @@ module BCL
     end
 
     emits :alcohol_content do
-      data = doc.css('.field-field-percent-alcohol .field-item.odd')[0].content
+      data = doc.css('.product-detail-item.Alcohol')[0].content
       if data
         data.gsub('%','').to_f
       else
@@ -236,25 +238,33 @@ module BCL
     # end
 
     emits :is_kosher do
-      data = doc.css('.field-field-kosher div.field-item.odd')[0].content
-      if data
-        data.strip != "No"
-      else
+      begin
+        data = doc.css('.product-detail-item.Kosher')[0].content
+        if data
+          data.strip != "No"
+        else
+          false
+        end
+      rescue
         false
       end
     end
 
     emits :is_organic do
-      data = doc.css('.field-field-organic div.field-item.odd')[0].content
-      if data
-        data.strip != "No"
-      else
+      begin
+        data = doc.css('.product-detail-item.Organic')[0].content
+        if data
+          data.strip != "No"
+        else
+          false
+        end
+      rescue
         false
       end
     end
 
     emits :description do
-      doc.css('.productDescription')[0].content.strip
+      doc.css('.description')[1].content.strip rescue nil
     end
 
     # emits :serving_suggestion do

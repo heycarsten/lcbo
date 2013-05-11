@@ -28,7 +28,7 @@ module BCL
 
     emits :name do
       # CrawlKit::TitleCaseHelper[doc.css('.infoWindowTitle')[0].content.strip]
-      CrawlKit::TitleCaseHelper[doc.css('title')[0].content.split("|")[0].strip]
+      CrawlKit::TitleCaseHelper[doc.css('h2.storeTitle a')[0].content.strip]
     end
 
     # emits :tags do

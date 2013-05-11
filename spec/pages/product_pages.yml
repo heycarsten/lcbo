@@ -491,12 +491,12 @@
     :id: 110056
     :name: Absolut
     # :tags: ["bombay", "sapphire", "spirits", "gin", "england", "united", "kingdom", "company", "ltd", "bottle"]
-    :price_in_cents: 2449
+    :price_in_cents: 2649
     :region: ~
     :type:
       - Spirits
       - Vodka
-    :volume_in_milliliters: 1140
+    :volume_in_milliliters: 750
     # :regular_price_in_cents: 5545
     # :limited_time_offer_savings_in_cents: 0
     # :limited_time_offer_ends_on:
@@ -539,15 +539,16 @@
     :id: 158311
     :name: Hester Creek - Character Red 10 / 11
     # :tags: ["bombay", "sapphire", "spirits", "gin", "england", "united", "kingdom", "company", "ltd", "bottle"]
-    :price_in_cents: 1999
+    :price_in_cents: 1995
     :sku: 158311
     :upc: 626990112228
     :volume_in_milliliters: 750
     :region: British Columbia
     :type:
       - Wine
-      - Table Wine
       - Red
+    :nid: 91520
+    :total_units: 1724
     # :regular_price_in_cents: 5545
     # :limited_time_offer_savings_in_cents: 0
     # :limited_time_offer_ends_on:

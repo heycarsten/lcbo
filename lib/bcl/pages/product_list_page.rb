@@ -55,20 +55,19 @@ module BCL
 
     emits :total_products do
       @total_products ||= begin
-        doc.css(".currentPage").first.text =~ /Viewing \d+-\d+ of (\d+) Matches/
+        doc.css(".solrsearch-paginator-static").first.text =~ /Showing from \d+ to \d+ of (\d+)/
         $1.to_i
       end
     end
 
     def product_ids
-      doc.css("#product-catalogue-results-body .productImage-front a").map do |divs|
+      doc.css("#solrsearch-pagination li .productlistimage a").map do |divs|
         divs['href'].split("/")[2]
       end
     end
 
     def products
-      doc.css("#product-catalogue-results-body .productImage-front a").each do |divs|
-        api_id = divs['href'].split("/")[2]
+      product_ids.each do |api_id|
         yield BCL.product(api_id)
       end
     end
