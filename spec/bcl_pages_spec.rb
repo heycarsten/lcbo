@@ -15,9 +15,15 @@ require 'yaml'
 
     requests.each do |req|
       if req[:file].split("_")[1] == valid_scraper_type
-        body = File.read("spec/pages/#{type}/#{req[:file]}")
-        req[:body] = body
+        req[:body] = File.read("spec/pages/#{type}/#{req[:file]}")
         SpecHelper.hydrastub(req[:method], req[:uri], :body => req[:body])
+
+        if req[:sub_uris]
+          req[:sub_uris].each do |sub_req|
+            sub_req[:body] = File.read("spec/pages/#{type}/#{sub_req[:file]}")
+            SpecHelper.hydrastub(:get, sub_req[:uri], :body => sub_req[:body])
+          end
+        end
       end
     end
 
