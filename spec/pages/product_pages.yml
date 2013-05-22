@@ -1,3 +1,4 @@
+# encoding: UTF-8
 - :file: 1_lcbo.html
   :desc: Seasonal product
   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=122408
@@ -581,3 +582,47 @@
     # :serving_suggestion: "Martinis, mixed drinks"
     # :image_thumb_url:
     :image_url: "http://www.bcliquorstores.com/files/imagecache/product_image/products/158311_0.jpg"
+
+- :file: 15_saq.html
+  :desc: red wine
+  :uri: http://www.saq.com/page/en/saqcom/type/name/11383473
+  :method: :get
+  :query_params:
+    :id: 11383473
+  :expectation:
+    :id: 11383473
+    :name: 7 Deadly Zins 2010
+    :price_in_cents: 2360
+    :sku: 11383473
+    :upc: '00652935100012'
+    :volume_in_milliliters: 750
+    :region: Californie
+    :type:
+      - Vin
+      - rouge
+    :country: États-Unis
+    :board: SAQ
+    :alcohol_content: 14.5
+    :description: "Robe exhibant une couleur rouge violacé foncé. Nez exubérant s'ouvrant sur des effluves de prune et de confiture de fruits noirs. Le tout est également agrémenté par des arômes de torréfaction. Laissez-vous charmer par ce rouge laissant percevoir une bonne acidité et pourvu de tannins enrobés. Fidèle aux parfums perçus à l'olfaction, il laisse percevoir des flaveurs de cassis, de prune, de cacao et de bois d'érable. Il offre une texture presque grasse qui se termine dans une finale assez persistante."
+    :image_url: "http://s7d9.scene7.com/is/image/SAQ/11383473_is?$saq-prod$"
+
+- :file: 16_saq.html
+  :desc: vodka
+  :uri: http://www.saq.com/page/en/saqcom/type/name/11345653
+  :method: :get
+  :query_params:
+    :id: 11345653
+  :expectation:
+    :id: 11345653
+    :name: Crystal Head
+    :price_in_cents: 5975
+    :sku: 11345653
+    :upc: '00627040411414'
+    :volume_in_milliliters: 750
+    :type:
+      - Vodka
+    :country: Canada
+    :board: SAQ
+    :alcohol_content: 40
+    :description: ~
+    :image_url: "http://s7d9.scene7.com/is/image/SAQ/11345653_is?$saq-prod$"

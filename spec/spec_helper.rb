@@ -1,6 +1,7 @@
 require 'minitest/spec'
 require 'lcbo'
 require 'bcl'
+require 'saq'
 
 MiniTest::Unit.autorun
 

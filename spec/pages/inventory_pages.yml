@@ -2104,3 +2104,18 @@
 #     - :store_id: 38783
 #       :quantity: 19
 
+
+- :file: 5_saq.html
+  :desc: Product with low inventories
+  :uri: 'http://www.saq.com/webapp/wcs/stores/servlet/RechercheSuccursale?inventaire=true&storeId=20002&productId=11818043&succInventaire=1&regionSelected=0&regionId=0'
+  :method: :get
+  :query_params:
+    :product_id: 11818043
+  :expectation:
+    :product_id: 11818043
+    :inventory_count: 31
+    :inventories:
+    - :store_id: 23113
+      :quantity: 24
+    - :store_id: 33575
+      :quantity: 7

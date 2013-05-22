@@ -37,5 +37,4 @@ describe BCL do
   end
 end
 
-
 require 'bcl_pages_spec'

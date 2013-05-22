@@ -12,7 +12,7 @@ task :default => :spec
 
 desc 'Start an irb console'
 task :console do
-  system 'irb -I lib -r lcbo -r bcl'
+  system 'irb -I lib -r lcbo -r bcl -r saq'
 end
 
 desc 'Validates the gemspec'
@@ -45,7 +45,11 @@ Rake::TestTask.new(:spec) do |t|
   t.libs += %w[lcbo spec]
   # t.test_files = FileList['spec/**/*.rb']
   # t.test_files = FileList[ENV['SPEC'] || 'spec/**/*.rb']
-  t.test_files = FileList['spec/bcl_spec.rb']
+  t.test_files = [
+    # FileList['spec/lcbo_spec.rb'],
+    # FileList['spec/bcl_spec.rb'],
+    FileList['spec/saq_spec.rb']
+  ]
   t.verbose = true
 end
 

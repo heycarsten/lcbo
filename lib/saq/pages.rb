@@ -1,0 +1,6 @@
+require 'saq/pages/inventory_page'
+require 'saq/pages/product_list_page'
+require 'saq/pages/product_page'
+require 'saq/pages/store_list_page'
+require 'saq/pages/store_page'
+require 'saq/pages/cities_list_page'

@@ -1,0 +1,154 @@
+
+- :name: Brisco General Store
+  :city_id: Brisco
+  :api_id: 762
+  :address: General Delivery
+  :zip_code: V0A 1B0
+  :phone_number: 
+  :is_open: 
+  :hours: 
+  :lat: 50.826998
+  :lng: -116.269968
+
+- :name: Canyon Country Store
+  :city_id: Canyon
+  :api_id: 676
+  :address: 4493 Canyon Lister Rd
+  :zip_code: V0B 1C0
+  :phone_number: 
+  :is_open: 
+  :hours: 
+  :lat: 49.079288
+  :lng: -116.447695
+
+- :name: Pip's Country Store
+  :city_id: Edgewater
+  :api_id: 754
+  :address: 4806 Selkirk Avenue
+  :zip_code: V0A 1E0
+  :phone_number: 
+  :is_open: 
+  :hours: 
+  :lat: 50.698303
+  :lng: -116.13614
+
+- :name: Fairmont Mountainside Market
+  :city_id: Fairmont Hot Springs
+  :api_id: 862
+  :address: 4992 Frontage Road
+  :zip_code: V0B 1L0
+  :phone_number: 
+  :is_open: 
+  :hours: 
+  :lat: 50.336228
+  :lng: -115.856373
+
+- :name: The Siding General Store
+  :city_id: Field
+  :api_id: 824
+  :address: 318 Stephen Avenue
+  :zip_code: V0A 1G0
+  :phone_number: 
+  :is_open: 
+  :hours: 
+  :lat: 51.39543
+  :lng: -116.489782
+
+- :name: Golden
+  :city_id: Golden
+  :api_id: 16
+  :address: 906 10th Ave South
+  :zip_code: V0A 1H0
+  :phone_number: 
+  :is_open: 
+  :hours: 
+  :lat: 51.296084
+  :lng: -116.963048
+
+- :name: Kicking Horse General Store
+  :city_id: Golden
+  :api_id: 690
+  :address: 1545 Kicking Horse Trail
+  :zip_code: V0A 1H0
+  :phone_number: 
+  :is_open: 
+  :hours: 
+  :lat: 51.307428
+  :lng: -116.985033
+
+- :name: Invermere
+  :city_id: Invermere
+  :api_id: 17
+  :address: 510 - 13th St
+  :zip_code: V0A 1K0
+  :phone_number: 
+  :is_open: 
+  :hours: 
+  :lat: 50.503724
+  :lng: -116.025339
+
+- :name: Meadow Creek Store
+  :city_id: Meadow Creek
+  :api_id: 838
+  :address: General Delivery
+  :zip_code: V0G 1N0
+  :phone_number: 
+  :is_open: 
+  :hours: 
+  :lat: 50.233333
+  :lng: -116.983333
+
+- :name: The Village Store
+  :city_id: Panorama
+  :api_id: 765
+  :address: 2035 Panorama Drive
+  :zip_code: V0A 1T0
+  :phone_number: 
+  :is_open: 
+  :hours: 
+  :lat: 50.650578
+  :lng: -116.349049
+
+- :name: Parson General Store
+  :city_id: Parson
+  :api_id: 778
+  :address: 3392 Highway 95 South
+  :zip_code: V0A 1L0
+  :phone_number: 
+  :is_open: 
+  :hours: 
+  :lat: 51.081291
+  :lng: -116.657506
+
+- :name: Radium
+  :city_id: Radium
+  :api_id: 245
+  :address: 7531 Hwy 95
+  :zip_code: V0A 1M0
+  :phone_number: 
+  :is_open: 
+  :hours: 
+  :lat: 50.612564
+  :lng: -116.066832
+
+- :name: Revelstoke
+  :city_id: Revelstoke
+  :api_id: 45
+  :address: 111 Campbell Ave
+  :zip_code: V0E 2S0
+  :phone_number: 
+  :is_open: 
+  :hours: 
+  :lat: 51.000233
+  :lng: -118.195751
+
+- :name: Windermere Family Foods
+  :city_id: Windermere
+  :api_id: 660
+  :address: 1661 Sinclair Avenue
+  :zip_code: V0B 2L0
+  :phone_number: 
+  :is_open: 
+  :hours: 
+  :lat: 50.46503
+  :lng: -115.986216
