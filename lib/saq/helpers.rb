@@ -29,7 +29,9 @@ module SAQ
   end
 
   def self.product_list(page_num)
-    ProductListPage.process({}, :page => page_num).as_hash
+    perPage = SAQ::ProductListPage::PER_PAGE
+    beginIndex = page_num * perPage
+    ProductListPage.process({perPage: perPage, beginIndex: beginIndex, page: page_num}, {}).as_hash
   end
 
   def self.store_list

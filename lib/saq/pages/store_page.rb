@@ -1,12 +1,9 @@
-require 'cgi'
-
 module SAQ
   class StorePage
 
     include CrawlKit::Page
 
-    # uri 'http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE={id}&language=EN'
-    uri 'http://www.bcliquorstores.com/store/{id}'
+    uri 'http://www.saq.com/webapp/wcs/stores/servlet/SAQStoreLocator?codeStore={id}&catalogId=50000&sousRegionId=&storeId=20002'
 
     FEATURE_FIELDS = {
       :has_wheelchair_accessability => 'wheelchair',
@@ -19,9 +16,6 @@ module SAQ
       :has_parking                  => 'parking',
       :has_transit_access           => 'transit' }
 
-    # on :before_parse, :verify_store_returned
-    # on :after_parse,  :verify_telephone_number
-
     emits :id do
       query_params[:id].to_i
     end
@@ -31,15 +25,6 @@ module SAQ
       CrawlKit::TitleCaseHelper[doc.css('h2.storeTitle a')[0].content.strip]
     end
 
-    # emits :tags do
-    #   CrawlKit::TagHelper[
-    #     name,
-    #     address_line_1,
-    #     address_line_2,
-    #     city,
-    #     postal_code
-    #   ]
-    # end
 
     emits :address_line_1 do
       data = doc.css('.storeStreet').first.content.strip

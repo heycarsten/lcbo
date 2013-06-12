@@ -1,3 +1,9 @@
+1.4.0
+* added support for saq.com
+
+1.3.0
+* added support for bcliquorstores.com
+
 Version 1.2.3
 
   * Updated `ProductPage` to return `RedirectedError` for gift cards which now

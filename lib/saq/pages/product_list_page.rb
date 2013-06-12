@@ -4,46 +4,21 @@ module SAQ
     include CrawlKit::Page
 
     PER_PAGE = 100
-    uri "http://www.bcliquorstores.com/product-catalogue?perPage={perPage}&page={page}"
+
+    uri "http://www.saq.com/webapp/wcs/stores/servlet/SearchDisplay?categoryIdentifier=06&showOnly=product&beginIndex={beginIndex}&pageSize={perPage}&catalogId=50000&sensTri=&storeId=20002"
 
     default_query_params \
-      :perPage            => PER_PAGE.to_s,
-      :page               => '1'
-      # :STOCK_TYPE_NAME    => 'All',
-      # :ITEM_NAME          => '',
-      # :KEYWORDS           => '',
-      # :ITEM_NUMBER        => '',
-      # :productListingType => '',
-      # :LIQUOR_TYPE_SHORT_ => '*',
-      # :CATEGORY_NAME      => '*',
-      # :SUB_CATEGORY_NAME  => '*',
-      # :PRODUCING_CNAME    => '*',
-      # :PRODUCING_REGION_N => '*',
-      # :UNIT_VOLUME        => '*',
-      # :SELLING_PRICE      => '*',
-      # :LTO_SALES_CODE     => 'N',
-      # :VQA_CODE           => 'N',
-      # :KOSHER_CODE        => 'N',
-      # :VINTAGES_CODE      => 'N',
-      # :VALUE_ADD_SALES_CO => 'N',
-      # :AIR_MILES_SALES_CO => 'N',
-      # :language           => 'EN',
-      # :style              => 'LCBO.css',
-      # :sort               => 'sortedProduct',
-      # :order              => '1',
-      # :action             => 'result',
-      # :sortby             => 'sortedProduct',
-      # :orderby            => '',
-      # :numPerPage         => PER_PAGE.to_s
+      beginIndex: '0',
+      perPage: PER_PAGE.to_s
 
     emits :page do
-      body_params[:page].to_i
+      query_params[:page].to_i
     end
 
     emits :final_page do
       @final_page ||= begin
         count = total_products / PER_PAGE
-        0 == (total_products % PER_PAGE) ? count : count + 1
+        0 == (total_products % PER_PAGE) ? count-1 : count
       end
     end
 
@@ -55,25 +30,14 @@ module SAQ
 
     emits :total_products do
       @total_products ||= begin
-        doc.css(".solrsearch-paginator-static").first.text =~ /Showing from \d+ to \d+ of (\d+)/
-        $1.to_i
+        doc.css(".rechercheNb")[0].content.match(/- (\d+)/)[1].to_i
       end
     end
 
-    def product_ids
-      doc.css("#solrsearch-pagination li .productlistimage a").map do |divs|
-        divs['href'].split("/")[2]
+    emits :product_ids do
+      doc.css('.resultats_product .desc').map do |divs|
+        divs.content.match(/Code SAQ :\s*(\d+)/).to_a[1].to_s
       end
-    end
-
-    def products
-      product_ids.each do |api_id|
-        yield BCL.product(api_id)
-      end
-    end
-
-    def dox
-      doc
     end
 
   end

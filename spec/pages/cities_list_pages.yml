@@ -297,3 +297,228 @@
       - '23285'
       - '23287'
       - '64290'
+
+
+- :file: 3_saq.html
+  :uri: 'http://www.saq.com/webapp/wcs/stores/servlet/SAQStoreLocator?storeId=20002&catalogId=50000&regionSelected=01&regionId=01'
+  :method: :get
+  :query_params: {}
+  :body_params: {}
+  :expectation:
+    :city_list:
+      - Acton Vale
+      - Alma
+      - Amos
+      - Anjou
+      - Asbestos
+      - Baie-Comeau
+      - Baie-Saint-Paul
+      - Baie-d Urf
+      - Beaconsfield
+      - Beauceville
+      - Beauharnois
+      - Bedford
+      - Beloeil
+      - Berthierville
+      - Blainville
+      - Bois-des-Filion
+      - Boisbriand
+      - Bonaventure
+      - Boucherville
+      - Bromont
+      - Brossard
+      - Candiac
+      - Cap-aux-Meules
+      - Carleton-sur-Mer
+      - Chambly
+      - Chandler
+      - Charlesbourg
+      - Chelsea
+      - Chibougamau
+      - Chicoutimi
+      - Chteauguay
+      - Clermont
+      - Coaticook
+      - Cowansville
+      - Delson
+      - Disraeli
+      - Dolbeau-Mistassini
+      - Dollard-des-Ormeaux
+      - Donnacona
+      - Dorval
+      - Drummondville
+      - Farnham
+      - Fermont
+      - Fleurimont
+      - Forestville
+      - Gasp
+      - Gatineau
+      - Gentilly
+      - Gracefield
+      - Granby
+      - Grand-Mre
+      - Grande-Valle
+      - Grenville
+      - Havre-Saint-Pierre
+      - Hemmingford
+      - Hudson
+      - Hull
+      - Huntingdon
+      - Iberville
+      - Joliette
+      - Jonquire
+      - Kirkland
+      - L Ancienne-Lorette
+      - L Assomption
+      - ! "L \x8Ele-Perrot"
+      - La Baie
+      - La Guadeloupe
+      - La Malbaie
+      - La Plaine
+      - La Prairie
+      - La Sarre
+      - La Tuque
+      - LaSalle
+      - Lac-Brome
+      - Lac-Etchemin
+      - Lac-Mgantic
+      - Lachine
+      - Lachute
+      - Lacolle
+      - Laurier-Station
+      - Laval
+      - Lavaltrie
+      - Lebel-sur-Quvillon
+      - Lennoxville
+      - Longueuil
+      - Lorraine
+      - Louiseville
+      - Lvis
+      - Magog
+      - Malartic
+      - Maniwaki
+      - Mansfield
+      - Marieville
+      - Mascouche
+      - Mercier
+      - Mirabel
+      - Mont-Laurier
+      - Mont-Royal
+      - Mont-Saint-Hilaire
+      - Mont-Tremblant
+      - Montmagny
+      - Montral
+      - Montral-Nord
+      - Morin-Heights
+      - Mtabetchouan
+      - Napierville
+      - New Richmond
+      - Nicolet
+      - Oka
+      - Ormstown
+      - Papineauville
+      - Paspbiac
+      - Perc
+      - Pierrefonds
+      - Plessisville
+      - Pointe-Claire
+      - Pointe--la-Croix
+      - Pont-Rouge
+      - Port-Cartier
+      - Qubec
+      - Rawdon
+      - Repentigny
+      - Richmond
+      - Rigaud
+      - Rivire au Renard
+      - Rivire-Rouge
+      - Roberval
+      - Rock Forest
+      - Rosemre
+      - Rougemont
+      - Rouyn-Noranda
+      - Saint-Amable
+      - Saint-Antoine
+      - Saint-Apollinaire
+      - Saint-Basile-le-Grand
+      - Saint-Constant
+      - Saint-Csaire
+      - Saint-Donat
+      - Saint-Eustache
+      - Saint-Flicien
+      - Saint-Flix-de-Valois
+      - Saint-Gabriel-de-Brandon
+      - Saint-Georges(Beauce)
+      - Saint-Hubert
+      - Saint-Hyacinthe
+      - Saint-Jean-Chrysostome
+      - Saint-Jean-Port-Joli
+      - Saint-Jean-de-Matha
+      - Saint-Jean-sur-Richelieu
+      - Saint-Joseph-de-Beauce
+      - Saint-Joseph-du-Lac
+      - Saint-Jrme
+      - Saint-Lambert
+      - Saint-Laurent
+      - Saint-Lazare
+      - Saint-Lin-Laurentides
+      - Saint-Luc
+      - Saint-Lonard
+      - Saint-Marc-des-Carrires
+      - Saint-Michel-des-Saints
+      - Saint-Nicolas
+      - Saint-Nicphore
+      - Saint-Raymond
+      - Saint-Romuald
+      - Saint-Rmi
+      - Saint-Sauveur
+      - Saint-Sauveur-des-Monts
+      - Saint-Tite
+      - Saint-Zotique
+      - ! "Saint-\x89mile"
+      - ! "Saint-\x89tienne-de-Lauzon"
+      - Sainte-Adle
+      - Sainte-Agathe-des-Monts
+      - Sainte-Anne-de-Beaupr
+      - Sainte-Anne-de-la-Prade
+      - Sainte-Anne-des-Monts
+      - Sainte-Anne-des-Plaines
+      - Sainte-Claire
+      - Sainte-Croix
+      - Sainte-Foy
+      - Sainte-Julie
+      - Sainte-Julienne
+      - Sainte-Marie-de-Beauce
+      - Sainte-Marthe-sur-le-Lac
+      - Sainte-Perptue
+      - Sainte-Thrse
+      - Salaberry-de-Valleyfield
+      - Senneterre
+      - ! "Sept-\x8Eles"
+      - Shawinigan
+      - Shawinigan-Sud
+      - Shawville
+      - Sherbrooke
+      - Sillery
+      - Sorel-Tracy
+      - St-Augustin-de-Desmaures
+      - St-Bruno-de-Montarville
+      - Stanstead
+      - Ste-Catherine-J.-Cartier
+      - Sutton
+      - Terrebonne
+      - Thetford Mines
+      - Trois-Rivires
+      - Tmiscaming
+      - Val-Blair
+      - Val-d or
+      - Vanier
+      - Varennes
+      - Vaudreuil-Dorion
+      - Verdun
+      - Victoriaville
+      - Ville Saint-Laurent
+      - Ville-Marie
+      - Waterloo
+      - Westmount
+      - Windsor

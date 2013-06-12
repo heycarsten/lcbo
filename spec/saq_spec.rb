@@ -2,11 +2,11 @@ require 'spec_helper'
 require 'yaml'
 
 { :product_pages      => SAQ::ProductPage,
-  # :store_pages        => SAQ::StorePage,
-  :inventory_pages    => SAQ::InventoryPage
-  # :cities_list_pages  => SAQ::CitiesListPage,
-  # :store_list_pages   => SAQ::StoreListPage,
-  # :product_list_pages => SAQ::ProductListPage
+  :store_pages        => SAQ::StorePage,
+  :inventory_pages    => SAQ::InventoryPage,
+  :cities_list_pages  => SAQ::CitiesListPage,
+  :store_list_pages   => SAQ::StoreListPage,
+  :product_list_pages => SAQ::ProductListPage
 }.each_pair do |type, page|
   valid_scraper_type = 'saq.html'
 
