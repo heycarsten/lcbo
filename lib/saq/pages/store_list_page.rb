@@ -25,8 +25,8 @@ module SAQ
       store_id: /storeAll\['code_succursale'\] = '(\d+)';/,
       latitude: /storeAll\['latitude'\] = (-?\d+(\.\d+)?);/,
       longitude: /storeAll\['longitude'\] = (-?\d+(\.\d+)?);/,
-      address: /storeAll\['adresse'\] = ([^;]+);/,
-      city: /storeAll\['ville'\] = ([^;]+);/,
+      address: /storeAll\['adresse'\] = '([^;]+)';/,
+      city: /storeAll\['ville'\] = '([^;]+)';/,
       postal_code: /storeAll\['code_postal'\] = '([^;]+)';/,
       phone: /storeAll\['telephone'\] = '([^;]+)';/,
     }
