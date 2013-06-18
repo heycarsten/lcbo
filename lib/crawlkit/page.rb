@@ -119,7 +119,7 @@
         return if is_parsed?
         return unless @html
         fire :before_parse
-        @doc = Nokogiri::HTML(@html)
+        @doc = Nokogiri::HTML(@html, nil, 'UTF-8')
         fire :after_parse
         self
       end

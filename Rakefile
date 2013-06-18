@@ -46,8 +46,8 @@ Rake::TestTask.new(:spec) do |t|
   # t.test_files = FileList['spec/**/*.rb']
   # t.test_files = FileList[ENV['SPEC'] || 'spec/**/*.rb']
   t.test_files = [
-    # FileList['spec/lcbo_spec.rb'],
-    # FileList['spec/bcl_spec.rb'],
+    FileList['spec/lcbo_spec.rb'],
+    FileList['spec/bcl_spec.rb'],
     FileList['spec/saq_spec.rb']
   ]
   t.verbose = true

@@ -14,7 +14,7 @@ unless defined? SpecHelper
     def self.hydrastub(method, uri, response_opts = {})
       response_params = {
         :code => 200,
-        :headers => '',
+        :headers => 'text/xml; charset=utf-8',
         :body => '',
         :time => 0.3
       }.merge(response_opts)

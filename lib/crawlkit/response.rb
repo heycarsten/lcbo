@@ -18,11 +18,12 @@
       end
 
       def self.normalize_encoding(html)
-        if html.force_encoding('ISO-8859-1').valid_encoding?
-          html.encode('UTF-8', 'ISO-8859-1')
-        else
-          html.encode('UTF-8')
-        end.gsub("\r\n", "\n")
+        html.force_encoding('UTF-8').gsub("\r\n", "\n")
+        # if html.force_encoding('ISO-8859-1').valid_encoding?
+        #   html.encode('UTF-8', 'ISO-8859-1')
+        # else
+        #   html.encode('UTF-8')
+        # end.gsub("\r\n", "\n")
       end
 
       def as_hash

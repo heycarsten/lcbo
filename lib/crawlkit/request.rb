@@ -27,7 +27,7 @@
       def config
         opts = {}
         opts[:method]  = request_prototype.http_method
-        opts[:headers] = { 'User-Agent' => USER_AGENT }
+        opts[:headers] = { 'User-Agent' => USER_AGENT, 'Content-Type' => "text/xml; charset=utf-8" }
         opts[:body]    = _body if body_params && !gettable?
         opts
       end

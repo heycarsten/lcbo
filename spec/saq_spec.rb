@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'spec_helper'
 require 'yaml'
 
@@ -36,5 +37,24 @@ require 'yaml'
       end
     end
   end
+end
 
+describe "Testing UTF-8" do
+  it "try basic" do
+    "hello ümlaut".must_equal "hello ümlaut"
+  end
+
+  it "nokogiri" do
+    Nokogiri::HTML('États-Unis').content.must_equal 'États-Unis'
+  end
+
+  it "nokogiri with css" do
+    doc = Nokogiri::HTML('<body>États-Unis</body>')
+    doc.css('body')[0].content.strip.must_equal 'États-Unis'
+  end
+
+  it "nokogiri with file" do
+    doc = Nokogiri::HTML(File.open('/Users/lenard/work/bcliquor/spec/test.html'), nil, 'UTF-8')
+    doc.css('body')[0].content.strip.must_equal 'États-Unis'
+  end
 end
