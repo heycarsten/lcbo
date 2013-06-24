@@ -6,7 +6,7 @@ module SAQ
 
     include CrawlKit::Page
 
-    uri 'http://www.saq.com/webapp/wcs/stores/servlet/RechercheSuccursale?inventaire=true&storeId=20002&productId={product_id}&succInventaire=1&regionSelected=0&regionId=0'
+    uri 'http://www.saq.com/webapp/wcs/stores/servlet/RechercheSuccursale?inventaire=true&storeId=20002&productId={product_id}&succInventaire=1&regionSelected=0&regionId=0&catalogId=50000&langId=-2&partNumber={product_id}'
 
     emits :product_id do
       query_params[:product_id].to_i
@@ -14,10 +14,6 @@ module SAQ
 
     emits :inventory_count do
       doc.css('.qte-dispo-succ-fiche').inject(0){|s,i| s += i.content.strip.split("\n")[1].strip.to_i}
-    end
-
-    emits :nid do
-      @nid
     end
 
     emits :inventories do
