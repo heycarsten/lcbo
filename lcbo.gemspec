@@ -1,9 +1,9 @@
 # coding: utf-8
-require File.expand_path("../lib/lcbo/version", __FILE__)
+require File.expand_path("../lib/version", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'lcbo'
-  s.version     = '1.4.3' # LCBO::VERSION
+  s.version     = VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Carsten Nielsen', 'Lenard Andal', 'Ahmed El-Daly']
   s.email       = ['aeldaly@developergurus.com']

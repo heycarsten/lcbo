@@ -29,7 +29,7 @@ module BCL
   end
 
   def self.product_list(page_num)
-    ProductListPage.process({}, :page => page_num).as_hash
+    ProductListPage.process(:beginIndex => page_num*BCL::ProductListPage::PER_PAGE).as_hash
   end
 
   def self.store_list
