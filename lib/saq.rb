@@ -17,7 +17,6 @@ module SAQ
 
 end
 
-require 'saq/version'
 require 'ext'
 require 'saq/helpers'
 require 'crawlkit'

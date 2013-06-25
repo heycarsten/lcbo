@@ -17,7 +17,6 @@ module BCL
 
 end
 
-require 'bcl/version'
 require 'ext'
 require 'bcl/helpers'
 require 'crawlkit'
