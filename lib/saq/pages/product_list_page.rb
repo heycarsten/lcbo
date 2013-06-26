@@ -36,7 +36,7 @@ module SAQ
 
     emits :product_ids do
       doc.css('.resultats_product .desc').map do |divs|
-        divs.content.match(/Code SAQ :\s*(\d+)/).to_a[1].to_s
+        divs.content.match(/[Code SAQ :\s*|SAQ code:\s*](\d+)/).to_a[1].to_s
       end
     end
 
