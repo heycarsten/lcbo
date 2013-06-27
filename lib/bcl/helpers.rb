@@ -28,8 +28,8 @@ module BCL
     InventoryPage.process(:product_id => product_id).as_hash
   end
 
-  def self.product_list(page_num)
-    ProductListPage.process(:beginIndex => page_num*BCL::ProductListPage::PER_PAGE).as_hash
+  def self.product_list(beginIndex=0)
+    ProductListPage.process(:beginIndex => beginIndex*BCL::ProductListPage::PER_PAGE).as_hash
   end
 
   def self.store_list
