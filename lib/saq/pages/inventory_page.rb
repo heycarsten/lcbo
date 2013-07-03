@@ -12,6 +12,10 @@ module SAQ
       query_params[:product_id].to_i
     end
 
+    emits :board do
+      "SAQ"
+    end
+
     emits :inventory_count do
       doc.css('.qte-dispo-succ-fiche').inject(0){|s,i| s += i.content.strip.split("\n")[1].strip.to_i}
     end

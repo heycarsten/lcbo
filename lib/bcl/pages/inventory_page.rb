@@ -20,6 +20,10 @@ module BCL
       @nid
     end
 
+    emits :board do
+      "BCL"
+    end
+
     emits :inventories do
       results = []
       doc.css("a.checkcity").each do |store_id|

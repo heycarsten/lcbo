@@ -19,7 +19,7 @@ unless defined? SpecHelper
         :time => 0.3
       }.merge(response_opts)
       response = Typhoeus::Response.new(response_params)
-      Typhoeus::Hydra.hydra.stub(method, uri).and_return(response)
+      Typhoeus.stub(uri).and_return(response)
     end
 
     class Evented

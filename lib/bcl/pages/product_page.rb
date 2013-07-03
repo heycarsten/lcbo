@@ -77,7 +77,7 @@ module BCL
     # end
 
     emits :board do
-      "LCLB"
+      "BCL"
     end
 
     # emits :primary_category do

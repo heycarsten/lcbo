@@ -112,16 +112,13 @@
 
 - :file: 3_saq.html
   :desc: Product listing page
-  :uri: "http://www.saq.com/webapp/wcs/stores/servlet/SearchDisplay?categoryIdentifier=06&showOnly=product&beginIndex=100&pageSize=100&catalogId=50000&sensTri=&storeId=20002"
+  :uri: "http://www.saq.com/webapp/wcs/stores/servlet/SearchDisplay?categoryIdentifier=06&showOnly=product&beginIndex=100&pageSize=10&catalogId=50000&sensTri=&storeId=20002"
   :method: :get
   :query_params:
     :page: 1
     :beginIndex: '100'
     :perPage: '100'
   :expectation:
-    :page: 1
-    # :next_page: 14
-    :final_page: 1
     :total_products: 147
     :product_ids:
       - '11288484'

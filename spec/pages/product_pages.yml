@@ -515,7 +515,7 @@
     :country: Sweden
     # :producer_name: Bombay Spirits Company Ltd.
     # :released_on:
-    :board: LCLB
+    :board: BCL
     # :primary_category: Spirits
     # :secondary_category: Gin
     # :has_bonus_reward_miles: false
@@ -567,7 +567,7 @@
     :country: Canada
     # :producer_name: Bombay Spirits Company Ltd.
     # :released_on:
-    :board: LCLB
+    :board: BCL
     # :primary_category: Spirits
     # :secondary_category: Gin
     # :has_bonus_reward_miles: false

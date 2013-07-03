@@ -16,7 +16,7 @@ module SAQ
     end
 
     emits :name do
-      CrawlKit::TitleCaseHelper[doc.css('.product-description-title')[0].content.split("|")[0].strip]
+      CrawlKit::TitleCaseHelper[doc.css('.product-description-title')[0].content.split("|")[0].strip] rescue 0
     end
 
     # emits :tags do
@@ -31,7 +31,7 @@ module SAQ
     # end
 
     emits :price_in_cents do
-      data = doc.css('p.price')[0].content.gsub("$",'').gsub(",",'.').strip.to_f * 100
+      data = doc.css('p.price')[0].content.gsub("$",'').gsub(",",'.').strip.to_f * 100 rescue 0
       data.round
     end
 
@@ -130,11 +130,11 @@ module SAQ
     # end
 
     emits :sku do
-      data = doc.css('input[name=productId]')[0].attr('value').to_i
+      doc.css('input[name=productId]')[0].attr('value').to_i rescue nil
     end
 
     emits :upc do
-      data = doc.css('.product-description-row2')[0].content.split("\n")[7].strip
+      doc.css('.product-description-row2')[0].content.split("\n")[7].strip rescue nil
     end
 
     emits :total_units do
@@ -142,7 +142,7 @@ module SAQ
     end
 
     emits :volume_in_milliliters do
-      data = doc.css('.product-description-title-type')[0].content.split(",")[1].strip
+      data = doc.css('.product-description-title-type')[0].content.split(",")[1].strip rescue []
       if data[-2..-1] == "ml"
         data[0..-4].to_i
       elsif data[-1..-1] == "L"
@@ -153,7 +153,7 @@ module SAQ
     end
 
     emits :alcohol_content do
-      doc.css('.product-detailsR span')[1].content.gsub(",",'.')[0..-3].to_f
+      doc.css('.product-detailsR span')[1].content.gsub(",",'.')[0..-3].to_f rescue nil
     end
 
     # emits :price_per_liter_of_alcohol_in_cents do
@@ -279,8 +279,12 @@ module SAQ
     # end
 
     emits :image_url do
-      if (doc.css('.product-description-image')[0].content =~ /s7d9\.scene7\.com\/is\/image\/SAQ\/#{id}_is/)
-        normalize_image_url("http://s7d9.scene7.com/is/image/SAQ/#{id}_is?$saq-prod$")
+      begin
+        if (doc.css('.product-description-image')[0].content =~ /s7d9\.scene7\.com\/is\/image\/SAQ\/#{id}_is/)
+          normalize_image_url("http://s7d9.scene7.com/is/image/SAQ/#{id}_is?$saq-prod$")
+        end
+      rescue
+        nil
       end
     end
 

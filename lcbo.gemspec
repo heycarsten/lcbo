@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{A library for parsing HTML pages from http://lcbo.com}
   s.description = %q{Request and parse product, store, inventory, and product search pages directly from the official LCBO website.}
 
-  s.add_dependency 'typhoeus',      '~> 0.3.3'
+  s.add_dependency 'typhoeus',      '~> 0.6.3'
   s.add_dependency 'nokogiri',      '~> 1.5.0'
   s.add_dependency 'unicode_utils', '~> 1.2.2'
   s.add_dependency 'stringex',      '~> 1.3.0'

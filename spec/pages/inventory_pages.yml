@@ -2107,7 +2107,7 @@
 
 - :file: 5_saq.html
   :desc: Product with low inventories
-  :uri: 'http://www.saq.com/webapp/wcs/stores/servlet/RechercheSuccursale?inventaire=true&storeId=20002&productId=11818043&succInventaire=1&regionSelected=0&regionId=0'
+  :uri: 'http://www.saq.com/webapp/wcs/stores/servlet/RechercheSuccursale?inventaire=true&storeId=20002&productId=11818043&succInventaire=1&regionSelected=0&regionId=0&catalogId=50000&langId=-2&partNumber=11818043'
   :method: :get
   :query_params:
     :product_id: 11818043
@@ -2122,7 +2122,7 @@
 
 - :file: 6_saq.html
   :desc: Product with lots inventories
-  :uri: 'http://www.saq.com/webapp/wcs/stores/servlet/RechercheSuccursale?inventaire=true&storeId=20002&productId=928317&succInventaire=1&regionSelected=0&regionId=0'
+  :uri: 'http://www.saq.com/webapp/wcs/stores/servlet/RechercheSuccursale?inventaire=true&storeId=20002&productId=928317&succInventaire=1&regionSelected=0&regionId=0&catalogId=50000&langId=-2&partNumber=928317'
   :method: :get
   :query_params:
     :product_id: 928317

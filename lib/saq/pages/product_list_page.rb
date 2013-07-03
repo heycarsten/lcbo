@@ -7,13 +7,13 @@ module SAQ
 
     emits :total_products do
       @total_products ||= begin
-        doc.css(".rechercheNb")[0].content.match(/- (\d+)/)[1].to_i
+        doc.css(".rechercheNb")[0].content.match(/- (\d+)/)[1].to_i rescue nil
       end
     end
 
     emits :product_ids do
       doc.css('.resultats_product .desc').map do |divs|
-        divs.content.match(/[Code SAQ :\s*|SAQ code:\s*](\d+)/).to_a[1].to_s
+        divs.content.match(/[Code SAQ :\s*|SAQ code:\s*](\d+)/).to_a[1].to_s rescue nil
       end
     end
 

@@ -29,6 +29,7 @@
         opts[:method]  = request_prototype.http_method
         opts[:headers] = { 'User-Agent' => USER_AGENT, 'Content-Type' => "text/xml; charset=utf-8" }
         opts[:body]    = _body if body_params && !gettable?
+        opts[:params]  = query_params if query_params && !gettable?
         opts
       end
 
@@ -43,7 +44,7 @@
         _run
       end
 
-      protected
+    protected
 
       def _body
         traversal = Typhoeus::Utils.traverse_params_hash(body_params)
@@ -52,12 +53,12 @@
 
       def _run(tries = 0)
         response = Timeout.timeout(LCBO.config[:timeout]) do
-          Typhoeus::Request.run(uri, config)
+          Typhoeus::Request.new(uri, config).run
         end
         Response.new \
           :code         => response.code,
           :uri          => response.request.url,
-          :http_method  => response.request.method,
+          :http_method  => response.request.options[:method],
           :time         => response.time,
           :query_params => query_params,
           :body_params  => body_params,
