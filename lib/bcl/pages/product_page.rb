@@ -131,19 +131,19 @@ module BCL
     # end
 
     emits :nid do
-      data = doc.css('#edit-content-id')[0]['value'].to_i
+      data = doc.css('#edit-content-id')[0]['value'].to_i rescue nil
     end
 
     emits :sku do
-      data = doc.css('.product-detail-item.SKU')[0].content[5..-1].to_i
+      data = doc.css('.product-detail-item.SKU')[0].content[5..-1].to_i rescue nil
     end
 
     emits :upc do
-      data = doc.css('.product-detail-item.UPC')[0].content[5..-1].to_i
+      data = doc.css('.product-detail-item.UPC')[0].content[5..-1].to_i rescue nil
     end
 
     emits :total_units do
-      data = doc.css('.availability-available')[0].content.match(/\d+/)[0].to_i
+      data = doc.css('.availability-available')[0].content.match(/\d+/)[0].to_i rescue nil
     end
 
     emits :volume_in_milliliters do
