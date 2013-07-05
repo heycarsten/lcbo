@@ -1,7 +1,846 @@
-<div id="inventorydiv"><table>
-<tbody>
- <tr class="odd"><td><a class="checkcity" tid=291 href="#">Vancouver</a></td><td>5</td> </tr>
- <tr class="odd"><td><a class="checkcity" tid=292 href="#">Vancouver2</a></td><td>5</td> </tr>
-</tbody>
-</table>
+
+<!DOCTYPE HTML>
+
+<!-- <html class="no-js" manifest='/cache.manifest.php'> -->
+<html class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="shortcut icon" href="http://www.bcliquorstores.com/sites/all/themes/bcliquor/favicon.ico" type="image/x-icon" />
+  <title>BC Liquor Stores - Where to buy this product</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="ldb,bcldb,liquor store,bc liquor store,bcd,my cellar,bc liqour,bc liqour store,bc liquor stores,wine,beer,spirits">
+  <meta name="viewport" content = "width = device-width, initial-scale = 1, minimum-scale = 1, maximum-scale = 1, user-scalable = no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="apple-touch-icon" href="/images/app/icon_iphone.png">
+
+  <link rel="stylesheet" type="text/css" href="/css/pc_mod.min.css" />
+  <script language="javascript" type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
+  <script language="javascript" type="text/javascript" src="/js/jquery.tools.min.js"></script>
+  <script language="javascript" type="text/javascript" src="/js/modernizr-2.0.3-custom.min.js"></script>
+  <script src="/js/gears_init.js" type="text/javascript" charset="utf-8"></script>
+  <script language="javascript" type="text/javascript" src="/js/geo.js"></script>
+  <script language="javascript" type="text/javascript" src="/js/master.js"></script>
+  <script language="javascript" type="text/javascript" src="/js/mycellar.js"></script>
+
+
+      <script src="/js/mycellar_bind.js" type="text/javascript" charset="utf-8"></script>
+
+
+  <script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAomIS76SxeX_wr5dW7XalrRSmT2TNJuC_RPmNRJXNc20ID0U4BhTGdsJ-7rUuHAjavxXaWN-u8Y6SCw"></script>
+
+    <script type="text/javascript">google.load("maps", "2.x"); </script>
+  <script type="text/javascript">$(function(){$('#displayMapView').show();});</script>
+
+  <script language="Javascript" src="/js/postGPSCal.js"></script>
+
+      <style media="all,handheld">
+
+/* ==== Scroll down to find where to put your styles :) ==== */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-text-size-adjust:none;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+table { border-collapse: collapse; border-spacing: 0; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+input, select { vertical-align: middle; }
+
+body { font:13px/1.231 sans-serif; *font-size:small; }
+select, input, textarea, button { font:99% sans-serif; }
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+html { overflow-y: scroll; }
+a:hover, a:active { outline: none; }
+ul, ol { margin-left: 2em; }
+ol { list-style-type: decimal; }
+nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+td { vertical-align: top; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 15px; }
+textarea { overflow: auto; }
+.ie6 legend, .ie7 legend { margin-left: -7px; }
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+button, input, select, textarea { margin: 0; }
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid { border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red; }
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+::-moz-selection{ background: #ccccccc; color:#fff; text-shadow: none; }
+::selection { background:#cccccc; color:#fff; text-shadow: none; }
+a:link { -webkit-tap-highlight-color: #eeeeee; }
+
+button {  width: auto; overflow: visible; }
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+body, select, input, textarea {  color: #444; }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+a, a:active, a:visited { color: #607890; }
+a:hover { color: #036; }
+
+/* custom style */
+
+body { color: #333333; }
+ul, ol { margin-left:0px; }
+a, a:active, a:visited { color: #333333; }
+a:hover { color: #333333; }
+ul, ol, li { list-style:none; }
+
+/* end of custom style */
+
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.hidden { display: none; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+body {
+font-family:'bbalpha sans', helvetica, arial, sans-serif;
+font-size:14px;
+/*-webkit-user-select:none;*/
+-webkit-text-size-adjust:none;
+}
+
+#maincontainer {
+background:#fff;
+width:100%;
+box-shadow:0 0 13px #000;
+-webkit-box-shadow:0 0 13px #000;
+-moz-box-shadow:0 0 13px #000;
+margin:0 auto;
+
+}
+
+a {
+color:#333;
+text-decoration:none;
+}
+
+select,input,button {
+border:#999 1px solid;
+}
+
+input.bb {
+  height:30px;
+}
+
+.center {
+text-align:center;
+}
+
+.left {
+text-align:left;
+}
+
+.right {
+text-align:right;
+}
+
+.cb {
+clear:both;
+}
+
+.floatL {
+float:left;
+}
+
+.noPadding {
+padding:0px;
+}
+
+.floatR {
+float:right;
+}
+
+.e {
+white-space:nowrap;
+overflow:hidden;
+width:80%;
+text-overflow:ellipsis;
+}
+
+.p5 {
+  padding:5px;
+}
+
+strong {
+font-weight:700;
+}
+
+/* gradient */
+.gd {
+background: #F8F8F8; /* for non-css3 browsers */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#F8F8F8'); /* for IE */
+background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#F8F8F8)); /* for webkit browsers */
+background: -moz-linear-gradient(top,  #ffffff,  #F8F8F8); /* for firefox 3.6+ */
+}
+
+/* rounded corner */
+.rc {
+border-radius:7px;
+-moz-border-radius:7px;
+-webkit-border-radius:7px;
+}
+
+/* list - title */
+div.listTitle {
+width:100%;
+height:32px;
+background-color:#eee;
+border-top:#999 1px solid;
+border-bottom:#999 1px solid;
+}
+
+div.listTitle > div {
+line-height:32px;
+font-size:14px;
+color:#666;
+padding:0px 10px;
+}
+
+ul.lnkList li {
+width:100%;
+border-bottom:1px #eeeeee solid;
+background: #F8F8F8; /* for non-css3 browsers */
+
+}
+
+ul.lnkList a {
+display:block;
+height:100%;
+user-select:none;
+-o-user-select:none;
+-moz-user-select:none;
+-khtml-user-select:none;
+-webkit-user-select:none;
+}
+
+ul.lnkList a.arrow {
+background:url(/images/chevron.png) no-repeat 97% center;
+}
+
+ul.lnklistTitle li {
+width:100%;
+background: #eeeeee; /* for non-css3 browsers */
+border-bottom:1px solid;
+}
+
+/*
+ul.button_3 li:first-child,ul.button_3 li:last-child {
+width:33%;
+float:left;
+display:block;
+}
+*/
+ul.button_3 li {
+width:33.3%;
+float:left;
+display:block;
+}
+
+ul.button_4 li {
+width:25%;
+float:left;
+display:block;
+}
+
+.p10,ul.lnkList a > div,ul.lnklistTitle div {
+font-size:14px;
+padding:15px;
+}
+
+ul.lnkList,ul.lnklistTitle {
+width:100%;
+border-top:#eee 1px solid;
+border-bottom:#eee 1px solid;
+}
+
+ul.button_3,ul.button_4 {
+width:100%;
+}
+
+ul.button_3 li > a,ul.button_4 li > a {
+width:100%;
+height:100%;
+display:block;
+text-align:center;
+}
+
+input[type=text]{
+  height:30px;
+  font-size:16px;
+  padding-left:5px;
+  line-height:30px;
+  margin-bottom:5px;
+}
+
+input[type=button], input[type=submit]{
+  height:30px;
+  font-size:16px;
+}
+
+/* the overlayed element */
+#app_popup {
+  display:none;
+    background-color: #FFF;
+
+    font-size:11px;
+    z-index: 10000;
+    text-align: center;
+    width: 320px;
+}
+#app_popup_container{
+  margin: 0px auto;
+
+    -moz-box-shadow: 0 0 50px #000;
+    -webkit-box-shadow: 0 0 50px #000;
+    padding: 1em;
+    padding-bottom: 4em;
+}
+#app_popup_container h2{
+  font-size: 2em;
+  margin: 0.5em auto;
+}
+/* default close button positioned on upper right corner */
+.app_popup .close {
+    background-image:url('/images/close.png');
+    position:absolute; right:5px; top:5px;
+    cursor:pointer;
+    height:35px;
+    width:35px;
+}
+#app_points{
+  margin-bottom: 1em;
+}
+#app_popup li{
+  padding-left: 3.5em;
+  text-align: left;
+  line-height: 2.5em;
+}
+#app_popup li img{
+  margin-right: 0.7em;
+}
+#products_point{
+  vertical-align: middle;
+  height: 22px;
+  width: 16px;
+}
+#favourite_point{
+  vertical-align: middle;
+  height: 16px;
+  width: 17px;
+}
+#recipes_point{
+  vertical-align: middle;
+  width: 13px;
+  height: 20px;
+}
+#app_no, #app_yes{
+  width: 43%;
+  float: left;
+  padding: 0.5em;
+  color: #FFF;
+  font-size: 1.3em;
+  text-align: center;
+  font-weight: bold;
+  cursor: default;
+}
+#app_no{
+  margin-right: 10px;
+  background-color: #a3a3a3;
+}
+#app_yes{
+  background-color: #b84e00;
+}
+#phone_image{
+  width: 114px;
+  height: 82px;
+}#maincontainer, img {
+  max-width:640px;
+}
+
+.flexImg {
+  max-width:640px;
+  width:100%;
+  display:block;
+  margin:0px;
+  padding:0px;
+  line-height:0px;
+  border:0px;
+}
+
+.wrapper {
+  position:absolute; z-index:1;
+  top:96px; bottom:0px; left:0;
+  width:100%;
+  background:#aaa;
+  overflow:auto;
+}
+
+.scroller {
+  position:absolute; z-index:1;
+  background-color:#ffffff;
+/*  -webkit-touch-callout:none;*/
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  width:100%;
+  padding:0;
+}
+
+.headerNav {
+  height:96px;
+  position:absolute; z-index:2;
+  top:0; left:0;
+  width:100%;
+}
+
+.foundMessage {
+  color:#89C958;
+}
+
+#headergraphic {
+  background-image:url(/images/app/navbar_nologo.png);
+  background-repeat:repeat-x;
+  background-position:center center;
+  padding:0px;
+  height:66px;
+  text-align:center;
+}
+
+#headergraphic a {
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+#logo {
+  width:100%;
+  height:100%;
+  background-image:url(/images/app/navbar.png);
+  background-position:54% center;
+}
+
+.navbarDiv {
+color:#fff;
+background: #333333; /* for non-css3 browsers */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#666666'); /* for IE */
+background: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#666666)); /* for webkit browsers */
+background: -moz-linear-gradient(top,  #333333,  #666666); /* for firefox 3.6+ */
+}
+
+.navbarDiv li a {
+color:#fff;
+
+}
+
+#bottomNavDiv,#bottomNavDiv li {
+height:40px;
+}
+
+#headergraphic li a,.navbarDiv li a,#bottomNavDiv li a {
+line-height:40px;
+font-weight:bold;
+height:40px;
+}
+
+#logo {
+margin:0px;
+width:100%;
+height:66px;
+}
+
+#contentDiv > div {
+padding:10px 10px 20px;
+}
+
+#contentDiv > div.noPadding {
+padding:0;
+}
+
+#showcaseDiv ul {
+width:100%;
+}
+
+#showcaseDiv ul li {
+width:100%;
+display:block;
+}
+
+#showcaseDiv ul.intro li.image {
+width:100%;
+display:block;
+text-align:center;
+font-weight:400;
+border:#eee 1px solid;
+margin-bottom:5px;
+font-size:22px;
+padding:10px 0;
+}
+
+#showcaseDiv ul.intro li > div {
+padding:10px;
+}
+
+#showcaseDiv ul.intro li p {
+width:100%;
+text-align:left;
+line-height:18px;
+}
+
+#productDiv ul li a > div {
+padding:5px 10px;
+}
+
+#productDiv ul li a > div > strong {
+font-weight:700;
+}
+
+#productDiv ul li a > div > div.pvl {
+padding-left:35px;
+}
+
+#productDetailDiv li {
+position:relative;
+height:auto;
+}
+
+#productDetailDiv li label {
+text-transform:uppercase;
+width:100px;
+text-align:right;
+line-height:30px;
+position:absolute;
+top:0;
+left:0;
+font-weight:700;
+}
+
+#productDetailDiv li span {
+margin-left:120px;
+line-height:30px;
+}
+
+#productDetailDiv img {
+  border:1px #eeeeee solid;
+}
+
+#productName {
+display:block;
+font-size:18px;
+position:relative;
+margin-top:20px;
+margin-bottom:10px;
+}
+
+#searchFormDiv h2 {
+font-size:16px;
+font-weight:700;
+}
+
+#searchFormDiv label {
+display:block;
+font-weight:700;
+font-size:14px;
+margin-bottom:5px;
+}
+
+#searchFormDiv select {
+width:90%;
+}
+
+#searchFormDiv li {
+margin-bottom:10px;
+}
+
+#searchFormDiv em {
+font-size:11px;
+color:#666;
+}
+
+#cityStoresDiv .openClose {
+font-size:12px;
+position:absolute;
+top:5px;
+right:20px;
+}
+
+#storeDetailDiv hr {
+color:#eee;
+text-align:center;
+height:1px;
+line-height:1px;
+margin:0 10px;
+}
+
+.openClosed {
+line-height:16px;
+float:left;
+margin:5px 0 0;
+padding:10px;
+}
+
+.star {
+position:absolute;
+left:0;
+top:0;
+width:30px;
+height:38px;
+margin-top:0px;
+margin-left:0px;
+
+}
+
+.loc {
+height:20px;
+overflow-x:hidden;
+}
+
+.loc36 {
+height:36px;
+overflow-x:hidden;
+}
+
+.unselected {
+background:url(/images/app/onestar2.png) 95% 10px no-repeat;
+}
+
+.selected {
+background:url(/images/app/onestar2.png) 0px 10px no-repeat;
+}
+
+.lFont {
+font-size:20px;
+}
+
+.fp {
+font-size:10px;
+}
+
+.open {
+color:green;
+}
+
+.closed {
+color:red;
+}
+
+.openBg {
+background-color:green;
+color:#fff;
+}
+
+.closedBg {
+background-color:red;
+color:#fff;
+}
+
+.letterSeparator {
+height:20px;
+line-height:20px;
+padding:3px 0px;
+color:#ffffff;
+background-color:#999999;
+}
+
+#searchDiv {
+width:100%;
+text-align:center;
+}
+
+#searchDiv > div {
+text-align:center;
+padding:20px;
+}
+
+#bottomLink {
+margin-top:15px;
+margin-left:10px;
+}
+
+#bottomLink li {
+margin-bottom:15px;
+}
+
+#listStores > li > a > div,ul#productList > li {
+position:relative;
+}
+
+#btnCellar {
+width:100%;
+}
+
+#legalDisclaimer p {
+margin-bottom:10px;
+}   </style>
+  </head>
+<body>
+  <div id="maincontainer">
+    <a href="/m/home" title="BC Liquor Stores - Home"><img src="/images/app/navbar.png" class="flexImg" style="display:block;"/></a>
+<div id="headerNav">
+  <div class="navbarDiv">
+    <ul class="button_4 clearfix">
+      <li><a href="/m/home">Products</a></li>
+      <li><a href="/m/taste">Taste</a></li>
+      <li><a href="/m/stores">Stores</a></li>
+      <li class="mycellar" style="display:block;"><a href="/m/mycellar">My Cellar</a></li>
+    </ul>
+  </div>
+</div><div>
+  <div class="p5" style="text-align:center;">
+    <form action="/m/search_result" method="post" onsubmit="return formCheck(1);" style="margin:0px;padding:0px;">
+      <img src="/images/app/Icon-Small.png" style="margin-right:5px;position:relative;top:7px;"/>
+      <input type="text" id="keyword1" name="keyword" maxlength="20" style="margin-right:5px;width:50%;margin-bottom:0px;" autocomplete="off"/>
+      <input type="submit" id="btnSearch" name="btnSearch" value="Search" style="margin-bottom:0px;"/>
+    </form>
+  </div>
 </div>
+<div class="listTitle"><div>Product you are looking at</div></div>
+
+
+<ul id="productList" class="lnkList">
+</ul>
+
+
+<div id="cityStoresDiv" >
+  <div class="listTitle"><div>Where to buy this item</div></div>
+
+
+  <ul id="listStores" class="lnkList postSort">
+
+
+
+
+
+    <li>
+      <a class="arrow" href="/m/stores/view/38795">
+        <div>
+          <strong>Richmond Brighouse</strong>
+          <div class="loc">
+            <input class="gpsLat" type="hidden" value="49.172005" />
+            <input class="gpsLong" type="hidden" value="-123.136568" />
+            <span class="dist"></span>
+            100 - 8100 Ackroyd Rd<br />
+          </div>
+          <div>
+            Quantity: 1         </div>
+          <div class="openClose open">
+            OPEN until 9:00 pm          </div>
+        </div>
+      </a>
+    </li>
+      </ul>
+</div><div id="backToTop">
+  <div class="p10">
+    <a href="#" onclick="window.scrollTo(0,0);return false;" style="display:block;text-align:right;" accesskey="T">Back to the top</a>
+  </div>
+</div>
+
+<script language="javascript">
+function formCheck(num){
+  if($('input#keyword'+num).val().length < 2) {
+    alert('Please type at least 2 characters.');
+    return false;
+  } else {
+    return true;
+  }
+}
+</script>
+
+<div>
+  <div class="p5" style="text-align:center;">
+    <form action="/m/search_result" method="post" onsubmit="return formCheck(2);" style="margin:0px;padding:0px;">
+      <img src="/images/app/Icon-Small.png" style="margin-right:5px;position:relative;top:7px;"/>
+      <input type="text" id="keyword2" name="keyword" maxlength="20" style="margin-right:5px;width:50%;margin-bottom:0px;" autocomplete="off"/>
+      <input type="submit" id="btnSearch" name="btnSearch" value="Search" style="margin-bottom:0px;"/>
+    </form>
+  </div>
+</div>
+
+<div class="navbarDiv">
+  <ul class="button_4 clearfix">
+    <li><a href="/m/home">Products</a></li>
+    <li><a href="/m/taste">Taste</a></li>
+    <li><a href="/m/stores">Stores</a></li>
+    <li class="mycellar" style="display:block;"><a href="/m/mycellar">My Cellar</a></li>
+  </ul>
+</div>
+<ul id="bottomLink" class="p10">
+  <li><a href="mailto:?subject=I%20would%20like%20to%20share%20this%20mobile%20website%20with%20you%21&body=Check%20out%20the%20official%20BC%20Liquor%20Stores%20mobile%20website.%20%20%0Ahttp%3A%2F%2Fm.bcliquorstores.com">&raquo; Tell a Friend</a></li>
+  <li><a href="mailto:&#99;&#111;&#109;&#109;&#117;&#110;&#105;&#99;&#97;&#116;&#105;&#111;&#110;&#115;&#64;&#98;&#99;&#108;&#100;&#98;&#46;&#99;&#111;&#109;?subject=Feedback%20on%20BC%20Liquor%20Stores%20Mobile%20Website&body=Hello%20BC%20Liquor%20Stores%2C%0A%0A">&raquo; Contact Us</a></li>
+  <li><a href="http://www.bcliquorstores.com/?fullsite=yes" target="_blank">&raquo; Visit full website</a></li>
+  <li><a href="/m/legal_and_disclaimer">&raquo; Legal &amp; Privacy</a></li>
+</ul>
+<div>
+  <div class="p10 center fp">
+    &copy; 2011 BCLDB. All Rights Reserved.
+  </div>
+</div>
+    <div class="clear"></div>
+
+  </div>
+  <div id="app_popup">
+    <div id="app_popup_container">
+      <img src="/images/download_image_iPhone.png" alt="Phone image" id="phone_image" />
+      <h2>Get the free BC Liquor Stores mobile app</h2>
+      <ul id="app_points">
+        <li><img src="/images/download_icon_products.png" alt="" id="products_point" /> Browse, search, and scan for products.</li>
+        <li><img src="/images/download_icon_favourite.png" alt="" id="favourite_point" />Save and share your favourite products</li>
+        <li><img src="/images/download_icon_recipes.png" alt="" id="recipes_point" /> Food and drink recipes</li>
+      </ul>
+      <div id="app_no" class="app_popup_button" rel="b1">No thanks</div>
+      <a href="https://itunes.apple.com/ca/app/bc-liquor-stores/id437904986?mt=8" id="app_yes" class="app_popup_button" rel="b1">Download the app</a>
+    </div>
+  </div>
+  <script type="text/javascript">
+
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-22979365-1']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+   })();
+
+  </script>
+  </body>
+</html>

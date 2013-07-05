@@ -6,7 +6,7 @@ module BCL
 
     include CrawlKit::Page
 
-    uri 'http://www.bcliquorstores.com/product/inventory/cities?nid={product_id}'
+    uri 'http://m.bcliquorstores.com/m/where_to_buy/{nid}'
 
     emits :product_id do
       query_params[:product_id].to_i
@@ -26,13 +26,10 @@ module BCL
 
     emits :inventories do
       results = []
-      doc.css("a.checkcity").each do |store_id|
-        store_uri = "http://www.bcliquorstores.com/product/inventory?cnid=#{@nid}&ctid=#{store_id['tid']}"
-        Nokogiri::HTML(CrawlKit::RequestPrototype.new(store_uri).request().body).css("td").to_a.each_slice(2) do |inv|
-          store_id = inv[0].css('a')[0]['href'].match(/\d+/)[0].to_i
-          stock = inv[1].content.to_i
-          results << {store_id: store_id, quantity: stock}
-        end
+      doc.css("#listStores li").each do |store_element|
+        store_id = store_element.css('a.arrow').attribute('href').value.match(/\/m\/stores\/view\/(\d+)/)[1].to_i
+        stock = store_element.css('a.arrow div:nth-of-type(2)')[0].content.strip.match(/Quantity: (\d+)/)[1].to_i
+        results << {store_id: store_id, quantity: stock}
       end
       results
     end
@@ -41,38 +38,25 @@ module BCL
       return if is_parsed?
       return unless @html
       fire :before_parse
-      @product_page = BCL.product(product_id)
-      @nid = @product_page[:nid] rescue product_id
-      inv_uri = "http://www.bcliquorstores.com/product/inventory/cities?nid=#{@nid}"
+      inv_uri = "http://m.bcliquorstores.com/m/where_to_buy/#{@nid}"
       @doc = Nokogiri::HTML(CrawlKit::RequestPrototype.new(inv_uri).request().body)
       fire :after_parse
       self
     end
 
-    def json
-      # JSON.parse(doc.content)
-    end
+    def request
+      return if @html
+      fire :before_request
 
-    def regions
-      # json.each do |region_id, region_hash|
-      #   yield region_hash
-      # end
-    end
+      @product_page = BCL.product(product_id)
+      @nid = @product_page[:nid] rescue product_id
+      @query_params[:nid] = @nid
 
-    def cities
-      # regions do |region_hash|
-      #   region_hash['cities'].each do |city_id, city_hash|
-      #     yield city_hash
-      #   end
-      # end
-    end
+      @response = request_prototype.request(query_params, body_params)
+      @html     = @response.body
 
-    def stores
-      # cities do |city_hash|
-      #   city_hash['stores'].each do |store_id, store_hash|
-      #     yield store_hash
-      #   end
-      # end
+      fire :after_request
+      self
     end
 
   end
