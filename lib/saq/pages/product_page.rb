@@ -106,6 +106,22 @@ module SAQ
       doc.css('.product-description-region.product-page-subtitle')[0].content.strip rescue nil
     end
 
+    emits :varietal do
+      varietal = nil
+      details = doc.css("#details li .left")
+      details.size.times do |i|
+        if details[i].content.strip == "Grape variety(ies)"
+          varietal = doc.css("#details li .right")[i].content.strip
+          if varietal =~ /100.*\%/
+            varietal = varietal.gsub(/100.*\%/,'').strip
+          else
+            varietal = "Blend"
+          end
+        end
+      end
+      varietal
+    end
+
     # emits :package do
     #   @package ||= begin
     #     string = info_cell_lines[2]
