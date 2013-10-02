@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Carsten Nielsen', 'Lenard Andal', 'Ahmed El-Daly']
   s.email       = ['aeldaly@developergurus.com']
-  s.summary     = %q{A library for parsing HTML pages from http://lcbo.com}
+  s.summary     = %q{A library for parsing HTML pages from http://lcbo.com, http://bcliquorstores.com, http://saq.com}
   s.description = %q{Request and parse product, store, inventory, and product search pages directly from the official LCBO website.}
 
   s.add_dependency 'typhoeus',      '~> 0.6.3'

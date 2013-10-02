@@ -31,7 +31,7 @@ module SAQ
     # end
 
     emits :price_in_cents do
-      data = doc.css('p.price')[0].content.gsub("$",'').gsub(",",'.').strip.to_f * 100 rescue 0
+      data = doc.css('p.price')[0].content.gsub("$",'').gsub(/Regular\sprice\:\s+/,'').gsub(",",'.').strip.to_f * 100 rescue 0
       data.round
     end
 
@@ -296,7 +296,8 @@ module SAQ
 
     emits :image_url do
       begin
-        if (doc.css('.product-description-image')[0].content =~ /s7d9\.scene7\.com\/is\/image\/SAQ\/#{id}_is/)
+        has_image = open("http://s7d9.scene7.com/is/image/SAQ/#{id}_is?req=exists,javascript").read.match(/catalogRecord\.exists \= '(\d)'/)[1].to_i
+        if (has_image == 1 && doc.css('.product-description-image')[0].content =~ /s7d9\.scene7\.com\/is\/image\/SAQ\/#{id}_is/)
           normalize_image_url("http://s7d9.scene7.com/is/image/SAQ/#{id}_is?$saq-prod$")
         end
       rescue

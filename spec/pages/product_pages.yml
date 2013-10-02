@@ -626,3 +626,25 @@
     :alcohol_content: 40
     :description: ~
     :image_url: "http://s7d9.scene7.com/is/image/SAQ/11345653_is?$saq-prod$"
+
+- :file: 17_saq.html
+  :desc: vodka
+  :uri: http://www.saq.com/page/en/saqcom/type/name/11852479
+  :method: :get
+  :query_params:
+    :id: 11852479
+  :expectation:
+    :id: 11852479
+    # :name: Crystal Head
+    :price_in_cents: 2705
+    :sku: 11852479
+    :upc: '07935738995904'
+    :volume_in_milliliters: 750
+    :type:
+      - Red
+      - wine
+    :country: Spain
+    :board: SAQ
+    :alcohol_content: 14
+    :description: ~
+    :image_url: ~
