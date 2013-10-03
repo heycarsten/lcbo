@@ -294,12 +294,12 @@ module SAQ
     #   end
     # end
 
+    # b/c of the open call this is NOT tested
     emits :image_url do
       begin
-        has_image = open("http://s7d9.scene7.com/is/image/SAQ/#{id}_is?req=exists,javascript").read.match(/catalogRecord\.exists \= '(\d)'/)[1].to_i
-        if (has_image == 1 && doc.css('.product-description-image')[0].content =~ /s7d9\.scene7\.com\/is\/image\/SAQ\/#{id}_is/)
-          normalize_image_url("http://s7d9.scene7.com/is/image/SAQ/#{id}_is?$saq-prod$")
-        end
+        possible_image_url = "http://s7d9.scene7.com/is/image/SAQ/#{id}-1?scl=1"
+        has_image = open("#{possible_image_url}&req=exists,javascript").read.match(/catalogRecord\.exists \= '(\d)'/)[1].to_i
+        normalize_image_url(possible_image_url)
       rescue
         nil
       end
