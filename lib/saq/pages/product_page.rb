@@ -299,7 +299,9 @@ module SAQ
       begin
         possible_image_url = "http://s7d9.scene7.com/is/image/SAQ/#{id}-1?scl=1"
         has_image = open("#{possible_image_url}&req=exists,javascript").read.match(/catalogRecord\.exists \= '(\d)'/)[1].to_i
-        normalize_image_url(possible_image_url)
+        if (has_image == 1)
+          normalize_image_url(possible_image_url)
+        end
       rescue
         nil
       end
