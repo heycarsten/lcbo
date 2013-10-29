@@ -3,39 +3,59 @@ module SAQ
 
     include CrawlKit::Page
 
-    uri 'http://www.saq.com/webapp/wcs/stores/servlet/SAQStoreLocator?codeStore=33527&storeId=20002'
+    PER_PAGE = 10
+    uri 'http://www.saq.com/webapp/wcs/stores/servlet/SAQStoreLocatorSearchResultsView?storeId=20002&catalogId=50000&langId=-2&pageSize=10&beginIndex={beginIndex}'
+
+    emits :page do
+      body_params[:beginIndex].to_i / PER_PAGE
+    end
+
+    emits :final_page do
+      @final_page ||= begin
+        count = total_stores / PER_PAGE
+        0 == (total_stores % PER_PAGE) ? count : count + 1
+      end
+    end
+
+    emits :next_page do
+      @next_page ||= begin
+        page < final_page ? page + 1 : nil
+      end
+    end
+
+    emits :total_stores do
+      @total_stores ||= begin
+        doc.css("#content.succursale .nb").first.text =~ /- (\d+) r/
+        $1.to_i
+      end
+    end
 
     emits :store_ids do
-      doc.css('script').map do |script|
-        # puts script.content[0..30]
-        script.content.match(/storeAll\['code_succursale'\] = '(\d+)'/)[1] rescue nil
+      doc.css('.fiche .entete .titre a').map do |script|
+        # puts script, script.content.match(/\D* (\d+)/)[1]
+        script.content.match(/\D* (\d+)/)[1] rescue nil
       end.compact
     end
 
     emits :store_hash do
-      doc.css('script').inject({}) do |result,script|
-        x = scrape_store_hash(script.content)
-        result[x[:store_id]] = scrape_store_hash(script.content) if x[:store_id]
+      doc.css('.fiche').inject({}) do |result,element|
+        x = scrape_store_hash(element)
+        result[x[:store_id]] = scrape_store_hash(element) if x[:store_id]
         result
       end
     end
     # alias_method :as_array, :product_ids
 
-    SCRAPE_DATA_FROM_JS_REGEX = {
-      store_id: /storeAll\['code_succursale'\] = '(\d+)';/,
-      latitude: /storeAll\['latitude'\] = (-?\d+(\.\d+)?);/,
-      longitude: /storeAll\['longitude'\] = (-?\d+(\.\d+)?);/,
-      address: /storeAll\['adresse'\] = '([^;]+)';/,
-      city: /storeAll\['ville'\] = '([^;]+)';/,
-      postal_code: /storeAll\['code_postal'\] = '([^;]+)';/,
-      phone: /storeAll\['telephone'\] = '([^;]+)';/,
-    }
-
-    def scrape_store_hash(content)
-      SCRAPE_DATA_FROM_JS_REGEX.inject({}) do |result,regex_hash|
-        result[regex_hash[0]] = content.match(regex_hash[1]).to_a[1]
-        result
-      end
+    def scrape_store_hash(element)
+      {
+        store_id: element.css('.entete .titre a')[0].content.match(/\D* (\d+)/)[1],
+        # latitude: ,
+        # longitude: ,
+        address: element.css('.adresse')[0].content.gsub(/\ +/,' ').strip.split(/\n/)[0].strip,
+        city: element.css('.adresse')[0].content.gsub(/\ +/,' ').strip.split(/\n/)[1].split(",")[0].strip,
+        postal_code: element.css('.adresse')[0].content.gsub(/\ +/,' ').strip.split(/\n/)[2].strip,
+        # phone: ,
+      }
     end
 
   end

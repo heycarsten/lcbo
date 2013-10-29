@@ -2,7 +2,7 @@ module LCBO
   module CrawlKit
     class Request
 
-      MAX_RETRIES = 8
+      MAX_RETRIES = 3
 
       attr_reader :request_prototype, :query_params, :body_params
 

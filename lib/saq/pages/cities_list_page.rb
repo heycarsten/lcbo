@@ -3,31 +3,37 @@ module SAQ
 
     include CrawlKit::Page
 
-    uri 'http://www.saq.com/webapp/wcs/stores/servlet/SAQStoreLocator?storeId=20002&catalogId=50000&regionSelected=01&regionId=01'
+    PER_PAGE = 10
+    uri 'http://www.saq.com/webapp/wcs/stores/servlet/SAQStoreLocatorSearchResultsView?storeId=20002&catalogId=50000&langId=-2&pageSize=10&beginIndex={beginIndex}'
 
-    SCRAPE_DATA_FROM_JS_REGEX = {
-      # store_id: /storeAll\['code_succursale'\] = '(\d+)';/,
-      # latitude: /storeAll\['latitude'\] = (-?\d+(\.\d+)?);/,
-      # longitude: /storeAll\['longitude'\] = (-?\d+(\.\d+)?);/,
-      # address: /storeAll\['adresse'\] = ([^;]+);/,
-      city: /storeAll\['ville'\] = '([^;]+)';/,
-      # postal_code: /storeAll\['code_postal'\] = '([^;]+)';/,
-      # phone: /storeAll\['telephone'\] = '([^;]+)';/,
-    }
+    emits :page do
+      body_params[:beginIndex].to_i / PER_PAGE
+    end
 
-    def scrape_store_hash(content)
-      SCRAPE_DATA_FROM_JS_REGEX.inject({}) do |result,regex_hash|
-        result[regex_hash[0]] = content.match(regex_hash[1]).to_a[1]
-        result
+    emits :final_page do
+      @final_page ||= begin
+        count = total_cities / PER_PAGE
+        0 == (total_cities % PER_PAGE) ? count : count + 1
+      end
+    end
+
+    emits :next_page do
+      @next_page ||= begin
+        page < final_page ? page + 1 : nil
+      end
+    end
+
+    emits :total_cities do
+      @total_cities ||= begin
+        doc.css("#content.succursale .nb").first.text =~ /- (\d+) r/
+        $1.to_i
       end
     end
 
     emits :city_list do
-      doc.css('script').inject([]) do |result,script|
-        x = scrape_store_hash(script.content)[:city]
-        result << x if x && !result.include?(x)
-        result
-      end.sort
+      doc.css('.fiche .contenu .adresse').map do |address|
+        address.content.split("\n")[2].strip.split(",").first.strip rescue nil
+      end
     end
 
   end

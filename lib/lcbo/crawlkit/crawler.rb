@@ -2,7 +2,7 @@ module LCBO
   module CrawlKit
     module Crawler
 
-      MAX_RETRIES = 8
+      MAX_RETRIES = 3
 
       class NotImplementedError < StandardError; end
 

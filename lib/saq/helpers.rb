@@ -34,8 +34,14 @@ module SAQ
     ProductListPage.process({perPage: perPage, beginIndex: beginIndex, page: page_num}, {}).as_hash
   end
 
-  def self.store_list
-    StoreListPage.process({}, {}).as_hash
+  def self.store_list(page_num=0)
+    beginIndex = page_num * SAQ::StoreListPage::PER_PAGE
+    StoreListPage.process({beginIndex: beginIndex}, {}).as_hash
+  end
+
+  def self.cities_list(page_num=0)
+    beginIndex = page_num * SAQ::CitiesListPage::PER_PAGE
+    CitiesListPage.process({beginIndex: beginIndex}, {}).as_hash
   end
 
 end
