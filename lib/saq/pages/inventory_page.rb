@@ -6,7 +6,7 @@ module SAQ
 
     include CrawlKit::Page
 
-    uri 'http://www.saq.com/webapp/wcs/stores/servlet/RechercheSuccursale?inventaire=true&storeId=20002&productId={product_id}&succInventaire=1&regionSelected=0&regionId=0&catalogId=50000&langId=-2&partNumber={product_id}'
+    uri 'http://www.saq.com/webapp/wcs/stores/servlet/SAQStoreLocatorSearchResultsView?storeId=20002&catalogId=50000&langId=-1&regionSelected=&productId={product_id}&orderBy=1&pageSize=1000&regionId=&x=58&y=12'
 
     emits :product_id do
       query_params[:product_id].to_i
@@ -17,14 +17,14 @@ module SAQ
     end
 
     emits :inventory_count do
-      doc.css('.qte-dispo-succ-fiche').inject(0){|s,i| s += i.content.strip.split("\n")[1].strip.to_i}
+      doc.css('.affichageListe .fiche .succ-dispo').inject(0){|s,i| s += i.content.strip.split("\n")[1].to_i}
     end
 
     emits :inventories do
       results = []
-      doc.css('.Succ_Fiche').each do |store|
-        store_id = store.css('.succ-titre.filet-bottom3 a')[0].attr('href').match(/selectedStore=(\d+)&/)[1].to_i
-        stock = store.css('.qte-dispo-succ-fiche span')[0].content.to_i
+      doc.css('.affichageListe .fiche').each do |store|
+        store_id = store.css('.titre')[0].content.strip.split("\n")[0].match(/(\d+)$/)[0].to_i
+        stock = store.css('.succ-dispo')[0].content.strip.split("\n")[1].to_i
         results << {store_id: store_id, quantity: stock}
       end
       results

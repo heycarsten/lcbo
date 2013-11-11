@@ -295,9 +295,11 @@ module SAQ
     # end
 
     # b/c of the open call this is NOT tested
+    # ids have leading zeros
     emits :image_url do
       begin
-        possible_image_url = "http://s7d9.scene7.com/is/image/SAQ/#{id}-1?scl=1"
+        id_with_leading_zeros = "%08d" % id
+        possible_image_url = "http://s7d9.scene7.com/is/image/SAQ/#{id_with_leading_zeros}-1?scl=1"
         has_image = open("#{possible_image_url}&req=exists,javascript").read.match(/catalogRecord\.exists \= '(\d)'/)[1].to_i
         if (has_image == 1)
           normalize_image_url(possible_image_url)
