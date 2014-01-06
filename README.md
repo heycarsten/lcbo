@@ -18,7 +18,7 @@ store list pages directly from the [LCBO](http://lcbo.com) website.
   LCBO.inventory(18)
   # => { :id => 18, :inventory_count => 40398, :inventories => [ ... ] }
 
-  LCBO.products_list(1)
+  LCBO.product_list(1)
   # => { :page => 1, :final_page => 108, ..., :product_ids => [ ... ] }
 
   LCBO.store_list
