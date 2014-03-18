@@ -32,6 +32,16 @@ module SAQ
 
     emits :price_in_cents do
       data = doc.css('p.price')[0].content.gsub("$",'').gsub(/Regular\sprice\:\s+/,'').gsub(",",'.').strip.to_f * 100 rescue 0
+      result = data.round
+      if result == 0.0
+        sale_price_in_cents
+      else
+        result
+      end
+    end
+
+    emits :sale_price_in_cents do
+      data = doc.css('p.price')[0].content.gsub("$",'').gsub(/Price\swith\srebate\:\s+/,'').gsub(",",'.').strip.to_f * 100 rescue 0
       data.round
     end
 
