@@ -40,6 +40,11 @@ module SAQ
       end
     end
 
+    emits :regular_price_in_cents do
+      data = doc.css('p.initialprice')[0].content.gsub("$",'').gsub(/Regular\sprice\:\s+/,'').gsub(",",'.').strip.to_f * 100 rescue 0
+      data.round
+    end
+
     emits :sale_price_in_cents do
       data = doc.css('p.price')[0].content.gsub("$",'').gsub(/Price\swith\srebate\:\s+/,'').gsub(",",'.').strip.to_f * 100 rescue 0
       data.round
