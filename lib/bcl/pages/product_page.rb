@@ -32,9 +32,27 @@ module BCL
     # end
 
     emits :price_in_cents do
+      if (sale_price_in_cents > 0.0)
+        sale_price_in_cents
+      else
+        regular_price_in_cents
+      end
+    end
+
+    emits :regular_price_in_cents do
       data = doc.css('.product-detail-item.reg-price')[0].content.gsub("$",'').strip.to_f * 100
       data.round
     end
+
+    emits :sale_price_in_cents do
+      begin
+        data = doc.css('.product-detail-item .lto')[0].content.gsub("$",'').strip.to_f * 100
+        data.round
+      rescue
+        0.0
+      end
+    end
+
 
     # emits :regular_price_in_cents do
     #   if has_limited_time_offer

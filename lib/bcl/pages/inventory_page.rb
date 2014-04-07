@@ -6,7 +6,7 @@ module BCL
 
     include CrawlKit::Page
 
-    uri 'http://m.bcliquorstores.com/m/where_to_buy/{nid}'
+    uri 'http://m.bcliquorstores.com/m/where_to_buy/{product_id}'
 
     emits :product_id do
       query_params[:product_id].to_i
@@ -34,11 +34,15 @@ module BCL
       results
     end
 
+    # emits :xdoc do
+    #   @doc
+    # end
+
     def parse
       return if is_parsed?
       return unless @html
       fire :before_parse
-      inv_uri = "http://m.bcliquorstores.com/m/where_to_buy/#{@nid}"
+      inv_uri = "http://m.bcliquorstores.com/m/where_to_buy/#{product_id}"
       @doc = Nokogiri::HTML(CrawlKit::RequestPrototype.new(inv_uri).request().body)
       fire :after_parse
       self
