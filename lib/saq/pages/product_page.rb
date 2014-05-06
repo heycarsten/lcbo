@@ -31,7 +31,7 @@ module SAQ
     # end
 
     emits :price_in_cents do
-      data = doc.css('p.price')[0].content.gsub("$",'').gsub(/Regular\sprice\:\s+/,'').gsub(",",'.').strip.to_f * 100 rescue 0
+      data = doc.css('p.price')[0].content.gsub("$",'').gsub(/Regular\sprice\:\s+/,'').gsub(",",'').strip.to_f * 100 rescue 0
       result = data.round
       if result == 0.0
         sale_price_in_cents
@@ -41,12 +41,12 @@ module SAQ
     end
 
     emits :regular_price_in_cents do
-      data = doc.css('p.initialprice')[0].content.gsub("$",'').gsub(/Regular\sprice\:\s+/,'').gsub(",",'.').strip.to_f * 100 rescue 0
+      data = doc.css('p.initialprice')[0].content.gsub("$",'').gsub(/Regular\sprice\:\s+/,'').gsub(",",'').strip.to_f * 100 rescue 0
       data.round
     end
 
     emits :sale_price_in_cents do
-      data = doc.css('p.price')[0].content.gsub("$",'').gsub(/Price\swith\srebate\:\s+/,'').gsub(",",'.').strip.to_f * 100 rescue 0
+      data = doc.css('p.price')[0].content.gsub("$",'').gsub(/Price\swith\srebate\:\s+/,'').gsub(",",'').strip.to_f * 100 rescue 0
       data.round
     end
 
@@ -184,7 +184,7 @@ module SAQ
     end
 
     emits :alcohol_content do
-      doc.css('.product-detailsR span')[1].content.gsub(",",'.')[0..-3].to_f rescue nil
+      doc.css('.product-detailsR span')[1].content.gsub(",",'')[0..-3].to_f rescue nil
     end
 
     # emits :price_per_liter_of_alcohol_in_cents do
