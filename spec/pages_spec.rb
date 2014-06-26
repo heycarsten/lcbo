@@ -2,12 +2,12 @@ require 'spec_helper'
 require 'yaml'
 
 { :product_pages      => LCBO::ProductPage,
-  :store_pages        => LCBO::StorePage,
-  :inventory_pages    => LCBO::InventoryPage,
-  :product_list_pages => LCBO::ProductListPage,
-  :store_list_pages   => LCBO::StoreListPage
+  # :store_pages        => LCBO::StorePage,
+  # :inventory_pages    => LCBO::InventoryPage,
+  # :product_list_pages => LCBO::ProductListPage,
+  # :store_list_pages   => LCBO::StoreListPage
 }.each_pair do |type, page|
-  valid_scraper_type = 'lcbo.html'  
+  valid_scraper_type = 'lcbo.html'
 
   describe(page) do
     requests = YAML.load_file("spec/pages/#{type}.yml")

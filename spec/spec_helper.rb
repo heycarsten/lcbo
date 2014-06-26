@@ -23,7 +23,7 @@ unless defined? SpecHelper
     end
 
     class Evented
-      include LCBO::CrawlKit::Eventable
+      include CrawlKit::Eventable
       on :before_request, :set_test_1
       on :before_request, :set_test_2
       on :after_request,  :set_test_3
@@ -39,7 +39,7 @@ unless defined? SpecHelper
     end
 
     class GetPage
-      include LCBO::CrawlKit::Page
+      include CrawlKit::Page
       uri 'http://bros.local/bros/{bro_no}'
       emits(:bro_no) { query_params[:bro_no].to_i }
       emits(:name)   { doc.css('h1')[0].content }
@@ -47,7 +47,7 @@ unless defined? SpecHelper
     end
 
     class PostPage
-      include LCBO::CrawlKit::Page
+      include CrawlKit::Page
       http_method :post
       uri 'http://bros.local/search'
       default_body_params :q => '', :type => 'all'
@@ -57,7 +57,7 @@ unless defined? SpecHelper
     end
 
     class EventedPage
-      include LCBO::CrawlKit::Page
+      include CrawlKit::Page
       attr_reader :before_parse, :after_parse, :before_request, :after_request
       on :before_parse,   :set_before_parse
       on :after_parse,    :set_after_parse

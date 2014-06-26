@@ -4,7 +4,7 @@ module BCL
     include CrawlKit::Page
 
     PER_PAGE = 10
-    uri "http://www.bcliquorstores.com/product-catalogue?start={beginIndex}"
+    uri "http://www.bcliquorstores.com/product-catalogue?start={beginIndex}&sort=bs_feature"
 
     emits :page do
       body_params[:page].to_i

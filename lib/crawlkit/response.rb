@@ -18,7 +18,12 @@
       end
 
       def self.normalize_encoding(html)
-        html.force_encoding('UTF-8').gsub("\r\n", "\n")
+        trying = html.force_encoding('UTF-8')
+        begin
+          trying.gsub("\r\n", "\n")
+        rescue
+          trying
+        end
         # if html.force_encoding('ISO-8859-1').valid_encoding?
         #   html.encode('UTF-8', 'ISO-8859-1')
         # else

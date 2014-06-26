@@ -17,7 +17,7 @@ module LCBO
 
 end
 
-require 'lcbo/ext'
+require 'ext'
 require 'lcbo/helpers'
-require 'lcbo/crawlkit'
+require 'crawlkit'
 require 'lcbo/pages'

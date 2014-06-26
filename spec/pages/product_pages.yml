@@ -1,486 +1,490 @@
 # encoding: UTF-8
-- :file: 1_lcbo.html
-  :desc: Seasonal product
-  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=122408
-  :method: :get
-  :query_params:
-    :id: 122408
-  :expectation:
-    :id: 122408
-    :name: Pascual Toso Malbec Rose
-    :tags: ["pascual", "toso", "malbec", "rose", "wine", "argentina", "bottle"]
-    :price_in_cents: 1195
-    :regular_price_in_cents: 1195
-    :limited_time_offer_savings_in_cents: 0
-    :limited_time_offer_ends_on:
-    :bonus_reward_miles: 0
-    :bonus_reward_miles_ends_on:
-    :alcohol_content: 1270
-    :price_per_liter_of_alcohol_in_cents: 1254
-    :price_per_liter_in_cents: 1593
-    :sugar_content: "1"
-    :package: 750 mL bottle
-    :package_unit_type: bottle
-    :package_unit_volume_in_milliliters: 750
-    :total_package_units: 1
-    :total_package_volume_in_milliliters: 750
-    :origin: Argentina
-    :producer_name: Pascual Toso
-    :released_on:
-    :stock_type: LCBO
-    :primary_category: Wine
-    :secondary_category:
-    :is_vqa: false
-    :is_kosher: false
-    :has_bonus_reward_miles: false
-    :has_limited_time_offer: false
-    :is_discontinued: false
-    :is_seasonal: true
-    :description:
-    :tasting_note:
-    :serving_suggestion:
-    :image_thumb_url:
-    :image_url:
+# - :file: 1_lcbo.html
+#   :desc: Seasonal product
+#   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=122408
+#   :method: :get
+#   :query_params:
+#     :id: 122408
+#   :expectation:
+#     :id: 122408
+#     :name: Pascual Toso Malbec Rose
+#     :tags: ["pascual", "toso", "malbec", "rose", "wine", "argentina", "bottle"]
+#     :price_in_cents: 1195
+#     :regular_price_in_cents: 1195
+#     :limited_time_offer_savings_in_cents: 0
+#     :limited_time_offer_ends_on:
+#     :bonus_reward_miles: 0
+#     :bonus_reward_miles_ends_on:
+#     :alcohol_content: 1270
+#     :price_per_liter_of_alcohol_in_cents: 1254
+#     :price_per_liter_in_cents: 1593
+#     :sugar_content: "1"
+#     :package: 750 mL bottle
+#     :package_unit_type: bottle
+#     :package_unit_volume_in_milliliters: 750
+#     :total_package_units: 1
+#     :total_package_volume_in_milliliters: 750
+#     :origin: Argentina
+#     :producer_name: Pascual Toso
+#     :released_on:
+#     :stock_type: LCBO
+#     :primary_category: Wine
+#     :secondary_category:
+#     :is_vqa: false
+#     :is_kosher: false
+#     :has_bonus_reward_miles: false
+#     :has_limited_time_offer: false
+#     :is_discontinued: false
+#     :is_seasonal: true
+#     :description:
+#     :tasting_note:
+#     :serving_suggestion:
+#     :image_thumb_url:
+#     :image_url:
 
 - :file: 2_lcbo.html
   :desc: Product with limited time offer
-  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=18
+  :uri: http://www.lcbo.ca/lcbo/product/name/317057
   :method: :get
   :query_params:
-    :id: 18
+    :id: 317057
   :expectation:
-    :id: 18
-    :name: Heineken Lager
-    :tags: ["heineken", "lager", "beer", "netherlands", "heineken's", "heinekens", "brouwerijen", "nederland", "bv", "bottle"]
-    :price_in_cents: 1250
-    :regular_price_in_cents: 1350
-    :limited_time_offer_savings_in_cents: 100
-    :limited_time_offer_ends_on: 2010-08-15
+    :id: 317057
+    :name: Masi Costasera Amarone Classico Doc
+    # :tags: ["heineken", "lager", "beer", "netherlands", "heineken's", "heinekens", "brouwerijen", "nederland", "bv", "bottle"]
+    :price_in_cents: 3695
+    :regular_price_in_cents: 3995
+    :limited_time_offer_savings_in_cents: 300
+    :limited_time_offer_ends_on: "2014-07-21"
     :bonus_reward_miles: 0
     :bonus_reward_miles_ends_on:
-    :alcohol_content: 500
-    :price_per_liter_of_alcohol_in_cents: 1262
-    :price_per_liter_in_cents: 631
-    :sugar_content: "7"
-    :package: 6x330 mL bottle
-    :package_unit_type: bottle
-    :package_unit_volume_in_milliliters: 330
-    :total_package_units: 6
-    :total_package_volume_in_milliliters: 1980
-    :origin: Netherlands
-    :producer_name: Heineken's Brouwerijen Nederland Bv
-    :released_on:
-    :stock_type: LCBO
-    :primary_category: Beer
-    :secondary_category: Lager
+    :alcohol_content: 15.1
+    # :price_per_liter_of_alcohol_in_cents: 1262
+    # :price_per_liter_in_cents: 631
+    # :sugar_content: "7"
+    :package: 750 mL bottle
+    # :package_unit_type: bottle
+    :volume_in_milliliters: 750
+    # :total_package_units: 6
+    # :total_package_volume_in_milliliters: 1980
+    :origin: Veneto, Italy
+    :producer_name: Masi Agricola S.P.A.
+    :released_on: "2013-08-17"
+    # :stock_type: LCBO
+    :primary_category: Wine
+    :secondary_category: Red Wine
+    :type:
+      - Wine
+      - Red Wine
+      - Amarone
+    :varietal: Amarone
     :has_bonus_reward_miles: false
     :has_limited_time_offer: true
     :is_vqa: false
-    :is_kosher: false
-    :is_discontinued: false
-    :is_seasonal: false
-    :description:
-    :tasting_note: "Pale gold colour; softly perfumed nose with some hoppy elements; soft grain taste; gently bitter finish."
-    :serving_suggestion: "Medium curry, pizza or burgers"
-    :image_thumb_url:
-    :image_url:
+    :is_kosher: true
+    # :is_discontinued: false
+    # :is_seasonal: false
+    :description: "Deep purple ruby colour; rich, ripe, plummy cherry aromas and flavours with hints of chocolate, spice and earth; full- bodied with a firm, long finish."
+    # :tasting_note: "Pale gold colour; softly perfumed nose with some hoppy elements; soft grain taste; gently bitter finish."
+    # :serving_suggestion: "Medium curry, pizza or burgers"
+    # :image_thumb_url:
+    :image_url: http://www.lcbo.ca/content/dam/lcbo/products/317057.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg
 
 - :file: 3_lcbo.html
   :desc: Product with bonus air miles
-  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=280461
+  :uri: http://www.lcbo.ca/lcbo/product/name/6452
   :method: :get
   :query_params:
-    :id: 280461
+    :id: 6452
   :expectation:
-    :id: 280461
-    :name: Dom Pérignon Brut Champagne
-    :tags: ["dom", "pérignon", "brut", "champagne", "wine", "france", "moet", "chandon", "sa", "bottle", "perignon"]
-    :price_in_cents: 21995
-    :regular_price_in_cents: 21995
-    :limited_time_offer_savings_in_cents: 0
-    :limited_time_offer_ends_on:
-    :bonus_reward_miles: 30
-    :bonus_reward_miles_ends_on: 2010-08-14
-    :alcohol_content: 1250
-    :price_per_liter_of_alcohol_in_cents: 23461
-    :price_per_liter_in_cents: 29326
-    :sugar_content: XD
+    :id: 6452
+    :name: 20 Bees Baco Noir VQA
+    :price_in_cents: 1195
+    # :regular_price_in_cents: 5545
+    # :limited_time_offer_savings_in_cents: 0
+    # :limited_time_offer_ends_on:
+    :bonus_reward_miles: 4.0
+    :bonus_reward_miles_ends_on: "2014-07-19"
+    :alcohol_content: 12.5
     :package: 750 mL bottle
-    :package_unit_type: bottle
-    :package_unit_volume_in_milliliters: 750
-    :total_package_units: 1
-    :total_package_volume_in_milliliters: 750
-    :origin: Champagne, France
-    :producer_name: Moet & Chandon S.A.
-    :released_on: 2010-05-15
-    :stock_type: VINTAGES
-    :primary_category: Wine
-    :secondary_category: Champagne
-    :has_bonus_reward_miles: true
-    :has_limited_time_offer: false
-    :is_vqa: false
-    :is_kosher: false
-    :is_discontinued: false
-    :is_seasonal: false
-    :description: "The legend now joins our Essentials Collection. Purported to be the father of all Champagne, Dom Pérignon continues to impress generation after generation. This ultimate anniversary, or birthday celebration, bubbly is only made in the greatest years. Loaded with stylish aromas of citrus, artisanal bread, green apple, mineral and pear, it's quite dry and vibrantly refreshing on the palate. Every vintage Robert Parker has reviewed from 1982 to the present has received scores in the range of 92 to 98 points! Expect to be impressed."
-    :tasting_note:
-    :serving_suggestion:
-    :image_thumb_url:
-    :image_url:
-
-- :file: 4_lcbo.html
-  :desc: Discontinued product
-  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=479154
-  :method: :get
-  :query_params:
-    :id: 479154
-  :expectation:
-    :id: 479154
-    :name: Floris Ninkeberry Gardenbeer
-    :tags: ["floris", "ninkeberry", "gardenbeer", "beer", "ale", "belgium", "brouwerij", "huyghe", "bottle"]
-    :price_in_cents: 250
-    :regular_price_in_cents: 250
-    :limited_time_offer_savings_in_cents: 0
-    :limited_time_offer_ends_on:
-    :bonus_reward_miles: 0
-    :bonus_reward_miles_ends_on:
-    :alcohol_content: 350
-    :price_per_liter_of_alcohol_in_cents: 2164
-    :price_per_liter_in_cents: 757
-    :sugar_content: "8"
-    :package: 330 mL bottle
-    :package_unit_type: bottle
-    :package_unit_volume_in_milliliters: 330
-    :total_package_units: 1
-    :total_package_volume_in_milliliters: 330
-    :origin: Belgium
-    :producer_name: Brouwerij Huyghe
-    :released_on:
-    :stock_type: LCBO
-    :primary_category: Beer
-    :secondary_category: Ale
-    :has_bonus_reward_miles: false
-    :has_limited_time_offer: false
-    :is_vqa: false
-    :is_kosher: false
-    :is_discontinued: true
-    :is_seasonal: false
-    :description:
-    :tasting_note:
-    :serving_suggestion:
-    :image_thumb_url:
-    :image_url:
-
-- :file: 5_lcbo.html
-  :desc: Product with release date
-  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=148528
-  :method: :get
-  :query_params:
-    :id: 148528
-  :expectation:
-    :id: 148528
-    :name: Bodegas Ruconia Rey Don Garcia El de Najera Crianza 2005
-    :tags: ["bodegas", "ruconia", "rey", "don", "garcia", "el", "de", "najera", "crianza", "2005", "wine", "red", "rioja", "spain", "sl", "bottle"]
-    :price_in_cents: 1595
-    :regular_price_in_cents: 1595
-    :limited_time_offer_savings_in_cents: 0
-    :limited_time_offer_ends_on:
-    :bonus_reward_miles: 0
-    :bonus_reward_miles_ends_on:
-    :alcohol_content: 1320
-    :price_per_liter_of_alcohol_in_cents: 1611
-    :price_per_liter_in_cents: 2126
-    :sugar_content: "XD"
-    :package: 750 mL bottle
-    :package_unit_type: bottle
-    :package_unit_volume_in_milliliters: 750
-    :total_package_units: 1
-    :total_package_volume_in_milliliters: 750
-    :origin: Rioja, Spain
-    :producer_name: Bodegas Ruconia S.L.
-    :released_on: 2010-01-23
-    :stock_type: VINTAGES
+    :volume_in_milliliters: 750
+    :origin: Ontario, Canada
+    :producer_name: Niagara Cellars Ltd.
+    :board: LCBO
+    :type:
+      - Wine
+      - Red Wine
+      - Baco Noir
+    :varietal: Baco Noir
     :primary_category: Wine
     :secondary_category: Red Wine
-    :has_bonus_reward_miles: false
-    :has_limited_time_offer: false
-    :is_vqa: false
-    :is_kosher: false
-    :is_discontinued: false
-    :is_seasonal: false
-    :description:
-    :tasting_note: "Excellent example of a more mature Crianza, featuring aromas of cherry, dried fruit, vanilla and sweet oak spice. Dry and fruity, this wine's tannins have softened out considerably making this wine very approachable. A fine wine for a rich lamb stew or roast beef. (VINTAGES panel, July 2009)"
-    :serving_suggestion:
+    :has_bonus_reward_miles: true
+    # :has_limited_time_offer: false
+    :is_vqa: true
+    # :is_kosher: false
+    # :is_discontinued: false
+    # :is_seasonal: false
+    :description: "Deep ruby purple colour; aromas of mocha, black cherry, vanilla and plum; dry, medium bodied, soft on the palate, juicy fruit flavours, medium finish."
     :image_thumb_url:
-    :image_url:
+    :image_url: http://www.lcbo.ca/content/dam/lcbo/products/006452.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg
+
+# - :file: 4_lcbo.html
+#   :desc: Discontinued product
+#   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=479154
+#   :method: :get
+#   :query_params:
+#     :id: 479154
+#   :expectation:
+#     :id: 479154
+#     :name: Floris Ninkeberry Gardenbeer
+#     :tags: ["floris", "ninkeberry", "gardenbeer", "beer", "ale", "belgium", "brouwerij", "huyghe", "bottle"]
+#     :price_in_cents: 250
+#     :regular_price_in_cents: 250
+#     :limited_time_offer_savings_in_cents: 0
+#     :limited_time_offer_ends_on:
+#     :bonus_reward_miles: 0
+#     :bonus_reward_miles_ends_on:
+#     :alcohol_content: 350
+#     :price_per_liter_of_alcohol_in_cents: 2164
+#     :price_per_liter_in_cents: 757
+#     :sugar_content: "8"
+#     :package: 330 mL bottle
+#     :package_unit_type: bottle
+#     :package_unit_volume_in_milliliters: 330
+#     :total_package_units: 1
+#     :total_package_volume_in_milliliters: 330
+#     :origin: Belgium
+#     :producer_name: Brouwerij Huyghe
+#     :released_on:
+#     :stock_type: LCBO
+#     :primary_category: Beer
+#     :secondary_category: Ale
+#     :has_bonus_reward_miles: false
+#     :has_limited_time_offer: false
+#     :is_vqa: false
+#     :is_kosher: false
+#     :is_discontinued: true
+#     :is_seasonal: false
+#     :description:
+#     :tasting_note:
+#     :serving_suggestion:
+#     :image_thumb_url:
+#     :image_url:
+
+# - :file: 5_lcbo.html
+#   :desc: Product with release date
+#   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=148528
+#   :method: :get
+#   :query_params:
+#     :id: 148528
+#   :expectation:
+#     :id: 148528
+#     :name: Bodegas Ruconia Rey Don Garcia El de Najera Crianza 2005
+#     :tags: ["bodegas", "ruconia", "rey", "don", "garcia", "el", "de", "najera", "crianza", "2005", "wine", "red", "rioja", "spain", "sl", "bottle"]
+#     :price_in_cents: 1595
+#     :regular_price_in_cents: 1595
+#     :limited_time_offer_savings_in_cents: 0
+#     :limited_time_offer_ends_on:
+#     :bonus_reward_miles: 0
+#     :bonus_reward_miles_ends_on:
+#     :alcohol_content: 1320
+#     :price_per_liter_of_alcohol_in_cents: 1611
+#     :price_per_liter_in_cents: 2126
+#     :sugar_content: "XD"
+#     :package: 750 mL bottle
+#     :package_unit_type: bottle
+#     :package_unit_volume_in_milliliters: 750
+#     :total_package_units: 1
+#     :total_package_volume_in_milliliters: 750
+#     :origin: Rioja, Spain
+#     :producer_name: Bodegas Ruconia S.L.
+#     :released_on: 2010-01-23
+#     :stock_type: VINTAGES
+#     :primary_category: Wine
+#     :secondary_category: Red Wine
+#     :has_bonus_reward_miles: false
+#     :has_limited_time_offer: false
+#     :is_vqa: false
+#     :is_kosher: false
+#     :is_discontinued: false
+#     :is_seasonal: false
+#     :description:
+#     :tasting_note: "Excellent example of a more mature Crianza, featuring aromas of cherry, dried fruit, vanilla and sweet oak spice. Dry and fruity, this wine's tannins have softened out considerably making this wine very approachable. A fine wine for a rich lamb stew or roast beef. (VINTAGES panel, July 2009)"
+#     :serving_suggestion:
+#     :image_thumb_url:
+#     :image_url:
 
 - :file: 6_lcbo.html
   :desc: Standard product
-  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=582973
+  :uri: http://www.lcbo.ca/lcbo/product/name/582973
   :method: :get
   :query_params:
     :id: 582973
   :expectation:
     :id: 582973
-    :name: Bombay Sapphire
-    :tags: ["bombay", "sapphire", "spirits", "gin", "england", "united", "kingdom", "company", "ltd", "bottle"]
-    :price_in_cents: 5545
-    :regular_price_in_cents: 5545
-    :limited_time_offer_savings_in_cents: 0
-    :limited_time_offer_ends_on:
-    :bonus_reward_miles: 0
-    :bonus_reward_miles_ends_on:
-    :alcohol_content: 4000
-    :price_per_liter_of_alcohol_in_cents: 792
-    :price_per_liter_in_cents: 3168
-    :sugar_content:
+    :name: Bombay Sapphire London Dry Gin
+    # :tags: ["bombay", "sapphire", "spirits", "gin", "england", "united", "kingdom", "company", "ltd", "bottle"]
+    :price_in_cents: 5895
+    # :regular_price_in_cents: 5545
+    # :limited_time_offer_savings_in_cents: 0
+    # :limited_time_offer_ends_on:
+    # :bonus_reward_miles: 0
+    # :bonus_reward_miles_ends_on:
+    :alcohol_content: 40
+    # :price_per_liter_of_alcohol_in_cents: 792
+    # :price_per_liter_in_cents: 3168
+    # :sugar_content:
     :package: 1750 mL bottle
-    :package_unit_type: bottle
-    :package_unit_volume_in_milliliters: 1750
-    :total_package_units: 1
-    :total_package_volume_in_milliliters: 1750
+    # :package_unit_type: bottle
+    :volume_in_milliliters: 1750
+    # :total_package_units: 1
+    # :total_package_volume_in_milliliters: 1750
     :origin: England, United Kingdom
     :producer_name: Bombay Spirits Company Ltd.
-    :released_on:
-    :stock_type: LCBO
+    # :released_on:
+    :board: LCBO
+    :type:
+      - Spirits
+      - Gin
+    # :stock_type: LCBO
     :primary_category: Spirits
     :secondary_category: Gin
     :has_bonus_reward_miles: false
-    :has_limited_time_offer: false
+    # :has_limited_time_offer: false
     :is_vqa: false
-    :is_kosher: false
-    :is_discontinued: false
-    :is_seasonal: false
-    :description:
-    :tasting_note: "Clear water white; complex mix of herbs and juniper on the nose with crisp lemon peel flavours; smooth and refreshing"
-    :serving_suggestion: "Martinis, mixed drinks"
-    :image_thumb_url:
-    :image_url:
+    # :is_kosher: false
+    # :is_discontinued: false
+    # :is_seasonal: false
+    :description: "Clear water white; complex mix of herbs and juniper on the nose with crisp lemon peel and citrus flavours; smooth and refreshing"
+    # :tasting_note: "Clear water white; complex mix of herbs and juniper on the nose with crisp lemon peel flavours; smooth and refreshing"
+    # :serving_suggestion: "Martinis, mixed drinks"
+    # :image_thumb_url:
+    :image_url: "http://www.lcbo.ca/content/dam/lcbo/products/582973.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg"
 
-- :file: 7_lcbo.html
-  :desc: VQA product
-  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=2183079
-  :method: :get
-  :query_params:
-    :id: 2183079
-  :expectation:
-    :id: 2183079
-    :name: Lake & River Series Cabernet Franc VQA
-    :tags: ["lake", "river", "series", "cabernet", "franc", "vqa", "wine", "ontario", "canada", "colio", "wines", "of", "ltd", "bottle"]
-    :price_in_cents: 1095
-    :regular_price_in_cents: 1095
-    :limited_time_offer_savings_in_cents: 0
-    :limited_time_offer_ends_on:
-    :bonus_reward_miles: 0
-    :bonus_reward_miles_ends_on:
-    :alcohol_content: 1220
-    :price_per_liter_of_alcohol_in_cents: 1196
-    :price_per_liter_in_cents: 1460
-    :sugar_content:
-    :package: 750 mL bottle
-    :package_unit_type: bottle
-    :package_unit_volume_in_milliliters: 750
-    :total_package_units: 1
-    :total_package_volume_in_milliliters: 750
-    :origin: Ontario, Canada
-    :producer_name: Colio Wines of Canada Ltd.
-    :released_on:
-    :stock_type: LCBO
-    :primary_category: Wine
-    :secondary_category:
-    :has_bonus_reward_miles: false
-    :has_limited_time_offer: false
-    :is_vqa: true
-    :is_kosher: false
-    :is_discontinued: false
-    :is_seasonal: false
-    :description:
-    :tasting_note:
-    :serving_suggestion:
-    :image_thumb_url:
-    :image_url:
+# - :file: 7_lcbo.html
+#   :desc: VQA product
+#   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=2183079
+#   :method: :get
+#   :query_params:
+#     :id: 2183079
+#   :expectation:
+#     :id: 2183079
+#     :name: Lake & River Series Cabernet Franc VQA
+#     :tags: ["lake", "river", "series", "cabernet", "franc", "vqa", "wine", "ontario", "canada", "colio", "wines", "of", "ltd", "bottle"]
+#     :price_in_cents: 1095
+#     :regular_price_in_cents: 1095
+#     :limited_time_offer_savings_in_cents: 0
+#     :limited_time_offer_ends_on:
+#     :bonus_reward_miles: 0
+#     :bonus_reward_miles_ends_on:
+#     :alcohol_content: 1220
+#     :price_per_liter_of_alcohol_in_cents: 1196
+#     :price_per_liter_in_cents: 1460
+#     :sugar_content:
+#     :package: 750 mL bottle
+#     :package_unit_type: bottle
+#     :package_unit_volume_in_milliliters: 750
+#     :total_package_units: 1
+#     :total_package_volume_in_milliliters: 750
+#     :origin: Ontario, Canada
+#     :producer_name: Colio Wines of Canada Ltd.
+#     :released_on:
+#     :stock_type: LCBO
+#     :primary_category: Wine
+#     :secondary_category:
+#     :has_bonus_reward_miles: false
+#     :has_limited_time_offer: false
+#     :is_vqa: true
+#     :is_kosher: false
+#     :is_discontinued: false
+#     :is_seasonal: false
+#     :description:
+#     :tasting_note:
+#     :serving_suggestion:
+#     :image_thumb_url:
+#     :image_url:
 
-- :file: 8_lcbo.html
-  :desc: Kosher Product
-  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=114173
-  :method: :get
-  :query_params:
-    :id: 114173
-  :expectation:
-    :id: 114173
-    :name: 05 Sauv Blanc Weinstock Cellar K
-    :tags: ["05", "sauv", "blanc", "weinstock", "cellar", "k", "wine", "california", "united", "states", "royal", "wines", "bottle"]
-    :price_in_cents: 2295
-    :regular_price_in_cents: 2295
-    :limited_time_offer_savings_in_cents: 0
-    :limited_time_offer_ends_on:
-    :bonus_reward_miles: 0
-    :bonus_reward_miles_ends_on:
-    :stock_type: VINTAGES
-    :primary_category: Wine
-    :secondary_category:
-    :origin: California, United States
-    :package: 750 mL bottle
-    :package_unit_type: bottle
-    :package_unit_volume_in_milliliters: 750
-    :total_package_units: 1
-    :total_package_volume_in_milliliters: 750
-    :volume_in_milliliters: 750
-    :alcohol_content: 1350
-    :price_per_liter_of_alcohol_in_cents: 2266
-    :price_per_liter_in_cents: 3060
-    :sugar_content:
-    :producer_name: Royal Wines
-    :released_on:
-    :is_discontinued: false
-    :has_limited_time_offer: false
-    :has_bonus_reward_miles: false
-    :is_seasonal: false
-    :is_vqa: false
-    :is_kosher: true
-    :description:
-    :serving_suggestion:
-    :tasting_note:
-    :image_thumb_url:
-    :image_url:
+# - :file: 8_lcbo.html
+#   :desc: Kosher Product
+#   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=114173
+#   :method: :get
+#   :query_params:
+#     :id: 114173
+#   :expectation:
+#     :id: 114173
+#     :name: 05 Sauv Blanc Weinstock Cellar K
+#     :tags: ["05", "sauv", "blanc", "weinstock", "cellar", "k", "wine", "california", "united", "states", "royal", "wines", "bottle"]
+#     :price_in_cents: 2295
+#     :regular_price_in_cents: 2295
+#     :limited_time_offer_savings_in_cents: 0
+#     :limited_time_offer_ends_on:
+#     :bonus_reward_miles: 0
+#     :bonus_reward_miles_ends_on:
+#     :stock_type: VINTAGES
+#     :primary_category: Wine
+#     :secondary_category:
+#     :origin: California, United States
+#     :package: 750 mL bottle
+#     :package_unit_type: bottle
+#     :package_unit_volume_in_milliliters: 750
+#     :total_package_units: 1
+#     :total_package_volume_in_milliliters: 750
+#     :volume_in_milliliters: 750
+#     :alcohol_content: 1350
+#     :price_per_liter_of_alcohol_in_cents: 2266
+#     :price_per_liter_in_cents: 3060
+#     :sugar_content:
+#     :producer_name: Royal Wines
+#     :released_on:
+#     :is_discontinued: false
+#     :has_limited_time_offer: false
+#     :has_bonus_reward_miles: false
+#     :is_seasonal: false
+#     :is_vqa: false
+#     :is_kosher: true
+#     :description:
+#     :serving_suggestion:
+#     :tasting_note:
+#     :image_thumb_url:
+#     :image_url:
 
-- :file: 9_lcbo.html
-  :desc: Product with Value Added Promotion
-  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=56796
-  :method: :get
-  :query_params:
-    :id: 56796
-  :expectation:
-    :id: 56796
-    :name: Heineken Draught Keg
-    :tags: ["heineken", "draught", "keg", "beer", "lager", "netherlands", "heineken's", "heinekens", "brouwerijen", "nederland", "bv", "can"]
-    :price_in_cents: 2995
-    :regular_price_in_cents: 2995
-    :limited_time_offer_savings_in_cents: 0
-    :limited_time_offer_ends_on:
-    :bonus_reward_miles: 0
-    :bonus_reward_miles_ends_on:
-    :stock_type: LCBO
-    :primary_category: Beer
-    :secondary_category: Lager
-    :origin: Netherlands
-    :package: 5000 mL can
-    :package_unit_type: can
-    :package_unit_volume_in_milliliters: 5000
-    :total_package_units: 1
-    :total_package_volume_in_milliliters: 5000
-    :volume_in_milliliters: 5000
-    :alcohol_content: 500
-    :price_per_liter_of_alcohol_in_cents: 1198
-    :price_per_liter_in_cents: 599
-    :sugar_content: "3"
-    :producer_name: Heineken's Brouwerijen Nederland Bv
-    :released_on:
-    :is_discontinued: false
-    :has_limited_time_offer: false
-    :has_bonus_reward_miles: false
-    :has_value_added_promotion: true
-    :is_seasonal: false
-    :is_vqa: false
-    :is_kosher: false
-    :description:
-    :serving_suggestion: Medium curry, pizza or burgers
-    :tasting_note: Pale gold colour; softly perfumed nose with some hoppy elements; soft grain taste; gently bitter finish.
-    :value_added_promotion_description: 5000 mL can comes with FREE Cooler Bag Wrap until Jan 1, 2011 or while supplies last!
-    :image_thumb_url:
-    :image_url:
+# - :file: 9_lcbo.html
+#   :desc: Product with Value Added Promotion
+#   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=56796
+#   :method: :get
+#   :query_params:
+#     :id: 56796
+#   :expectation:
+#     :id: 56796
+#     :name: Heineken Draught Keg
+#     :tags: ["heineken", "draught", "keg", "beer", "lager", "netherlands", "heineken's", "heinekens", "brouwerijen", "nederland", "bv", "can"]
+#     :price_in_cents: 2995
+#     :regular_price_in_cents: 2995
+#     :limited_time_offer_savings_in_cents: 0
+#     :limited_time_offer_ends_on:
+#     :bonus_reward_miles: 0
+#     :bonus_reward_miles_ends_on:
+#     :stock_type: LCBO
+#     :primary_category: Beer
+#     :secondary_category: Lager
+#     :origin: Netherlands
+#     :package: 5000 mL can
+#     :package_unit_type: can
+#     :package_unit_volume_in_milliliters: 5000
+#     :total_package_units: 1
+#     :total_package_volume_in_milliliters: 5000
+#     :volume_in_milliliters: 5000
+#     :alcohol_content: 500
+#     :price_per_liter_of_alcohol_in_cents: 1198
+#     :price_per_liter_in_cents: 599
+#     :sugar_content: "3"
+#     :producer_name: Heineken's Brouwerijen Nederland Bv
+#     :released_on:
+#     :is_discontinued: false
+#     :has_limited_time_offer: false
+#     :has_bonus_reward_miles: false
+#     :has_value_added_promotion: true
+#     :is_seasonal: false
+#     :is_vqa: false
+#     :is_kosher: false
+#     :description:
+#     :serving_suggestion: Medium curry, pizza or burgers
+#     :tasting_note: Pale gold colour; softly perfumed nose with some hoppy elements; soft grain taste; gently bitter finish.
+#     :value_added_promotion_description: 5000 mL can comes with FREE Cooler Bag Wrap until Jan 1, 2011 or while supplies last!
+#     :image_thumb_url:
+#     :image_url:
 
-- :file: 10_lcbo.html
-  :desc: Product with Image
-  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=90399
-  :method: :get
-  :query_params:
-    :id: 90399
-  :expectation:
-    :id: 90399
-    :name: Yellow Tail Bubbles Rose
-    :tags: ["yellow", "tail", "bubbles", "rose", "wine", "sparkling", "australia", "casella", "wines", "bottle"]
-    :price_in_cents: 1395
-    :regular_price_in_cents: 1395
-    :limited_time_offer_savings_in_cents: 0
-    :limited_time_offer_ends_on:
-    :bonus_reward_miles: 0
-    :bonus_reward_miles_ends_on:
-    :stock_type: LCBO
-    :primary_category: Wine
-    :secondary_category: Sparkling Wine
-    :origin: Australia
-    :package: 750 mL bottle
-    :package_unit_type: bottle
-    :package_unit_volume_in_milliliters: 750
-    :total_package_units: 1
-    :total_package_volume_in_milliliters: 750
-    :volume_in_milliliters: 750
-    :alcohol_content: 1200
-    :price_per_liter_of_alcohol_in_cents: 1550
-    :price_per_liter_in_cents: 1860
-    :sugar_content: "2"
-    :producer_name: Casella Wines
-    :released_on:
-    :is_discontinued: false
-    :has_limited_time_offer: false
-    :has_bonus_reward_miles: false
-    :has_value_added_promotion: false
-    :is_seasonal: false
-    :is_vqa: false
-    :is_kosher: false
-    :description:
-    :serving_suggestion: "Perfect on its own or with appetizers"
-    :tasting_note: "Pale salmon colour with medium-sized bubbles; aromas of candied raspberry, strawberry, and pink grapefruit; dry, very crisp and fresh acidity, laden with candied fruit flavours through to the finish."
-    :value_added_promotion_description:
-    :image_thumb_url: http://lcbo.com/app/images/products/website/0090399.jpg
-    :image_url: http://lcbo.com/app/images/products/0090399.jpg
+# - :file: 10_lcbo.html
+#   :desc: Product with Image
+#   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=90399
+#   :method: :get
+#   :query_params:
+#     :id: 90399
+#   :expectation:
+#     :id: 90399
+#     :name: Yellow Tail Bubbles Rose
+#     :tags: ["yellow", "tail", "bubbles", "rose", "wine", "sparkling", "australia", "casella", "wines", "bottle"]
+#     :price_in_cents: 1395
+#     :regular_price_in_cents: 1395
+#     :limited_time_offer_savings_in_cents: 0
+#     :limited_time_offer_ends_on:
+#     :bonus_reward_miles: 0
+#     :bonus_reward_miles_ends_on:
+#     :stock_type: LCBO
+#     :primary_category: Wine
+#     :secondary_category: Sparkling Wine
+#     :origin: Australia
+#     :package: 750 mL bottle
+#     :package_unit_type: bottle
+#     :package_unit_volume_in_milliliters: 750
+#     :total_package_units: 1
+#     :total_package_volume_in_milliliters: 750
+#     :volume_in_milliliters: 750
+#     :alcohol_content: 1200
+#     :price_per_liter_of_alcohol_in_cents: 1550
+#     :price_per_liter_in_cents: 1860
+#     :sugar_content: "2"
+#     :producer_name: Casella Wines
+#     :released_on:
+#     :is_discontinued: false
+#     :has_limited_time_offer: false
+#     :has_bonus_reward_miles: false
+#     :has_value_added_promotion: false
+#     :is_seasonal: false
+#     :is_vqa: false
+#     :is_kosher: false
+#     :description:
+#     :serving_suggestion: "Perfect on its own or with appetizers"
+#     :tasting_note: "Pale salmon colour with medium-sized bubbles; aromas of candied raspberry, strawberry, and pink grapefruit; dry, very crisp and fresh acidity, laden with candied fruit flavours through to the finish."
+#     :value_added_promotion_description:
+#     :image_thumb_url: http://lcbo.com/app/images/products/website/0090399.jpg
+#     :image_url: http://lcbo.com/app/images/products/0090399.jpg
 
-- :file: 11_lcbo.html
-  :desc: Vintages product with no image
-  :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=905596
-  :method: :get
-  :query_params:
-    :id: 905596
-  :expectation:
-    :id: 905596
-    :name: Terredora Campore Fiano Di Avellino 2008
-    :tags: ["terredora", "campore", "fiano", "di", "avellino", "2008", "wine", "white", "campania", "italy", "terre", "dora", "paulo", "ss", "bottle"]
-    :price_in_cents: 2895
-    :regular_price_in_cents: 2895
-    :limited_time_offer_savings_in_cents: 0
-    :limited_time_offer_ends_on:
-    :bonus_reward_miles: 0
-    :bonus_reward_miles_ends_on:
-    :stock_type: VINTAGES
-    :primary_category: Wine
-    :secondary_category: White Wine
-    :origin: "Campania, Italy"
-    :package: 750 mL bottle
-    :package_unit_type: bottle
-    :package_unit_volume_in_milliliters: 750
-    :total_package_units: 1
-    :total_package_volume_in_milliliters: 750
-    :volume_in_milliliters: 750
-    :alcohol_content: 1300
-    :price_per_liter_of_alcohol_in_cents: 2969
-    :price_per_liter_in_cents: 3860
-    :sugar_content: D
-    :producer_name: "Terre Dora Di Paulo S.S."
-    :released_on: 2011-01-22
-    :is_discontinued: false
-    :has_limited_time_offer: false
-    :has_bonus_reward_miles: false
-    :has_value_added_promotion: false
-    :is_seasonal: false
-    :is_vqa: false
-    :is_kosher: false
-    :description: "TASTING NOTE: Delivers amazing aromas of lemon and lime, with hints of mineral. A full-bodied, late-harvest style, offering lots of dried fruits, from citrus to melon. Spicy. If you want a denser, richer Fiano, this is for you. Drink now. Score: 91 (James Suckling, www.winespectator.com, April 30, 2010)"
-    :serving_suggestion:
-    :tasting_note:
-    :value_added_promotion_description:
-    :image_thumb_url:
-    :image_url:
+# - :file: 11_lcbo.html
+#   :desc: Vintages product with no image
+#   :uri: http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=905596
+#   :method: :get
+#   :query_params:
+#     :id: 905596
+#   :expectation:
+#     :id: 905596
+#     :name: Terredora Campore Fiano Di Avellino 2008
+#     :tags: ["terredora", "campore", "fiano", "di", "avellino", "2008", "wine", "white", "campania", "italy", "terre", "dora", "paulo", "ss", "bottle"]
+#     :price_in_cents: 2895
+#     :regular_price_in_cents: 2895
+#     :limited_time_offer_savings_in_cents: 0
+#     :limited_time_offer_ends_on:
+#     :bonus_reward_miles: 0
+#     :bonus_reward_miles_ends_on:
+#     :stock_type: VINTAGES
+#     :primary_category: Wine
+#     :secondary_category: White Wine
+#     :origin: "Campania, Italy"
+#     :package: 750 mL bottle
+#     :package_unit_type: bottle
+#     :package_unit_volume_in_milliliters: 750
+#     :total_package_units: 1
+#     :total_package_volume_in_milliliters: 750
+#     :volume_in_milliliters: 750
+#     :alcohol_content: 1300
+#     :price_per_liter_of_alcohol_in_cents: 2969
+#     :price_per_liter_in_cents: 3860
+#     :sugar_content: D
+#     :producer_name: "Terre Dora Di Paulo S.S."
+#     :released_on: 2011-01-22
+#     :is_discontinued: false
+#     :has_limited_time_offer: false
+#     :has_bonus_reward_miles: false
+#     :has_value_added_promotion: false
+#     :is_seasonal: false
+#     :is_vqa: false
+#     :is_kosher: false
+#     :description: "TASTING NOTE: Delivers amazing aromas of lemon and lime, with hints of mineral. A full-bodied, late-harvest style, offering lots of dried fruits, from citrus to melon. Spicy. If you want a denser, richer Fiano, this is for you. Drink now. Score: 91 (James Suckling, www.winespectator.com, April 30, 2010)"
+#     :serving_suggestion:
+#     :tasting_note:
+#     :value_added_promotion_description:
+#     :image_thumb_url:
+#     :image_url:
 
 - :file: 12_bcl.html
   :desc: vodka
@@ -583,49 +587,49 @@
     # :image_thumb_url:
     :image_url: "http://www.bcliquorstores.com/files/imagecache/product_image/products/158311_0.jpg"
 
-- :file: 15_saq.html
-  :desc: red wine
-  :uri: http://www.saq.com/page/en/saqcom/type/name/11383473
-  :method: :get
-  :query_params:
-    :id: 11383473
-  :expectation:
-    :id: 11383473
-    :name: 7 Deadly Zins 2010
-    :price_in_cents: 2360
-    :sku: 11383473
-    :upc: '00652935100012'
-    :volume_in_milliliters: 750
-    :region: Californie
-    :type:
-      - Vin
-      - rouge
-    :country: États-Unis
-    :board: SAQ
-    :alcohol_content: 14.5
-    :description: "Robe exhibant une couleur rouge violacé foncé. Nez exubérant s'ouvrant sur des effluves de prune et de confiture de fruits noirs. Le tout est également agrémenté par des arômes de torréfaction. Laissez-vous charmer par ce rouge laissant percevoir une bonne acidité et pourvu de tannins enrobés. Fidèle aux parfums perçus à l'olfaction, il laisse percevoir des flaveurs de cassis, de prune, de cacao et de bois d'érable. Il offre une texture presque grasse qui se termine dans une finale assez persistante."
-    :image_url: "http://s7d9.scene7.com/is/image/SAQ/11383473-1?scl=1"
+# - :file: 15_saq.html
+#   :desc: red wine
+#   :uri: http://www.saq.com/page/en/saqcom/type/name/11383473
+#   :method: :get
+#   :query_params:
+#     :id: 11383473
+#   :expectation:
+#     :id: 11383473
+#     :name: 7 Deadly Zins 2010
+#     :price_in_cents: 2360
+#     :sku: 11383473
+#     :upc: '00652935100012'
+#     :volume_in_milliliters: 750
+#     :region: Californie
+#     :type:
+#       - Vin
+#       - rouge
+#     :country: États-Unis
+#     :board: SAQ
+#     :alcohol_content: 14.5
+#     :description: "Robe exhibant une couleur rouge violacé foncé. Nez exubérant s'ouvrant sur des effluves de prune et de confiture de fruits noirs. Le tout est également agrémenté par des arômes de torréfaction. Laissez-vous charmer par ce rouge laissant percevoir une bonne acidité et pourvu de tannins enrobés. Fidèle aux parfums perçus à l'olfaction, il laisse percevoir des flaveurs de cassis, de prune, de cacao et de bois d'érable. Il offre une texture presque grasse qui se termine dans une finale assez persistante."
+#     :image_url: "http://s7d9.scene7.com/is/image/SAQ/11383473-1?scl=1"
 
-- :file: 16_saq.html
-  :desc: vodka
-  :uri: http://www.saq.com/page/en/saqcom/type/name/11345653
-  :method: :get
-  :query_params:
-    :id: 11345653
-  :expectation:
-    :id: 11345653
-    :name: Crystal Head
-    :price_in_cents: 5975
-    :sku: 11345653
-    :upc: '00627040411414'
-    :volume_in_milliliters: 750
-    :type:
-      - Vodka
-    :country: Canada
-    :board: SAQ
-    :alcohol_content: 40
-    :description: ~
-    :image_url: "http://s7d9.scene7.com/is/image/SAQ/11345653-1?scl=1"
+# - :file: 16_saq.html
+#   :desc: vodka
+#   :uri: http://www.saq.com/page/en/saqcom/type/name/11345653
+#   :method: :get
+#   :query_params:
+#     :id: 11345653
+#   :expectation:
+#     :id: 11345653
+#     :name: Crystal Head
+#     :price_in_cents: 5975
+#     :sku: 11345653
+#     :upc: '00627040411414'
+#     :volume_in_milliliters: 750
+#     :type:
+#       - Vodka
+#     :country: Canada
+#     :board: SAQ
+#     :alcohol_content: 40
+#     :description: ~
+#     :image_url: "http://s7d9.scene7.com/is/image/SAQ/11345653-1?scl=1"
 
 - :file: 17_saq.html
   :desc: vodka

@@ -3,40 +3,44 @@ module LCBO
 
     include CrawlKit::Page
 
-    uri 'http://lcbo.com/lcbo-ear/lcbo/product/details.do?' \
-        'language=EN&itemNumber={id}'
+    # uri 'http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber={id}'
+    uri 'http://www.lcbo.ca/lcbo/product/name/{id}'
 
-    on :before_parse, :verify_response_not_blank
-    on :after_parse,  :verify_product_details_form
-    on :after_parse,  :verify_product_name
-    on :after_parse,  :verify_third_info_cell
+    # on :before_parse, :verify_response_not_blank
+    # on :after_parse,  :verify_product_details_form
+    # on :after_parse,  :verify_product_name
+    # on :after_parse,  :verify_third_info_cell
 
     emits :id do
       query_params[:id].to_i
     end
 
     emits :name do
-      CrawlKit::TitleCaseHelper[product_details_form('itemName')]
+      CrawlKit::TitleCaseHelper[doc.css('.details h1')[0].content]
     end
 
     emits :tags do
-      CrawlKit::TagHelper[
-        name,
-        primary_category,
-        secondary_category,
-        origin,
-        producer_name,
-        package_unit_type
-      ]
+      # CrawlKit::TagHelper[
+      #   name,
+      #   primary_category,
+      #   secondary_category,
+      #   origin,
+      #   producer_name,
+      #   package_unit_type
+      # ]
     end
 
     emits :price_in_cents do
-      (product_details_form('price').to_f * 100).to_i
+      data = doc.css('.prices strong')[0].content.gsub("$",'').strip.to_f * 100 rescue 0
+      result = data.round
     end
 
     emits :regular_price_in_cents do
       if has_limited_time_offer
-        info_cell_line_after('Was:').sub('$ ', '').to_f * 100
+
+
+        data = doc.css('.prices small')[0].content.gsub("WAS$",'').strip.to_f * 100 rescue 0
+        result = data.round
       else
         price_in_cents
       end
@@ -48,7 +52,8 @@ module LCBO
 
     emits :limited_time_offer_ends_on do
       if has_limited_time_offer
-        CrawlKit::FastDateHelper[info_cell_line_after('Until')]
+        x = doc.css('.lto-end-date')[0].content.match(/Until ([a-zA-Z]+ \d+, \d+)/)[1]
+        Date.parse(x).to_s
       else
         nil
       end
@@ -56,7 +61,7 @@ module LCBO
 
     emits :bonus_reward_miles do
       if has_bonus_reward_miles
-        info_cell_line_after('Earn').to_i
+        doc.css('.air-miles')[0].content.match(/(\d+)/)[1].to_f
       else
         0
       end
@@ -64,32 +69,35 @@ module LCBO
 
     emits :bonus_reward_miles_ends_on do
       if has_bonus_reward_miles
-        CrawlKit::FastDateHelper[info_cell_line_after('Until')]
+        x = doc.css('.air-miles-end-date')[0].content.match(/Until ([a-zA-Z]+ \d+, \d+)/)[1]
+        Date.parse(x).to_s
       else
         nil
       end
     end
 
-    emits :stock_type do
-      product_details_form('stock type')
+    # emits :stock_type do
+    #   product_details_form('stock type')
+    # end
+
+    emits :type do
+      [
+        primary_category,
+        secondary_category,
+        varietal,
+      ].compact
     end
 
     emits :primary_category do
-      if stock_category
-        cat = stock_category.split(',')[0]
-        cat ? cat.strip : cat
-      end
+      doc.css('#WC_BreadCrumb_Link_1')[0].content.strip
     end
 
     emits :secondary_category do
-      if stock_category
-        cat = stock_category.split(',')[1]
-        cat ? cat.strip : cat
-      end
+      doc.css('#WC_BreadCrumb_Link_2')[0].content.strip
     end
 
     emits :origin do
-      match = find_info_line(/\AMade in: /)
+      match = product_details_form("Made in:")
       if match
         place = match.
           gsub('Made in: ', '').
@@ -106,146 +114,145 @@ module LCBO
     end
 
     emits :package do
-      @package ||= begin
-        string = info_cell_lines[2]
-        string.include?('Price: ') ? nil : string.sub('|','').strip
+      result = product_details_form.find do |k,v|
+        x = k.match(/(\d+) mL bottle/i)
+        x[1] if x
       end
+      result[0] if result
     end
 
-    emits :package_unit_type do
-      volume_helper.unit_type
-    end
-
-    emits :package_unit_volume_in_milliliters do
-      volume_helper.unit_volume
-    end
-
-    emits :total_package_units do
-      volume_helper.total_units
-    end
-
-    emits :total_package_volume_in_milliliters do
-      volume_helper.package_volume
-    end
+    # emits :package_unit_type do
+    #   volume_helper.unit_type
+    # end
 
     emits :volume_in_milliliters do
-      CrawlKit::VolumeHelper[package]
+      result = package.match(/(\d+) mL bottle/i)
+      result[1].to_i if result
     end
+
+    # emits :total_package_units do
+    #   volume_helper.total_units
+    # end
+
+    # emits :total_package_volume_in_milliliters do
+    #   volume_helper.package_volume
+    # end
+
+    # emits :volume_in_milliliters do
+    #   CrawlKit::VolumeHelper[package]
+    # end
 
     emits :alcohol_content do
-      if (match = find_info_line(/ Alcohol\/Vol.\Z/))
-        ac = match.gsub(/%| Alcohol\/Vol./, '').to_f
-        (ac * 100).to_i
-      else
-        0
-      end
+      product_details_form("Alcohol/Vol").to_f
     end
 
-    emits :price_per_liter_of_alcohol_in_cents do
-      if alcohol_content > 0 && volume_in_milliliters > 0
-        alc_frac = alcohol_content.to_f / 1000.0
-        alc_vol  = (volume_in_milliliters.to_f / 1000.0) * alc_frac
-        (price_in_cents.to_f / alc_vol).to_i
-      else
-        0
-      end
-    end
+    # emits :price_per_liter_of_alcohol_in_cents do
+    #   if alcohol_content > 0 && volume_in_milliliters > 0
+    #     alc_frac = alcohol_content.to_f / 1000.0
+    #     alc_vol  = (volume_in_milliliters.to_f / 1000.0) * alc_frac
+    #     (price_in_cents.to_f / alc_vol).to_i
+    #   else
+    #     0
+    #   end
+    # end
 
-    emits :price_per_liter_in_cents do
-      if volume_in_milliliters > 0
-        (price_in_cents.to_f / (volume_in_milliliters.to_f / 1000.0)).to_i
-      else
-        0
-      end
-    end
+    # emits :price_per_liter_in_cents do
+    #   if volume_in_milliliters > 0
+    #     (price_in_cents.to_f / (volume_in_milliliters.to_f / 1000.0)).to_i
+    #   else
+    #     0
+    #   end
+    # end
 
-    emits :sugar_content do
-      if (match = find_info_line(/\ASugar Content : /))
-        match.gsub('Sugar Content : ', '')
-      end
-    end
+    # emits :sugar_content do
+    #   if (match = find_info_line(/\ASugar Content : /))
+    #     match.gsub('Sugar Content : ', '')
+    #   end
+    # end
 
     emits :producer_name do
-      if (match = find_info_line(/\ABy: /))
-        CrawlKit::TitleCaseHelper[
-          match.gsub(/By: |Tasting Note|Serving Suggestion|NOTE:/, '')
-        ]
-      end
+      product_details_form("By:")
     end
+
+    emits :varietal do
+      product_details_form("Varietal:")
+    end
+
+    emits :board do
+      "LCBO"
+    end
+
 
     emits :released_on do
       if html.include?('Release Date:')
-        date = info_cell_line_after('Release Date:')
-        date == 'N/A' ? nil : CrawlKit::FastDateHelper[date]
+        x = product_details_form("Release Date:")
+        Date.parse(x).to_s
       else
         nil
       end
     end
 
-    emits :is_discontinued do
-      html.include?('PRODUCT DISCONTINUED')
-    end
+    # emits :is_discontinued do
+    #   html.include?('PRODUCT DISCONTINUED')
+    # end
 
     emits :has_limited_time_offer do
-      html.include?('<B>Limited Time Offer</B>')
+      html.include?('Limited Time Offers')
     end
 
     emits :has_bonus_reward_miles do
-      html.include?('<B>Bonus Reward Miles Offer</B>')
+      html.include?('Bonus AIR MILES')
     end
 
-    emits :has_value_added_promotion do
-      html.include?('<B>Value Added Promotion</B>')
-    end
+    # emits :has_value_added_promotion do
+    #   html.include?('<B>Value Added Promotion</B>')
+    # end
 
-    emits :is_seasonal do
-      html.include?('<font color="#ff0000">SEASONAL/LIMITED QUANTITIES</font>')
-    end
+    # emits :is_seasonal do
+    #   html.include?('<font color="#ff0000">SEASONAL/LIMITED QUANTITIES</font>')
+    # end
 
     emits :is_vqa do
-      html.include?('This is a <B>VQA</B> wine')
+      html.include?("This is a VQA wine")
     end
 
     emits :is_kosher do
-      html.include?('This is a <B>Kosher</B> product')
+      html.include?('This is a Kosher product.')
     end
 
     emits :description do
-      if html.include?('<B>Description</B>')
-        match = html.match(/<B>Description<\/B><\/font><BR>\n\t\t\t(.+?)<BR>\n\t\t\t<BR>/m)
-        CrawlKit::CaptionHelper[match && match.captures[0]]
-      end
+      doc.css('.description blockquote')[0].content
     end
 
-    emits :serving_suggestion do
-      if html.include?('<B>Serving Suggestion</B>')
-        match = html.match(/<B>Serving Suggestion<\/B><\/font><BR>\n\t\t\t(.+?)<BR><BR>/m)
-        CrawlKit::CaptionHelper[match && match.captures[0]]
-      end
-    end
+    # emits :serving_suggestion do
+    #   if html.include?('<B>Serving Suggestion</B>')
+    #     match = html.match(/<B>Serving Suggestion<\/B><\/font><BR>\n\t\t\t(.+?)<BR><BR>/m)
+    #     CrawlKit::CaptionHelper[match && match.captures[0]]
+    #   end
+    # end
 
-    emits :tasting_note do
-      if html.include?('<B>Tasting Note</B>')
-        match = html.match(/<B>Tasting Note<\/B><\/font><BR>\n\t\t\t(.+?)<BR>\n\t\t\t<BR>/m)
-        CrawlKit::CaptionHelper[match && match.captures[0]]
-      end
-    end
+    # emits :tasting_note do
+    #   if html.include?('<B>Tasting Note</B>')
+    #     match = html.match(/<B>Tasting Note<\/B><\/font><BR>\n\t\t\t(.+?)<BR>\n\t\t\t<BR>/m)
+    #     CrawlKit::CaptionHelper[match && match.captures[0]]
+    #   end
+    # end
 
-    emits :value_added_promotion_description do
-      if has_value_added_promotion
-        match = html.match(/<B>Value Added Promotion<\/B><\/FONT><BR>(.+?)<BR><BR>/m)
-        CrawlKit::CaptionHelper[match && match.captures[0]]
-      end
-    end
+    # emits :value_added_promotion_description do
+    #   if has_value_added_promotion
+    #     match = html.match(/<B>Value Added Promotion<\/B><\/FONT><BR>(.+?)<BR><BR>/m)
+    #     CrawlKit::CaptionHelper[match && match.captures[0]]
+    #   end
+    # end
 
-    emits :image_thumb_url do
-      if (img = doc.css('#image_holder img').first)
-        normalize_image_url(img[:src])
-      end
-    end
+    # emits :image_thumb_url do
+    #   if (img = doc.css('#image_holder img').first)
+    #     normalize_image_url(img[:src])
+    #   end
+    # end
 
     emits :image_url do
-      if (img = doc.css('#enlargement img').first)
+      if (img = doc.css('.images img').first)
         normalize_image_url(img[:src])
       end
     end
@@ -271,9 +278,16 @@ module LCBO
       cat ? cat.strip : nil
     end
 
-    def product_details_form(name)
-      doc.css("form[name=\"productdetails\"] input[name=\"#{name}\"]")[0].
-        attributes['value'].to_s
+    def product_details_form(name=nil)
+      result = doc.css("#item-accordion-aside-product-details")[0].content.strip.gsub(/(\r\n)+/, "\r\n").split("\r\n").map{|e| e.strip}.each_slice(2).to_a
+      if name
+        result.each do |k,v|
+          return v if name == k
+        end
+        return nil
+      else
+        result
+      end
     end
 
     def get_info_lines_at_offset(offset)
@@ -316,33 +330,33 @@ module LCBO
     def normalize_image_url(url)
       return unless url
       return if url.include?('default')
-      url.include?('http://') ? url : File.join('http://lcbo.com', url)
+      url.include?('http://') ? url : File.join('http://www.lcbo.ca', url)
     end
 
-    def verify_third_info_cell
-      return unless has_package? && info_cell_lines[2][0,1] != '|'
-      raise CrawlKit::MalformedError,
-        "Expected third line in info cell to begin with bar. LCBO No: " \
-        "#{id}, Dump: #{info_cell_lines[2].inspect}"
-    end
+    # def verify_third_info_cell
+    #   return unless has_package? && info_cell_lines[2][0,1] != '|'
+    #   raise CrawlKit::MalformedError,
+    #     "Expected third line in info cell to begin with bar. LCBO No: " \
+    #     "#{id}, Dump: #{info_cell_lines[2].inspect}"
+    # end
 
-    def verify_response_not_blank
-      return unless html.strip == ''
-      raise CrawlKit::NotFoundError,
-        "product #{id} does not appear to exist"
-    end
+    # def verify_response_not_blank
+    #   return unless html.strip == ''
+    #   raise CrawlKit::NotFoundError,
+    #     "product #{id} does not appear to exist"
+    # end
 
-    def verify_product_name
-      return unless product_details_form('itemName').strip == ''
-      raise CrawlKit::NotFoundError,
-        "can not locate name for product #{id}"
-    end
+    # def verify_product_name
+    #   return unless product_details_form('itemName').strip == ''
+    #   raise CrawlKit::NotFoundError,
+    #     "can not locate name for product #{id}"
+    # end
 
-    def verify_product_details_form
-      return unless doc.css('form[name="productdetails"]').empty?
-      raise CrawlKit::MalformedError,
-        "productdetails form not found in doc for product #{id}"
-    end
+    # def verify_product_details_form
+    #   return unless doc.css('form[name="productdetails"]').empty?
+    #   raise CrawlKit::MalformedError,
+    #     "productdetails form not found in doc for product #{id}"
+    # end
 
   end
 end
