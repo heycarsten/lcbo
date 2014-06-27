@@ -3,26 +3,23 @@ module LCBO
 
     include CrawlKit::Page
 
-    uri 'http://www.lcbo.com/lcbo-ear/lcbo/product/inventory/searchResults.do' \
-        '?language=EN&itemNumber={product_id}'
+    uri 'http://www.vintages.com/lcbo-ear/vintages/product/inventory/searchResults.do?language=EN&itemNumber={product_id}'
 
     emits :product_id do
       query_params[:product_id].to_i
     end
 
     emits :inventory_count do
-      inventories.reduce(0) { |sum, inv| sum + inv[:quantity] }
+      doc.css('table[cellpadding="5"] tr td[width="80"] p.mainFont').map{|e| e.content.to_i}.inject(:+)
     end
 
     emits :inventories do
       # [updated_on, store_id, quantity]
-      doc.css('table[cellpadding="3"] tr[bgcolor] > td[width="17%"] > a.item-details-col5').zip(
-      doc.css('table[cellpadding="3"] tr[bgcolor] > td > a.item-details-col0'),
-      doc.css('table[cellpadding="3"] tr[bgcolor] > td[width="13%"]')).map do |updated_on, store_id, quantity|
+      doc.css('table[cellpadding="5"] tr')[1..-1].map do |tr|
         {
-          :updated_on => CrawlKit::FastDateHelper[updated_on.text.strip],
-          :store_id => store_id['href'].match(/\?STORE=([0-9]{1,3})\&/)[1].to_i,
-          :quantity => quantity.content.strip.to_i,
+          updated_on: Date.parse(tr.css('td')[2].content).to_s,
+          store_id: tr.css('td')[1].css('a').attr("href").content.match(/STORE=(\d+)/)[1].to_i,
+          quantity: tr.css('td')[3].content.strip.to_i,
         }
       end
     end

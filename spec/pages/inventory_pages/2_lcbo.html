@@ -1,4 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 
@@ -13,483 +14,393 @@
 
 
 
-	
 
 
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Inventory Position</title>
-<link rel="stylesheet" href="/products/lcbo.css" type="text/css">
 
-<script language="Javascript">
-function printInventory(form) {
-	var localwin=window.open("","InventoryPrintPopup","status=0,scrollbars=1,resizable=1,width=700,height=600");
-	form.action.value = "print";
-	form.target="InventoryPrintPopup";
-	form.submit();
-	localwin.focus();
-	form.target="";
-}
 
+
+
+
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+	<meta property="fb:admins" content="595541334">
+    <meta property="og:title" content="LCBO | Store Information">
+    <meta property="og:description" content="I found my favourite LCBO store!  Use the LCBO Store Search tool and find your favourite LCBO store.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://www.lcbo.com/lcbo.jpg">
+    <meta property="og:site_name" content="LCBO.com">
+    <meta property="og:url" content="http://www.lcbo.com/">
+
+<TITLE>VINTAGES - Inventory Position</TITLE>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">
+        stLight.options({
+                publisher:'12345'
+        });
 </script>
 
-<base target="_top" />
+<link href="/__en/_includes_en/CSS/vintages.css" rel="stylesheet" type="text/css">
 
-<style>
-.item-details-col0, .item-details-col1, .item-details-col2, .item-details-col3, .item-details-col4, .item-details-col5, .item-details-col6 {font-family: Verdana, Arial, Helvetica, sans-serif; text-align: left; text-align: top; font-size: 10px; cursor:pointer;}
-.item-details-col2, {font-weight:bold; COLOR: #666666;}
-.item-details-col0, .item-details-col1, .item-details-col3, .item-details-col4, .item-details-col5, .item-details-col6 {font-weight:normal; COLOR: #546415;}
-</style>
 </head>
 
-<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0"
-	marginwidth="0" marginheight="0">
-<script language="JavaScript">
-<!--
-	function ToSort(sort) {
-		document.forms['inventoryresults'].action.value="inventory";
-		
-		// click the current sorted column reverse the sorting order
-		if (document.forms['inventoryresults'].sort.value==sort){		
-			document.forms['inventoryresults'].order.value = "1";
-		}
-		// click other column will reset the sorting order to ascending
-		else{
-			document.forms['inventoryresults'].sort.value=sort
-			document.forms['inventoryresults'].order.value = "1";
-		}
-		//alert("PARAM_SORT = " + document.forms['inventoryresults'].sort.value);
-		document.forms['inventoryresults'].submit();
-	}
-//-->
+<body>
 
-function underline(column, doUnderline, stopCol) {
-	var underline="none";
-	var color="#666666";
-	if (doUnderline) {
-		underline="underline";
-		color="#000000";
-	}
+<div id="wrapper">
 
-	for (var x = 0; x <= stopCol; x++) {
-		var obj = document.getElementById(column+x);
-		obj.style.textDecoration=underline;
-		obj.style.color=color;
-	}
-}
-
-</script>
-<br />
-<table width="774" border="0" cellspacing="0" cellpadding="0"
-	class="mainborder" align="center">
-	<tbody>
-		<tr>
-	
-			<td>
-			<table width="774" border="0" cellspacing="0" cellpadding="0"
-				align="center">
-				<tbody>
-					<tr>
-					
-						<td>
-							
-								<!--Beginning of Primary SSI file 2009//-->
-
-<noscript><div style="position:absolute;top:0;left:0;background-color:#DADEAF;width:100%;text-align:center;font-size:10px;font-family:verdana,arial,helvetica,sans-serif;padding:5px 0px;color:#193105;">Please note: JavaScript (scripting) must be enabled for this site to work as intended.</div></noscript>
+	<div id="topNav">
 
 
+<noscript><div style="position: absolute; top: 0; background-color: #EEEEEE; width: 800px; text-align: center; font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 5px 0px; color: #193105;">Please note: JavaScript (scripting) must be enabled for this site to work as intended.</div></noscript>
+<table width="800" border="0" cellspacing="0" cellpadding="0" height="120">
+  <tr>
+    <td>
 
-<style>
-.AutoCompleteBackground
-{
-        background-color:white;
-}
-.AutoCompleteHighlight
-{
-        background-color:#D6DE9D;
-}
-#theDiv {width:215px;background-color:white;white-space:nowrap; overflow:hidden;}
-#theDiv2 {width:215px;background-color:white;white-space:nowrap; overflow:hidden;}
-</style>
+        <div id="logo">
+                    <a href="http://www.vintages.com/index.shtml"><img src="http://www.vintages.com/images/Vintages_logo_en.jpg" title="VINTAGES" width="260" height="60" border="0" /></a>
+        </div>
 
-<script type="text/javascript" src="/ssi/primary.js"></script>
-<table border="0" cellpadding="0" cellspacing="0" width="774"><tr><td><a href="/english.html"><img src="/ssi/images/logo.gif" width="97" height="64" border="0"></a></td><td><table border="0" cellpadding="0" cellspacing="0" width="677"><tr><td>
-	<img src="/images/spacer.gif" width="677" height="16" border="0"></td></tr><tr><td>
-<table border="0" cellpadding="0" cellspacing="0" width="677"><tr>
-<td title="Discover" style="cursor:pointer;" onclick="document.location.href='/discover/index.shtml';"><a id="graphic-discover" title="Discover" href="/discover/index.shtml" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('topnav_r2_c2','','/ssi/images/topnav_r2_c2_f2.gif',1);" ><img name="topnav_r2_c2" src="/ssi/images/topnav_r2_c2.gif" width="84" height="22" border="0" alt="Discover"></a></td>
-<td title="FOOD &amp; DRINK" style="cursor:pointer;" onclick="document.location.href='/fooddrink/index.shtml';"><a id="graphic-fooddrink" title="FOOD &amp; DRINK" href="/fooddrink/index.shtml" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('topnav_r2_c3','','/ssi/images/topnav_r2_c3_f2.gif',1);" ><img name="topnav_r2_c3" src="/ssi/images/topnav_r2_c3.gif" width="115" height="22" border="0" alt="FOOD &amp; DRINK"></a></td>
-<td title="Products" style="cursor:pointer;" onclick="document.location.href='/products/index.shtml';"><a id="graphic-products" title="Products" href="/products/index.shtml" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('topnav_r2_c4','','/ssi/images/topnav_r2_c4_f2.gif',1);" ><img name="topnav_r2_c4" src="/ssi/images/topnav_r2_c4.gif" width="86" height="22" border="0" alt="Products"></a></td>
-<td title="Events & Courses | Podcasts | Planning Tips | The Basics" style="cursor:pointer;" onclick="document.location.href='/learn/index.shtml';"><a id="graphic-learn" title="Events & Courses | Podcasts | Planning Tips | The Basics" href="/learn/index.shtml" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('topnav_r2_c5','','/ssi/images/topnav_r2_c5_f2.gif',1);" ><img name="topnav_r2_c5" src="/ssi/images/topnav_r2_c5.gif" width="68" height="22" border="0" alt="Events & Courses | Podcasts | Planning Tips | The Basics"></a></td>
-<td title="Gifts" style="cursor:pointer;" onclick="document.location.href='/gifts/index.shtml';"><a id="graphic-gifts" title="Gifts" href="/gifts/index.shtml" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('topnav_r2_c6','','/ssi/images/topnav_r2_c6_f2.gif',1);" ><img name="topnav_r2_c6" src="/ssi/images/topnav_r2_c6.gif" width="59" height="22" border="0" alt="Gifts"></a></td>
-<td title="Search"><a id="graphic-search" title="Search"><img name="topnav_r2_c7" src="/ssi/images/topnav_r2_c7.gif" width="72" height="22" border="0" alt="Search"></a></td>
+        <div id="nav2">
+    <!--    	<p class="order">ORDER NOW 1-800-282-2197</p>-->
+            <ul class="nav2">
+            <li><a href="http://lcboconnect.com/app/vintages/english/register/?topnavSign"> Sign-up</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" /><li><a href="http://lcboconnect.com/app/vintages/english/profile/?topnavAccount">My Account</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" /><li><a href="http://www.vintages.com/frame_stores.html">Store Search</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" /><li><a href="http://www.vintages.com/frame_search.html">Advanced Product Search</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" /><li><a href="http://www.vintages.com/fr/index_fr.shtml">Fran&ccedil;ais</a></li>
+            </ul>
+        </div>
 
-<td>
-<form name="quickSearchForm" id="quickSearchForm" method="get" action="/lcbo-ear/lcbo/product/searchResults.do" onsubmit="quickSearchForm_checkNameOrNumber()" style="padding: 0; margin: 0;">
-<div style="position:relative;overflow:visible;cursor:pointer;">
-<input name="ITEM_NAME" id="ITEM_NAME" value="Product Name or Item #" type="text" autocomplete="off" style="border: 1px solid black; font-size: 9px; height: 20px; padding-top:3px; font-family: arial;/*\*//*/height: 15px;/**/" size="22" onfocus="this.value=''">
-<div id="theDiv" style="padding:4px;position:absolute;left:0px;top:21px;visibility:hidden;border:solid #D6DE9D 1px;background-color:white;z-index:1;font-family:arial;font-size:10px;">
-</div>
-</div>
-<input name="ITEM_NUMBER" type="hidden" value="">
-<input name="language" type="hidden" value="EN">
-</form>
+        <div id="mainNav">
+            <ul class="nav" id="nav">
+            <li id="nav-new">
+            <a href="http://www.vintages.com/circular/circ_main.shtml?topnav" id="nr">&nbsp;New Arrivals&nbsp;</a><img src="http://www.vintages.com/images/verticalline.gif" width="1" height="14" /><a href="http://www.vintages.com/circular/ontario.shtml?topnav" id="ow">&nbsp;Ontario Wines&nbsp;</a><img src="http://www.vintages.com/images/verticalline.gif" alt="" width="1" height="14" /><a href="http://www.vintages.com/vintages/essentials/collection/en/index.shtml?topnav" id="es">&nbsp;Essentials&nbsp;</a><img src="http://www.vintages.com/images/verticalline.gif" alt="" width="1" height="14" /><a href="http://www.vintages.com/classics/cc_main.shtml?topnav" id="cl">&nbsp;Classics&nbsp;</a><img src="http://www.vintages.com/images/verticalline.gif" alt="" width="1" height="14" /><a href="http://www.vintages.com/futures/futures_main_intro.shtml?topnav" id="so">&nbsp;Special Offers&nbsp;</a><img src="http://www.vintages.com/images/verticalline.gif" alt="" width="1" height="14" /><a href="http://www.vintages.com/events.shtml?topnav" id="ev">&nbsp;Events&nbsp;</a><img src="http://www.vintages.com/images/verticalline.gif" alt="" width="1" height="14" /><a href="https://www.vintagesshoponline.com/vintages/Home.aspx?lang=en&utm_source=vintagescom&utm_medium=OnlineAd&utm_campaign=VSOHomepageTop" onclick="_gaq.push(['_trackPageview', '/goal/orderHP/en/VSOHomepageTop']);"><!--<a href="/wine-information-faq/vso-faq.shtml" target="_blank">-->&nbsp;Shop&nbsp;</a><img src="http://www.vintages.com/images/verticalline.gif" alt="" width="1" height="14" /><a href="https://wwws.givex.com/cws/lcbo/consumer/purchase/select_cards.py?Vtopnav" id="gc" target="_blank">&nbsp;Gift Cards&nbsp;</a>
+            </li>
+            </ul>
+        </div>
+
+        <div id="subNav">
+            <div id="searchForm">
+            <form name="quickSearchForm" id="quickSearchForm" action="http://www.vintages.com/lcbo-ear/vintages/product/searchResults.do" onSubmit="quickSearchForm_checkNameOrNumber()" target="_top" method="get">
+            <div style="position:relative;overflow:visible;cursor:pointer; z-index: 10;">
+        	<input name="ITEM_NAME" id="ITEM_NAME" value="Product Name or Item #" type="text" autocomplete="off" style="border: 1px solid black; font-size: 9px; height: 14px; padding-top: 2px; padding-left: 4px; font-family: arial;" size="32" onFocus="this.value=''">
+            	<div id="theDiv" style="padding:4px;position:absolute;left:0px;top:21px;visibility:hidden;border:solid #EEEEEE 1px;background-color:white;z-index:1;font-family:arial;font-size:10px;">
+				</div>
+            </div>
+			<input name="ITEM_NUMBER" type="hidden" value="">
+			<input name="language" type="hidden" value="EN">
+			<input name="style" type="hidden" value="Vintages">
+			</form>
+            </div>
+            <div id="searchButton"><a href="#" onClick="quickSearchForm_checkNameOrNumber(); quickSearchForm.submit()" target="_self"><img src="http://www.vintages.com/images/search.jpg" title="Search" width="76" height="20" border="0"></a></div>
+			<div id="banner"><a href="http://lcboconnect.com/app/vintages/english/register/?banner"><img src="http://www.vintages.com/images/110228-Vmail_banner_en.jpg" title="Become a VINTAGES insider..." width="314" height="35" border="0" /></a></div>
+        </div>
 </td>
+  </tr>
+</table>
 
-<td><img src="/images/spacer.gif" width="3" height="22" border="0"></td>
-<td><a href="#" onclick="quickSearchForm_checkNameOrNumber(); quickSearchForm.submit()" target="_self"><img src="/ssi/images/topnav_r2_c10.gif" width="22" height="22" border="0" alt="Go"></a></td>
-<td><img src="/images/spacer.gif" width="26" height="22" border="0"></td></tr></table></td></tr>
 
-<tr><td><img src="/images/spacer.gif" width="677" height="16" border="0"></td></tr></table></td></tr></table>
 
 <script type="text/javascript" src="/lcbo-ear/js/typeAhead/Http.js"></script>
 <script type="text/javascript" src="/lcbo-ear/js/typeAhead/QuickSearchForm.js"></script>
 <script type="text/javascript">
 quickSearchForm_setLanguage("EN");
 quickSearchForm_setItemnameResults("15");
-quickSearchForm_setItemnameLength("32");
+quickSearchForm_setItemnameLength("36");
 var set_inputForm_setItemnameResults = false;
 </script>
-<!--[if IE 6]>
-<script type="text/javascript">
-quickSearchForm_setItemnameResults("4");
-</script>
-<![endif]-->
 
-<!--End of Primary SSI file//-->
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-BSNS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-BSNS');</script>
+<!-- End Google Tag Manager -->
 
-							
-						</td>
-					</tr>
-					<tr>
-						<td>
-						<table width="100%" border="0" cellspacing="0" cellpadding="0">
-							<tbody>
-								<tr>
-									<td>&nbsp;</td>
-									
-	<style>
-		#2nd_productsearch {color:#cccc99;}
-	</style>
+	</div>
 
+    <div style="float: left;">
+        <span class="breadcrumb"><a href="/index.shtml">Home</a> &gt; <strong>Inventory Position</strong></span>
+    </div>
+    <div style="float: right; margin-top: 10px; margin-bottom: 10px;">
+		<span class="st_sharethis"></span><span class="st_facebook"></span><span class="st_twitter"></span><span class="st_email" ></span>
+	</div>
 
+<div id="IBM">
 
-									<td>
-										
-											<!--2009//-->
-
-<span class="textnav">
-
-<nobr><a id="2nd_productsearch" class="productsearch" href="/products/productsearch.shtml">Product Search</a>&nbsp;|</nobr>
-
-<nobr><a id="2nd_limitedtimeoffers" class="limitedtimeoffers" href="/products/limitedtimeoffers.shtml">Limited Time Offers</a>&nbsp;|</nobr>
-
-<nobr><a id="2nd_airmiles" class="airmiles" href="/products/airmiles.shtml">AIR MILES&reg; Offers</a></nobr><br>
-
-<nobr><a id="worldofwine" href="/products/wine/en/index.shtml">World of Wine</a>&nbsp;|</nobr>
-
-<nobr><a id="beergarden" href="/products/beer/en/index.shtml">Beer Garden</a>&nbsp;|</nobr>
-
-<!--<nobr><a id="grillo" href="/products/sections/grillo/index.shtml">Grillo</a>&nbsp;|</nobr>//-->
-
-<!--<nobr><a id="rethinkpink" href="/products/sections/rethinkpink/index.shtml">Rethink Pink</a>&nbsp;|</nobr>//-->
-
-<nobr><a id="returningproducts" href="/products/returningproducts.shtml">Returning Products</a>&nbsp;|</nobr>
-
-<nobr><a id="privateordering" href="/programs_services/private_ordering/content_priv_ordering.shtml">Private Ordering</a>&nbsp;|</nobr>
-
-<nobr><a id="permits" href="/products/permits.shtml">Event Permits</a>&nbsp;|</nobr>
-
-<nobr><a id="ontario" href="/ontario2/index.shtml">Wines of the Month</a>&nbsp;|</nobr>
-
-<nobr><a id="premium_spirits" href="/premium_spirits/index.shtml">Premium&nbsp;Spirits</a></nobr>
-
-</span>
+<form method= "post" name="inventoryresults" action="/lcbo-ear/vintages/product/inventory/searchResults.do" >
 
 
-<script language="JavaScript">
-<!--
-MM_swapImage('topnav_r2_c4','','/ssi/images/topnav_r2_c4_f2.gif',1);
+<input name="sort" value="sortedQuantity" type="hidden">
+<input name="order" value="-1" type="hidden">
+<input name="action" value="result" type="hidden">
+<input name="language" value="EN" type="hidden">
+<input name="style" value="Vintages" type="hidden">
 
-//following code highlights active text navigation for JSP Product pages.
-if (navigator.appName != "Microsoft Internet Explorer") {
-if (document.title == "Product Search") {document.write('<style>.productsearch {color:#CCCC99 !important;}</style>');};
-if (document.title == "Product Search Results") {document.write('<style>.productsearch {color:#CCCC99 !important;}</style>');};
-if (document.title == "Product Information") {document.write('<style>.productsearch {color:#CCCC99 !important;}</style>');};
-if (document.title == "Inventory Position") {document.write('<style>.productsearch {color:#CCCC99 !important;}</style>');};
-if (document.title == "Limited Time Offers") {document.write('<style>.limitedtimeoffers {color:#CCCC99 !important;}</style>');};
-if (document.title == "AIR MILES® Offers") {document.write('<style>.airmiles {color:#CCCC99 !important;}</style>');};
-}
-
-//-->
-</script>
-
-
-
-
-
-
-
-                 
-
-										
-									</td>
-									<td>&nbsp;</td>
-								</tr>
-								<tr>
-									<td colspan="3"><img name="nav_rde_r1_c2"
-										src="/images/products/nav_rde_r1_c2.gif" width="25" height="4"
-										border="0"></td>
-								</tr>
-								<tr>
-									<td><img name="nav_rde_r1_c2"
-										src="/images/products/nav_rde_r1_c2.gif" width="25" height="4"
-										border="0"></td>
-									<td>
-										
-											
-<table border="0" cellpadding="0" cellspacing="0" width="720">
-<tr> 
-<td><a href="/products/productsearch.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('navigation_r1_c1','','/images/products/navigation_r1_c1_f2.gif',1);" ><img name="navigation_r1_c1" src="/images/products/navigation_r1_c1_f2.gif" width="236" height="20" border="0" alt="Product Search"></a></td>
-<td><img name="navigation_r1_c2" src="/images/products/navigation_r1_c2.gif" width="6" height="20" border="0"></td>
-<td><a href="/products/limitedtimeoffers.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('navigation_r1_c3','','/images/products/navigation_r1_c3_f2.gif',1);" ><img name="navigation_r1_c3" src="/images/products/navigation_r1_c3.gif" width="236" height="20" border="0" alt="Limited Time Offers"></a></td>
-<td><img name="navigation_r1_c4" src="/images/products/navigation_r1_c4.gif" width="6" height="20" border="0"></td>
-<td><a href="/products/airmiles.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('navigation_r1_c5','','/images/products/navigation_r1_c5_f2.gif',1);" ><img name="navigation_r1_c5" src="/images/products/navigation_r1_c5.gif" width="236" height="20" border="0" alt="AIR MILES&reg;"></a></td>
-</tr>
-</table>
-
-										
-									</td>
-									<td><img name="nav_rde_r1_c2"
-										src="/images/products/nav_rde_r1_c2.gif" width="25" height="4"
-										border="0"></td>
-								</tr>
-								<tr>
-									<td colspan="3"><img name="nav_rde_r1_c2"
-										src="/images/products/nav_rde_r1_c2.gif" width="25" height="6"
-										border="0"></td>
-								</tr>
-								<tr>
-									<td>&nbsp;</td>
-									<td>
-									<table width="100%" border="0" cellspacing="0" cellpadding="0">
-										<tbody>
-											<tr>
-												<td width="207" valign="top">
-												<table width="11%" border="0" cellspacing="0"
-													cellpadding="0">
-													<tbody>
-														<tr>
-															<td><img name="food_drink_r1_c1"
-																src="/images/storesearch/lcbo_store.gif" width="236"
-																height="189" border="0" alt="Product Search"></td>
-														</tr>
-														<tr>
-															<td><img name="food_drink_r2_c1"
-																src="/images/products/product_search.gif" width="236"
-																height="84" border="0" alt="Product Search"></td>
-														</tr>
-													</tbody>
-												</table>
-												</td>
-												<td width="5">&nbsp;</td>
-												<td width="479">
-												<table width="478" border="0" cellspacing="0"
-													cellpadding="0" class="border">
-													<tbody>
-														<tr>
-															<td height="271" valign="top">
-															<table width="100%" border="0" cellspacing="0"
-																cellpadding="10">
-																<tbody>
-																
-																	<tr>
-																		<td>
-
-																		<form method="post" name="inventoryprint" action="/lcbo-ear/lcbo/product/inventory/printerFriendly.do"/>
-<input type="hidden" name="sort" value="sortedQuantity">
-<input type="hidden" name="order" value="-1">
-<input type="hidden" name="action" value="result">
-<input type="hidden" name="language" value="EN">
-<input type="hidden" name="style" value="LCBO.css">
-<input type="hidden" name="itemNumber" value="8466">
-<input type="hidden" name="price" value="545.35">
-<input type="hidden" name="store type" value="">
-<input type="hidden" name="city" value="All Cities">
-<input type="hidden" name="itemName" value="01 CH CHEVAL BLANC (COMPAGNIE MEDOCAINE)">
-<input type="hidden" name="inventorySize" value="0">
-<input type="hidden" name="stock type" value="VINTAGES">
-																		</form>
-																		<form method="post" name="inventoryresults" action="/lcbo-ear/lcbo/product/inventory/searchResults.do"/>
-<input type="hidden" name="sort" value="sortedQuantity">
-<input type="hidden" name="order" value="-1">
-<input type="hidden" name="action" value="result">
-<input type="hidden" name="language" value="EN">
-<input type="hidden" name="style" value="LCBO.css">
-<input type="hidden" name="itemNumber" value="8466">
-<input type="hidden" name="price" value="545.35">
-<input type="hidden" name="store type" value="">
-<input type="hidden" name="city" value="All Cities">
-<input type="hidden" name="itemName" value="01 CH CHEVAL BLANC (COMPAGNIE MEDOCAINE)">
-<input type="hidden" name="inventorySize" value="0">
-<input type="hidden" name="stock type" value="VINTAGES">
-
-																		<p class="main_font"><b><font color="#546415">Inventory Position</font></b></p>
-																		
-																		<p class="main_font">
-																			Inventory information for
-																			<b><font color="#546415">01 CH CHEVAL BLANC (COMPAGNIE MEDOCAINE),
-																				<nobr>
-																					
-																						VINTAGES Item #
-																					
-																				8466,</nobr>
-																				<nobr>$ 545.35</nobr>
-																				in
-																				
-																					all cities.
-																				
-																			</font></b>
-																			<br /><br />
-																			
-																				No store in the selected city has inventory for that item.  Please go to the previous page to select another city.
-																			
-																		</p>
-
-
-																		
-
-																		<table border="0" cellpadding="0" cellspacing="0" width="100%">
-																			<tr>
-																				<td align="left" valign="middle">
-																					<a href="/products/productsearch.shtml"><img src="/images/products/revise_search.gif" width="144" height="20" border="0" alt='Revise Search'></a>
-																				</td>
-																				<td align="right" valign="middle" class="main_font" nowrap>
-			                                                                        
-																						&nbsp;
-																					
-																				</td>
-																			</tr>
-																		</table>
-																		<br />
-																			
-																		</form>
-																		</td>
-																	</tr>
-																</tbody>
-															</table>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-									</td>
-									<td>&nbsp;</td>
-								</tr>
-								<tr>
-									<td>&nbsp;</td>
-									<td>&nbsp;</td>
-									<td>&nbsp;</td>
-								</tr>
-								<tr>
-									<td>&nbsp;</td>
-									
-										<!--2008//-->
-
-<script type="text/javascript" src="/ssi/footer.js"></script>
-
-<!--needed structure//--><td><!--needed structure//-->
-
-<table WIDTH="100%" border="0" cellpadding="0" cellspacing="0">
-
-<tr>
-
-<td>
-<span class="textlinks">
-<a id="aboutlcbo" href="/aboutlcbo/index.shtml">About LCBO</a>&nbsp;|
-<a id="accessibility" href="/accessibility/index.shtml">Accessibility</a>&nbsp;|
-<a id="socialresponsibility" href="/socialresponsibility/index.shtml">Social Responsibility</a>&nbsp;|
-<a id="careers" href="/careers/index.shtml">Careers</a>&nbsp;|
-<a id="vintages" href="/vintages/index.shtml" target="_blank">VINTAGES</a>&nbsp;|
-<a id="contactus" href="/contactus/index.shtml">Contact Us</a>&nbsp;|
-<a id="sitemap" href="/sitemap/index.shtml">Site Map</a>&nbsp;|
-<a id="storesearch" href="/storesearch/index.shtml">Store Search</a>
-
-
+<input name="itemNumber" value="461145" type="hidden">
+<input name="price" value="599.0" type="hidden">
+<input name="store type" value="with stock" type="hidden">
+<input name="city" value="All Cities" type="hidden">
+<input name="itemName" value="DOM PÉRIGNON BRUT CHAMPAGNE 2003" type="hidden">
+<input name="inventorySize" value="5" type="hidden">
+<input name="stock type" value="VINTAGES" type="hidden">
 
 <script>
-var win = null;
-function NewWindowPopBox(mypage,myname,w,h,scroll){
-LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
-TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
-settings = 'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable=yes'
-win = window.open(mypage,myname,settings)}
+function ToSort(sort) {
+	document.forms['inventoryresults'].action.value="inventory";
+
+	// click the current sorted column reverse the sorting order
+	if (document.forms['inventoryresults'].sort.value==sort){
+		document.forms['inventoryresults'].order.value = "1";
+	}
+	// click other column will reset the sorting order to ascending
+	else{
+		document.forms['inventoryresults'].sort.value=sort
+		document.forms['inventoryresults'].order.value = "1";
+	}
+	//alert("PARAM_SORT = " + document.forms['inventoryresults'].sort.value);
+	document.forms['inventoryresults'].submit();
+}
 </script>
 
-<!--
-<a id="fsi" target="_blank" href="/main/files/fsi/correction.html" onclick="NewWindow(this.href,'xmlPop','546','398','yes');return false" style="color:#E71838;" >Correction Notice</a>
-//-->
-</span></td>
+	<p class="searchHead">Inventory Position</p>
 
-<script src="/ssi/footer_fsi.js"></script>
 
-</tr></table>
+	<table class="search" width="100%" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td valign=top style="padding-right:10px;">
 
-<!--needed structure//--></td><!--needed structure//-->
-									
-									<td>&nbsp;</td>
-								</tr>
-								<tr>
-									<td>&nbsp;</td>
-									<td>&nbsp;</td>
-									<td>&nbsp;</td>
-								</tr>
-							</tbody>
-						</table>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+			<!--  PRODUCT IMAGE -->
+
+
+				<img name="food_drink_r1_c1"
+					src="http://www.lcbo.com/assets/products/234x234/default_vintages.jpg"
+					alt=" "
+					width="234"
+					height="234"
+					style="border-style: solid; border-width: 1px 1px 1px 1px; border-color: #3E0E40; display:block;"
+				>
+
 			</td>
-		</tr>
-	</tbody>
+			<td valign=top style="padding-right:20px;">
+	            <p class="mainFont">
+		            <span style="font-weight: bold;">DOM PÉRIGNON BRUT CHAMPAGNE 2003</span>
+		            <br>
+					VINTAGES 461145 | 1500 mL bottle
+				</p>
+				<br>
+
+			<p class="mainFont">
+				<span style="font-weight: bold;">Price: $ 599.00</span>
+			</p>
+			<br>
+
+
+
+    <p class="mainFont"><span style="font-weight: bold;">The Quantity on Hand displayed is as of the Inventory Date indicated.&nbsp;Please contact the store to confirm quantity.</span></p>
+    <br>
+
+	<p class="mainFont">
+	Click on the store address for detailed store information and store hours.<br><br>
+    Click on column heading to sort results.</p>
+    <br>
+	<p class="mainFont">Results sorted by
+		<span style="font-weight: bold;">
+
+				Quantity On Hand:
+
+		</span>
+
+			Descending.
+
+	</p>
+    <br>
+	<a href="/lcbo-ear/vintages/product/details.do?language=EN&itemNumber=461145"><img height="20" src='/images/product_info.gif' border=0 ALT='PRODUCT INFO'></a>
+	<br><br>
+
+		</td>
+	</tr>
 </table>
 
-<!--2009//-->
+	<!--Table-->
+	<table border="0" width="100%" cellspacing="0" cellpadding="5">
+	<tbody>
+		<tr bgcolor="#878e8c">
 
-<!--copyright notice begins//-->
 
-<div align="center"><br><table width="774" border="0" cellspacing="0" cellpadding="0"><tr><td width="10"><img src="/images/spacer.gif" width="25" height="4" border="0"></td><td width="764"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><span class="textlinks" style="color:#666666">&copy; 2000/2010 LCBO</span><span class="textlinks"> | <a id="privacy" href="/privacy/index.shtml">Privacy Policy</a> | <a id="terms" href="/terms/index.shtml">Terms &amp; Conditions</a> | <a id="language" href="/french.html">
-	Français</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.lcbotrade.com/" target="_blank">TRADE RESOURCES</a></span></td><td align="right"><a href="/bagitback/bib_en.shtml" target="_blank"><img onmouseover="this.src='/ssi/images/bagitback_on.gif';" onmouseout="this.src='/ssi/images/bagitback_off.gif';" src="/ssi/images/bagitback_off.gif" width="110" height="14" border="0" alt="BAGITBACK.CA" style="margin-right:25px;"></a></td></tr></table></td></tr><tr><td width="10">&nbsp;</td><td width="764">&nbsp;</td></tr></table></div>
+			<th align="left" nowrap width="80" valign="bottom"><p class="mainFont"><span style="font-weight: bold;"><a href="javascript:ToSort('sortedCity')" class="head">
+			City
+			</a></span></p></TH>
 
-<!--copyright notice ends//-->
 
-<!--Suppress IE6 Image toolbar//-->
-<META HTTP-EQUIV="imagetoolbar" CONTENT="no">
+			<th nowrap align="left" width="200" valign="bottom"><p class="mainFont"><span style="color: #FFF; font-weight: bold;">
+			Address and Intersection
+			</span></p></TH>
+
+			<th align="left" nowrap width="110" valign="bottom"><p class="mainFont"><span style="font-weight: bold;"><a href="javascript:ToSort('sortedDate')" class="head">
+			Inventory Date
+			</a></span></p></TH>
+
+			<th align="left" nowrap width="80" valign="bottom"><p class="mainFont"><span style="font-weight: bold;"><a href="javascript:ToSort('sortedQuantity')" class="head">
+			Qty. On Hand
+			</a></span></p></TH>
+
+		</tr>
+
+
+            <tr  >
+
+					<td nowrap align="left" width="80" valign="top"><p class="mainFont">TORONTO-CENTRAL</p></TD>
+
+
+				<td nowrap align="left" width="200" valign="top">
+                	<p class="mainFont">
+                		<a href='/lcbo-ear/jsp/vin_storeinfo.jsp?STORE=10&amp;language=EN' class="bodylink">10 SCRIVENER SQUARE</a><br>
+                		YONGE & SUMMERHILL<br>
+                		416-922-0403
+                	</p>
+				</td>
+
+				<td nowrap align="left" width="110" valign="top"><p class="mainFont">Jun 26, 2014</p></td>
+                <td align="left" nowrap width="80" valign="top"><p class="mainFont">4</p>
+                </td>
+            </tr>
+
+            <tr  bgcolor='#ece8ea'>
+
+					<td nowrap align="left" width="80" valign="top"><p class="mainFont">TORONTO-CENTRAL</p></TD>
+
+
+				<td nowrap align="left" width="200" valign="top">
+                	<p class="mainFont">
+                		<a href='/lcbo-ear/jsp/vin_storeinfo.jsp?STORE=164&amp;language=EN' class="bodylink">65 WICKSTEED AVENUE</a><br>
+                		EGLINTON & LAIRD<br>
+                		416-425-6282
+                	</p>
+				</td>
+
+				<td nowrap align="left" width="110" valign="top"><p class="mainFont">Jun 26, 2014</p></td>
+                <td align="left" nowrap width="80" valign="top"><p class="mainFont">2</p>
+                </td>
+            </tr>
+
+            <tr  >
+
+					<td nowrap align="left" width="80" valign="top"><p class="mainFont">WOODBRIDGE</p></TD>
+
+
+				<td nowrap align="left" width="200" valign="top">
+                	<p class="mainFont">
+                		<a href='/lcbo-ear/jsp/vin_storeinfo.jsp?STORE=346&amp;language=EN' class="bodylink">7850 WESTON ROAD</a><br>
+                		HWY 7 & WESTON<br>
+                		905-851-2500
+                	</p>
+				</td>
+
+				<td nowrap align="left" width="110" valign="top"><p class="mainFont">Jun 26, 2014</p></td>
+                <td align="left" nowrap width="80" valign="top"><p class="mainFont">2</p>
+                </td>
+            </tr>
+
+            <tr  bgcolor='#ece8ea'>
+
+					<td nowrap align="left" width="80" valign="top"><p class="mainFont">TORONTO-CENTRAL</p></TD>
+
+
+				<td nowrap align="left" width="200" valign="top">
+                	<p class="mainFont">
+                		<a href='/lcbo-ear/jsp/vin_storeinfo.jsp?STORE=15&amp;language=EN' class="bodylink">232 DUPONT STREET</a><br>
+                		DUPONT & SPADINA<br>
+                		416-922-7066
+                	</p>
+				</td>
+
+				<td nowrap align="left" width="110" valign="top"><p class="mainFont">Jun 26, 2014</p></td>
+                <td align="left" nowrap width="80" valign="top"><p class="mainFont">1</p>
+                </td>
+            </tr>
+
+            <tr  >
+
+					<td nowrap align="left" width="80" valign="top"><p class="mainFont">MISSISSAUGA</p></TD>
+
+
+				<td nowrap align="left" width="200" valign="top">
+                	<p class="mainFont">
+                		<a href='/lcbo-ear/jsp/vin_storeinfo.jsp?STORE=371&amp;language=EN' class="bodylink">930 SOUTHDOWN ROAD</a><br>
+                		SOUTHDOWN & ROYAL WINDSOR (CLARKSON)<br>
+                		905-822-2281
+                	</p>
+				</td>
+
+				<td nowrap align="left" width="110" valign="top"><p class="mainFont">Jun 25, 2014</p></td>
+                <td align="left" nowrap width="80" valign="top"><p class="mainFont">1</p>
+                </td>
+            </tr>
+
+
+	</tbody>
+	</table>
+	<br>
+
+</form>
+
+</div>
+
+<div id="bottomText">
+
+<p class="vintagesBottomText">Prices include container deposit fees where applicable.<br>
+Select products may be available to customers in limited quantity.&nbsp;Please see store personnel for details.<br>
+<span style="color: #F00;">Note:</span>&nbsp;The inventory shown in for VINTAGES products may include items pre-paid that have not been picked up by customers, such as CLASSICS, Bordeaux Futures and other direct offer products. Please contact the respective store to confirm with store staff that the product is available for sale. We are currently working on a solution to filter out such inventory and will alert product search engine users when it has been implemented.</p>
+
+</div>
+
+
+	<div id="footerTertiaryNav">
+        	<ul class="footerTertiaryNav">
+      		<li><a href="http://www.vintages.com/fr/index_fr.shtml">Fran&ccedil;ais</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" alt="verticalline-grey"><li><a href="http://www.vintages.com/about_vintages.shtml">About VINTAGES</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" alt="verticalline-grey"><li><a href="http://www.vintages.com/wine-information-faq/wine-faq-vintages.shtml">FAQ</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" alt="verticalline-grey"><li><a href="http://www.vintages.com/glossary/index.shtml">Glossary of Terms</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" alt="verticalline-grey"><li><a href="http://www.doingbusinesswithlcbo.com" target="_blank">Trade</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" alt="verticalline-grey"><li><a id="accessibility" href="http://www.lcbo.com/content/lcbo/en/corporate-pages/accessibility.html" target="_blank">Accessibility</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" alt="verticalline-grey"><li><a href="http://www.lcbo.com/content/lcbo/en/responsibility.html" target="_blank">Responsibility</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" alt="verticalline-grey"><li><a href="http://www.vintages.com/frame_stores.html">Store Search</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10"  alt="verticalline-grey"><li><a href="http://www.vintages.com/sitemap.shtml">Site Map</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" alt="verticalline-grey"><li><a href="http://hellolcbo.com/" target="_blank">Contact Us</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" alt="verticalline-grey"><li><!--<a href="http://lcboconnect.com/app/vintages/english/register/?utm_source=bottomvintages&utm_medium=web&utm_campaign=newsletter">E-mail Sign-up</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" /><li>--><a href="http://lcboconnect.com/app/vintages/english/profile/?bottomnavAccount">My Account</a></li>
+    		</ul>
+            <ul class="footerTertiaryNav">
+      		<li><span style="font-size: 10px; font-family: Arial, Helvetica, sans-serif; color: #000000">&copy; 2000/2014 LCBO</span>&nbsp;&nbsp;<a href="http://www.lcbo.com/content/lcbo/en/corporate-pages/privacy.html" target="_blank">Privacy Policy</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" alt="verticalline-grey"><a href="http://www.lcbo.com/content/lcbo/en/corporate-pages/terms-and-conditions.html" target="_blank">Terms & Conditions</a></li><img src="http://www.vintages.com/images/verticalline-grey.gif" width="9" height="10" alt="verticalline-grey"><a href="http://www.lcbo.com/content/lcbo/en/corporate-pages/social-media.html" target="_blank">Social Media</a></li>
+    		</ul>
+            <p style="text-align: center; padding-top: 20px;"><a href="http://essentialaccessibility.com" target="_blank"><img src="/images/eaccess.jpg" width="59" height="22" title="eSSENTIAL Accessibility"></a></p>
+</div>
 
 <script type="text/javascript">
 if (set_inputForm_setItemnameResults) {
-	inputForm_setItemnameResults("15");
-	inputForm_setItemnameLength("32"); 
-	}
-</script>
-<!--[if IE 6]>
-<script type="text/javascript">
-if (set_inputForm_setItemnameResults) {
-	inputForm_setItemnameResults("4"); }
-</script>
-<![endif]-->
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-553500-6");
-pageTracker._trackPageview();
+        inputForm_setItemnameResults("15");
+        inputForm_setItemnameLength("50");
+}
 </script>
 
 
-</body>
-</html>
+
+   <script type="text/javascript">
+       var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-553500-5']);
+       _gaq.push(['_trackPageview']);
+   </script>
+   <script type="text/javascript">  (function() {
+       var ga = document.createElement('script');     ga.type =
+   'text/javascript'; ga.async = true;
+       ga.src = ('https:'   == document.location.protocol ?
+   'https://ssl'   : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0];
+   s.parentNode.insertBefore(ga, s);
+       })();
+   </script>
+   <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-553500-35', 'vintages.com');
+  ga('send', 'pageview');
+
+   </script>
+
+
+</div>
+
+</BODY>
+
+</HTML>
