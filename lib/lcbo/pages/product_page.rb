@@ -286,7 +286,11 @@ module LCBO
     end
 
     def product_details_form(name=nil)
-      result = doc.css("#item-accordion-aside-product-details")[0].content.strip.gsub(/(\r\n)+/, "\r\n").split(/\r\n|\n/).map{|e| e.strip}.each_slice(2).to_a
+      result = doc.css("#item-accordion-aside-product-details")[0].content.strip.gsub(
+        /(\t)+/, "\t").gsub(
+        /(\r\n|\n)+/, "\n")
+      result = result.split(/\n\t\n\t|\n/).map{|e| e.strip}.each_slice(2).to_a
+
       if name
         result.each do |k,v|
           return v if name == k
