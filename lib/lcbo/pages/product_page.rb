@@ -35,10 +35,16 @@ module LCBO
       result = data.round
     end
 
+    emits :sale_price_in_cents do
+      if has_limited_time_offer
+        price_in_cents
+      else
+        0
+      end
+    end
+
     emits :regular_price_in_cents do
       if has_limited_time_offer
-
-
         data = doc.css('.prices small')[0].content.gsub("WAS$",'').strip.to_f * 100 rescue 0
         result = data.round
       else
@@ -116,9 +122,10 @@ module LCBO
     emits :package do
       result = product_details_form.find do |k,v|
         x = k.match(/(\d+) mL bottle/i)
-        x[1] if x
+        x ? x : nil
       end
-      result[0] if result
+
+      result ? result[0] : nil
     end
 
     # emits :package_unit_type do
@@ -279,7 +286,7 @@ module LCBO
     end
 
     def product_details_form(name=nil)
-      result = doc.css("#item-accordion-aside-product-details")[0].content.strip.gsub(/(\r\n)+/, "\r\n").split("\r\n").map{|e| e.strip}.each_slice(2).to_a
+      result = doc.css("#item-accordion-aside-product-details")[0].content.strip.gsub(/(\r\n)+/, "\r\n").split(/\r\n|\n/).map{|e| e.strip}.each_slice(2).to_a
       if name
         result.each do |k,v|
           return v if name == k
