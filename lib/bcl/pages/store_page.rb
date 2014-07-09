@@ -6,7 +6,8 @@ module BCL
     include CrawlKit::Page
 
     # uri 'http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE={id}&language=EN'
-    uri 'http://www.bcliquorstores.com/store/{id}'
+    # uri 'http://www.bcliquorstores.com/store/{id}'
+    uri 'http://www.bcliquorstores.com/store/locator?store={id}'
 
     FEATURE_FIELDS = {
       :has_wheelchair_accessability => 'wheelchair',
