@@ -70,7 +70,8 @@ module BCL
       result = {}
       stores do |store_hash, city_hash, region_hash|
         store_hash['city'] = city_hash
-        result[store_hash['store_id']] = store_hash
+        # result[store_hash['store_id']] = store_hash # switched from store_id to store_number
+        result[store_hash['store_number']] = store_hash
       end
       result
     end
