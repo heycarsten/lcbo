@@ -258,9 +258,21 @@ module LCBO
     #   end
     # end
 
+    emits :label_url do
+      "http://www.foodanddrink.ca/assets/products/720x720/#{id.to_s.rjust(7,'0')}.jpg"
+    end
+
     emits :image_url do
       if (img = doc.css('.images img').first)
-        normalize_image_url(img[:src])
+        path = normalize_image_url(img[:src])
+
+        begin
+          request = Typhoeus::Request.new(path)
+          response = request.run
+          path if response.code == 200
+        rescue
+          nil
+        end
       end
     end
 
