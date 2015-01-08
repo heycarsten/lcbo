@@ -28,7 +28,7 @@ module BCL
       results = []
       doc.css("#listStores li").each do |store_element|
         store_id = store_element.css('a.arrow').attribute('href').value.match(/\/m\/stores\/view\/(\d+)/)[1].to_i
-        stock = store_element.css('a.arrow div:nth-of-type(2)')[0].content.strip.match(/Quantity: (\d+)/)[1].to_i
+        stock = store_element.css('a.arrow div:nth-of-type(1)')[0].content.strip.match(/Quantity: (\d+)/)[1].to_i
         results << {store_id: store_id, quantity: stock}
       end
       results
