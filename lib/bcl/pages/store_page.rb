@@ -7,7 +7,8 @@ module BCL
 
     # uri 'http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE={id}&language=EN'
     # uri 'http://www.bcliquorstores.com/store/{id}'
-    uri 'http://www.bcliquorstores.com/store/locator?store={id}'
+    # uri 'http://www.bcliquorstores.com/store/locator?store={id}'
+    uri 'http://www.bcliquorstores.com/store/locator/{id}'
 
     FEATURE_FIELDS = {
       :has_wheelchair_accessability => 'wheelchair',
@@ -29,7 +30,8 @@ module BCL
 
     emits :name do
       # CrawlKit::TitleCaseHelper[doc.css('.infoWindowTitle')[0].content.strip]
-      CrawlKit::TitleCaseHelper[doc.css('h2.storeTitle a')[0].content.strip]
+      # CrawlKit::TitleCaseHelper[doc.css('h2.storeTitle a')[0].content.strip]
+      CrawlKit::TitleCaseHelper[doc.css('h2.store-title')[0].content.strip]
     end
 
     # emits :tags do
@@ -43,7 +45,7 @@ module BCL
     # end
 
     emits :address_line_1 do
-      data = doc.css('.storeStreet').first.content.strip
+      data = doc.css('.store-line1').first.content.strip
       # data = CrawlKit::TitleCaseHelper[doc.css('.storeStreet')[0].content.strip]
       # unless data
       #   raise CrawlKit::MalformedError,
@@ -53,7 +55,7 @@ module BCL
     end
 
     emits :address_line_2 do
-      data = doc.css('.storeAdditional').first.content.strip rescue nil
+      data = doc.css('.store-line2').first.content.strip rescue nil
       # data = CrawlKit::TitleCaseHelper[doc.css('.storeAdditional')[0].content.strip]
       # unless data
       #   raise CrawlKit::MalformedError,
@@ -63,11 +65,11 @@ module BCL
     end
 
     emits :city do
-      CrawlKit::TitleCaseHelper[doc.css('.storeCity')[0].content.split(",")[0].strip]
+      CrawlKit::TitleCaseHelper[doc.css('.store-line3')[0].content.split(",")[0].strip]
     end
 
     emits :postal_code do
-      data = CrawlKit::TitleCaseHelper[doc.css('.storeCity')[0].content.split(", BC")[1].strip]
+      data = CrawlKit::TitleCaseHelper[doc.css('.store-line3')[0].content.split(", BC")[1].strip]
       unless data
         raise CrawlKit::MalformedError,
         "unable to locate postal code for store #{id}"
@@ -76,7 +78,7 @@ module BCL
     end
 
     emits :telephone do
-      CrawlKit::PhoneHelper[doc.css('.storePhoneNumber')[0].content.strip]
+      CrawlKit::PhoneHelper[doc.css('.store-phone h4')[0].content.strip] rescue nil
     end
 
     # emits :fax do
