@@ -48,7 +48,7 @@ module SAQ
 
     def scrape_store_hash(element)
       {
-        store_id: element.css('.entete .titre a')[0].content.match(/\D* (\d+)/)[1],
+        store_id: element.css('.entete .titre a')[0].content.match(/\D* (\d+)$/)[1],
         # latitude: ,
         # longitude: ,
         address: element.css('.adresse')[0].content.gsub(/\ +/,' ').strip.split(/\n/)[0].strip,
