@@ -6,7 +6,9 @@ module BCL
 
     include CrawlKit::Page
 
-    uri 'http://m.bcliquorstores.com/m/where_to_buy/{product_id}'
+    # FIXME: Duplicated BELOW!!!
+    # uri 'http://m.bcliquorstores.com/m/where_to_buy/{product_id}'
+    uri 'http://m.bcliquorstores.com/m/api_stores/{product_id}/9999/'
 
     emits :product_id do
       query_params[:product_id].to_i
@@ -26,12 +28,23 @@ module BCL
 
     emits :inventories do
       results = []
-      doc.css("#listStores li").each do |store_element|
-        store_id = store_element.css('a.arrow').attribute('href').value.match(/\/m\/stores\/view\/(\d+)/)[1].to_i
-        stock = store_element.css('a.arrow div:nth-of-type(1)')[0].content.strip.match(/Quantity: (\d+)/)[1].to_i
+      # doc.css("#listStores li").each do |store_element|
+      #   store_id = store_element.css('a.arrow').attribute('href').value.match(/\/m\/stores\/view\/(\d+)/)[1].to_i
+      #   stock = store_element.css('a.arrow div:nth-of-type(1)')[0].content.strip.match(/Quantity: (\d+)/)[1].to_i
+      #   results << {store_id: store_id, quantity: stock}
+      # end
+
+      json.each do |store_element|
+        store_id = store_element['serial']
+        stock = store_element['quantity'].to_i
         results << {store_id: store_id, quantity: stock}
       end
+
       results
+    end
+
+    def json
+      @data ||= JSON.parse(doc.content)
     end
 
     # emits :xdoc do
@@ -42,7 +55,7 @@ module BCL
       return if is_parsed?
       return unless @html
       fire :before_parse
-      inv_uri = "http://m.bcliquorstores.com/m/where_to_buy/#{product_id}"
+      inv_uri = "http://m.bcliquorstores.com/m/api_stores/#{product_id}/9999/"
       @doc = Nokogiri::HTML(CrawlKit::RequestPrototype.new(inv_uri).request().body)
       fire :after_parse
       self
