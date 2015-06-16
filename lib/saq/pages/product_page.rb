@@ -165,7 +165,7 @@ module SAQ
     end
 
     emits :upc do
-      doc.css('.product-description-row2')[0].content.split("\n")[7].strip rescue nil
+      doc.css('.product-description-row2')[0].content.strip.match(/UPC code : \n +(\d+$)/i)[1] rescue nil
     end
 
     emits :total_units do
