@@ -228,7 +228,7 @@ module LCBO
     end
 
     emits :description do
-      doc.css('.description blockquote')[0].content
+      doc.css('.description blockquote')[0].content rescue nil
     end
 
     # emits :serving_suggestion do
