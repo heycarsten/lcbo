@@ -45,7 +45,7 @@ module LCBO
 
     emits :regular_price_in_cents do
       if has_limited_time_offer
-        data = doc.css('.prices small')[0].content.gsub("WAS$",'').strip.to_f * 100 rescue 0
+        data = doc.css('.prices small')[0].content.gsub(/WAS.?\$/i,'').strip.to_f * 100 rescue 0
         result = data.round
       else
         price_in_cents
@@ -204,7 +204,7 @@ module LCBO
     # end
 
     emits :has_limited_time_offer do
-      html.include?('Limited Time Offers')
+      html.include?('Limited Time Offer')
     end
 
     emits :has_bonus_reward_miles do
