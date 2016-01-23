@@ -121,7 +121,7 @@ module LCBO
 
     emits :package do
       result = product_details_form.find do |k,v|
-        x = k.match(/(\d+) mL bottle/i)
+        x = k.match(/(\d+) mL [bottle|gift]/i)
         x ? x : nil
       end
 
@@ -133,7 +133,7 @@ module LCBO
     # end
 
     emits :volume_in_milliliters do
-      result = package.match(/(\d+) mL bottle/i)
+      result = package.match(/(\d+) mL [bottle|gift]/i)
       result[1].to_i if result
     end
 
