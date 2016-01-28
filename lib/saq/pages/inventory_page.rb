@@ -24,7 +24,7 @@ module SAQ
       results = []
       doc.css('.affichageListe .fiche').each do |store|
         store_id = store.css('.titre')[0].content.strip.split("\n")[0].match(/(\d+)$/)[0].to_i
-        stock = store.css('.succ-dispo')[0].content.strip.split("\n")[1].to_i
+        stock = store.css('.succ-dispo')[0].content.strip.split("\n")[1].to_i rescue 0
         results << {store_id: store_id, quantity: stock}
       end
       results
