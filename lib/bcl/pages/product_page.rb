@@ -40,13 +40,13 @@ module BCL
     end
 
     emits :regular_price_in_cents do
-      data = doc.css('.product-detail-item.reg-price')[0].content.gsub("$",'').strip.to_f * 100
+      data = doc.css('.product-detail-item.reg-price')[0].content.gsub(/(\$|,)/,'').strip.to_f * 100
       data.round
     end
 
     emits :sale_price_in_cents do
       begin
-        data = doc.css('.product-detail-item .lto')[0].content.gsub("$",'').strip.to_f * 100
+        data = doc.css('.product-detail-item .lto')[0].content.gsub(/(\$|,)/,'').strip.to_f * 100
         data.round
       rescue
         0.0
