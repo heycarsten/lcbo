@@ -31,7 +31,7 @@ module LCBO
     end
 
     emits :price_in_cents do
-      data = doc.css('.prices strong')[0].content.gsub("$",'').strip.to_f * 100 rescue 0
+      data = doc.css('.prices strong')[0].content.gsub(/(\$|,)/,'').strip.to_f * 100 rescue 0
       result = data.round
     end
 
