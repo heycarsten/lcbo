@@ -5,7 +5,9 @@ module LCBO
 
     include CrawlKit::Page
 
-    uri 'http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE={id}&language=EN'
+    # uri 'http://www.lcbo.com/lcbo-ear/jsp/storeinfo.jsp?STORE={id}&language=EN'
+    uri 'http://www.foodanddrink.ca/lcbo-ear/jsp/storeinfo.jsp?STORE={id}&language=EN'
+    # uri 'http://stage.lcbo.com/lcbo-webapp/storedetail.do?locationNumber={id}'
 
     FEATURE_FIELDS = {
       :has_wheelchair_accessability => 'wheelchair',
