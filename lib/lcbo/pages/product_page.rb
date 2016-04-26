@@ -133,6 +133,7 @@ module LCBO
     # end
 
     emits :volume_in_milliliters do
+      #TODO FIX: package is null
       result = package.match(/(\d+) mL [bottle|gift]/i)
       result[1].to_i if result
     end
@@ -273,6 +274,16 @@ module LCBO
         rescue
           nil
         end
+      end
+    end
+
+    emits :upc do
+      upc_path = "http://stage.lcbo.com/lcbo-webapp/productdetail.do?itemNumber=%s" % id
+      begin
+        xml = open(upc_path)
+        upc = Nokogiri::XML(xml).at('upcNumber').inner_text
+      rescue
+       nil
       end
     end
 
