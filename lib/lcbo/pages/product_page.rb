@@ -4,7 +4,7 @@ module LCBO
     include CrawlKit::Page
 
     # uri 'http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber={id}'
-    uri 'http://www.lcbo.ca/lcbo/product/name/{id}'
+    uri 'http://www.lcbo.com/lcbo/product/name/{id}'
 
     # on :before_parse, :verify_response_not_blank
     # on :after_parse,  :verify_product_details_form
