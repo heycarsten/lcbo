@@ -270,7 +270,7 @@ module LCBO
         begin
           request = Typhoeus::Request.new(path)
           response = request.run
-          path if response.code == 200
+          path if [200, 301].include? response.code
         rescue
           nil
         end
