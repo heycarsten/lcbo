@@ -260,20 +260,12 @@ module LCBO
     # end
 
     emits :label_url do
-      "http://www.foodanddrink.ca/assets/products/720x720/#{id.to_s.rjust(7,'0')}.jpg"
+      normalize_image_url("http://www.foodanddrink.ca/assets/products/720x720/#{id.to_s.rjust(7,'0')}.jpg")
     end
 
     emits :image_url do
       if (img = doc.css('.images img').first)
-        path = normalize_image_url(img[:src])
-
-        begin
-          request = Typhoeus::Request.new(path)
-          response = request.run
-          path if [200, 301].include? response.code
-        rescue
-          nil
-        end
+        normalize_image_url(img[:src])
       end
     end
 
@@ -363,8 +355,18 @@ module LCBO
 
     def normalize_image_url(url)
       return unless url
+      url = url.include?('http://') ? url : File.join('http://www.lcbo.com', url)
+
+      response = Typhoeus.get(url, followlocation:true)
+      url = response.effective_url
+
+      return if [200].include? response.code
       return if url.include?('default')
-      url.include?('http://') ? url : File.join('http://www.lcbo.ca', url)
+      return if url.include?('generic')
+
+      url
+    rescue
+      nil
     end
 
     # def verify_third_info_cell
