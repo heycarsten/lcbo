@@ -360,7 +360,7 @@ module LCBO
       response = Typhoeus.get(url, followlocation:true)
       url = response.effective_url
 
-      return if [200].include? response.code
+      return unless [200].include? response.code
       return if url.include?('default')
       return if url.include?('generic')
 
