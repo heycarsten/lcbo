@@ -67,7 +67,7 @@ module LCBO
 
     emits :bonus_reward_miles do
       if has_bonus_reward_miles
-        doc.css('.air-miles')[0].content.match(/(\d+)/)[1].to_f
+        doc.css('.pip-info .air-miles')[0].content.match(/(\d+)/)[1].to_f
       else
         0
       end
@@ -75,7 +75,7 @@ module LCBO
 
     emits :bonus_reward_miles_ends_on do
       if has_bonus_reward_miles
-        x = doc.css('.air-miles-end-date')[0].content.match(/Until ([a-zA-Z]+ \d+, \d+)/)[1]
+        x = doc.css('.pip-info .air-miles-end-date')[0].content.match(/Until ([a-zA-Z]+ \d+, \d+)/)[1]
         Date.parse(x).to_s
       else
         nil
