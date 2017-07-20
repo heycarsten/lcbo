@@ -209,7 +209,7 @@ module LCBO
     end
 
     emits :has_bonus_reward_miles do
-      html.include?('Bonus AIR MILES')
+      html.include?('Bonus AIR MILES') && !doc.css('.pip-info .air-miles').empty?
     end
 
     # emits :has_value_added_promotion do
