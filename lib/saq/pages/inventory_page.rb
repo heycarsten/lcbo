@@ -6,7 +6,7 @@ module SAQ
 
     include CrawlKit::Page
 
-    uri 'http://www.saq.com/webapp/wcs/stores/servlet/SAQStoreLocatorSearchResultsView?storeId=20002&catalogId=50000&langId=-1&regionSelected=&productId={product_id}&orderBy=1&pageSize=1000&regionId=&x=58&y=12'
+    uri 'https://www.saq.com/webapp/wcs/stores/servlet/SAQStoreLocatorSearchResultsView?storeId=20002&catalogId=50000&langId=-1&regionSelected=&productId={product_id}&orderBy=1&pageSize=1000&regionId=&x=58&y=12'
 
     emits :product_id do
       query_params[:product_id].to_i
