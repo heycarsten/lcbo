@@ -4,7 +4,7 @@ module SAQ
 
     include CrawlKit::Page
 
-    uri 'http://www.saq.com/page/en/saqcom/type/name/{id}'
+    uri 'https://www.saq.com/page/en/saqcom/type/name/{id}'
 
     # on :before_parse, :verify_response_not_blank
     # on :after_parse,  :verify_product_details_form
