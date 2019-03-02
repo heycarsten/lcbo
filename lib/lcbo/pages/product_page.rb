@@ -4,7 +4,7 @@ module LCBO
     include CrawlKit::Page
 
     # uri 'http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber={id}'
-    uri 'http://www.lcbo.com/lcbo/product/name/{id}'
+    uri 'https://www.lcbo.com/lcbo/product/name/{id}'
 
     # on :before_parse, :verify_response_not_blank
     # on :after_parse,  :verify_product_details_form
@@ -15,8 +15,13 @@ module LCBO
       query_params[:id].to_i
     end
 
+    # emits :xdoc do
+    #   doc
+    # end
+
     emits :name do
-      CrawlKit::TitleCaseHelper[doc.css('.details h1')[0].content]
+      # CrawlKit::TitleCaseHelper[doc.css("#ProductInfoName_#{id}")[0].content]
+      CrawlKit::TitleCaseHelper[doc.css('title')[0].content.split(' | ').first]
     end
 
     emits :tags do
@@ -31,7 +36,7 @@ module LCBO
     end
 
     emits :price_in_cents do
-      data = doc.css('.prices strong')[0].content.gsub(/(\$|,)/,'').strip.to_f * 100 rescue 0
+      data = doc.css('.price')[0].content.gsub(/(\$|,)/,'').strip.to_f * 100 rescue 0
       result = data.round
     end
 
@@ -45,7 +50,7 @@ module LCBO
 
     emits :regular_price_in_cents do
       if has_limited_time_offer
-        data = doc.css('#prodPrices .was-price + small')[0].content.sub(/[a-zA-Z\$\ ]*/i,'').strip.to_f * 100 rescue 0
+        data = doc.css('.listPrice')[0].content.match(/WAS.\$(\d+\.\d+)/)[1].to_f * 100 rescue 0
         result = data.round
       else
         price_in_cents
@@ -58,7 +63,7 @@ module LCBO
 
     emits :limited_time_offer_ends_on do
       if has_limited_time_offer
-        x = doc.css('.lto-end-date')[0].content.match(/Until ([a-zA-Z]+ \d+, \d+)/)[1]
+        x = doc.css('.limitedOffer')[0].content.match(/Until ([a-zA-Z]+ \d+, \d+)/)[1]
         Date.parse(x).to_s
       else
         nil
@@ -67,7 +72,7 @@ module LCBO
 
     emits :bonus_reward_miles do
       if has_bonus_reward_miles
-        doc.css('.pip-info .air-miles')[0].content.match(/(\d+)/)[1].to_f
+        doc.css('.airmiles-section span')[0].content.match(/(\d+)/)[1].to_f
       else
         0
       end
@@ -75,7 +80,7 @@ module LCBO
 
     emits :bonus_reward_miles_ends_on do
       if has_bonus_reward_miles
-        x = doc.css('.pip-info .air-miles-end-date')[0].content.match(/Until ([a-zA-Z]+ \d+, \d+)/)[1]
+        x = doc.css('.airmiles-section')[0].content.match(/Until.([a-zA-Z]+ \d+ ?, ?\d+)/)[1]
         Date.parse(x).to_s
       else
         nil
@@ -86,26 +91,29 @@ module LCBO
     #   product_details_form('stock type')
     # end
 
-    emits :type do
-      [
-        primary_category,
-        secondary_category,
-        varietal,
-      ].compact
-    end
+    # REDO
+    # emits :type do
+    #   [
+    #     primary_category,
+    #     secondary_category,
+    #     varietal,
+    #   ].compact
+    # end
 
-    emits :primary_category do
-      doc.css('#WC_BreadCrumb_Link_1')[0].content.strip
-    end
+    # REDO
+    # emits :primary_category do
+    #   doc.css('#WC_BreadCrumb_Link_1')[0].content.strip
+    # end
 
-    emits :secondary_category do
-      doc.css('#WC_BreadCrumb_Link_2')[0].content.strip
-    end
+    # REDO
+    # emits :secondary_category do
+    #   doc.css('#WC_BreadCrumb_Link_2')[0].content.strip
+    # end
 
     emits :origin do
-      match = product_details_form("Made in:")
-      if match
-        place = match.
+      origin_match = product_details_form("Made In:")
+      if origin_match
+        place = origin_match.
           gsub('Made in: ', '').
           gsub('/Californie', '').
           gsub('Bosnia\'Hercegovina', 'Bosnia and Herzegovina').
@@ -115,7 +123,7 @@ module LCBO
           gsub(', Rep. Of', '').
           gsub('&', 'and').
           gsub('Region Not Specified, ', '')
-        place.split(',').map { |s| s.strip }.uniq.join(', ')
+        place.split(',').map{ |s| s.strip }.uniq.join(', ')
       end
     end
 
@@ -132,11 +140,12 @@ module LCBO
     #   volume_helper.unit_type
     # end
 
-    emits :volume_in_milliliters do
-      #TODO FIX: package is null
-      result = package.match(/(\d+) mL [bottle|gift]/i)
-      result[1].to_i if result
-    end
+    # REDO
+    # emits :volume_in_milliliters do
+    #   #TODO FIX: package is null
+    #   result = package.match(/(\d+) mL [bottle|gift]/i)
+    #   result[1].to_i if result
+    # end
 
     # emits :total_package_units do
     #   volume_helper.total_units
@@ -183,7 +192,8 @@ module LCBO
     end
 
     emits :varietal do
-      product_details_form("Varietal:")
+      # product_details_form("Varietal:")
+      staging_lcbo_data.at('wineVarietal').inner_text rescue nil
     end
 
     emits :board do
@@ -209,7 +219,7 @@ module LCBO
     end
 
     emits :has_bonus_reward_miles do
-      html.include?('Bonus AIR MILES') && !doc.css('.pip-info .air-miles').empty?
+      html.include?('Bonus AIR MILES') && !doc.css('.share-links .airmiles-section').empty?
     end
 
     # emits :has_value_added_promotion do
@@ -264,18 +274,23 @@ module LCBO
     end
 
     emits :image_url do
-      if (img = doc.css('.images img').first)
+      if (img = doc.css('img#productMainImage').first)
         normalize_image_url(img[:src])
       end
     end
 
     emits :upc do
-      upc_path = "http://stage.lcbo.com/lcbo-webapp/productdetail.do?itemNumber=%s" % id
+      staging_lcbo_data.at('upcNumber').inner_text rescue nil
+    end
+
+    def staging_lcbo_data
+      @staging_lcbo_data =
       begin
+        upc_path = "http://stage.lcbo.com/lcbo-webapp/productdetail.do?itemNumber=%s" % id
         xml = open(upc_path)
-        upc = Nokogiri::XML(xml).at('upcNumber').inner_text
+        Nokogiri::XML(xml)
       rescue
-       nil
+        nil
       end
     end
 
@@ -301,9 +316,7 @@ module LCBO
     end
 
     def product_details_form(name=nil)
-      result = doc.css(".product-details-list")[0].content.strip.gsub(
-        /(\t)+/, "\t").gsub(
-        /(\r\n|\n)+/, "\n")
+      result = doc.css(".product-details-list")[0].content.strip.gsub(/(\t)+/, "\t").gsub(/(\r\n|\n)+/, "\n").gsub(/\n\t\ ?\n\t\n\t(\n\t)*/, "\n")
       result = result.split(/\n\t\n\t|\n/).map{|e| e.strip}.each_slice(2).to_a
 
       if name

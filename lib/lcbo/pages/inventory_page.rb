@@ -3,7 +3,8 @@ module LCBO
 
     include CrawlKit::Page
 
-    uri 'https://www.vintages.com/lcbo-ear/vintages/product/inventory/searchResults.do?language=EN&itemNumber={product_id}'
+     uri 'https://www.vintages.com/lcbo-ear/vintages/product/inventory/searchResults.do?language=EN&itemNumber={product_id}'
+    # uri 'https://www.lcbo.com/webapp/wcs/stores/servlet/ProductStoreInventoryView?partNumber={product_id}'
 
     emits :product_id do
       query_params[:product_id].to_i
