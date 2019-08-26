@@ -50,7 +50,7 @@ module LCBO
 
     emits :regular_price_in_cents do
       if has_limited_time_offer
-        data = doc.css('.listPrice')[0].content.match(/WAS.\$(\d+\.\d+)/)[1].to_f * 100 rescue 0
+        data = doc.css('.listPrice .listPrice_old')[0].content.match(/\$(\d+\.\d+)/)[1].to_f * 100 rescue 0
         result = data.round
       else
         price_in_cents
