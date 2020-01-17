@@ -24,8 +24,8 @@ module LCBO
     StorePage.process(:id => id).as_hash
   end
 
-  def self.inventory(product_id)
-    InventoryPage.process(:product_id => product_id).as_hash
+  def self.inventory(internal_id, sku)
+    InventoryPage.process(internal_id:internal_id, sku:sku).as_hash
   end
 
   def self.product_list(page_num)

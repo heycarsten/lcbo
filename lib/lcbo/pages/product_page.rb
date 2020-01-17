@@ -11,13 +11,17 @@ module LCBO
     # on :after_parse,  :verify_product_name
     # on :after_parse,  :verify_third_info_cell
 
+    # emits :xdoc do
+    #   doc
+    # end
+
     emits :id do
       query_params[:id].to_i
     end
 
-    # emits :xdoc do
-    #   doc
-    # end
+    emits :code2 do
+      doc.css('meta[name="pageId"]')[0].attr(:content) rescue nil
+    end
 
     emits :name do
       # CrawlKit::TitleCaseHelper[doc.css("#ProductInfoName_#{id}")[0].content]
