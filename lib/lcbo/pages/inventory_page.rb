@@ -36,7 +36,7 @@ module LCBO
 
     def inventory_json
       @inventory_js_string ||= doc.to_s.gsub(/[\n\t]/, '').match(/var\ storesArray\ =\ \[(.*)\]\;var/)[1]
-      @inventory_array ||= @inventory_js_string.to_s.split("},{").map{|e| e.match(/address1\:(.*)\,address2.*Math\.floor\((.*)\)/)[1..2].map{|f| CGI.unescapeHTML(f).strip[1..-2]}}
+      @inventory_array ||= @inventory_js_string.to_s.split("},{").map{|e| e.match(/address1\:(.*)\,address2.*Math\.floor\((.*)\)/)[1..2].map{|f| CGI.unescapeHTML(f).strip[1..-2].squeeze(" ")}}
 
       @inventory_array ||= []
     end
