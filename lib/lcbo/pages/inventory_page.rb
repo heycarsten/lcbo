@@ -35,10 +35,19 @@ module LCBO
 
 
     def inventory_json
-      @inventory_js_string ||= doc.to_s.gsub(/[\n\t]/, '').match(/var\ storesArray\ =\ \[(.*)\]\;var/)[1]
-      @inventory_array ||= @inventory_js_string.to_s.split("},{").map{|e| e.match(/address1\:(.*)\,address2.*Math\.floor\((.*)\)/)[1..2].map{|f| CGI.unescapeHTML(f).strip[1..-2].squeeze(" ")}}
+      if !doc.css(".no-results").empty?
+        # No inventory available... not an error
+        @inventory_array = []
+      else
+        @inventory_js_string ||= doc.to_s.gsub(/[\n\t]/, '').match(/var\ storesArray\ =\ \[(.*)\]\;var/)[1]
+        @inventory_array ||= @inventory_js_string.to_s.split("},{").map do |e|
+          e.match(/address1\:(.*)\,address2.*Math\.floor\((.*)\)/)[1..2].map do |f|
+            CGI.unescapeHTML(f).strip[1..-2].squeeze(" ")
+          end
+        end
 
-      @inventory_array ||= []
+        @inventory_array ||= []
+      end
     end
 
   end
