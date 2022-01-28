@@ -135,7 +135,7 @@ module LCBO
       result = product_details_form.find do |k,v|
         x = k.match(/(\d+) mL [bottle|gift]/i)
         x ? x : nil
-      end
+      end rescue nil
 
       result ? result[0] : nil
     end
@@ -285,6 +285,10 @@ module LCBO
 
     emits :upc do
       staging_lcbo_data.at('upcNumber').inner_text rescue nil
+    end
+
+    emits :online_inventory do
+      doc.css('.homeDeliveryFields')[0].content.strip.match(/(\d*) available for home delivery/)[1]
     end
 
     def staging_lcbo_data
