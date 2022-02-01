@@ -288,7 +288,7 @@ module LCBO
     end
 
     emits :online_inventory do
-      doc.css('.homeDeliveryFields')[0].content.strip.match(/(\d*) available for home delivery/)[1]
+      doc.css('.homeDeliveryFields')[0].content.strip.match(/(\d*) available for home delivery/)[1] rescue 0
     end
 
     def staging_lcbo_data
