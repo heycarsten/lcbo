@@ -335,6 +335,8 @@ module LCBO
       else
         result
       end
+    rescue
+      raise "Unable to parse product-details-list"
     end
 
     def get_info_lines_at_offset(offset)
