@@ -3,7 +3,8 @@ module LCBO
 
     include CrawlKit::Page
 
-    uri 'https://www.lcbo.com/webapp/wcs/stores/servlet/PhysicalStoreInventoryView?langId=-1&storeId=10203&productId={internal_id}'
+    uri 'https://www.lcbo.com/en/storeinventory/?sku={internal_id}'
+    # uri 'https://www.lcbo.com/webapp/wcs/stores/servlet/PhysicalStoreInventoryView?langId=-1&storeId=10203&productId={internal_id}'
     # uri 'https://www.vintages.com/lcbo-ear/vintages/product/inventory/searchResults.do?language=EN&itemNumber={product_id}'
     # uri 'https://www.lcbo.com/webapp/wcs/stores/servlet/ProductStoreInventoryView?partNumber={product_id}'
 
@@ -17,15 +18,18 @@ module LCBO
     end
 
     emits :inventory_count do
-      inventory_json.inject(0){|s,e| s+= e[1].to_i; s}
+      # sums all quantities in inventory json
+      inventory_json.inject(0){|s,e| s+= e[6].to_i; s}
     end
 
     emits :inventories do
       begin
-        inventory_json.map do |a1, q1|
+        inventory_json.map do |x|
           {
-            quantity: q1.to_i,
-            address: a1
+            quantity: x[6].to_i,
+            address: x[2].upcase,
+            store_id: x[5],
+            phone: x[4]
           }
         end
       rescue
@@ -35,16 +39,13 @@ module LCBO
 
 
     def inventory_json
+
       if !doc.css(".no-results").empty?
         # No inventory available... not an error
         @inventory_array = []
       else
-        @inventory_js_string ||= doc.to_s.gsub(/[\n\t]/, '').match(/var\ storesArray\ =\ \[(.*)\]\;var/)[1]
-        @inventory_array ||= @inventory_js_string.to_s.split("},{").map do |e|
-          e.match(/address1\:(.*)\,address2.*Math\.floor\((.*)\)/)[1..2].map do |f|
-            CGI.unescapeHTML(f).strip[1..-2].squeeze(" ")
-          end
-        end
+        # ["City","Intersection","Address Line 1","Address Line 2","Phone Number","Store Number","Available Inventory"]
+        @inventory_array ||= JSON.parse doc.to_s.gsub(/[\n\t]/, '').match(/\"storeList\"\:(\[.*\])\, +\"sku\"/)[1]
 
         @inventory_array ||= []
       end
