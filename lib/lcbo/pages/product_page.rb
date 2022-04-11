@@ -3,10 +3,15 @@ module LCBO
 
     include CrawlKit::Page
 
-    # uri 'http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber={id}'
-    uri 'https://www.lcbo.com/lcbo/product/name/{id}'
+    uri 'https://www.lcbo.com/en/storeinventory/?sku={id}'
 
-    # on :before_parse, :verify_response_not_blank
+    # I CANNOT USE This url b/c it uses JS to update
+    # uri 'https://www.lcbo.com/en/catalogsearch/result/#q={id}'
+
+    # uri 'https://www.lcbo.com/lcbo/product/name/{id}'
+    # uri 'http://lcbo.com/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber={id}'
+
+    on :after_parse,  :perform_real_request
     # on :after_parse,  :verify_product_details_form
     # on :after_parse,  :verify_product_name
     # on :after_parse,  :verify_third_info_cell
@@ -14,6 +19,24 @@ module LCBO
     # emits :xdoc do
     #   doc
     # end
+
+    # Original url needs to be parsed for actual product page url and a 2nd request needs to be performed.
+    def perform_real_request
+      if @real_request_performed
+        # puts "ALREADY PERFORMED HIZZY"
+      else
+        @real_request_performed = true
+        real_request_url = doc.css('h1 a[title="Product Name"]')[0].attr(:href)
+
+        @response = Timeout.timeout(LCBO.config[:timeout]) do
+          Typhoeus::Request.new(real_request_url, {method:'GET'}).run
+        end
+        @html     = @response.body
+        @doc      = Nokogiri::HTML(@html, nil, 'UTF-8')
+
+        # puts "HIZZAH"
+      end
+    end
 
     emits :id do
       query_params[:id].to_i
@@ -114,8 +137,9 @@ module LCBO
     #   doc.css('#WC_BreadCrumb_Link_2')[0].content.strip
     # end
 
+
     emits :origin do
-      origin_match = product_details_form("Made In:")
+      origin_match = product_details_form("Made In")
       if origin_match
         place = origin_match.
           gsub('Made in: ', '').
@@ -131,14 +155,14 @@ module LCBO
       end
     end
 
-    emits :package do
-      result = product_details_form.find do |k,v|
-        x = k.match(/(\d+) mL [bottle|gift]/i)
-        x ? x : nil
-      end rescue nil
+    # emits :package do
+    #   result = product_details_form.find do |k,v|
+    #     x = k.match(/(\d+) mL [bottle|gift]/i)
+    #     x ? x : nil
+    #   end rescue nil
 
-      result ? result[0] : nil
-    end
+    #   result ? result[0] : nil
+    # end
 
     # emits :package_unit_type do
     #   volume_helper.unit_type
@@ -192,12 +216,12 @@ module LCBO
     # end
 
     emits :producer_name do
-      product_details_form("By:")
+      product_details_form("By")
     end
 
     emits :varietal do
-      # product_details_form("Varietal:")
-      staging_lcbo_data.at('wineVarietal').inner_text rescue nil
+      product_details_form("Varietal")
+      # staging_lcbo_data.at('wineVarietal').inner_text rescue nil
     end
 
     emits :board do
@@ -206,12 +230,7 @@ module LCBO
 
 
     emits :released_on do
-      if html.include?('Release Date:')
-        x = product_details_form("Release Date:")
-        Date.parse(x).to_s
-      else
-        nil
-      end
+      product_details_form("Release Date")
     end
 
     # emits :is_discontinued do
@@ -243,7 +262,7 @@ module LCBO
     end
 
     emits :description do
-      doc.css('.description blockquote')[0].content rescue nil
+      doc.css('.testing_note')[0].content rescue nil
     end
 
     # emits :serving_suggestion do
@@ -284,23 +303,24 @@ module LCBO
     end
 
     emits :upc do
-      staging_lcbo_data.at('upcNumber').inner_text rescue nil
+      # staging_lcbo_data.at('upcNumber').inner_text rescue nil
     end
 
     emits :online_inventory do
       doc.css('.homeDeliveryFields')[0].content.strip.match(/(\d*) available for home delivery/)[1] rescue 0
     end
 
-    def staging_lcbo_data
-      @staging_lcbo_data =
-      begin
-        upc_path = "http://stage.lcbo.com/lcbo-webapp/productdetail.do?itemNumber=%s" % id
-        xml = open(upc_path)
-        Nokogiri::XML(xml)
-      rescue
-        nil
-      end
-    end
+    # NO LONGER AVAILABLE
+    # def staging_lcbo_data
+    #   @staging_lcbo_data =
+    #   begin
+    #     upc_path = "http://stage.lcbo.com/lcbo-webapp/productdetail.do?itemNumber=%s" % id
+    #     xml = open(upc_path)
+    #     Nokogiri::XML(xml)
+    #   rescue
+    #     nil
+    #   end
+    # end
 
     def volume_helper
       @volume_helper ||= CrawlKit::VolumeHelper.new(package)
@@ -324,16 +344,18 @@ module LCBO
     end
 
     def product_details_form(name=nil)
-      result = doc.css(".product-details-list")[0].content.strip.gsub(/(\t)+/, "\t").gsub(/(\r\n|\n)+/, "\n").gsub(/\n\t\ ?\n\t\n\t(\n\t)*/, "\n")
-      result = result.split(/\n\t\n\t|\n/).map{|e| e.strip}.each_slice(2).to_a
-
-      if name
-        result.each do |k,v|
-          return v if name == k
+      if name && @product_details_hash
+        @product_details_hash[name]
+      elsif name
+        @product_details_hash = {}
+      
+        doc.css("#moredetail li").each do |x|
+          @product_details_hash[x.css('div')[0].content.strip] = x.css('div')[1].content.strip
         end
-        return nil
+
+        product_details_form(name)
       else
-        result
+        @product_details_hash
       end
     rescue
       raise "Unable to parse product-details-list"
