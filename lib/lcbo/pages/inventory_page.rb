@@ -40,7 +40,7 @@ module LCBO
 
     def inventory_json
 
-      if !doc.css(".no-results").empty?
+      if !doc.css(".inventory_empty_div").empty?
         # No inventory available... not an error
         @inventory_array = []
       else
