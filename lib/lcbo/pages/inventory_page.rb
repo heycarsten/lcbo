@@ -3,7 +3,7 @@ module LCBO
 
     include CrawlKit::Page
 
-    uri 'https://www.lcbo.com/en/storeinventory/?sku={internal_id}'
+    uri 'https://www.lcbo.com/en/storeinventory/?sku={sku}'
     # uri 'https://www.lcbo.com/webapp/wcs/stores/servlet/PhysicalStoreInventoryView?langId=-1&storeId=10203&productId={internal_id}'
     # uri 'https://www.vintages.com/lcbo-ear/vintages/product/inventory/searchResults.do?language=EN&itemNumber={product_id}'
     # uri 'https://www.lcbo.com/webapp/wcs/stores/servlet/ProductStoreInventoryView?partNumber={product_id}'
