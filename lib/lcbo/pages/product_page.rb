@@ -297,9 +297,10 @@ module LCBO
     end
 
     emits :image_url do
-      if (img = doc.css('img#productMainImage').first)
-        normalize_image_url(img[:src])
-      end
+      normalize_image_url("http://www.foodanddrink.ca/assets/products/720x720/#{id.to_s.rjust(7,'0')}.jpg")
+      # if (img = doc.css('img#productMainImage').first)
+      #   normalize_image_url(img[:src])
+      # end
     end
 
     emits :upc do
@@ -307,7 +308,8 @@ module LCBO
     end
 
     emits :online_inventory do
-      doc.css('.homeDeliveryFields')[0].content.strip.match(/(\d*) available for home delivery/)[1] rescue 0
+      return 0
+      # doc.css('.home-shipping-available')[0].content.strip.match(/(\d*) available/)[1] rescue 0
     end
 
     # NO LONGER AVAILABLE
