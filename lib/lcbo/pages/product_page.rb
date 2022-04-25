@@ -308,7 +308,7 @@ module LCBO
     end
 
     emits :online_inventory do
-      return 0
+      0
       # doc.css('.home-shipping-available')[0].content.strip.match(/(\d*) available/)[1] rescue 0
     end
 
