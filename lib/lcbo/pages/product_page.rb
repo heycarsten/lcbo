@@ -20,6 +20,10 @@ module LCBO
     #   doc
     # end
 
+    emits :url do
+      doc.css('link[rel=canonical]')[0].attr(:href)
+    end
+
     # Original url needs to be parsed for actual product page url and a 2nd request needs to be performed.
     def perform_real_request
       if @real_request_performed

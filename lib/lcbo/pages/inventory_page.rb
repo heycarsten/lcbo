@@ -12,6 +12,10 @@ module LCBO
     #   doc
     # end
 
+    emits :product_url do
+      doc.css('h1 a[title="Product Name"]')[0].attr(:href)
+    end
+
     emits :product_id do
       # query_params[:internal_id].to_i
       query_params[:sku].to_i
