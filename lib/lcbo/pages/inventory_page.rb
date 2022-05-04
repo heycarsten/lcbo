@@ -13,7 +13,7 @@ module LCBO
     # end
 
     emits :product_url do
-      doc.css('h1 a[title="Product Name"]')[0].attr(:href)
+      doc.css('h1 a[title="Product Name"]')[0].attr(:href) rescue nil
     end
 
     emits :product_id do
@@ -32,8 +32,7 @@ module LCBO
           {
             quantity: x[6].to_i,
             address: x[2].upcase,
-            store_id: x[5],
-            phone: x[4]
+            store_id: x[5]
           }
         end
       rescue

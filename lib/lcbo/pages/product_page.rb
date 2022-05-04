@@ -21,7 +21,7 @@ module LCBO
     # end
 
     emits :url do
-      doc.css('link[rel=canonical]')[0].attr(:href)
+      doc.css('link[rel=canonical]')[0].attr(:href) rescue nil
     end
 
     # Original url needs to be parsed for actual product page url and a 2nd request needs to be performed.
