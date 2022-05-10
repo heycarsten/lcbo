@@ -67,22 +67,16 @@ module LCBO
     end
 
     emits :price_in_cents do
-      data = doc.css('.price')[0].content.gsub(/(\$|,)/,'').strip.to_f * 100 rescue 0
-      result = data.round
+      (doc.css('meta[property="product:price:amount"]')[0].attr('content').strip.to_f * 100).round rescue 0
     end
 
     emits :sale_price_in_cents do
-      if has_limited_time_offer
-        price_in_cents
-      else
-        0
-      end
+      (doc.css('span[data-price-type="oldPrice"]')[0].attr('data-price-amount').to_f * 100).round rescue 0
     end
 
     emits :regular_price_in_cents do
       if has_limited_time_offer
-        data = doc.css('.listPrice .listPrice_old')[0].content.match(/\$(\d+\.\d+)/)[1].to_f * 100 rescue 0
-        result = data.round
+        sale_price_in_cents
       else
         price_in_cents
       end
@@ -94,8 +88,10 @@ module LCBO
 
     emits :limited_time_offer_ends_on do
       if has_limited_time_offer
-        x = doc.css('.limitedOffer')[0].content.match(/Until ([a-zA-Z]+ \d+, \d+)/)[1]
-        Date.parse(x).to_s
+        x = doc.css('.product-info-price .limited-text')[0].content
+        puts x.inspect
+        y = x.match(/Sale Ends\: (.*)/)[1]
+        Date.parse(y).to_s
       else
         nil
       end
@@ -242,7 +238,8 @@ module LCBO
     # end
 
     emits :has_limited_time_offer do
-      html.include?('Limited Time Offer')
+      sale_price_in_cents != 0
+      # html.include?('Limited Time Offer')
     end
 
     emits :has_bonus_reward_miles do
