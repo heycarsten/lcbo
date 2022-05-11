@@ -71,11 +71,15 @@ module LCBO
     end
 
     emits :sale_price_in_cents do
-      (doc.css('span[data-price-type="finalPrice"]')[0].attr('data-price-amount').to_f * 100).round rescue 0
+      if limited_time_offer_ends_on
+        (doc.css('span[data-price-type="finalPrice"]')[0].attr('data-price-amount').to_f * 100).round rescue 0
+      else
+        0
+      end
     end
 
     emits :regular_price_in_cents do
-      if has_limited_time_offer
+      if limited_time_offer_ends_on
         (doc.css('span[data-price-type="oldPrice"]')[0].attr('data-price-amount').to_f * 100).round rescue 0
         # sale_price_in_cents
       else
@@ -88,11 +92,11 @@ module LCBO
     end
 
     emits :limited_time_offer_ends_on do
-      if has_limited_time_offer
+      begin
         x = doc.css('.limited-text')[0].content
         y = x.match(/Sale Ends\: (.*)/)[1]
         Date.parse(y).to_s
-      else
+      rescue
         nil
       end
     end
