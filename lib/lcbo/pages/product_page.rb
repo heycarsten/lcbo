@@ -298,11 +298,13 @@ module LCBO
     # end
 
     emits :label_url do
-      normalize_image_url("http://www.foodanddrink.ca/assets/products/720x720/#{id.to_s.rjust(7,'0')}.jpg")
+      # normalize_image_url("http://www.foodanddrink.ca/assets/products/720x720/#{id.to_s.rjust(7,'0')}.jpg")
+      image_url
     end
 
     emits :image_url do
-      normalize_image_url("http://www.foodanddrink.ca/assets/products/720x720/#{id.to_s.rjust(7,'0')}.jpg")
+      doc.css('meta[property="og:image"]')[0].attr('content').match(/(.*)\.thumb.*/)[1] rescue nil
+      # normalize_image_url("http://www.foodanddrink.ca/assets/products/720x720/#{id.to_s.rjust(7,'0')}.jpg")
       # if (img = doc.css('img#productMainImage').first)
       #   normalize_image_url(img[:src])
       # end
